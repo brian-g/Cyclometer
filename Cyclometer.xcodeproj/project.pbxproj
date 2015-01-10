@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D336104B1A588497003E39DF /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33610491A588497003E39DF /* CardViewController.swift */; };
+		D336104C1A588497003E39DF /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D336104A1A588497003E39DF /* CardViewController.xib */; };
+		D336104E1A589C7D003E39DF /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104D1A589C7D003E39DF /* Sensor.swift */; };
+		D33610501A59AF56003E39DF /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104F1A59AF56003E39DF /* SensorManager.swift */; };
+		D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C0AD01A5CDDC500969585 /* SensorLog.swift */; };
 		D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83141A54AFF00070E792 /* AppDelegate.swift */; };
-		D3DA83171A54AFF00070E792 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83161A54AFF00070E792 /* ViewController.swift */; };
-		D3DA831A1A54AFF00070E792 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DA83181A54AFF00070E792 /* Main.storyboard */; };
+		D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83161A54AFF00070E792 /* BaseControllers.swift */; };
 		D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831B1A54AFF00070E792 /* Images.xcassets */; };
 		D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */; };
 		D3DA832B1A54AFF00070E792 /* CyclometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA832A1A54AFF00070E792 /* CyclometerTests.swift */; };
+		D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +31,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D33610491A588497003E39DF /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		D336104A1A588497003E39DF /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		D336104D1A589C7D003E39DF /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		D336104F1A59AF56003E39DF /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
+		D39C0AD01A5CDDC500969585 /* SensorLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorLog.swift; sourceTree = "<group>"; };
 		D3DA830F1A54AFF00070E792 /* Cyclometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cyclometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DA83131A54AFF00070E792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DA83141A54AFF00070E792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3DA83161A54AFF00070E792 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D3DA83191A54AFF00070E792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3DA83161A54AFF00070E792 /* BaseControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControllers.swift; sourceTree = "<group>"; };
 		D3DA831B1A54AFF00070E792 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3DA831E1A54AFF00070E792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D3DA83241A54AFF00070E792 /* CyclometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CyclometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DA83291A54AFF00070E792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DA832A1A54AFF00070E792 /* CyclometerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclometerTests.swift; sourceTree = "<group>"; };
+		D3FDEFCA1A6176E9006D3840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cyclometer/Base.lproj/Cyclometer.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D332F1871A576D07001DD2D3 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				D33610491A588497003E39DF /* CardViewController.swift */,
+				D336104A1A588497003E39DF /* CardViewController.xib */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		D33610511A59AF65003E39DF /* Sensors */ = {
+			isa = PBXGroup;
+			children = (
+				D336104D1A589C7D003E39DF /* Sensor.swift */,
+				D336104F1A59AF56003E39DF /* SensorManager.swift */,
+				D39C0AD01A5CDDC500969585 /* SensorLog.swift */,
+			);
+			name = Sensors;
+			sourceTree = "<group>";
+		};
 		D3DA83061A54AFF00070E792 = {
 			isa = PBXGroup;
 			children = (
@@ -78,11 +107,13 @@
 			isa = PBXGroup;
 			children = (
 				D3DA83141A54AFF00070E792 /* AppDelegate.swift */,
-				D3DA83161A54AFF00070E792 /* ViewController.swift */,
-				D3DA83181A54AFF00070E792 /* Main.storyboard */,
+				D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */,
+				D3DA83161A54AFF00070E792 /* BaseControllers.swift */,
 				D3DA831B1A54AFF00070E792 /* Images.xcassets */,
 				D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */,
 				D3DA83121A54AFF00070E792 /* Supporting Files */,
+				D332F1871A576D07001DD2D3 /* Card */,
+				D33610511A59AF65003E39DF /* Sensors */,
 			);
 			path = Cyclometer;
 			sourceTree = "<group>";
@@ -161,6 +192,11 @@
 				TargetAttributes = {
 					D3DA830E1A54AFF00070E792 = {
 						CreatedOnToolsVersion = 6.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					D3DA83231A54AFF00070E792 = {
 						CreatedOnToolsVersion = 6.2;
@@ -192,9 +228,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3DA831A1A54AFF00070E792 /* Main.storyboard in Resources */,
+				D336104C1A588497003E39DF /* CardViewController.xib in Resources */,
 				D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */,
 				D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */,
+				D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3DA83171A54AFF00070E792 /* ViewController.swift in Sources */,
+				D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */,
+				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
+				D336104E1A589C7D003E39DF /* Sensor.swift in Sources */,
+				D33610501A59AF56003E39DF /* SensorManager.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
+				D336104B1A588497003E39DF /* CardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,20 +277,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D3DA83181A54AFF00070E792 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D3DA83191A54AFF00070E792 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D3DA831E1A54AFF00070E792 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3FDEFCA1A6176E9006D3840 /* Base */,
+			);
+			name = Cyclometer.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -405,6 +447,7 @@
 				D3DA83301A54AFF00070E792 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3DA83311A54AFF00070E792 /* Build configuration list for PBXNativeTarget "CyclometerTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +456,7 @@
 				D3DA83331A54AFF00070E792 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
