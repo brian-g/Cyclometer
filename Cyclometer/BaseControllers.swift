@@ -15,6 +15,8 @@ class CylNavigationController : UINavigationController {
         
         self.navigationBar.tintColor = UIColor(red:0.0, green:0.415, blue:0.431, alpha:1.0)
         self.navigationBar.barTintColor = UIColor(red:1.0, green:0.89, blue:0.639, alpha:1)
+        
+        self.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,16 +34,16 @@ class CylNavigationController : UINavigationController {
     override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
         var anObject = super.popViewControllerAnimated(animated)
 
-//        NSLog("pop")
-//        if self.childViewControllers?.count == 0 {
-//            self.setNavigationBarHidden(true, animated: animated)
-//        }
+        if self.childViewControllers.count == 1 {
+
+            self.setNavigationBarHidden(true, animated: animated)
+        }
         
         return anObject
     }
 }
 
-class CylDashboardController : UICollectionViewController {
+class CylDashboardController : UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -85,21 +85,11 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="General" id="B2P-99-ScM">
+                            <tableViewSection headerTitle="Devices" id="B2P-99-ScM">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="15" indentationWidth="10" id="iBX-5r-38A">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iBX-5r-38A" id="X2O-yj-eKU">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="General" id="Xpv-hn-SFa">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="15" indentationWidth="10" id="alx-fe-wKp">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="alx-fe-wKp" id="FAQ-t7-jdC">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -230,11 +220,16 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7t-c4-Cuo">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Start" id="BL2-Yq-ooy"/>
+                                    <barButtonItem image="Play" id="BL2-Yq-ooy"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="c1Z-cI-Fxr"/>
-                                    <barButtonItem title="History" id="rRq-XF-kmC">
+                                    <barButtonItem image="History" id="rRq-XF-kmC">
                                         <connections>
                                             <segue destination="Hg3-Bl-1e7" kind="show" id="xWS-mk-6b8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="Settings" id="Wl7-g9-TeE">
+                                        <connections>
+                                            <segue destination="Irx-LN-qoZ" kind="show" id="Ni0-bR-nwE"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -251,13 +246,7 @@
                             <constraint firstItem="kH9-hI-73Y" firstAttribute="top" secondItem="BCV-q9-8Uw" secondAttribute="top" id="u2e-U7-kY8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Dashboard" id="D44-2z-ogW">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="enW-3s-DLi">
-                            <connections>
-                                <segue destination="Irx-LN-qoZ" kind="show" id="LLp-1y-U0g"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Dashboard" id="D44-2z-ogW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8m-5Y-ehg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,13 +255,16 @@
         <!--Cyl Navigation Controller-->
         <scene sceneID="QKi-qz-dts">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uF5-os-OCe" customClass="CylNavigationController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="uF5-os-OCe" customClass="CylNavigationController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FNh-tT-J1y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="faF-ZJ-ok8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Fgv-my-Dd4" kind="relationship" relationship="rootViewController" id="XYq-cM-KyL"/>
                     </connections>
@@ -282,4 +274,10 @@
             <point key="canvasLocation" x="-2642" y="-2976"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="History" width="22" height="22"/>
+        <image name="Play" width="22" height="22"/>
+        <image name="Settings" width="22" height="22"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.74332284927368164" blue="0.85895025730133057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

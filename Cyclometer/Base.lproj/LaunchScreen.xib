@@ -10,10 +10,10 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="364"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="67V-4y-Tp7">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="364"/>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="kNB-x5-SAl">
+                    <rect key="frame" x="-611" y="-144" width="1920" height="750"/>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cyclometer" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cyclometer" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
                     <rect key="frame" x="20" y="53" width="441" height="138"/>
                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="120"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -24,13 +24,8 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="67V-4y-Tp7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ge5-Me-zLr"/>
-                <constraint firstAttribute="trailing" secondItem="67V-4y-Tp7" secondAttribute="trailing" id="P0w-tA-jjQ"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="53" id="R8I-qd-8jT"/>
-                <constraint firstAttribute="bottom" secondItem="67V-4y-Tp7" secondAttribute="bottom" id="UKh-Tt-PHJ"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="YeC-BV-lQz"/>
-                <constraint firstItem="67V-4y-Tp7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eVu-cn-n1W"/>
-                <constraint firstItem="67V-4y-Tp7" firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="jtF-p4-uNA"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -38,6 +33,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Image" width="1920" height="750"/>
+        <image name="LaunchScreen" width="1920" height="750"/>
     </resources>
 </document>
