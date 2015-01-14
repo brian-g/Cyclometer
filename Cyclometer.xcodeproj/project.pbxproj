@@ -18,6 +18,10 @@
 		D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */; };
 		D3DA832B1A54AFF00070E792 /* CyclometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA832A1A54AFF00070E792 /* CyclometerTests.swift */; };
 		D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */; };
+		D3FDEFCD1A633890006D3840 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCC1A633890006D3840 /* Ride.swift */; };
+		D3FDEFD01A6342B4006D3840 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCE1A6342B4006D3840 /* Model.xcdatamodeld */; };
+		D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */; };
+		D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		D3DA83291A54AFF00070E792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DA832A1A54AFF00070E792 /* CyclometerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclometerTests.swift; sourceTree = "<group>"; };
 		D3FDEFCA1A6176E9006D3840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cyclometer/Base.lproj/Cyclometer.storyboard; sourceTree = "<group>"; };
+		D3FDEFCC1A633890006D3840 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		D3FDEFCF1A6342B4006D3840 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CylSettingsDeviceInfoCell.xib; sourceTree = "<group>"; };
+		D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycSettingsDeviceInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +115,13 @@
 			isa = PBXGroup;
 			children = (
 				D3DA83141A54AFF00070E792 /* AppDelegate.swift */,
+				D3FDEFCC1A633890006D3840 /* Ride.swift */,
 				D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */,
+				D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */,
+				D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */,
 				D3DA83161A54AFF00070E792 /* BaseControllers.swift */,
 				D3DA831B1A54AFF00070E792 /* Images.xcassets */,
+				D3FDEFCE1A6342B4006D3840 /* Model.xcdatamodeld */,
 				D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */,
 				D3DA83121A54AFF00070E792 /* Supporting Files */,
 				D332F1871A576D07001DD2D3 /* Card */,
@@ -230,6 +242,7 @@
 			files = (
 				D336104C1A588497003E39DF /* CardViewController.xib in Resources */,
 				D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */,
+				D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */,
 				D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */,
 				D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */,
 			);
@@ -252,9 +265,12 @@
 				D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */,
 				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
 				D336104E1A589C7D003E39DF /* Sensor.swift in Sources */,
+				D3FDEFD01A6342B4006D3840 /* Model.xcdatamodeld in Sources */,
+				D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */,
 				D33610501A59AF56003E39DF /* SensorManager.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
 				D336104B1A588497003E39DF /* CardViewController.swift in Sources */,
+				D3FDEFCD1A633890006D3840 /* Ride.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +475,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D3FDEFCE1A6342B4006D3840 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D3FDEFCF1A6342B4006D3840 /* Model.xcdatamodel */,
+			);
+			currentVersion = D3FDEFCF1A6342B4006D3840 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D3DA83071A54AFF00070E792 /* Project object */;
 }

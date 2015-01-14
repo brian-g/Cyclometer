@@ -41,6 +41,10 @@ class CylNavigationController : UINavigationController {
         
         return anObject
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        NSLog(segue.identifier!);
+    }
 }
 
 class CylDashboardController : UIViewController {
@@ -73,14 +77,75 @@ class CylHistoryController : UITableViewController {
 
 class CylSettingsController : UITableViewController {
     
+    let deviceSection = 1
+    let maxDevices = 10
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        NSLog(segue.identifier!);
+    }
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+
+        return super.numberOfSectionsInTableView(tableView)
+
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+
+        if indexPath.section == deviceSection {
+            return 44.0
+        }
+        
+        return super.tableView(tableView, heightForRowAtIndexPath:indexPath)
+    }
+    
+    override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+
+        if indexPath.section == deviceSection {
+            return 0
+        }
+        
+        return super.tableView(tableView, indentationLevelForRowAtIndexPath:indexPath)
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        if section == deviceSection {
+            return 3
+        }
+        return super.tableView(tableView, numberOfRowsInSection:section)
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        if indexPath.section == deviceSection {
+            
+            var cell : CylSettingsDeviceInfoCell? = tableView.dequeueReusableCellWithIdentifier("deviceInfoCell") as? CylSettingsDeviceInfoCell
+            
+            if cell === nil {
+                cell = (NSBundle.mainBundle().loadNibNamed("CylSettingsDeviceInfoCell", owner: nil, options: nil)[0] as CylSettingsDeviceInfoCell)
+                
+                cell?.deviceName?.text = "Device \(indexPath.row)"
+                cell?.deviceCapabilities?.text = "Heart rate, Location"
+                cell?.isConnected?.highlighted = true
+            }
+            return cell!
+        }
+        
+        return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+    }
 }
+
