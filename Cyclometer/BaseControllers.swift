@@ -47,20 +47,6 @@ class CylNavigationController : UINavigationController {
     }
 }
 
-class CylDashboardController : UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-}
-
 class CylHistoryController : UITableViewController {
     
     override func viewDidLoad() {
@@ -75,7 +61,7 @@ class CylHistoryController : UITableViewController {
     
 }
 
-class CylSettingsController : UITableViewController {
+class CylSettingsController : UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let deviceSection = 1
     let maxDevices = 10
@@ -147,5 +133,24 @@ class CylSettingsController : UITableViewController {
         
         return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
     }
+    
+    // MARK - PickerView Delegate
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        if row == 1 {
+            return "700c x 23"
+        }
+        
+        return "Automatic"
+    }
+    
+    // MARK - UIPickerViewDataSource
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 2
+    }
+    
 }
 

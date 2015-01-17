@@ -25,9 +25,6 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Connection" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-LD-LA8">
                         <rect key="frame" x="573" y="11" width="22" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="22" id="TQ4-Rn-8lV"/>
-                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device capabilities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXE-px-ZuT">
                         <rect key="frame" x="16" y="22" width="97" height="21"/>
@@ -37,14 +34,14 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="YwT-LD-LA8" firstAttribute="centerY" secondItem="lq1-nn-27O" secondAttribute="centerYWithinMargins" id="0X2-VM-Ify"/>
                     <constraint firstItem="xxa-e8-Ep6" firstAttribute="top" secondItem="lq1-nn-27O" secondAttribute="top" id="4Mc-Wy-iQt"/>
                     <constraint firstItem="oXE-px-ZuT" firstAttribute="top" secondItem="xxa-e8-Ep6" secondAttribute="bottom" constant="1" id="4Vt-2W-c1M"/>
+                    <constraint firstAttribute="trailing" secondItem="YwT-LD-LA8" secondAttribute="trailing" id="9AL-eQ-3VA"/>
                     <constraint firstAttribute="bottomMargin" secondItem="oXE-px-ZuT" secondAttribute="bottom" constant="-8" id="J52-W3-Hxg"/>
                     <constraint firstItem="oXE-px-ZuT" firstAttribute="leading" secondItem="xxa-e8-Ep6" secondAttribute="leading" id="SYk-yk-ccd"/>
                     <constraint firstItem="oXE-px-ZuT" firstAttribute="trailing" secondItem="xxa-e8-Ep6" secondAttribute="trailing" id="dF4-Ne-RVX"/>
-                    <constraint firstItem="YwT-LD-LA8" firstAttribute="centerY" secondItem="lq1-nn-27O" secondAttribute="centerYWithinMargins" id="ozv-WB-byd"/>
                     <constraint firstItem="xxa-e8-Ep6" firstAttribute="leading" secondItem="lq1-nn-27O" secondAttribute="leading" constant="16" id="yaA-DW-KpY"/>
-                    <constraint firstAttribute="trailing" secondItem="YwT-LD-LA8" secondAttribute="trailing" id="zbv-YH-Fhi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

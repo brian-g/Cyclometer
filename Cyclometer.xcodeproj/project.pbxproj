@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D336104B1A588497003E39DF /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33610491A588497003E39DF /* CardViewController.swift */; };
-		D336104C1A588497003E39DF /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D336104A1A588497003E39DF /* CardViewController.xib */; };
 		D336104E1A589C7D003E39DF /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104D1A589C7D003E39DF /* Sensor.swift */; };
 		D33610501A59AF56003E39DF /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104F1A59AF56003E39DF /* SensorManager.swift */; };
 		D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C0AD01A5CDDC500969585 /* SensorLog.swift */; };
@@ -22,6 +20,14 @@
 		D3FDEFD01A6342B4006D3840 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCE1A6342B4006D3840 /* Model.xcdatamodeld */; };
 		D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */; };
 		D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */; };
+		D3FDEFE01A66A291006D3840 /* DashboardViews.h in Headers */ = {isa = PBXBuildFile; fileRef = D3FDEFDF1A66A291006D3840 /* DashboardViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FDEFE61A66A291006D3840 /* DashboardViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FDEFDB1A66A291006D3840 /* DashboardViews.framework */; };
+		D3FDEFEF1A66A291006D3840 /* DashboardViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFEE1A66A291006D3840 /* DashboardViewsTests.swift */; };
+		D3FDEFF21A66A291006D3840 /* DashboardViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FDEFDB1A66A291006D3840 /* DashboardViews.framework */; };
+		D3FDEFF31A66A291006D3840 /* DashboardViews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3FDEFDB1A66A291006D3840 /* DashboardViews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3FDEFFC1A66A339006D3840 /* CylCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFFB1A66A339006D3840 /* CylCardView.swift */; };
+		D3FDEFFE1A693F76006D3840 /* CylCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFFD1A693F76006D3840 /* CylCardView.xib */; };
+		D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,11 +38,44 @@
 			remoteGlobalIDString = D3DA830E1A54AFF00070E792;
 			remoteInfo = Cyclometer;
 		};
+		D3FDEFE71A66A291006D3840 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3FDEFDA1A66A291006D3840;
+			remoteInfo = DashboardViews;
+		};
+		D3FDEFE91A66A291006D3840 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3DA830E1A54AFF00070E792;
+			remoteInfo = Cyclometer;
+		};
+		D3FDEFF01A66A291006D3840 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3FDEFDA1A66A291006D3840;
+			remoteInfo = DashboardViews;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D3FDEFF71A66A291006D3840 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D3FDEFF31A66A291006D3840 /* DashboardViews.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		D33610491A588497003E39DF /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		D336104A1A588497003E39DF /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		D336104D1A589C7D003E39DF /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		D336104F1A59AF56003E39DF /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 		D39C0AD01A5CDDC500969585 /* SensorLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorLog.swift; sourceTree = "<group>"; };
@@ -54,6 +93,15 @@
 		D3FDEFCF1A6342B4006D3840 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CylSettingsDeviceInfoCell.xib; sourceTree = "<group>"; };
 		D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycSettingsDeviceInfoCell.swift; sourceTree = "<group>"; };
+		D3FDEFDB1A66A291006D3840 /* DashboardViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DashboardViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3FDEFDE1A66A291006D3840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3FDEFDF1A66A291006D3840 /* DashboardViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashboardViews.h; sourceTree = "<group>"; };
+		D3FDEFE51A66A291006D3840 /* DashboardViewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashboardViewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3FDEFED1A66A291006D3840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3FDEFEE1A66A291006D3840 /* DashboardViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewsTests.swift; sourceTree = "<group>"; };
+		D3FDEFFB1A66A339006D3840 /* CylCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CylCardView.swift; path = DashboardViews/CylCardView.swift; sourceTree = SOURCE_ROOT; };
+		D3FDEFFD1A693F76006D3840 /* CylCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CylCardView.xib; path = DashboardViews/CylCardView.xib; sourceTree = SOURCE_ROOT; };
+		D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3FDEFF21A66A291006D3840 /* DashboardViews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,18 +120,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3FDEFD71A66A291006D3840 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FDEFE21A66A291006D3840 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FDEFE61A66A291006D3840 /* DashboardViews.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D332F1871A576D07001DD2D3 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				D33610491A588497003E39DF /* CardViewController.swift */,
-				D336104A1A588497003E39DF /* CardViewController.xib */,
-			);
-			name = Card;
-			sourceTree = "<group>";
-		};
 		D33610511A59AF65003E39DF /* Sensors */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +153,8 @@
 			children = (
 				D3DA83111A54AFF00070E792 /* Cyclometer */,
 				D3DA83271A54AFF00070E792 /* CyclometerTests */,
+				D3FDEFDC1A66A291006D3840 /* DashboardViews */,
+				D3FDEFEB1A66A291006D3840 /* DashboardViewsTests */,
 				D3DA83101A54AFF00070E792 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,6 +164,8 @@
 			children = (
 				D3DA830F1A54AFF00070E792 /* Cyclometer.app */,
 				D3DA83241A54AFF00070E792 /* CyclometerTests.xctest */,
+				D3FDEFDB1A66A291006D3840 /* DashboardViews.framework */,
+				D3FDEFE51A66A291006D3840 /* DashboardViewsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,15 +176,14 @@
 				D3DA83141A54AFF00070E792 /* AppDelegate.swift */,
 				D3FDEFCC1A633890006D3840 /* Ride.swift */,
 				D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */,
-				D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */,
-				D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */,
 				D3DA83161A54AFF00070E792 /* BaseControllers.swift */,
 				D3DA831B1A54AFF00070E792 /* Images.xcassets */,
 				D3FDEFCE1A6342B4006D3840 /* Model.xcdatamodeld */,
 				D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */,
+				D3FDEFD51A66A207006D3840 /* CellsAndOddments */,
 				D3DA83121A54AFF00070E792 /* Supporting Files */,
-				D332F1871A576D07001DD2D3 /* Card */,
 				D33610511A59AF65003E39DF /* Sensors */,
+				D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */,
 			);
 			path = Cyclometer;
 			sourceTree = "<group>";
@@ -155,7 +213,65 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D3FDEFD51A66A207006D3840 /* CellsAndOddments */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */,
+				D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */,
+			);
+			name = CellsAndOddments;
+			sourceTree = "<group>";
+		};
+		D3FDEFDC1A66A291006D3840 /* DashboardViews */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDEFDF1A66A291006D3840 /* DashboardViews.h */,
+				D3FDEFDD1A66A291006D3840 /* Supporting Files */,
+				D3FDEFFB1A66A339006D3840 /* CylCardView.swift */,
+				D3FDEFFD1A693F76006D3840 /* CylCardView.xib */,
+			);
+			name = DashboardViews;
+			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/DashboardViews;
+			sourceTree = "<absolute>";
+		};
+		D3FDEFDD1A66A291006D3840 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDEFDE1A66A291006D3840 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3FDEFEB1A66A291006D3840 /* DashboardViewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDEFEE1A66A291006D3840 /* DashboardViewsTests.swift */,
+				D3FDEFEC1A66A291006D3840 /* Supporting Files */,
+			);
+			name = DashboardViewsTests;
+			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/DashboardViewsTests;
+			sourceTree = "<absolute>";
+		};
+		D3FDEFEC1A66A291006D3840 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3FDEFED1A66A291006D3840 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D3FDEFD81A66A291006D3840 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FDEFE01A66A291006D3840 /* DashboardViews.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		D3DA830E1A54AFF00070E792 /* Cyclometer */ = {
@@ -165,10 +281,12 @@
 				D3DA830B1A54AFF00070E792 /* Sources */,
 				D3DA830C1A54AFF00070E792 /* Frameworks */,
 				D3DA830D1A54AFF00070E792 /* Resources */,
+				D3FDEFF71A66A291006D3840 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D3FDEFF11A66A291006D3840 /* PBXTargetDependency */,
 			);
 			name = Cyclometer;
 			productName = Cyclometer;
@@ -193,6 +311,43 @@
 			productReference = D3DA83241A54AFF00070E792 /* CyclometerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D3FDEFDA1A66A291006D3840 /* DashboardViews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3FDEFF41A66A291006D3840 /* Build configuration list for PBXNativeTarget "DashboardViews" */;
+			buildPhases = (
+				D3FDEFD61A66A291006D3840 /* Sources */,
+				D3FDEFD71A66A291006D3840 /* Frameworks */,
+				D3FDEFD81A66A291006D3840 /* Headers */,
+				D3FDEFD91A66A291006D3840 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DashboardViews;
+			productName = DashboardViews;
+			productReference = D3FDEFDB1A66A291006D3840 /* DashboardViews.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D3FDEFE41A66A291006D3840 /* DashboardViewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3FDEFF81A66A291006D3840 /* Build configuration list for PBXNativeTarget "DashboardViewsTests" */;
+			buildPhases = (
+				D3FDEFE11A66A291006D3840 /* Sources */,
+				D3FDEFE21A66A291006D3840 /* Frameworks */,
+				D3FDEFE31A66A291006D3840 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3FDEFE81A66A291006D3840 /* PBXTargetDependency */,
+				D3FDEFEA1A66A291006D3840 /* PBXTargetDependency */,
+			);
+			name = DashboardViewsTests;
+			productName = DashboardViewsTests;
+			productReference = D3FDEFE51A66A291006D3840 /* DashboardViewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -214,6 +369,13 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = D3DA830E1A54AFF00070E792;
 					};
+					D3FDEFDA1A66A291006D3840 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					D3FDEFE41A66A291006D3840 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = D3DA830E1A54AFF00070E792;
+					};
 				};
 			};
 			buildConfigurationList = D3DA830A1A54AFF00070E792 /* Build configuration list for PBXProject "Cyclometer" */;
@@ -231,6 +393,8 @@
 			targets = (
 				D3DA830E1A54AFF00070E792 /* Cyclometer */,
 				D3DA83231A54AFF00070E792 /* CyclometerTests */,
+				D3FDEFDA1A66A291006D3840 /* DashboardViews */,
+				D3FDEFE41A66A291006D3840 /* DashboardViewsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -240,7 +404,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D336104C1A588497003E39DF /* CardViewController.xib in Resources */,
 				D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */,
 				D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */,
 				D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */,
@@ -255,6 +418,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3FDEFD91A66A291006D3840 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FDEFFE1A693F76006D3840 /* CylCardView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FDEFE31A66A291006D3840 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -263,13 +441,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */,
+				D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */,
 				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
 				D336104E1A589C7D003E39DF /* Sensor.swift in Sources */,
 				D3FDEFD01A6342B4006D3840 /* Model.xcdatamodeld in Sources */,
 				D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */,
 				D33610501A59AF56003E39DF /* SensorManager.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
-				D336104B1A588497003E39DF /* CardViewController.swift in Sources */,
 				D3FDEFCD1A633890006D3840 /* Ride.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +460,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3FDEFD61A66A291006D3840 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FDEFFC1A66A339006D3840 /* CylCardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3FDEFE11A66A291006D3840 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FDEFEF1A66A291006D3840 /* DashboardViewsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -289,6 +483,21 @@
 			isa = PBXTargetDependency;
 			target = D3DA830E1A54AFF00070E792 /* Cyclometer */;
 			targetProxy = D3DA83251A54AFF00070E792 /* PBXContainerItemProxy */;
+		};
+		D3FDEFE81A66A291006D3840 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3FDEFDA1A66A291006D3840 /* DashboardViews */;
+			targetProxy = D3FDEFE71A66A291006D3840 /* PBXContainerItemProxy */;
+		};
+		D3FDEFEA1A66A291006D3840 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3DA830E1A54AFF00070E792 /* Cyclometer */;
+			targetProxy = D3FDEFE91A66A291006D3840 /* PBXContainerItemProxy */;
+		};
+		D3FDEFF11A66A291006D3840 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3FDEFDA1A66A291006D3840 /* DashboardViews */;
+			targetProxy = D3FDEFF01A66A291006D3840 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -444,6 +653,83 @@
 			};
 			name = Release;
 		};
+		D3FDEFF51A66A291006D3840 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DashboardViews/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3FDEFF61A66A291006D3840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DashboardViews/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3FDEFF91A66A291006D3840 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DashboardViewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyclometer.app/Cyclometer";
+			};
+			name = Debug;
+		};
+		D3FDEFFA1A66A291006D3840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DashboardViewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyclometer.app/Cyclometer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -470,6 +756,24 @@
 			buildConfigurations = (
 				D3DA83321A54AFF00070E792 /* Debug */,
 				D3DA83331A54AFF00070E792 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3FDEFF41A66A291006D3840 /* Build configuration list for PBXNativeTarget "DashboardViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3FDEFF51A66A291006D3840 /* Debug */,
+				D3FDEFF61A66A291006D3840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3FDEFF81A66A291006D3840 /* Build configuration list for PBXNativeTarget "DashboardViewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3FDEFF91A66A291006D3840 /* Debug */,
+				D3FDEFFA1A66A291006D3840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

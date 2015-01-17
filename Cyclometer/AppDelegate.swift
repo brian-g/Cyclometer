@@ -7,17 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-//        application.keyWindow?.tintColor = UIColor(red:0.0, green:0.415, blue:0.431, alpha:1.0)
 
-        
         return true
     }
 
