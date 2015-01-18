@@ -54,9 +54,36 @@ class CylDashboardController : UIViewController, UICollectionViewDelegate, UICol
                 
             case Stop:
                 
-                firstButton.tag = Play
-                firstButton.image = playImage
+                var alert = UIAlertController(title: "Save Ride?", message: "When you save your ride, results will also be posted to any accounts you have set up", preferredStyle: UIAlertControllerStyle.ActionSheet)
                 
+                alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction? ) in
+                    NSLog("Save")
+                    
+                    self.firstButton.tag = self.Play
+                    self.firstButton.image = self.playImage
+
+                }))
+
+                alert.addAction(UIAlertAction(title: "Don't save", style: UIAlertActionStyle.Destructive, handler: { ( action: UIAlertAction? ) in
+                    NSLog("Don't save")
+                    
+                    self.firstButton.tag = self.Play
+                    self.firstButton.image = self.playImage
+
+                }))
+
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { ( action: UIAlertAction? ) in
+                    
+                    NSLog("Cancel")
+                    
+                    self.secondButton.show(self.playImage, title:nil)
+                }))
+
+                self.presentViewController(alert, animated: true, completion: { () in
+                    NSLog("Done")
+                })
+                
+            
             case Pause:
                 firstButton.tag = Stop
                 firstButton.image = stopImage
