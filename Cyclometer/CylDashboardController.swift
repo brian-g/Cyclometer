@@ -14,7 +14,8 @@ let dashboardCellId = "CylDashboardCell"
 
 class CylDashboardController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet weak var startStopButton: UIBarButtonItem!
+    @IBOutlet weak var firstButton: UIBarButtonItem!
+    @IBOutlet weak var secondButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
