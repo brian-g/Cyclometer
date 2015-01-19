@@ -408,26 +408,56 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nsx-Ny-gaU">
-                                    <size key="itemSize" width="247" height="153"/>
+                                    <size key="itemSize" width="376" height="153"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CylDashboardCell" id="9wE-jw-YcU">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="CylDashboardCell" id="9wE-jw-YcU">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="247" height="153"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="153"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ej-Hy-eqf" customClass="CylCardView" customModule="DashboardViews">
-                                                    <rect key="frame" x="0.0" y="0.0" width="255" height="162"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ej-Hy-eqf" customClass="CylCardView" customModule="DashboardViews">
+                                                    <rect key="frame" x="0.0" y="0.0" width="376" height="153"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtI-G4-7Nh">
+                                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="REn-Qh-MTm"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTW-S8-xAR">
+                                                            <rect key="frame" x="81" y="4" width="215" height="146"/>
+                                                            <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="128"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="WtI-G4-7Nh" firstAttribute="leading" secondItem="8Ej-Hy-eqf" secondAttribute="leadingMargin" id="0xJ-Ap-knp"/>
+                                                        <constraint firstItem="tTW-S8-xAR" firstAttribute="top" secondItem="8Ej-Hy-eqf" secondAttribute="top" constant="4" id="M4q-ae-Gh4"/>
+                                                        <constraint firstItem="tTW-S8-xAR" firstAttribute="centerX" secondItem="8Ej-Hy-eqf" secondAttribute="centerX" id="VQ6-WA-zN0"/>
+                                                        <constraint firstItem="WtI-G4-7Nh" firstAttribute="top" secondItem="8Ej-Hy-eqf" secondAttribute="topMargin" id="W45-D3-icb"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="8Ej-Hy-eqf" firstAttribute="top" secondItem="9wE-jw-YcU" secondAttribute="top" id="CuM-rP-ckh"/>
+                                            <constraint firstItem="8Ej-Hy-eqf" firstAttribute="leading" secondItem="9wE-jw-YcU" secondAttribute="leading" id="L0N-vn-slY"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Ej-Hy-eqf" secondAttribute="trailing" id="Sn3-qL-7ZE"/>
+                                            <constraint firstAttribute="bottom" secondItem="8Ej-Hy-eqf" secondAttribute="bottom" id="jmD-Do-JbH"/>
+                                        </constraints>
+                                        <size key="customSize" width="376" height="153"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -482,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8m-5Y-ehg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1839" y="-3264"/>
+            <point key="canvasLocation" x="-1951" y="-3264"/>
         </scene>
         <!--Cyl Navigation Controller-->
         <scene sceneID="QKi-qz-dts">
