@@ -12,6 +12,9 @@
             </compoundIndex>
         </compoundIndexes>
     </entity>
+    <entity name="Devices" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Location" syncable="YES">
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
@@ -68,10 +71,11 @@
         <relationship name="ride" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ride" inverseName="summary" inverseEntity="Ride" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Ride" positionX="-45" positionY="-459" width="128" height="118"/>
-        <element name="Location" positionX="-254" positionY="-487" width="128" height="118"/>
         <element name="Biometrics" positionX="-54" positionY="-657" width="128" height="118"/>
+        <element name="Location" positionX="-254" positionY="-487" width="128" height="118"/>
         <element name="Motion" positionX="171" positionY="-469" width="128" height="118"/>
+        <element name="Ride" positionX="-45" positionY="-459" width="128" height="118"/>
         <element name="Summary" positionX="-47" positionY="-270" width="128" height="298"/>
+        <element name="Devices" positionX="-45" positionY="-504" width="128" height="60"/>
     </elements>
 </model>

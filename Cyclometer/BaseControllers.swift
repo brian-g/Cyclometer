@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CylNavigationController : UINavigationController {
     
@@ -48,15 +49,99 @@ class CylNavigationController : UINavigationController {
 }
 
 class CylHistoryController : UITableViewController {
+
+    let dateFormatter = NSDateFormatter()
+    
+    var rides = [NSManagedObject]()
+
+    private let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.timeZone = NSTimeZone.systemTimeZone()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.doesRelativeDateFormatting = true
+        
+        let managedContext = appDelegate.managedObjectContext!
+        let fetchRequest = NSFetchRequest(entityName: "Ride")
+        var error: NSError?
+        
+        let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        
+        if let results = fetchResults {
+            rides = results
+            if rides.count < 10 {
+                
+                let alert = UIAlertController(title: "Load demo data", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+                
+                alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction? ) in
+                    self.createDemoData()
+                }))
+                
+                alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil))
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        } else {
+            NSLog("Could not fetch \(error), \(error!.userInfo)")
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rides.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as UITableViewCell?
+
+
+        if cell === nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "historyCell")
+        }
+
+        var rideDate = rides[indexPath.row].valueForKey("date") as NSDate
+        
+        cell?.textLabel?.text = dateFormatter.stringFromDate(rideDate)
+        
+        return cell!
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        NSLog("pre[pareForSegque")
+        
+        var selectedRow = tableView.indexPathForSelectedRow()
+        var row = selectedRow?.row
+        
+        if (row != nil) {
+            segue.destinationViewController.navigationItem.title = dateFormatter.stringFromDate((rides[row!].valueForKey("date") as NSDate))
+        }
+        
+    }
+
+    func createDemoData() {
+        let managedContext = appDelegate.managedObjectContext!
+        
+        var entity = NSEntityDescription.entityForName("Ride", inManagedObjectContext: managedContext)
+        
+        let ride = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+
+        ride.setValue(NSDate(), forKey: "date")
+
+        var error: NSError?
+        if !managedContext.save(&error) {
+            NSLog("Could not save \(error), \(error?.userInfo)")
+        }
+
     }
     
 }

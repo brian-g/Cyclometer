@@ -16,9 +16,10 @@
 		D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */; };
 		D3DA832B1A54AFF00070E792 /* CyclometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA832A1A54AFF00070E792 /* CyclometerTests.swift */; };
 		D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */; };
+		D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */; };
 		D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */; };
 		D3FDEFCD1A633890006D3840 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCC1A633890006D3840 /* Ride.swift */; };
-		D3FDEFD01A6342B4006D3840 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCE1A6342B4006D3840 /* Model.xcdatamodeld */; };
+		D3FDEFD01A6342B4006D3840 /* CyclometerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCE1A6342B4006D3840 /* CyclometerModel.xcdatamodeld */; };
 		D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */; };
 		D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */; };
 		D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */; };
@@ -75,9 +76,10 @@
 		D3DA83291A54AFF00070E792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DA832A1A54AFF00070E792 /* CyclometerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclometerTests.swift; sourceTree = "<group>"; };
 		D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardCards.swift; sourceTree = "<group>"; };
 		D3FDEFCA1A6176E9006D3840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cyclometer/Base.lproj/Cyclometer.storyboard; sourceTree = "<group>"; };
 		D3FDEFCC1A633890006D3840 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
-		D3FDEFCF1A6342B4006D3840 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D3FDEFCF1A6342B4006D3840 /* CyclometerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CyclometerModel.xcdatamodel; sourceTree = "<group>"; };
 		D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CylSettingsDeviceInfoCell.xib; sourceTree = "<group>"; };
 		D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycSettingsDeviceInfoCell.swift; sourceTree = "<group>"; };
 		D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardController.swift; sourceTree = "<group>"; };
@@ -153,7 +155,7 @@
 				D3DA83161A54AFF00070E792 /* BaseControllers.swift */,
 				D3F7F91E1A6CA2C400DA3FC0 /* CardViews */,
 				D3DA831B1A54AFF00070E792 /* Images.xcassets */,
-				D3FDEFCE1A6342B4006D3840 /* Model.xcdatamodeld */,
+				D3FDEFCE1A6342B4006D3840 /* CyclometerModel.xcdatamodeld */,
 				D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */,
 				D3FDEFD51A66A207006D3840 /* CellsAndOddments */,
 				D3DA83121A54AFF00070E792 /* Supporting Files */,
@@ -199,6 +201,7 @@
 		D3F7F91E1A6CA2C400DA3FC0 /* CardViews */ = {
 			isa = PBXGroup;
 			children = (
+				D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */,
 			);
 			name = CardViews;
 			sourceTree = "<group>";
@@ -387,12 +390,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */,
 				D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */,
 				D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */,
 				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
 				D336104E1A589C7D003E39DF /* Sensor.swift in Sources */,
 				D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */,
-				D3FDEFD01A6342B4006D3840 /* Model.xcdatamodeld in Sources */,
+				D3FDEFD01A6342B4006D3840 /* CyclometerModel.xcdatamodeld in Sources */,
 				D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */,
 				D33610501A59AF56003E39DF /* SensorManager.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
@@ -722,13 +726,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D3FDEFCE1A6342B4006D3840 /* Model.xcdatamodeld */ = {
+		D3FDEFCE1A6342B4006D3840 /* CyclometerModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D3FDEFCF1A6342B4006D3840 /* Model.xcdatamodel */,
+				D3FDEFCF1A6342B4006D3840 /* CyclometerModel.xcdatamodel */,
 			);
-			currentVersion = D3FDEFCF1A6342B4006D3840 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			currentVersion = D3FDEFCF1A6342B4006D3840 /* CyclometerModel.xcdatamodel */;
+			path = CyclometerModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
