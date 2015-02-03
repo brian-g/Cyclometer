@@ -50,9 +50,7 @@ class CylNavigationController : UINavigationController {
 
 class CylHistoryController : UITableViewController {
 
-    let dateFormatter = NSDateFormatter()
-    
-    var rides = [NSManagedObject]()
+    var rides = [Ride]()
 
     private let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     
@@ -60,21 +58,17 @@ class CylHistoryController : UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
-        dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.timeZone = NSTimeZone.systemTimeZone()
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.doesRelativeDateFormatting = true
-        
         let managedContext = appDelegate.managedObjectContext!
         let fetchRequest = NSFetchRequest(entityName: "Ride")
+        
         var error: NSError?
         
-        let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
-        
-        if let results = fetchResults {
-            rides = results
-            if rides.count < 10 {
+        if let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [Ride] {
+            
+            NSLog("Number of rides: \(fetchResults.count)")
+            rides = fetchResults
+            
+            if fetchResults.count < 20 {
                 
                 let alert = UIAlertController(title: "Load demo data", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
                 
@@ -102,28 +96,30 @@ class CylHistoryController : UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        NSLog("cellForRowAtIndexPath: \(indexPath.row)")
+        
         var cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as UITableViewCell?
-
-
         if cell === nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "historyCell")
         }
 
-        var rideDate = rides[indexPath.row].valueForKey("date") as NSDate
+        var rideDate = rides[indexPath.row].date as NSDate
+        var c = rides[indexPath.row].biometrics.count
         
-        cell?.textLabel?.text = dateFormatter.stringFromDate(rideDate)
+        NSLog("Count of bio data \(c)")
+        cell?.textLabel?.text = appDelegate.dateFormatter.stringFromDate(rideDate)
         
         return cell!
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        NSLog("pre[pareForSegque")
+        NSLog("prepareForSegue")
         
         var selectedRow = tableView.indexPathForSelectedRow()
         var row = selectedRow?.row
         
         if (row != nil) {
-            segue.destinationViewController.navigationItem.title = dateFormatter.stringFromDate((rides[row!].valueForKey("date") as NSDate))
+            (segue.destinationViewController as CylRideDetailsController).ride = rides[row!]
         }
         
     }
@@ -131,12 +127,55 @@ class CylHistoryController : UITableViewController {
     func createDemoData() {
         let managedContext = appDelegate.managedObjectContext!
         
-        var entity = NSEntityDescription.entityForName("Ride", inManagedObjectContext: managedContext)
+        var ride = NSEntityDescription.insertNewObjectForEntityForName("Ride", inManagedObjectContext: managedContext) as Ride
+        var summary = NSEntityDescription.insertNewObjectForEntityForName("Summary", inManagedObjectContext: managedContext) as Summary
+
+        summary.elevation_gain = 500
+        summary.elevation_loss = 301
+        summary.distance = 30
+        summary.speed_avg = 15.5
+        summary.speed_max = 32.9
+        summary.hr_avg = 78
+        summary.hr_max = 130
+        summary.pace_avg = 10
+        summary.pace_avg = 1.9
+        summary.pace_max = 2.3
+        summary.pace_min = 1.0
+        summary.cadence_avg = 80
+        summary.cadence_max = 130
+        summary.start = NSDate()
+        summary.end = NSDate(timeIntervalSinceNow: 10800.0)
+        summary.time_active = 10353
+        summary.time_total = 10800
         
-        let ride = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        ride.date = NSDate()
+        ride.summary = summary
+        
+        summary.ride = ride
+        
+        var biometrics = [Biometrics]()
 
-        ride.setValue(NSDate(), forKey: "date")
+        for i in 1...15 {
+            var bio = NSEntityDescription.insertNewObjectForEntityForName("Biometrics", inManagedObjectContext: managedContext) as Biometrics
+            bio.date = NSDate(timeIntervalSinceNow: 5)
+            bio.ride = ride
+            bio.bpm = 78
+        }
 
+        var motion = [Motion]()
+        
+        for i in 1...20 {
+            var motion = NSEntityDescription.insertNewObjectForEntityForName("Motion", inManagedObjectContext: managedContext) as Motion
+            
+            motion.date = NSDate()
+            motion.cadence = 78
+            motion.gpsspeed = 15.6
+            motion.wheelspeed = 15.5
+            motion.ride = ride
+            
+        }
+        
+        
         var error: NSError?
         if !managedContext.save(&error) {
             NSLog("Could not save \(error), \(error?.userInfo)")
@@ -146,7 +185,35 @@ class CylHistoryController : UITableViewController {
     
 }
 
-class CylSettingsController : UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CylRideDetailsController : UIViewController {
+
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var avgSpeedLabel: UILabel!
+    @IBOutlet weak var maxSpeedLabel: UILabel!
+    @IBOutlet weak var avgPaceLabel: UILabel!
+    @IBOutlet weak var maxPaceLabel: UILabel!
+    @IBOutlet weak var acentLabel: UILabel!
+    @IBOutlet weak var decentLabel: UILabel!
+    
+    var ride : Ride?
+    
+    private let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = appDelegate.dateFormatter.stringFromDate(ride!.date)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+}
+
+
+class CylSettingsController : UITableViewController {
     
     let deviceSection = 1
     let maxDevices = 10
@@ -219,23 +286,54 @@ class CylSettingsController : UITableViewController, UIPickerViewDelegate, UIPic
         return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
     }
     
-    // MARK - PickerView Delegate
+    @IBAction func unwindFromWheelPicker(segue: UIStoryboardSegue) {
+        NSLog("unwindFromWheelPicker")
+        segue.sourceViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
+}
+
+class CylWheelPickerViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    let sizes = [
+        "Automatic",
+        "700c x 20",
+        "700c x 23",
+        "700c x 25",
+        "700c x 28",
+        "700c x 32",
+        "700c x 35",
+        "700c x 38",
+        "700c x 44",
+        "700c x 50",
+        "700c x 56",
+        "26 x 1.0",
+        "26 x 1.25",
+        "26 x 1.5",
+        "26 x 1.9",
+        "26 x 2.125",
+        "27 x 1",
+        "27 x 1 1/8",
+        "27 x 1 1/4",
+        "27 x 1 3/8",
+        "29 x 1",
+        "29 x 1.25",
+        "29 x 1.5"
+    ]
+    
+    @IBOutlet weak var picker: UIPickerView!
+    
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        if row == 1 {
-            return "700c x 23"
-        }
-        
-        return "Automatic"
+        return sizes[row]
     }
     
-    // MARK - UIPickerViewDataSource
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 2
+        return sizes.count
     }
     
 }
-

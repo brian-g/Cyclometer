@@ -14,7 +14,17 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    lazy var dateFormatter : NSDateFormatter = {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.timeZone = NSTimeZone.systemTimeZone()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.doesRelativeDateFormatting = true
+        return dateFormatter
+    }()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         return true

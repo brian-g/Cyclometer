@@ -13,7 +13,7 @@ import CoreBluetooth
 var mm: CMMotionManager?
 var ble: CBCentralManager?
 
-class Ride {
+class RideManager {
 
     init() {
 

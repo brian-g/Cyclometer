@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6735" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Biometrics" syncable="YES">
-        <attribute name="bloodpressure" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    <entity name="Biometrics" representedClassName="Cyclometer.Biometrics" syncable="YES">
         <attribute name="bpm" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="o2" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="ride" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ride" inverseName="biometrics" inverseEntity="Ride" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
@@ -12,10 +10,10 @@
             </compoundIndex>
         </compoundIndexes>
     </entity>
-    <entity name="Devices" syncable="YES">
+    <entity name="Devices" representedClassName="Cyclometer.Devices" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Location" syncable="YES">
+    <entity name="Location" representedClassName="Cyclometer.Location" syncable="YES">
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -27,11 +25,11 @@
             </compoundIndex>
         </compoundIndexes>
     </entity>
-    <entity name="Motion" syncable="YES">
+    <entity name="Motion" representedClassName="Cyclometer.Motion" syncable="YES">
         <attribute name="cadence" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="gpsspeed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="wheelspeed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="gpsspeed" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="wheelspeed" optional="YES" attributeType="Double" minValueString="0" syncable="YES"/>
         <relationship name="ride" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ride" inverseName="motions" inverseEntity="Ride" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
@@ -39,7 +37,7 @@
             </compoundIndex>
         </compoundIndexes>
     </entity>
-    <entity name="Ride" syncable="YES">
+    <entity name="Ride" representedClassName="Cyclometer.Ride" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="biometrics" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Biometrics" inverseName="ride" inverseEntity="Biometrics" syncable="YES"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Location" inverseName="ride" inverseEntity="Location" syncable="YES"/>
@@ -51,31 +49,31 @@
             </compoundIndex>
         </compoundIndexes>
     </entity>
-    <entity name="Summary" syncable="YES">
-        <attribute name="cadence_avg" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    <entity name="Summary" representedClassName="Cyclometer.Summary" syncable="YES">
+        <attribute name="cadence_avg" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="cadence_max" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="distance" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="elevation_gain" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="elevation_loss" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="hr_avg" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hr_avg" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="hr_max" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="pace_avg" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="pace_max" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="pace_min" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="speed_avg" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="speed_max" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pace_avg" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="pace_max" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="pace_min" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="speed_avg" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="speed_max" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="time_active" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="time_total" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="ride" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ride" inverseName="summary" inverseEntity="Ride" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Biometrics" positionX="-54" positionY="-657" width="128" height="118"/>
-        <element name="Location" positionX="-254" positionY="-487" width="128" height="118"/>
-        <element name="Motion" positionX="171" positionY="-469" width="128" height="118"/>
-        <element name="Ride" positionX="-45" positionY="-459" width="128" height="118"/>
-        <element name="Summary" positionX="-47" positionY="-270" width="128" height="298"/>
+        <element name="Biometrics" positionX="-54" positionY="-657" width="128" height="90"/>
         <element name="Devices" positionX="-45" positionY="-504" width="128" height="60"/>
+        <element name="Location" positionX="-254" positionY="-487" width="128" height="120"/>
+        <element name="Motion" positionX="171" positionY="-469" width="128" height="118"/>
+        <element name="Ride" positionX="-45" positionY="-459" width="128" height="120"/>
+        <element name="Summary" positionX="-47" positionY="-270" width="128" height="298"/>
     </elements>
 </model>
