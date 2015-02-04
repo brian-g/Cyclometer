@@ -10,6 +10,17 @@
 		D336104E1A589C7D003E39DF /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104D1A589C7D003E39DF /* Sensor.swift */; };
 		D33610501A59AF56003E39DF /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104F1A59AF56003E39DF /* SensorManager.swift */; };
 		D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A393E1A7DB0B800941901 /* CyclometerModel.swift */; };
+		D3893A361A81958A00C8AA96 /* CylExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3893A351A81958A00C8AA96 /* CylExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3893A3C1A81958A00C8AA96 /* CylExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A311A81958A00C8AA96 /* CylExtensions.framework */; };
+		D3893A451A81958A00C8AA96 /* CylExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3893A441A81958A00C8AA96 /* CylExtensionsTests.swift */; };
+		D3893A481A81958A00C8AA96 /* CylExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A311A81958A00C8AA96 /* CylExtensions.framework */; };
+		D3893A491A81958A00C8AA96 /* CylExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A311A81958A00C8AA96 /* CylExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3893A5A1A8195C500C8AA96 /* CylCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = D3893A591A8195C500C8AA96 /* CylCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3893A601A8195C500C8AA96 /* CylCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A551A8195C500C8AA96 /* CylCoreData.framework */; };
+		D3893A691A8195C500C8AA96 /* CylCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3893A681A8195C500C8AA96 /* CylCoreDataTests.swift */; };
+		D3893A6C1A8195C500C8AA96 /* CylCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A551A8195C500C8AA96 /* CylCoreData.framework */; };
+		D3893A6D1A8195C500C8AA96 /* CylCoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A551A8195C500C8AA96 /* CylCoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3893A761A81C89F00C8AA96 /* CylProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3893A751A81C89F00C8AA96 /* CylProtocols.swift */; };
 		D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C0AD01A5CDDC500969585 /* SensorLog.swift */; };
 		D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83141A54AFF00070E792 /* AppDelegate.swift */; };
 		D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83161A54AFF00070E792 /* BaseControllers.swift */; };
@@ -27,6 +38,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D3893A3D1A81958A00C8AA96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3893A301A81958A00C8AA96;
+			remoteInfo = CylExtensions;
+		};
+		D3893A3F1A81958A00C8AA96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3DA830E1A54AFF00070E792;
+			remoteInfo = Cyclometer;
+		};
+		D3893A461A81958A00C8AA96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3893A301A81958A00C8AA96;
+			remoteInfo = CylExtensions;
+		};
+		D3893A611A8195C500C8AA96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3893A541A8195C500C8AA96;
+			remoteInfo = CylCoreData;
+		};
+		D3893A631A8195C500C8AA96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3DA830E1A54AFF00070E792;
+			remoteInfo = Cyclometer;
+		};
+		D3893A6A1A8195C500C8AA96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3893A541A8195C500C8AA96;
+			remoteInfo = CylCoreData;
+		};
 		D3DA83251A54AFF00070E792 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
@@ -57,6 +110,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D3893A6D1A8195C500C8AA96 /* CylCoreData.framework in Embed Frameworks */,
+				D3893A491A81958A00C8AA96 /* CylExtensions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +121,20 @@
 /* Begin PBXFileReference section */
 		D336104D1A589C7D003E39DF /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		D336104F1A59AF56003E39DF /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
-		D33A393E1A7DB0B800941901 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclometerModel.swift; sourceTree = "<group>"; };
+		D33A393E1A7DB0B800941901 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CyclometerModel.swift; path = /Shared/Users/brian/Projects/Cyclometer/Cyclometer/CyclometerModel.swift; sourceTree = "<absolute>"; };
+		D3893A311A81958A00C8AA96 /* CylExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CylExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3893A341A81958A00C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3893A351A81958A00C8AA96 /* CylExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylExtensions.h; sourceTree = "<group>"; };
+		D3893A3B1A81958A00C8AA96 /* CylExtensionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CylExtensionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3893A431A81958A00C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3893A441A81958A00C8AA96 /* CylExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylExtensionsTests.swift; sourceTree = "<group>"; };
+		D3893A551A8195C500C8AA96 /* CylCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CylCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3893A581A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3893A591A8195C500C8AA96 /* CylCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylCoreData.h; sourceTree = "<group>"; };
+		D3893A5F1A8195C500C8AA96 /* CylCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CylCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3893A671A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3893A681A8195C500C8AA96 /* CylCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylCoreDataTests.swift; sourceTree = "<group>"; };
+		D3893A751A81C89F00C8AA96 /* CylProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CylProtocols.swift; path = CylExtensions/CylProtocols.swift; sourceTree = SOURCE_ROOT; };
 		D39C0AD01A5CDDC500969585 /* SensorLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorLog.swift; sourceTree = "<group>"; };
 		D3DA830F1A54AFF00070E792 /* Cyclometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cyclometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DA83131A54AFF00070E792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +145,7 @@
 		D3DA83241A54AFF00070E792 /* CyclometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CyclometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DA83291A54AFF00070E792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DA832A1A54AFF00070E792 /* CyclometerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclometerTests.swift; sourceTree = "<group>"; };
-		D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtensions.swift; path = /Shared/Users/brian/Projects/Cyclometer/UIKitExtensions.swift; sourceTree = "<absolute>"; };
 		D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardCards.swift; sourceTree = "<group>"; };
 		D3FDEFCA1A6176E9006D3840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cyclometer/Base.lproj/Cyclometer.storyboard; sourceTree = "<group>"; };
 		D3FDEFCC1A633890006D3840 /* RideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideManager.swift; sourceTree = "<group>"; };
@@ -88,10 +156,42 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D3893A2D1A81958A00C8AA96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A381A81958A00C8AA96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3893A3C1A81958A00C8AA96 /* CylExtensions.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A511A8195C500C8AA96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A5C1A8195C500C8AA96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3893A601A8195C500C8AA96 /* CylCoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3DA830C1A54AFF00070E792 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3893A6C1A8195C500C8AA96 /* CylCoreData.framework in Frameworks */,
+				D3893A481A81958A00C8AA96 /* CylExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,21 +229,99 @@
 			name = Sensors;
 			sourceTree = "<group>";
 		};
-		D33A393B1A7D854C00941901 /* CoreDataModelAndEntities */ = {
+		D3893A321A81958A00C8AA96 /* CylExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */,
+				D3893A351A81958A00C8AA96 /* CylExtensions.h */,
+				D3893A331A81958A00C8AA96 /* Supporting Files */,
+				D3893A751A81C89F00C8AA96 /* CylProtocols.swift */,
+			);
+			name = CylExtensions;
+			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CylExtensions;
+			sourceTree = "<absolute>";
+		};
+		D3893A331A81958A00C8AA96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3893A341A81958A00C8AA96 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3893A411A81958A00C8AA96 /* CylExtensionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3893A441A81958A00C8AA96 /* CylExtensionsTests.swift */,
+				D3893A421A81958A00C8AA96 /* Supporting Files */,
+			);
+			name = CylExtensionsTests;
+			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CylExtensionsTests;
+			sourceTree = "<absolute>";
+		};
+		D3893A421A81958A00C8AA96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3893A431A81958A00C8AA96 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3893A561A8195C500C8AA96 /* CylCoreData */ = {
 			isa = PBXGroup;
 			children = (
 				D3FDEFCE1A6342B4006D3840 /* CyclometerModel.xcdatamodeld */,
 				D33A393E1A7DB0B800941901 /* CyclometerModel.swift */,
+				D3893A591A8195C500C8AA96 /* CylCoreData.h */,
+				D3893A571A8195C500C8AA96 /* Supporting Files */,
 			);
-			name = CoreDataModelAndEntities;
+			name = CylCoreData;
+			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CylCoreData;
+			sourceTree = "<absolute>";
+		};
+		D3893A571A8195C500C8AA96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3893A581A8195C500C8AA96 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3893A651A8195C500C8AA96 /* CylCoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3893A681A8195C500C8AA96 /* CylCoreDataTests.swift */,
+				D3893A661A8195C500C8AA96 /* Supporting Files */,
+			);
+			name = CylCoreDataTests;
+			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CylCoreDataTests;
+			sourceTree = "<absolute>";
+		};
+		D3893A661A8195C500C8AA96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3893A671A8195C500C8AA96 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3893A741A81962100C8AA96 /* Oddments */ = {
+			isa = PBXGroup;
+			children = (
+				D3893A321A81958A00C8AA96 /* CylExtensions */,
+				D3893A411A81958A00C8AA96 /* CylExtensionsTests */,
+				D3893A561A8195C500C8AA96 /* CylCoreData */,
+				D3893A651A8195C500C8AA96 /* CylCoreDataTests */,
+			);
+			name = Oddments;
 			sourceTree = "<group>";
 		};
 		D3DA83061A54AFF00070E792 = {
 			isa = PBXGroup;
 			children = (
-				D3F7F9191A6C1AF900DA3FC0 /* Extensions */,
 				D3DA83111A54AFF00070E792 /* Cyclometer */,
 				D3DA83271A54AFF00070E792 /* CyclometerTests */,
+				D3893A741A81962100C8AA96 /* Oddments */,
 				D3DA83101A54AFF00070E792 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +331,10 @@
 			children = (
 				D3DA830F1A54AFF00070E792 /* Cyclometer.app */,
 				D3DA83241A54AFF00070E792 /* CyclometerTests.xctest */,
+				D3893A311A81958A00C8AA96 /* CylExtensions.framework */,
+				D3893A3B1A81958A00C8AA96 /* CylExtensionsTests.xctest */,
+				D3893A551A8195C500C8AA96 /* CylCoreData.framework */,
+				D3893A5F1A8195C500C8AA96 /* CylCoreDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,7 +349,6 @@
 				D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */,
 				D3F7F91E1A6CA2C400DA3FC0 /* CardViews */,
 				D3DA831B1A54AFF00070E792 /* Images.xcassets */,
-				D33A393B1A7D854C00941901 /* CoreDataModelAndEntities */,
 				D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */,
 				D3FDEFD51A66A207006D3840 /* CellsAndOddments */,
 				D3DA83121A54AFF00070E792 /* Supporting Files */,
@@ -201,14 +382,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D3F7F9191A6C1AF900DA3FC0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
 		D3F7F91E1A6CA2C400DA3FC0 /* CardViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +402,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		D3893A2E1A81958A00C8AA96 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3893A361A81958A00C8AA96 /* CylExtensions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A521A8195C500C8AA96 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3893A5A1A8195C500C8AA96 /* CylCoreData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3FDEFD81A66A291006D3840 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +428,80 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D3893A301A81958A00C8AA96 /* CylExtensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3893A4A1A81958A00C8AA96 /* Build configuration list for PBXNativeTarget "CylExtensions" */;
+			buildPhases = (
+				D3893A2C1A81958A00C8AA96 /* Sources */,
+				D3893A2D1A81958A00C8AA96 /* Frameworks */,
+				D3893A2E1A81958A00C8AA96 /* Headers */,
+				D3893A2F1A81958A00C8AA96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CylExtensions;
+			productName = CylExtensions;
+			productReference = D3893A311A81958A00C8AA96 /* CylExtensions.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D3893A3A1A81958A00C8AA96 /* CylExtensionsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3893A4D1A81958A00C8AA96 /* Build configuration list for PBXNativeTarget "CylExtensionsTests" */;
+			buildPhases = (
+				D3893A371A81958A00C8AA96 /* Sources */,
+				D3893A381A81958A00C8AA96 /* Frameworks */,
+				D3893A391A81958A00C8AA96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3893A3E1A81958A00C8AA96 /* PBXTargetDependency */,
+				D3893A401A81958A00C8AA96 /* PBXTargetDependency */,
+			);
+			name = CylExtensionsTests;
+			productName = CylExtensionsTests;
+			productReference = D3893A3B1A81958A00C8AA96 /* CylExtensionsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D3893A541A8195C500C8AA96 /* CylCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3893A6E1A8195C500C8AA96 /* Build configuration list for PBXNativeTarget "CylCoreData" */;
+			buildPhases = (
+				D3893A501A8195C500C8AA96 /* Sources */,
+				D3893A511A8195C500C8AA96 /* Frameworks */,
+				D3893A521A8195C500C8AA96 /* Headers */,
+				D3893A531A8195C500C8AA96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CylCoreData;
+			productName = CylCoreData;
+			productReference = D3893A551A8195C500C8AA96 /* CylCoreData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D3893A5E1A8195C500C8AA96 /* CylCoreDataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3893A711A8195C500C8AA96 /* Build configuration list for PBXNativeTarget "CylCoreDataTests" */;
+			buildPhases = (
+				D3893A5B1A8195C500C8AA96 /* Sources */,
+				D3893A5C1A8195C500C8AA96 /* Frameworks */,
+				D3893A5D1A8195C500C8AA96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3893A621A8195C500C8AA96 /* PBXTargetDependency */,
+				D3893A641A8195C500C8AA96 /* PBXTargetDependency */,
+			);
+			name = CylCoreDataTests;
+			productName = CylCoreDataTests;
+			productReference = D3893A5F1A8195C500C8AA96 /* CylCoreDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D3DA830E1A54AFF00070E792 /* Cyclometer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3DA832E1A54AFF00070E792 /* Build configuration list for PBXNativeTarget "Cyclometer" */;
@@ -251,6 +514,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				D3893A471A81958A00C8AA96 /* PBXTargetDependency */,
+				D3893A6B1A8195C500C8AA96 /* PBXTargetDependency */,
 			);
 			name = Cyclometer;
 			productName = Cyclometer;
@@ -319,6 +584,20 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Brian Glaeske";
 				TargetAttributes = {
+					D3893A301A81958A00C8AA96 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					D3893A3A1A81958A00C8AA96 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = D3DA830E1A54AFF00070E792;
+					};
+					D3893A541A8195C500C8AA96 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					D3893A5E1A8195C500C8AA96 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = D3DA830E1A54AFF00070E792;
+					};
 					D3DA830E1A54AFF00070E792 = {
 						CreatedOnToolsVersion = 6.2;
 						SystemCapabilities = {
@@ -357,11 +636,43 @@
 				D3DA83231A54AFF00070E792 /* CyclometerTests */,
 				D3FDEFDA1A66A291006D3840 /* DashboardViews */,
 				D3FDEFE41A66A291006D3840 /* DashboardViewsTests */,
+				D3893A301A81958A00C8AA96 /* CylExtensions */,
+				D3893A3A1A81958A00C8AA96 /* CylExtensionsTests */,
+				D3893A541A8195C500C8AA96 /* CylCoreData */,
+				D3893A5E1A8195C500C8AA96 /* CylCoreDataTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D3893A2F1A81958A00C8AA96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A391A81958A00C8AA96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A531A8195C500C8AA96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A5D1A8195C500C8AA96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3DA830D1A54AFF00070E792 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,6 +708,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D3893A2C1A81958A00C8AA96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A371A81958A00C8AA96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3893A451A81958A00C8AA96 /* CylExtensionsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A501A8195C500C8AA96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3893A5B1A8195C500C8AA96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3893A691A8195C500C8AA96 /* CylCoreDataTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3DA830B1A54AFF00070E792 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,6 +748,7 @@
 				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
 				D336104E1A589C7D003E39DF /* Sensor.swift in Sources */,
 				D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */,
+				D3893A761A81C89F00C8AA96 /* CylProtocols.swift in Sources */,
 				D3FDEFD01A6342B4006D3840 /* CyclometerModel.xcdatamodeld in Sources */,
 				D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */,
 				D33610501A59AF56003E39DF /* SensorManager.swift in Sources */,
@@ -441,6 +783,36 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D3893A3E1A81958A00C8AA96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3893A301A81958A00C8AA96 /* CylExtensions */;
+			targetProxy = D3893A3D1A81958A00C8AA96 /* PBXContainerItemProxy */;
+		};
+		D3893A401A81958A00C8AA96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3DA830E1A54AFF00070E792 /* Cyclometer */;
+			targetProxy = D3893A3F1A81958A00C8AA96 /* PBXContainerItemProxy */;
+		};
+		D3893A471A81958A00C8AA96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3893A301A81958A00C8AA96 /* CylExtensions */;
+			targetProxy = D3893A461A81958A00C8AA96 /* PBXContainerItemProxy */;
+		};
+		D3893A621A8195C500C8AA96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3893A541A8195C500C8AA96 /* CylCoreData */;
+			targetProxy = D3893A611A8195C500C8AA96 /* PBXContainerItemProxy */;
+		};
+		D3893A641A8195C500C8AA96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3DA830E1A54AFF00070E792 /* Cyclometer */;
+			targetProxy = D3893A631A8195C500C8AA96 /* PBXContainerItemProxy */;
+		};
+		D3893A6B1A8195C500C8AA96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3893A541A8195C500C8AA96 /* CylCoreData */;
+			targetProxy = D3893A6A1A8195C500C8AA96 /* PBXContainerItemProxy */;
+		};
 		D3DA83261A54AFF00070E792 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D3DA830E1A54AFF00070E792 /* Cyclometer */;
@@ -479,6 +851,154 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D3893A4B1A81958A00C8AA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CylExtensions/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3893A4C1A81958A00C8AA96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CylExtensions/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3893A4E1A81958A00C8AA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CylExtensionsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyclometer.app/Cyclometer";
+			};
+			name = Debug;
+		};
+		D3893A4F1A81958A00C8AA96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CylExtensionsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyclometer.app/Cyclometer";
+			};
+			name = Release;
+		};
+		D3893A6F1A8195C500C8AA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CylCoreData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3893A701A8195C500C8AA96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CylCoreData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3893A721A8195C500C8AA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CylCoreDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyclometer.app/Cyclometer";
+			};
+			name = Debug;
+		};
+		D3893A731A8195C500C8AA96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CylCoreDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyclometer.app/Cyclometer";
+			};
+			name = Release;
+		};
 		D3DA832C1A54AFF00070E792 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -690,6 +1210,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D3893A4A1A81958A00C8AA96 /* Build configuration list for PBXNativeTarget "CylExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3893A4B1A81958A00C8AA96 /* Debug */,
+				D3893A4C1A81958A00C8AA96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D3893A4D1A81958A00C8AA96 /* Build configuration list for PBXNativeTarget "CylExtensionsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3893A4E1A81958A00C8AA96 /* Debug */,
+				D3893A4F1A81958A00C8AA96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D3893A6E1A8195C500C8AA96 /* Build configuration list for PBXNativeTarget "CylCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3893A6F1A8195C500C8AA96 /* Debug */,
+				D3893A701A8195C500C8AA96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D3893A711A8195C500C8AA96 /* Build configuration list for PBXNativeTarget "CylCoreDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3893A721A8195C500C8AA96 /* Debug */,
+				D3893A731A8195C500C8AA96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D3DA830A1A54AFF00070E792 /* Build configuration list for PBXProject "Cyclometer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -744,8 +1296,9 @@
 				D3FDEFCF1A6342B4006D3840 /* CyclometerModel.xcdatamodel */,
 			);
 			currentVersion = D3FDEFCF1A6342B4006D3840 /* CyclometerModel.xcdatamodel */;
-			path = CyclometerModel.xcdatamodeld;
-			sourceTree = "<group>";
+			name = CyclometerModel.xcdatamodeld;
+			path = /Shared/Users/brian/Projects/Cyclometer/Cyclometer/CyclometerModel.xcdatamodeld;
+			sourceTree = "<absolute>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

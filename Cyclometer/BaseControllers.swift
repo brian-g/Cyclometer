@@ -119,6 +119,7 @@ class CylHistoryController : UITableViewController {
         var row = selectedRow?.row
         
         if (row != nil) {
+//            (segue.destinationViewController as CylViewControllerParameter).viewControllerParameter = CylParameter(param: rides[row!], function:nil)
             (segue.destinationViewController as CylRideDetailsController).ride = rides[row!]
         }
         
@@ -185,7 +186,7 @@ class CylHistoryController : UITableViewController {
     
 }
 
-class CylRideDetailsController : UIViewController {
+class CylRideDetailsController : UIViewController, CylViewControllerParameter {
 
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
@@ -195,6 +196,8 @@ class CylRideDetailsController : UIViewController {
     @IBOutlet weak var maxPaceLabel: UILabel!
     @IBOutlet weak var acentLabel: UILabel!
     @IBOutlet weak var decentLabel: UILabel!
+    
+    var viewControllerParameter : CylParameter?
     
     var ride : Ride?
     
@@ -232,7 +235,11 @@ class CylSettingsController : UITableViewController {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        NSLog(segue.identifier!);
+        NSLog(segue.identifier!)
+        
+        if segue.identifier == "wheelSizePicker" {
+            
+        }
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -289,6 +296,7 @@ class CylSettingsController : UITableViewController {
     @IBAction func unwindFromWheelPicker(segue: UIStoryboardSegue) {
         NSLog("unwindFromWheelPicker")
         segue.sourceViewController.dismissViewControllerAnimated(true, completion: nil)
+//        (segue.destinationViewController as CylHistoryController).wheelSize =
     }
 
     
