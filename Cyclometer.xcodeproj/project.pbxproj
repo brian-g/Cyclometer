@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D302FBC91A882B740076E6E0 /* CylNumberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */; };
 		D336104E1A589C7D003E39DF /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104D1A589C7D003E39DF /* Sensor.swift */; };
 		D33610501A59AF56003E39DF /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104F1A59AF56003E39DF /* SensorManager.swift */; };
 		D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A393E1A7DB0B800941901 /* CyclometerModel.swift */; };
@@ -119,6 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylNumberCardView.swift; sourceTree = "<group>"; };
 		D336104D1A589C7D003E39DF /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		D336104F1A59AF56003E39DF /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 		D33A393E1A7DB0B800941901 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CyclometerModel.swift; path = /Shared/Users/brian/Projects/Cyclometer/Cyclometer/CyclometerModel.swift; sourceTree = "<absolute>"; };
@@ -395,6 +397,7 @@
 			children = (
 				D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */,
 				D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */,
+				D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */,
 			);
 			name = CellsAndOddments;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 			files = (
 				D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */,
 				D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */,
+				D302FBC91A882B740076E6E0 /* CylNumberCardView.swift in Sources */,
 				D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */,
 				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
 				D336104E1A589C7D003E39DF /* Sensor.swift in Sources */,
@@ -1217,6 +1221,7 @@
 				D3893A4C1A81958A00C8AA96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3893A4D1A81958A00C8AA96 /* Build configuration list for PBXNativeTarget "CylExtensionsTests" */ = {
 			isa = XCConfigurationList;
@@ -1225,6 +1230,7 @@
 				D3893A4F1A81958A00C8AA96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3893A6E1A8195C500C8AA96 /* Build configuration list for PBXNativeTarget "CylCoreData" */ = {
 			isa = XCConfigurationList;
@@ -1233,6 +1239,7 @@
 				D3893A701A8195C500C8AA96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3893A711A8195C500C8AA96 /* Build configuration list for PBXNativeTarget "CylCoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -1241,6 +1248,7 @@
 				D3893A731A8195C500C8AA96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3DA830A1A54AFF00070E792 /* Build configuration list for PBXProject "Cyclometer" */ = {
 			isa = XCConfigurationList;

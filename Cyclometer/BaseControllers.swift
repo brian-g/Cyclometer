@@ -52,7 +52,7 @@ class CylHistoryController : UITableViewController {
 
     var rides = [Ride]()
 
-    private let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    private let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +98,7 @@ class CylHistoryController : UITableViewController {
         
         NSLog("cellForRowAtIndexPath: \(indexPath.row)")
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as UITableViewCell?
+        var cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as! UITableViewCell?
         if cell === nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "historyCell")
         }
@@ -120,7 +120,7 @@ class CylHistoryController : UITableViewController {
         
         if (row != nil) {
 //            (segue.destinationViewController as CylViewControllerParameter).viewControllerParameter = CylParameter(param: rides[row!], function:nil)
-            (segue.destinationViewController as CylRideDetailsController).ride = rides[row!]
+            (segue.destinationViewController as! CylRideDetailsController).ride = rides[row!]
         }
         
     }
@@ -128,8 +128,8 @@ class CylHistoryController : UITableViewController {
     func createDemoData() {
         let managedContext = appDelegate.managedObjectContext!
         
-        var ride = NSEntityDescription.insertNewObjectForEntityForName("Ride", inManagedObjectContext: managedContext) as Ride
-        var summary = NSEntityDescription.insertNewObjectForEntityForName("Summary", inManagedObjectContext: managedContext) as Summary
+        var ride = NSEntityDescription.insertNewObjectForEntityForName("Ride", inManagedObjectContext: managedContext) as! Ride
+        var summary = NSEntityDescription.insertNewObjectForEntityForName("Summary", inManagedObjectContext: managedContext) as! Summary
 
         summary.elevation_gain = 500
         summary.elevation_loss = 301
@@ -157,7 +157,7 @@ class CylHistoryController : UITableViewController {
         var biometrics = [Biometrics]()
 
         for i in 1...15 {
-            var bio = NSEntityDescription.insertNewObjectForEntityForName("Biometrics", inManagedObjectContext: managedContext) as Biometrics
+            var bio = NSEntityDescription.insertNewObjectForEntityForName("Biometrics", inManagedObjectContext: managedContext) as! Biometrics
             bio.date = NSDate(timeIntervalSinceNow: 5)
             bio.ride = ride
             bio.bpm = 78
@@ -166,7 +166,7 @@ class CylHistoryController : UITableViewController {
         var motion = [Motion]()
         
         for i in 1...20 {
-            var motion = NSEntityDescription.insertNewObjectForEntityForName("Motion", inManagedObjectContext: managedContext) as Motion
+            var motion = NSEntityDescription.insertNewObjectForEntityForName("Motion", inManagedObjectContext: managedContext) as! Motion
             
             motion.date = NSDate()
             motion.cadence = 78
@@ -201,7 +201,7 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
     
     var ride : Ride?
     
-    private let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    private let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -281,7 +281,7 @@ class CylSettingsController : UITableViewController {
             var cell : CylSettingsDeviceInfoCell? = tableView.dequeueReusableCellWithIdentifier("deviceInfoCell") as? CylSettingsDeviceInfoCell
             
             if cell === nil {
-                cell = (NSBundle.mainBundle().loadNibNamed("CylSettingsDeviceInfoCell", owner: nil, options: nil)[0] as CylSettingsDeviceInfoCell)
+                cell = (NSBundle.mainBundle().loadNibNamed("CylSettingsDeviceInfoCell", owner: nil, options: nil)[0] as! CylSettingsDeviceInfoCell)
                 
                 cell?.deviceName?.text = "Device \(indexPath.row)"
                 cell?.deviceCapabilities?.text = "Heart rate, Location"
