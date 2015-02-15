@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-class CylNumberCardView : UIView {
+@IBDesignable class CylNumberCardView : UIView {
     
 
-    let number: UILabel = UILabel()
-    let label: UILabel = UILabel()
+    private let numberLabel: UILabel = UILabel(frame:CGRectZero)
+    private let labelLabel: UILabel = UILabel(frame:CGRectZero)
+    private var caption : String!
+    private var unitofmeasure : String!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,15 +29,98 @@ class CylNumberCardView : UIView {
     
     func commonInit() {
         
-        label.font = UIFont(name:"Gill Sans Light", size:11.0)
-        number.font = UIFont(name:"Gill Sans Light", size:48.0)
+        self.label = "CAPTION"
+        self.units = "ft"
+        self.number = "0987654321"
         
-        addSubview(number)
-        addSubview(label)
+//        numberLabel.backgroundColor = UIColor(red:0.8, green:0.5, blue:0.3, alpha: 1.0)
+//        labelLabel.backgroundColor = UIColor(red: 0.0, green: 0.8, blue: 0.1, alpha: 1.0)
+
+        labelLabel.textColor = UIColor(white: 0.25, alpha: 1.0)
+
+        labelLabel.font = UIFont(name:"GillSans-Light", size:11.0)
+        numberLabel.font = UIFont(name:"GillSans-Light", size:56.0)
+
+        numberLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        labelLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         
-//        NSLayoutConstraint.constraintsWithVisualFormat(<#format: String#>,
-//            options: <#NSLayoutFormatOptions#>,
-//            metrics: <#[NSObject : AnyObject]?#>,
-//            views: <#[NSObject : AnyObject]#>)
+        numberLabel.adjustsFontSizeToFitWidth = true
+        numberLabel.minimumScaleFactor = 0.5
+        numberLabel.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+
+        addSubview(numberLabel)
+        addSubview(labelLabel)
+
+        setNeedsUpdateConstraints()
+    }
+  
+    override func updateConstraints() {
+       
+        var v = [ "number" : numberLabel, "label" : labelLabel]
+        
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(-10)-[number]-(-10)-[label]",
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: v))
+        
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[number]|",
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: v))
+        
+        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|",
+            options: NSLayoutFormatOptions.DirectionLeadingToTrailing,
+            metrics: nil,
+            views: v))
+/*
+        addConstraint(NSLayoutConstraint(item: self,
+            attribute: NSLayoutAttribute.Height,
+            relatedBy: NSLayoutRelation.GreaterThanOrEqual,
+            toItem: label,
+            attribute: NSLayoutAttribute.Bottom,
+            multiplier: 1.0,
+            constant: 0.0))
+*/
+        super.updateConstraints()
+    }
+
+    @IBInspectable var number : String {
+        get {
+            return numberLabel.text!
+        }
+        
+        set {
+            numberLabel.text = newValue
+            numberLabel.sizeToFit()
+        }
+    }
+    
+    @IBInspectable var label : String {
+        get {
+            return caption
+        }
+        
+        set {
+            caption = newValue
+            labelLabel.text = newValue.uppercaseString
+            labelLabel.sizeToFit()
+        }
+    }
+    
+    @IBInspectable var units : String {
+        get {
+            return unitofmeasure
+        }
+        
+        set {
+            unitofmeasure = newValue
+            labelLabel.text = label + units
+            labelLabel.sizeToFit()
+        }
+    }
+    override func drawRect(rect: CGRect) {
+        super.drawRect(rect)
+        
+        
     }
 }
