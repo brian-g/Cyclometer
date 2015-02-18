@@ -188,24 +188,36 @@ class CylHistoryController : UITableViewController {
 
 class CylRideDetailsController : UIViewController, CylViewControllerParameter {
 
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var avgSpeedLabel: UILabel!
-    @IBOutlet weak var maxSpeedLabel: UILabel!
-    @IBOutlet weak var avgPaceLabel: UILabel!
-    @IBOutlet weak var maxPaceLabel: UILabel!
-    @IBOutlet weak var acentLabel: UILabel!
-    @IBOutlet weak var decentLabel: UILabel!
+    let emptyString = "--"
+    
+    @IBOutlet weak var distance: CylNumberCardView!
+    @IBOutlet weak var duration: CylNumberCardView!
+    @IBOutlet weak var avgSpeed: CylNumberCardView!
+    @IBOutlet weak var maxSpeed: CylNumberCardView!
+    @IBOutlet weak var avgPace: CylNumberCardView!
+    @IBOutlet weak var maxPace: CylNumberCardView!
+    @IBOutlet weak var ascent: CylNumberCardView!
+    @IBOutlet weak var descent: CylNumberCardView!
+    @IBOutlet weak var avgHr: CylNumberCardView!
+    @IBOutlet weak var maxHr: CylNumberCardView!
+
     
     var viewControllerParameter : CylParameter?
     
     var ride : Ride?
     
+    let numberFormatter = NSNumberFormatter()
+    
     private let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        
         self.navigationItem.title = appDelegate.dateFormatter.stringFromDate(ride!.date)
+     
+        updateValues()
     }
     
     override func didReceiveMemoryWarning() {
@@ -213,6 +225,85 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
         // Dispose of any resources that can be recreated.
     }
 
+    override func updateViewConstraints() {
+/*
+        let v1 = [
+            "distance" : distance,
+            "avgspeed" : avgSpeed,
+            "avgpace" : avgPace,
+            "ascent" : ascent,
+            "avghr" : avgHr
+        ]
+        
+        let v2 = [
+            "duration" : duration,
+            "maxspeed" : maxSpeed,
+            "maxpace" : maxPace,
+            "descent" : descent,
+            "maxhr" : maxHr
+        ]
+        
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[distance][avgspeed][avgpace][ascent][avghr]",
+            options: NSLayoutFormatOptions.AlignAllLeading,
+            metrics: nil,
+            views: v1))
+
+
+        view.addConstraint(NSLayoutConstraint(item: distance,
+            attribute: NSLayoutAttribute.Width,
+            relatedBy: NSLayoutRelation.LessThanOrEqual,
+            toItem: view,
+            attribute: NSLayoutAttribute.Width,
+            multiplier: 0.5,
+            constant: 0.0))
+
+        
+        
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[duration][maxspeed][maxpace][descent][maxhr]",
+            options: NSLayoutFormatOptions.AlignAllLeading,
+            metrics: nil,
+            views: v2))
+
+*/
+        super.updateViewConstraints()
+    }
+  
+    func updateValues() {
+
+        if let n = numberFormatter.stringFromNumber(ride!.summary.distance) {
+            distance.number = n
+        } else {
+            distance.number = emptyString
+        }
+        /*
+        if let n = numberFormatter.stringFromNumber(ride!.summary.time_active) {
+        duration.number = n
+        } else {
+        duration.number = emptyString
+        }
+        */
+/*
+        if let n = numberFormatter.stringFromNumber(ride!.summary.speed_avg) {
+            avgSpeed.number = n
+        } else {
+            avgSpeed.number = emptyString
+        }
+
+        if let n = numberFormatter.stringFromNumber(ride!.summary.speed_max) {
+            maxSpeed.number = n
+        } else {
+            maxSpeed.number = emptyString
+        }
+
+        if let n = numberFormatter.stringFromNumber(ride!.summary.elevation_gain) {
+            ascent.number = n
+        } else {
+            ascent.number = emptyString
+        }
+*/
+        
+    
+    }
 }
 
 

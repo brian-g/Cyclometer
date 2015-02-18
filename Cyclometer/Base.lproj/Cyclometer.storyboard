@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7512"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Wheel Size-->
@@ -150,89 +151,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJ0-R0-uH5" userLabel="Distance" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="20" width="276" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJ0-R0-uH5" userLabel="Distance" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="284" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="n7N-hX-xJL"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="number" value="999.99"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="label" value="Distance (miles)"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y72-Ff-d6g" userLabel="Duration" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y72-Ff-d6g" userLabel="Duration" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
                                 <rect key="frame" x="300" y="20" width="284" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2YD-74-Djz"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="number" value="99:99:59"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="label" value="Duration"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwq-YE-wPh" userLabel="AvgSpeed" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="88" width="276" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="99.9"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Average Speed (mph)"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y0w-3I-PUD" userLabel="MaxSpeed" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="88" width="284" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="99.9"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Max Speed (mph)"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGF-tl-wfD" userLabel="AvgPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="156" width="276" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="9:59"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Average Pace (minutes / mile)"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pen-LA-t4V" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="156" width="284" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="9:59"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Max Pace (minutes / mile)"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gej-Fb-lVW" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="224" width="276" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="1,765"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Ascent (feet)"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SeN-kB-lbs" userLabel="Descent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="224" width="284" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="1,234"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Descent (feet)"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZOe-6E-wTd" userLabel="AvgHR" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="292" width="276" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="999"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Average Heartrate (bpm)"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-6g-vAj" userLabel="MaxHR" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="292" width="284" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="999"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Max Heartrate (bpm)"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jJ0-R0-uH5" firstAttribute="top" secondItem="fFz-uH-D16" secondAttribute="bottom" id="32t-IB-yjd"/>
+                            <constraint firstItem="jJ0-R0-uH5" firstAttribute="width" secondItem="P6Q-Ak-BKH" secondAttribute="width" multiplier="0.5" constant="-16" id="6Hg-XU-WT5"/>
+                            <constraint firstItem="Y72-Ff-d6g" firstAttribute="top" secondItem="jJ0-R0-uH5" secondAttribute="top" id="WhM-dN-4cK"/>
+                            <constraint firstItem="jJ0-R0-uH5" firstAttribute="leading" secondItem="P6Q-Ak-BKH" secondAttribute="leadingMargin" id="gHc-jw-JcU"/>
+                            <constraint firstItem="Y72-Ff-d6g" firstAttribute="width" secondItem="P6Q-Ak-BKH" secondAttribute="width" multiplier="0.5" constant="-16" id="nKw-zD-dyu"/>
+                            <constraint firstAttribute="centerXWithinMargins" secondItem="Y72-Ff-d6g" secondAttribute="trailing" multiplier="0.5" constant="8" id="sRY-f9-sfZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distance" destination="jJ0-R0-uH5" id="aLv-7Y-BDf"/>
+                        <outlet property="duration" destination="Y72-Ff-d6g" id="jWr-d1-CoI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BB-Gk-l3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
