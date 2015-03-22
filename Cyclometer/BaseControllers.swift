@@ -196,6 +196,8 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
     @IBOutlet weak var maxSpeed: CylNumberCardView!
     @IBOutlet weak var avgPace: CylNumberCardView!
     @IBOutlet weak var maxPace: CylNumberCardView!
+    @IBOutlet weak var avgCadence: CylNumberCardView!
+    @IBOutlet weak var maxCadence: CylNumberCardView!
     @IBOutlet weak var ascent: CylNumberCardView!
     @IBOutlet weak var descent: CylNumberCardView!
     @IBOutlet weak var avgHr: CylNumberCardView!
@@ -225,64 +227,21 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
         // Dispose of any resources that can be recreated.
     }
 
-    override func updateViewConstraints() {
-/*
-        let v1 = [
-            "distance" : distance,
-            "avgspeed" : avgSpeed,
-            "avgpace" : avgPace,
-            "ascent" : ascent,
-            "avghr" : avgHr
-        ]
-        
-        let v2 = [
-            "duration" : duration,
-            "maxspeed" : maxSpeed,
-            "maxpace" : maxPace,
-            "descent" : descent,
-            "maxhr" : maxHr
-        ]
-        
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[distance][avgspeed][avgpace][ascent][avghr]",
-            options: NSLayoutFormatOptions.AlignAllLeading,
-            metrics: nil,
-            views: v1))
-
-
-        view.addConstraint(NSLayoutConstraint(item: distance,
-            attribute: NSLayoutAttribute.Width,
-            relatedBy: NSLayoutRelation.LessThanOrEqual,
-            toItem: view,
-            attribute: NSLayoutAttribute.Width,
-            multiplier: 0.5,
-            constant: 0.0))
-
-        
-        
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[duration][maxspeed][maxpace][descent][maxhr]",
-            options: NSLayoutFormatOptions.AlignAllLeading,
-            metrics: nil,
-            views: v2))
-
-*/
-        super.updateViewConstraints()
-    }
   
     func updateValues() {
-
+        
         if let n = numberFormatter.stringFromNumber(ride!.summary.distance) {
             distance.number = n
         } else {
             distance.number = emptyString
         }
-        /*
-        if let n = numberFormatter.stringFromNumber(ride!.summary.time_active) {
-        duration.number = n
+
+        if let n = numberFormatter.stringFromNumber(NSNumber(longLong:ride!.summary.time_active)) {
+            duration.number = n
         } else {
-        duration.number = emptyString
+            duration.number = emptyString
         }
-        */
-/*
+
         if let n = numberFormatter.stringFromNumber(ride!.summary.speed_avg) {
             avgSpeed.number = n
         } else {
@@ -295,13 +254,54 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
             maxSpeed.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(ride!.summary.elevation_gain) {
+        if let n = numberFormatter.stringFromNumber(NSNumber(int: ride!.summary.elevation_gain)) {
             ascent.number = n
         } else {
             ascent.number = emptyString
         }
-*/
-        
+
+        if let n = numberFormatter.stringFromNumber(NSNumber(int: ride!.summary.elevation_loss)) {
+            descent.number = n
+        } else {
+            descent.number = emptyString
+        }
+
+        if let n = numberFormatter.stringFromNumber(NSNumber(float: ride!.summary.pace_avg)) {
+            avgPace.number = n
+        } else {
+            avgPace.number = emptyString
+        }
+
+        if let n = numberFormatter.stringFromNumber(NSNumber(float: ride!.summary.pace_max)) {
+            maxPace.number = n
+        } else {
+            maxPace.number = emptyString
+        }
+
+        if let n = numberFormatter.stringFromNumber(NSNumber(float: ride!.summary.cadence_avg)) {
+            avgCadence.number = n
+        } else {
+            avgCadence.number = emptyString
+        }
+
+        if let n = numberFormatter.stringFromNumber(NSNumber(short: ride!.summary.cadence_max)) {
+            maxCadence.number = n
+        } else {
+            maxCadence.number = emptyString
+        }
+
+        if let n = numberFormatter.stringFromNumber(NSNumber(float: ride!.summary.hr_avg)) {
+            avgHr.number = n
+        } else {
+            avgHr.number = emptyString
+        }
+
+        if let n = numberFormatter.stringFromNumber(NSNumber(short:ride!.summary.hr_max)) {
+            maxHr.number = n
+        } else {
+            maxHr.number = emptyString
+        }
+
     
     }
 }

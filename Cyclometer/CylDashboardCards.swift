@@ -35,7 +35,18 @@ class CylSpeedDashboardView : CylDashboardView {
     
 }
 
-class CylTimeDashboardView : CylDashboardView {
+class CylDistanceTimeDashboardView : CylDashboardView {
 
 }
 
+class CylCadenceDashboardView : CylDashboardView {
+    
+}
+
+class CylHeartRateDashboardView : CylDashboardView {
+    
+}
+
+class CylGeoDashboardView : CylDashboardView {
+    
+}

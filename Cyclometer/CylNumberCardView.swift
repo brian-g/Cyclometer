@@ -72,15 +72,7 @@ import UIKit
             options: NSLayoutFormatOptions.DirectionLeadingToTrailing,
             metrics: nil,
             views: v))
-/*
-        addConstraint(NSLayoutConstraint(item: self,
-            attribute: NSLayoutAttribute.Height,
-            relatedBy: NSLayoutRelation.GreaterThanOrEqual,
-            toItem: label,
-            attribute: NSLayoutAttribute.Bottom,
-            multiplier: 1.0,
-            constant: 0.0))
-*/
+
         super.updateConstraints()
     }
 
@@ -114,7 +106,7 @@ import UIKit
         
         set {
             unitofmeasure = newValue
-            labelLabel.text = label + units
+            labelLabel.text = label.uppercaseString + " (" + units + ")"
             labelLabel.sizeToFit()
         }
     }
