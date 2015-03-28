@@ -33,9 +33,6 @@ import UIKit
         self.units = "ft"
         self.number = "0987654321"
         
-//        numberLabel.backgroundColor = UIColor(red:0.8, green:0.5, blue:0.3, alpha: 1.0)
-//        labelLabel.backgroundColor = UIColor(red: 0.0, green: 0.8, blue: 0.1, alpha: 1.0)
-
         labelLabel.textColor = UIColor(white: 0.25, alpha: 1.0)
 
         labelLabel.font = UIFont(name:"GillSans-Light", size:11.0)
@@ -109,10 +106,5 @@ import UIKit
             labelLabel.text = label.uppercaseString + " (" + units + ")"
             labelLabel.sizeToFit()
         }
-    }
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
-        
-        
     }
 }

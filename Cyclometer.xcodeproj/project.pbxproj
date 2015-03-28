@@ -348,8 +348,7 @@
 				D3FDEFCC1A633890006D3840 /* RideManager.swift */,
 				D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */,
 				D3DA83161A54AFF00070E792 /* BaseControllers.swift */,
-				D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */,
-				D3F7F91E1A6CA2C400DA3FC0 /* CardViews */,
+				D3F7F91E1A6CA2C400DA3FC0 /* Dashboard */,
 				D3DA831B1A54AFF00070E792 /* Images.xcassets */,
 				D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */,
 				D3FDEFD51A66A207006D3840 /* CellsAndOddments */,
@@ -384,12 +383,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D3F7F91E1A6CA2C400DA3FC0 /* CardViews */ = {
+		D3F7F91E1A6CA2C400DA3FC0 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */,
 				D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */,
 			);
-			name = CardViews;
+			name = Dashboard;
 			sourceTree = "<group>";
 		};
 		D3FDEFD51A66A207006D3840 /* CellsAndOddments */ = {
