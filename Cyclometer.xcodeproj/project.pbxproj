@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D302FBC91A882B740076E6E0 /* CylNumberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */; };
-		D336104E1A589C7D003E39DF /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104D1A589C7D003E39DF /* Sensor.swift */; };
-		D33610501A59AF56003E39DF /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336104F1A59AF56003E39DF /* SensorManager.swift */; };
+		D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31780B01ADB62C900F8512D /* CycleSensor.swift */; };
+		D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D335E2971AC8D38B00555080 /* HealthKit.framework */; };
 		D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A393E1A7DB0B800941901 /* CyclometerModel.swift */; };
+		D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */; };
+		D349AF8B1AC8D82B00E9049A /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D349AF8A1AC8D82B00E9049A /* Tools.swift */; };
 		D3893A361A81958A00C8AA96 /* CylExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3893A351A81958A00C8AA96 /* CylExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3893A3C1A81958A00C8AA96 /* CylExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A311A81958A00C8AA96 /* CylExtensions.framework */; };
 		D3893A451A81958A00C8AA96 /* CylExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3893A441A81958A00C8AA96 /* CylExtensionsTests.swift */; };
@@ -22,7 +24,11 @@
 		D3893A6C1A8195C500C8AA96 /* CylCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A551A8195C500C8AA96 /* CylCoreData.framework */; };
 		D3893A6D1A8195C500C8AA96 /* CylCoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A551A8195C500C8AA96 /* CylCoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3893A761A81C89F00C8AA96 /* CylProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3893A751A81C89F00C8AA96 /* CylProtocols.swift */; };
-		D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C0AD01A5CDDC500969585 /* SensorLog.swift */; };
+		D38F14031AC8C09500A959A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14021AC8C09400A959A2 /* CoreLocation.framework */; };
+		D38F14051AC8C0A300A959A2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */; };
+		D395E00D1ACA3DE40007AF34 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395E00C1ACA3DE40007AF34 /* MapKit.framework */; };
+		D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C862ED1ACF3AB20033872C /* HeartRateSensor.swift */; };
+		D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C862EF1ACF84EA0033872C /* SensorManager.swift */; };
 		D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83141A54AFF00070E792 /* AppDelegate.swift */; };
 		D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83161A54AFF00070E792 /* BaseControllers.swift */; };
 		D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831B1A54AFF00070E792 /* Images.xcassets */; };
@@ -121,9 +127,11 @@
 
 /* Begin PBXFileReference section */
 		D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylNumberCardView.swift; sourceTree = "<group>"; };
-		D336104D1A589C7D003E39DF /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
-		D336104F1A59AF56003E39DF /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
+		D31780B01ADB62C900F8512D /* CycleSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleSensor.swift; sourceTree = "<group>"; };
+		D335E2971AC8D38B00555080 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		D33A393E1A7DB0B800941901 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CyclometerModel.swift; path = /Shared/Users/brian/Projects/Cyclometer/Cyclometer/CyclometerModel.swift; sourceTree = "<absolute>"; };
+		D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsControllers.swift; sourceTree = "<group>"; };
+		D349AF8A1AC8D82B00E9049A /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		D3893A311A81958A00C8AA96 /* CylExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CylExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3893A341A81958A00C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3893A351A81958A00C8AA96 /* CylExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylExtensions.h; sourceTree = "<group>"; };
@@ -137,7 +145,12 @@
 		D3893A671A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3893A681A8195C500C8AA96 /* CylCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylCoreDataTests.swift; sourceTree = "<group>"; };
 		D3893A751A81C89F00C8AA96 /* CylProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CylProtocols.swift; path = CylExtensions/CylProtocols.swift; sourceTree = SOURCE_ROOT; };
-		D39C0AD01A5CDDC500969585 /* SensorLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorLog.swift; sourceTree = "<group>"; };
+		D38F14021AC8C09400A959A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		D38F14081AC8C17D00A959A2 /* Cyclometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cyclometer.entitlements; sourceTree = "<group>"; };
+		D395E00C1ACA3DE40007AF34 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D3C862ED1ACF3AB20033872C /* HeartRateSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateSensor.swift; sourceTree = "<group>"; };
+		D3C862EF1ACF84EA0033872C /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 		D3DA830F1A54AFF00070E792 /* Cyclometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cyclometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DA83131A54AFF00070E792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DA83141A54AFF00070E792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,8 +205,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38F14051AC8C0A300A959A2 /* CoreBluetooth.framework in Frameworks */,
+				D38F14031AC8C09500A959A2 /* CoreLocation.framework in Frameworks */,
 				D3893A6C1A8195C500C8AA96 /* CylCoreData.framework in Frameworks */,
 				D3893A481A81958A00C8AA96 /* CylExtensions.framework in Frameworks */,
+				D395E00D1ACA3DE40007AF34 /* MapKit.framework in Frameworks */,
+				D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,9 +241,9 @@
 		D33610511A59AF65003E39DF /* Sensors */ = {
 			isa = PBXGroup;
 			children = (
-				D336104D1A589C7D003E39DF /* Sensor.swift */,
-				D336104F1A59AF56003E39DF /* SensorManager.swift */,
-				D39C0AD01A5CDDC500969585 /* SensorLog.swift */,
+				D3C862ED1ACF3AB20033872C /* HeartRateSensor.swift */,
+				D3C862EF1ACF84EA0033872C /* SensorManager.swift */,
+				D31780B01ADB62C900F8512D /* CycleSensor.swift */,
 			);
 			name = Sensors;
 			sourceTree = "<group>";
@@ -321,6 +338,10 @@
 		D3DA83061A54AFF00070E792 = {
 			isa = PBXGroup;
 			children = (
+				D395E00C1ACA3DE40007AF34 /* MapKit.framework */,
+				D335E2971AC8D38B00555080 /* HealthKit.framework */,
+				D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */,
+				D38F14021AC8C09400A959A2 /* CoreLocation.framework */,
 				D3DA83111A54AFF00070E792 /* Cyclometer */,
 				D3DA83271A54AFF00070E792 /* CyclometerTests */,
 				D3893A741A81962100C8AA96 /* Oddments */,
@@ -344,10 +365,12 @@
 		D3DA83111A54AFF00070E792 /* Cyclometer */ = {
 			isa = PBXGroup;
 			children = (
+				D38F14081AC8C17D00A959A2 /* Cyclometer.entitlements */,
 				D3DA83141A54AFF00070E792 /* AppDelegate.swift */,
-				D3FDEFCC1A633890006D3840 /* RideManager.swift */,
 				D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */,
+				D349AF8A1AC8D82B00E9049A /* Tools.swift */,
 				D3DA83161A54AFF00070E792 /* BaseControllers.swift */,
+				D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */,
 				D3F7F91E1A6CA2C400DA3FC0 /* Dashboard */,
 				D3DA831B1A54AFF00070E792 /* Images.xcassets */,
 				D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */,
@@ -386,6 +409,7 @@
 		D3F7F91E1A6CA2C400DA3FC0 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				D3FDEFCC1A633890006D3840 /* RideManager.swift */,
 				D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */,
 				D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */,
 			);
@@ -589,6 +613,7 @@
 				TargetAttributes = {
 					D3893A301A81958A00C8AA96 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = R57AHL4XS9;
 					};
 					D3893A3A1A81958A00C8AA96 = {
 						CreatedOnToolsVersion = 6.2;
@@ -596,6 +621,7 @@
 					};
 					D3893A541A8195C500C8AA96 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = R57AHL4XS9;
 					};
 					D3893A5E1A8195C500C8AA96 = {
 						CreatedOnToolsVersion = 6.2;
@@ -603,8 +629,24 @@
 					};
 					D3DA830E1A54AFF00070E792 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = R57AHL4XS9;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+							com.apple.WAC = {
 								enabled = 0;
 							};
 						};
@@ -746,16 +788,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */,
-				D39C0AD11A5CDDC500969585 /* SensorLog.swift in Sources */,
 				D302FBC91A882B740076E6E0 /* CylNumberCardView.swift in Sources */,
 				D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */,
 				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
-				D336104E1A589C7D003E39DF /* Sensor.swift in Sources */,
+				D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */,
 				D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */,
+				D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */,
 				D3893A761A81C89F00C8AA96 /* CylProtocols.swift in Sources */,
 				D3FDEFD01A6342B4006D3840 /* CyclometerModel.xcdatamodeld in Sources */,
+				D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */,
+				D349AF8B1AC8D82B00E9049A /* Tools.swift in Sources */,
+				D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */,
 				D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */,
-				D33610501A59AF56003E39DF /* SensorManager.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
 				D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */,
 				D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */,
@@ -858,6 +902,8 @@
 		D3893A4B1A81958A00C8AA96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -871,6 +917,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -881,6 +928,8 @@
 		D3893A4C1A81958A00C8AA96 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -890,6 +939,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -932,6 +982,8 @@
 		D3893A6F1A8195C500C8AA96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -945,6 +997,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -955,6 +1008,8 @@
 		D3893A701A8195C500C8AA96 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -964,6 +1019,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1084,9 +1140,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ../../../../../../../../Shared/Users/brian/Projects/Cyclometer/Cyclometer/Cyclometer.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cyclometer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1094,9 +1154,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ../../../../../../../../Shared/Users/brian/Projects/Cyclometer/Cyclometer/Cyclometer.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cyclometer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

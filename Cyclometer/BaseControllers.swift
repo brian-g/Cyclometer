@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+
+
 class CylNavigationController : UINavigationController {
     
     override func viewDidLoad() {
@@ -205,7 +207,6 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
 
     
     var viewControllerParameter : CylParameter?
-    
     var ride : Ride?
     
     let numberFormatter = NSNumberFormatter()
@@ -307,132 +308,3 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
 }
 
 
-class CylSettingsController : UITableViewController {
-    
-    let deviceSection = 1
-    let maxDevices = 10
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        NSLog(segue.identifier!)
-        
-        if segue.identifier == "wheelSizePicker" {
-            
-        }
-    }
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-
-        return super.numberOfSectionsInTableView(tableView)
-
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-
-        if indexPath.section == deviceSection {
-            return 44.0
-        }
-        
-        return super.tableView(tableView, heightForRowAtIndexPath:indexPath)
-    }
-    
-    override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
-
-        if indexPath.section == deviceSection {
-            return 0
-        }
-        
-        return super.tableView(tableView, indentationLevelForRowAtIndexPath:indexPath)
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        if section == deviceSection {
-            return 3
-        }
-        return super.tableView(tableView, numberOfRowsInSection:section)
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        if indexPath.section == deviceSection {
-            
-            var cell : CylSettingsDeviceInfoCell? = tableView.dequeueReusableCellWithIdentifier("deviceInfoCell") as? CylSettingsDeviceInfoCell
-            
-            if cell === nil {
-                cell = (NSBundle.mainBundle().loadNibNamed("CylSettingsDeviceInfoCell", owner: nil, options: nil)[0] as! CylSettingsDeviceInfoCell)
-                
-                cell?.deviceName?.text = "Device \(indexPath.row)"
-                cell?.deviceCapabilities?.text = "Heart rate, Location"
-                cell?.isConnected?.highlighted = true
-            }
-            return cell!
-        }
-        
-        return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
-    }
-    
-    @IBAction func unwindFromWheelPicker(segue: UIStoryboardSegue) {
-        NSLog("unwindFromWheelPicker")
-        segue.sourceViewController.dismissViewControllerAnimated(true, completion: nil)
-//        (segue.destinationViewController as CylHistoryController).wheelSize =
-    }
-
-    
-}
-
-class CylWheelPickerViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    let sizes = [
-        "Automatic",
-        "700c x 20",
-        "700c x 23",
-        "700c x 25",
-        "700c x 28",
-        "700c x 32",
-        "700c x 35",
-        "700c x 38",
-        "700c x 44",
-        "700c x 50",
-        "700c x 56",
-        "26 x 1.0",
-        "26 x 1.25",
-        "26 x 1.5",
-        "26 x 1.9",
-        "26 x 2.125",
-        "27 x 1",
-        "27 x 1 1/8",
-        "27 x 1 1/4",
-        "27 x 1 3/8",
-        "29 x 1",
-        "29 x 1.25",
-        "29 x 1.5"
-    ]
-    
-    @IBOutlet weak var picker: UIPickerView!
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return sizes[row]
-    }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sizes.count
-    }
-    
-}

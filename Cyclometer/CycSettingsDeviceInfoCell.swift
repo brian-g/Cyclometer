@@ -14,5 +14,9 @@ class CylSettingsDeviceInfoCell : UITableViewCell {
     @IBOutlet weak var deviceName: UILabel!
     @IBOutlet weak var deviceCapabilities: UILabel!
     @IBOutlet weak var isConnected: UIImageView!
+    @IBOutlet weak var isRemembered: UISwitch!
     
+    @IBAction func toggleRemembered(sender: AnyObject) {
+        NSLog("remember me")
+    }
 }

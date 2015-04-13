@@ -8,12 +8,15 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var tintColor = UIColor(red: 0.0, green: 0.75, blue: 0.86, alpha: 1.0)
     
     lazy var dateFormatter : NSDateFormatter = {
         let dateFormatter = NSDateFormatter()
@@ -27,6 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        window?.tintColor = tintColor
+        
+        NSUserDefaults.standardUserDefaults().registerDefaults([
+            kAutoPause: true,
+            kUseInBackground: true,
+            kUseHealthKit: true,
+            kUnits: 0,
+            kWheelSize: -1,
+            kDevices: []
+            ])
+
         return true
     }
 

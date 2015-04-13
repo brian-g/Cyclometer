@@ -9,34 +9,60 @@
 import Foundation
 import CoreMotion
 import CoreBluetooth
-
-var mm: CMMotionManager?
-var ble: CBCentralManager?
-
-class RideManager {
-
-    init() {
+import CoreLocation
 
 
+class CylRideManager : NSObject, CLLocationManagerDelegate {
 
+    var locationManager : CLLocationManager!
+    var motionManager : CMMotionActivityManager?
+
+    override init() {
+        
+        super.init()
+
+        locationManager = CLLocationManager()
+        locationManager.requestAlwaysAuthorization()
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.distanceFilter = kCLDistanceFilterNone
+
+        if (CMMotionActivityManager.isActivityAvailable()) {
+            motionManager = CMMotionActivityManager()
+        }
     }
     
     deinit {
-        mm?.stopAccelerometerUpdates()
-        mm = nil
+        locationManager.stopMonitoringSignificantLocationChanges()
+        locationManager = nil
+        
+        motionManager?.stopActivityUpdates()
+        motionManager = nil
     }
-    
+
     func start() {
-        mm = CMMotionManager()
-        mm?.startAccelerometerUpdates()
-        //        ble = CBCentralManager(delegate: self, queue: nil)
+        var opQ = NSOperationQueue()
+        
+        motionManager!.startActivityUpdatesToQueue(opQ, withHandler: updateMotion)
     }
     
-    func pause() {
+    /* CoreMotion */
+    
+    func updateMotion(motionActivity: CMMotionActivity!) -> Void {
+
         
     }
     
-    func stop() {
+
+    /* CoreLocation Delegates */
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
+        NSLog("%d", manager.location.altitude)
+    }
+ 
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        NSLog("We changed")
     }
 }

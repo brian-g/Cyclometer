@@ -15,17 +15,19 @@ let captionFontSize : CGFloat = 12.0
 let heroFontSize : CGFloat = 128.0
 let majorFontSize : CGFloat = 56.0
 let minorFontSize : CGFloat = (heroFontSize / 4)
-
+let globalTintColor = UIColor(red: 0.0, green: 0.75, blue: 0.86, alpha: 1.0)
 let captionColor = UIColor(white: 0.25, alpha: 1.0)
 
 @IBDesignable class CylSpeedDashboardView : UIView {
-    
-    private lazy var speed = UILabel(frame:CGRectZero)
-    private lazy var speedUnits = UILabel(frame: CGRectZero)
-    private lazy var maxSpeed = UILabel(frame: CGRectZero)
-    private lazy var maxSpeedCaption = UILabel(frame: CGRectZero)
-    private lazy var avgSpeed = UILabel(frame: CGRectZero)
+
     private lazy var avgSpeedCaption = UILabel(frame: CGRectZero)
+    private lazy var maxSpeedCaption = UILabel(frame: CGRectZero)
+    
+    lazy var speed = UILabel(frame:CGRectZero)
+    lazy var speedUnits = UILabel(frame: CGRectZero)
+    lazy var maxSpeed = UILabel(frame: CGRectZero)
+    lazy var avgSpeed = UILabel(frame: CGRectZero)
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -187,12 +189,13 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
 @IBDesignable class CylDistanceTimeDashboardView : UIView {
 
     private lazy var moduleCaption = UILabel(frame:CGRectZero)
-    private lazy var distance = UILabel(frame:CGRectZero)
-    private lazy var distanceUnits = UILabel(frame:CGRectZero)
     private lazy var durationCaption = UILabel(frame:CGRectZero)
-    private lazy var duration = UILabel(frame:CGRectZero)
-    private lazy var paceCaption = UILabel(frame:CGRectZero)
-    private lazy var pace = UILabel(frame:CGRectZero)
+    
+    lazy var distance = UILabel(frame:CGRectZero)
+    lazy var distanceUnits = UILabel(frame:CGRectZero)
+    lazy var duration = UILabel(frame:CGRectZero)
+    lazy var paceCaption = UILabel(frame:CGRectZero)
+    lazy var pace = UILabel(frame:CGRectZero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -211,7 +214,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
         moduleCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
         moduleCaption.adjustsFontSizeToFitWidth = false
-        moduleCaption.textColor = captionColor
+        moduleCaption.textColor = globalTintColor
         moduleCaption.text = "DISTANCE"
 
         distance.font = UIFont(name: fontName, size: majorFontSize)
@@ -233,7 +236,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
         durationCaption.font = UIFont(name: fontName, size: captionFontSize)
         durationCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
         durationCaption.adjustsFontSizeToFitWidth = false
-        durationCaption.textColor = captionColor
+        durationCaption.textColor = globalTintColor
         durationCaption.text = "DURATION"
 
         pace.font = UIFont(name: fontName, size: minorFontSize)
@@ -380,12 +383,14 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
 class CylCadenceDashboardView : UIView {
  
     private lazy var moduleCaption = UILabel(frame: CGRectZero)
-    private lazy var cadence = UILabel(frame: CGRectZero)
-    private lazy var cadenceUnits = UILabel(frame: CGRectZero)
-    private lazy var avg = UILabel(frame: CGRectZero)
     private lazy var avgCaption = UILabel(frame: CGRectZero)
-    private lazy var max = UILabel(frame: CGRectZero)
     private lazy var maxCaption = UILabel(frame: CGRectZero)
+    
+    lazy var cadence = UILabel(frame: CGRectZero)
+    lazy var cadenceUnits = UILabel(frame: CGRectZero)
+    lazy var avg = UILabel(frame: CGRectZero)
+    lazy var max = UILabel(frame: CGRectZero)
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -402,7 +407,7 @@ class CylCadenceDashboardView : UIView {
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
         moduleCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
         moduleCaption.adjustsFontSizeToFitWidth = false
-        moduleCaption.textColor = captionColor
+        moduleCaption.textColor = globalTintColor
         moduleCaption.text = "CADENCE"
 
         cadence.font = UIFont(name: fontName, size: majorFontSize)
@@ -570,12 +575,14 @@ class CylCadenceDashboardView : UIView {
 @IBDesignable class CylHeartRateDashboardView : UIView {
 
     private lazy var moduleCaption = UILabel(frame: CGRectZero)
-    private lazy var hr = UILabel(frame: CGRectZero)
     private lazy var hrUnits = UILabel(frame: CGRectZero)
-    private lazy var avg = UILabel(frame: CGRectZero)
     private lazy var avgCaption = UILabel(frame: CGRectZero)
-    private lazy var max = UILabel(frame: CGRectZero)
     private lazy var maxCaption = UILabel(frame: CGRectZero)
+    
+    lazy var hr = UILabel(frame: CGRectZero)
+    lazy var avg = UILabel(frame: CGRectZero)
+    lazy var max = UILabel(frame: CGRectZero)
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -591,7 +598,7 @@ class CylCadenceDashboardView : UIView {
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
         moduleCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
         moduleCaption.adjustsFontSizeToFitWidth = false
-        moduleCaption.textColor = captionColor
+        moduleCaption.textColor = globalTintColor
         moduleCaption.text = "HEART RATE"
         
         hr.font = UIFont(name: fontName, size: majorFontSize)
@@ -759,12 +766,13 @@ class CylCadenceDashboardView : UIView {
 @IBDesignable class CylGeoDashboardView : UIView {
 
     private lazy var moduleCaption = UILabel(frame: CGRectZero)
-    private lazy var el = UILabel(frame: CGRectZero)
-    private lazy var elUnits = UILabel(frame: CGRectZero)
-    private lazy var asc = UILabel(frame: CGRectZero)
     private lazy var ascCaption = UILabel(frame: CGRectZero)
-    private lazy var des = UILabel(frame: CGRectZero)
     private lazy var desCaption = UILabel(frame: CGRectZero)
+    
+    lazy var el = UILabel(frame: CGRectZero)
+    lazy var elUnits = UILabel(frame: CGRectZero)
+    lazy var asc = UILabel(frame: CGRectZero)
+    lazy var des = UILabel(frame: CGRectZero)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -781,7 +789,7 @@ class CylCadenceDashboardView : UIView {
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
         moduleCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
         moduleCaption.adjustsFontSizeToFitWidth = false
-        moduleCaption.textColor = captionColor
+        moduleCaption.textColor = globalTintColor
         moduleCaption.text = "ELEVATION"
 
         el.font = UIFont(name: fontName, size: majorFontSize)
