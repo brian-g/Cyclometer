@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D302FBC91A882B740076E6E0 /* CylNumberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */; };
 		D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31780B01ADB62C900F8512D /* CycleSensor.swift */; };
+		D31780B31AE1EC2200F8512D /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31780B21AE1EC2200F8512D /* MicrosoftBandKit_iOS.framework */; };
 		D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D335E2971AC8D38B00555080 /* HealthKit.framework */; };
 		D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A393E1A7DB0B800941901 /* CyclometerModel.swift */; };
 		D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */; };
@@ -128,6 +129,7 @@
 /* Begin PBXFileReference section */
 		D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylNumberCardView.swift; sourceTree = "<group>"; };
 		D31780B01ADB62C900F8512D /* CycleSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleSensor.swift; sourceTree = "<group>"; };
+		D31780B21AE1EC2200F8512D /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 		D335E2971AC8D38B00555080 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		D33A393E1A7DB0B800941901 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CyclometerModel.swift; path = /Shared/Users/brian/Projects/Cyclometer/Cyclometer/CyclometerModel.swift; sourceTree = "<absolute>"; };
 		D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsControllers.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				D3893A6C1A8195C500C8AA96 /* CylCoreData.framework in Frameworks */,
 				D3893A481A81958A00C8AA96 /* CylExtensions.framework in Frameworks */,
 				D395E00D1ACA3DE40007AF34 /* MapKit.framework in Frameworks */,
+				D31780B31AE1EC2200F8512D /* MicrosoftBandKit_iOS.framework in Frameworks */,
 				D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +341,7 @@
 		D3DA83061A54AFF00070E792 = {
 			isa = PBXGroup;
 			children = (
+				D31780B21AE1EC2200F8512D /* MicrosoftBandKit_iOS.framework */,
 				D395E00C1ACA3DE40007AF34 /* MapKit.framework */,
 				D335E2971AC8D38B00555080 /* HealthKit.framework */,
 				D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */,
@@ -1143,6 +1147,10 @@
 				CODE_SIGN_ENTITLEMENTS = ../../../../../../../../Shared/Users/brian/Projects/Cyclometer/Cyclometer/Cyclometer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Cyclometer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1157,6 +1165,10 @@
 				CODE_SIGN_ENTITLEMENTS = ../../../../../../../../Shared/Users/brian/Projects/Cyclometer/Cyclometer/Cyclometer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Cyclometer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

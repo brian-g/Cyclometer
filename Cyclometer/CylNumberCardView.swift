@@ -35,8 +35,8 @@ import UIKit
         
         labelLabel.textColor = UIColor(white: 0.25, alpha: 1.0)
 
-        labelLabel.font = UIFont(name:"GillSans-Light", size:11.0)
-        numberLabel.font = UIFont(name:"GillSans-Light", size:56.0)
+        labelLabel.font = UIFont(name:fontName, size:11.0)
+        numberLabel.font = UIFont(name:fontName, size:56.0)
 
         numberLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         labelLabel.setTranslatesAutoresizingMaskIntoConstraints(false)

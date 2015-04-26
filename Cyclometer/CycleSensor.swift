@@ -48,37 +48,14 @@ class CycleSensor : NSObject, CBPeripheralDelegate {
     
     weak var _peripheral : CBPeripheral!
     
-    class func readHeartRate(data : NSData) -> UInt16 {
-        
-        var buffer = [UInt8](count: data.length, repeatedValue: 0x00)
-        data.getBytes(&buffer, length: buffer.count)
-        
-        var bpm:UInt16?
-        
-        if (buffer.count >= 2) {
-            if (buffer[0] & 0x01 == 0){
-                bpm = UInt16(buffer[1]);
-            } else {
-                bpm = UInt16(buffer[1]) << 8
-                bpm =  bpm! | UInt16(buffer[2])
-            }
-        }
-        
-        if let actualBpm = bpm {
-            return actualBpm
-        } else {
-            return bpm!
-        }
-    }
-    
-    class func readCylingFeature(data: NSData) -> ( wheelrevolutions: Bool, crankrevolutions: Bool, muliplesensorlocations: Bool) {
+    class func readCylingFeature(data: NSData) -> ( wheelrevolutions: Bool, crankrevolutions: Bool) {
         
         var wheel = false
         var crank = false
-        var multiple = false
         
         var buffer : UInt16 = 0x0
-        data.getBytes(&buffer, length:data.length)
+        
+        data.getBytes(&buffer, range:NSMakeRange(0, 2))
         
         if buffer & 0x00 > 0 {
             wheel = true
@@ -88,7 +65,7 @@ class CycleSensor : NSObject, CBPeripheralDelegate {
             crank = true
         }
         
-        return (wheel, crank, multiple)
+        return (wheel, crank)
     }
 
     class func readCylingMeasurement(data: NSData) {

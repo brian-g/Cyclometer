@@ -11,11 +11,12 @@ import UIKit
 
 
 let fontName = "GillSans-Light"
-let captionFontSize : CGFloat = 12.0
+let captionFontSize : CGFloat = 14.0
 let heroFontSize : CGFloat = 128.0
 let majorFontSize : CGFloat = 56.0
 let minorFontSize : CGFloat = (heroFontSize / 4)
-let globalTintColor = UIColor(red: 0.0, green: 0.75, blue: 0.86, alpha: 1.0)
+//let globalTintColor = UIColor(red: 0.0, green: 0.75, blue: 0.86, alpha: 1.0)
+let globalTintColor = UIColor(red:0, green:0.532, blue:0.679, alpha:1.0)
 let captionColor = UIColor(white: 0.25, alpha: 1.0)
 
 @IBDesignable class CylSpeedDashboardView : UIView {
@@ -102,7 +103,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: speedUnits,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.Left,
             relatedBy: NSLayoutRelation.Equal,
             toItem: speed,
             attribute: NSLayoutAttribute.Right,
@@ -113,9 +114,9 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
             toItem: speed,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: 24.0))
 
         addConstraint(NSLayoutConstraint(item: avgSpeedCaption,
             attribute: NSLayoutAttribute.Right,
@@ -296,7 +297,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: distanceUnits,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.Left,
             relatedBy: NSLayoutRelation.Equal,
             toItem: distance,
             attribute: NSLayoutAttribute.Right,
@@ -304,12 +305,12 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: distanceUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
             toItem: distance,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.Top,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: 9.0))
 
         addConstraint(NSLayoutConstraint(item: durationCaption,
             attribute: NSLayoutAttribute.Left,
@@ -322,7 +323,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
         addConstraint(NSLayoutConstraint(item: durationCaption,
             attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: distanceUnits,
+            toItem: distance,
             attribute: NSLayoutAttribute.Bottom,
             multiplier: 1.0,
             constant: 8.0))
@@ -380,7 +381,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     
 }
 
-class CylCadenceDashboardView : UIView {
+@IBDesignable class CylCadenceDashboardView : UIView {
  
     private lazy var moduleCaption = UILabel(frame: CGRectZero)
     private lazy var avgCaption = UILabel(frame: CGRectZero)
@@ -489,7 +490,7 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: cadenceUnits,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.Left,
             relatedBy: NSLayoutRelation.Equal,
             toItem: cadence,
             attribute: NSLayoutAttribute.Right,
@@ -497,12 +498,12 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: cadenceUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
             toItem: cadence,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.Top,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: 9.0))
 
         addConstraint(NSLayoutConstraint(item: max,
             attribute: NSLayoutAttribute.Baseline,
@@ -521,12 +522,12 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: maxCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: cadenceUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            toItem: max,
+            attribute: NSLayoutAttribute.Bottom,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: maxCaption,
             attribute: NSLayoutAttribute.Right,
@@ -553,12 +554,12 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: avgCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: cadenceUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            toItem: avg,
+            attribute: NSLayoutAttribute.Bottom,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: avgCaption,
             attribute: NSLayoutAttribute.Right,
@@ -680,7 +681,7 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: hrUnits,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.Left,
             relatedBy: NSLayoutRelation.Equal,
             toItem: hr,
             attribute: NSLayoutAttribute.Right,
@@ -688,12 +689,12 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: hrUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
             toItem: hr,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.Top,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: 9.0))
         
         addConstraint(NSLayoutConstraint(item: max,
             attribute: NSLayoutAttribute.Baseline,
@@ -712,12 +713,12 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: maxCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: hrUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            toItem: max,
+            attribute: NSLayoutAttribute.Bottom,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: -8.0))
         
         addConstraint(NSLayoutConstraint(item: maxCaption,
             attribute: NSLayoutAttribute.Right,
@@ -744,12 +745,12 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: avgCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: hrUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            toItem: avg,
+            attribute: NSLayoutAttribute.Bottom,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: avgCaption,
             attribute: NSLayoutAttribute.Right,
@@ -871,7 +872,7 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: elUnits,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.Left,
             relatedBy: NSLayoutRelation.Equal,
             toItem: el,
             attribute: NSLayoutAttribute.Right,
@@ -879,12 +880,12 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: elUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
             toItem: el,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.Top,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: 9.0))
         
         addConstraint(NSLayoutConstraint(item: asc,
             attribute: NSLayoutAttribute.Baseline,
@@ -903,12 +904,12 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: ascCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: elUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            toItem: asc,
+            attribute: NSLayoutAttribute.Bottom,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: ascCaption,
             attribute: NSLayoutAttribute.Right,
@@ -935,12 +936,12 @@ class CylCadenceDashboardView : UIView {
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: desCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: elUnits,
-            attribute: NSLayoutAttribute.Baseline,
+            toItem: des,
+            attribute: NSLayoutAttribute.Bottom,
             multiplier: 1.0,
-            constant: 0.0))
+            constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: desCaption,
             attribute: NSLayoutAttribute.Right,

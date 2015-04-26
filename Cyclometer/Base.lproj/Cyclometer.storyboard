@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uF5-os-OCe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uF5-os-OCe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -365,7 +365,7 @@
                         <sections>
                             <tableViewSection headerTitle="General" id="VBI-sA-WFs">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="15" indentationWidth="10" id="K0p-Ze-2Xf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="15" indentationWidth="10" id="K0p-Ze-2Xf">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K0p-Ze-2Xf" id="vuL-Gs-stA">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -500,7 +500,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Devices" id="B2P-99-ScM">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" textLabel="rwD-F2-n2Z" detailTextLabel="Lww-86-79p" style="IBUITableViewCellStyleSubtitle" id="iBX-5r-38A">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailButton" indentationWidth="10" textLabel="rwD-F2-n2Z" detailTextLabel="Lww-86-79p" style="IBUITableViewCellStyleSubtitle" id="iBX-5r-38A">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iBX-5r-38A" id="X2O-yj-eKU">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -524,7 +524,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Accounts" id="7mB-1H-nFf">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationLevel="15" indentationWidth="10" id="H2f-86-zzd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationLevel="15" indentationWidth="10" id="H2f-86-zzd">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H2f-86-zzd" id="sRK-7u-1Ef">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -573,7 +573,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="About" id="dic-nG-rqx">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ZKO-ey-5hF" detailTextLabel="SkX-tp-Z74" style="IBUITableViewCellStyleValue1" id="ZiZ-4c-xx4">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="ZKO-ey-5hF" detailTextLabel="SkX-tp-Z74" style="IBUITableViewCellStyleValue1" id="ZiZ-4c-xx4">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZiZ-4c-xx4" id="Js6-yU-Due">
                                             <autoresizingMask key="autoresizingMask"/>

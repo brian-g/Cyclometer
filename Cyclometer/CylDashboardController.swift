@@ -142,22 +142,22 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
    
         speed.speed.text = "—.–"
         speed.speedUnits.text = "MPH"
-        speed.avgSpeed.text = "--.-"
-        speed.maxSpeed.text = "--.-"
+        speed.avgSpeed.text = "—.–"
+        speed.maxSpeed.text = "—.–"
         
         distanceDuration.distance.text = numberFormatter.stringFromNumber(0)
         distanceDuration.distanceUnits.text = "MILES"
         distanceDuration.duration.text = (NSString(format: "%d:%.2d.%d", 0, 0, 0) as String)
-        distanceDuration.pace.text = "--.--"
+        distanceDuration.pace.text = "—.–"
         distanceDuration.paceCaption.text = "MIN/MILE"
         
         cadence.cadence.text = "—"
-        cadence.max.text = "—"
-        cadence.avg.text = "—"
+        cadence.max.text = "—.–"
+        cadence.avg.text = "—.–"
 
         biometrics.hr.text = "—"
-        biometrics.max.text = "—"
-        biometrics.avg.text = "—"
+        biometrics.max.text = "—.–"
+        biometrics.avg.text = "—.–"
         
         geo.elUnits.text = "FEET"
         geo.el.text = numberFormatter.stringFromNumber(0)
