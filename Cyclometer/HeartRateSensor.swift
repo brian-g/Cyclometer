@@ -26,11 +26,29 @@ enum HeartRateSensorLocation : UInt8 {
     }
 }
 
-class HeartRateSensor : NSObject, CBPeripheralDelegate {
-
-    let deviceName = "Heart Rate Monitor"
+class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
 
     weak var _peripheral : CBPeripheral!
+
+    let type : SensorType = SensorType.HeartRate
+    var name : String {
+        get {
+            return _peripheral.name
+        }
+    }
+    override var description: String {
+        get {
+            return location.description() + " heart rate monitor"
+        }
+    }
+    var connected: Bool = false
+    var remembered: Bool = false
+    var identifier: NSUUID {
+        get {
+            return _peripheral.identifier
+        }
+    }
+    var location : HeartRateSensorLocation = .Other
     
     class func readHeartRate(data : NSData) -> UInt16 {
         
@@ -65,13 +83,14 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate {
     }
     
     init(peripheral : CBPeripheral) {
-        
+ 
         super.init()
-        
+
         _peripheral = peripheral
         _peripheral.delegate = self
+
         
-    }
+     }
     
     var updateHeartRate : ((UInt16) -> Void)?
     
@@ -126,7 +145,8 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate {
                         f(bpm)
                     }
                 case kBTHRLocation:
-                    NSLog("Location: \(HeartRateSensor.readHeartRateLocation(characteristic.value).description())")
+                    location = HeartRateSensor.readHeartRateLocation(characteristic.value)
+
                 default:
                     NSLog("WTF")
             }

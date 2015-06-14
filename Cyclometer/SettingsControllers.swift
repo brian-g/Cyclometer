@@ -57,6 +57,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         
         updateControlsFromDefaults()
         sensorManager.sensorListUpdatedDelegate = self
+        sensorManager.startScanningForSensors()
 
     }
     
@@ -87,6 +88,12 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         } else {
             
         }
+    }
+    
+    func rememberToggled(sender : CylSettingsDeviceInfoCell) {
+        NSLog("rememberToggled")
+        
+//        sensorManager.rememberSensor(sender.peripheral, remember: sender.isRemembered.on)
     }
     
     @IBAction func updateDefaultsFromControls(sender: AnyObject) {
@@ -149,7 +156,8 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
                 cell?.deviceCapabilities?.text = sensor.capabilities
                 cell?.isConnected?.highlighted = sensor.connected
                 cell?.isRemembered?.on = sensor.remembered
-                
+                cell?.peripheral = sensor.peripheral
+                cell?.isRemembered.addTarget(self, action: "rememberToggled:", forControlEvents: UIControlEvents.ValueChanged)
             }
             return cell!
         }
