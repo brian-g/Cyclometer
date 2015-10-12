@@ -33,7 +33,7 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
     let type : SensorType = SensorType.HeartRate
     var name : String {
         get {
-            return _peripheral.name
+            return _peripheral.name!
         }
     }
     override var description: String {
@@ -95,30 +95,30 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
     var updateHeartRate : ((UInt16) -> Void)?
     
     /* These 2 should never get called because of how I'm fucking with the delegate */
-    func peripheral(peripheral: CBPeripheral!, didDiscoverIncludedServicesForService service: CBService!, error: NSError!) {
+    func peripheral(peripheral: CBPeripheral, didDiscoverIncludedServicesForService service: CBService, error: NSError?) {
         
         NSLog("HRSensor: Found \(peripheral.name): service: \(service.description)")
         
     }
     
-    func peripheral(peripheral: CBPeripheral!, didDiscoverServices error: NSError!) {
+    func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
         NSLog("HRSensor didDiscoverServices")
         
-        for service in peripheral.services as! [CBService] {
+        for service in peripheral.services! {
             peripheral.discoverCharacteristics(nil, forService: service)
         }
     }
     
     
-    func peripheral(peripheral: CBPeripheral!, didDiscoverCharacteristicsForService service: CBService!, error: NSError!) {
+    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
         
         if (service.UUID == CBUUID(string: kBTHR)) {
             NSLog("didDiscoverCharacteristics: \(peripheral.name), Service: \(service.UUID):\(service.UUID.UUIDString), " + service.description)
             
             
-            var characteristics = service.characteristics
-            
-            for c in characteristics as! [CBCharacteristic] {
+            let characteristics = service.characteristics
+
+            for c in characteristics! {
                 NSLog("Characteristic: \(c.UUID.UUIDString)")
                 
                 if (c.UUID.UUIDString == kBTHRLocation) {
@@ -132,20 +132,20 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
         }
     }
     
-    func peripheral(peripheral: CBPeripheral!, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
+    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
         
-        if let actualError = error {
+        if let _ = error {
             NSLog("error reading characteristic")
         } else {
             switch characteristic.UUID.UUIDString {
                 case kBTHRMeasurement:
                     
-                    var bpm = HeartRateSensor.readHeartRate(characteristic.value)
-                    if var f = updateHeartRate {
+                    let bpm = HeartRateSensor.readHeartRate(characteristic.value!)
+                    if let f = updateHeartRate {
                         f(bpm)
                     }
                 case kBTHRLocation:
-                    location = HeartRateSensor.readHeartRateLocation(characteristic.value)
+                    location = HeartRateSensor.readHeartRateLocation(characteristic.value!)
 
                 default:
                     NSLog("WTF")
@@ -153,18 +153,18 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
         }
     }
 
-    func peripheral(peripheral: CBPeripheral!, didUpdateNotificationStateForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
+    func peripheral(peripheral: CBPeripheral, didUpdateNotificationStateForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
 
-        if let actualError = error {
+        if let _ = error {
             NSLog("error")
         } else {
             switch characteristic.UUID.UUIDString {
                 case kBTHRMeasurement:
                 
-                    if var v = characteristic.value {
-                        var bpm = HeartRateSensor.readHeartRate(v)
+                    if let v = characteristic.value {
+                        let bpm = HeartRateSensor.readHeartRate(v)
                         NSLog("Rate: \(bpm)")
-                        if var f = updateHeartRate {
+                        if let f = updateHeartRate {
                             f(bpm)
                         }
                     }

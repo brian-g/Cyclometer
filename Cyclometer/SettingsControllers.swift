@@ -82,7 +82,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         units.selectedSegmentIndex = defaults.integerForKey(kUnits)
         useHealthKit.on = defaults.boolForKey(kUseHealthKit)
         
-        var size = defaults.integerForKey(kWheelSize)
+        let size = defaults.integerForKey(kWheelSize)
         if (size <= 0) {
             wheelSize.text = "Automatic"
         } else {
@@ -150,7 +150,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
             if cell === nil {
                 cell = (NSBundle.mainBundle().loadNibNamed("CylSettingsDeviceInfoCell", owner: nil, options: nil)[0] as! CylSettingsDeviceInfoCell)
                 
-                var sensor = sensorManager.sensorAt(indexPath.row)
+                let sensor = sensorManager.sensorAt(indexPath.row)
                 
                 cell?.deviceName?.text = sensor.name
                 cell?.deviceCapabilities?.text = sensor.capabilities

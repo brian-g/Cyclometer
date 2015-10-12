@@ -35,7 +35,7 @@ class CylNavigationController : UINavigationController {
     }
 
     override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
-        var anObject = super.popViewControllerAnimated(animated)
+        let anObject = super.popViewControllerAnimated(animated)
 
         if self.childViewControllers.count == 1 {
 
@@ -62,19 +62,18 @@ class CylHistoryController : UITableViewController {
     
         let managedContext = appDelegate.managedObjectContext!
         let fetchRequest = NSFetchRequest(entityName: "Ride")
-        
-        var error: NSError?
-        
-        if let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [Ride] {
+             
+        do {
+            let fetchResults = try managedContext.executeFetchRequest(fetchRequest) as? [Ride]
             
-            NSLog("Number of rides: \(fetchResults.count)")
-            rides = fetchResults
+            NSLog("Number of rides: \(fetchResults!.count)")
+            rides = fetchResults!
             
-            if fetchResults.count < 20 {
+            if fetchResults!.count < 20 {
                 
                 let alert = UIAlertController(title: "Load demo data", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
                 
-                alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction? ) in
+                alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction ) in
                     self.createDemoData()
                 }))
                 
@@ -82,8 +81,9 @@ class CylHistoryController : UITableViewController {
                 
                 self.presentViewController(alert, animated: true, completion: nil)
             }
-        } else {
-            NSLog("Could not fetch \(error), \(error!.userInfo)")
+
+        } catch {
+            NSLog("Could not fetch \(error), \(error)")
         }
     }
     
@@ -100,13 +100,13 @@ class CylHistoryController : UITableViewController {
         
         NSLog("cellForRowAtIndexPath: \(indexPath.row)")
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("historyCell") as! UITableViewCell?
+        var cell = tableView.dequeueReusableCellWithIdentifier("historyCell") 
         if cell === nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "historyCell")
         }
 
-        var rideDate = rides[indexPath.row].date as NSDate
-        var c = rides[indexPath.row].biometrics.count
+        let rideDate = rides[indexPath.row].date as NSDate
+        let c = rides[indexPath.row].biometrics.count
         
         NSLog("Count of bio data \(c)")
         cell?.textLabel?.text = appDelegate.dateFormatter.stringFromDate(rideDate)
@@ -117,8 +117,8 @@ class CylHistoryController : UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         NSLog("prepareForSegue")
         
-        var selectedRow = tableView.indexPathForSelectedRow()
-        var row = selectedRow?.row
+        let selectedRow = tableView.indexPathForSelectedRow
+        let row = selectedRow?.row
         
         if (row != nil) {
 //            (segue.destinationViewController as CylViewControllerParameter).viewControllerParameter = CylParameter(param: rides[row!], function:nil)
@@ -130,8 +130,8 @@ class CylHistoryController : UITableViewController {
     func createDemoData() {
         let managedContext = appDelegate.managedObjectContext!
         
-        var ride = NSEntityDescription.insertNewObjectForEntityForName("Ride", inManagedObjectContext: managedContext) as! Ride
-        var summary = NSEntityDescription.insertNewObjectForEntityForName("Summary", inManagedObjectContext: managedContext) as! Summary
+        let ride = NSEntityDescription.insertNewObjectForEntityForName("Ride", inManagedObjectContext: managedContext) as! Ride
+        let summary = NSEntityDescription.insertNewObjectForEntityForName("Summary", inManagedObjectContext: managedContext) as! Summary
 
         summary.elevation_gain = 500
         summary.elevation_loss = 301
@@ -159,7 +159,7 @@ class CylHistoryController : UITableViewController {
         var biometrics = [Biometrics]()
 
         for i in 1...15 {
-            var bio = NSEntityDescription.insertNewObjectForEntityForName("Biometrics", inManagedObjectContext: managedContext) as! Biometrics
+            let bio = NSEntityDescription.insertNewObjectForEntityForName("Biometrics", inManagedObjectContext: managedContext) as! Biometrics
             bio.date = NSDate(timeIntervalSinceNow: 5)
             bio.ride = ride
             bio.bpm = 78
@@ -168,7 +168,7 @@ class CylHistoryController : UITableViewController {
         var motion = [Motion]()
         
         for i in 1...20 {
-            var motion = NSEntityDescription.insertNewObjectForEntityForName("Motion", inManagedObjectContext: managedContext) as! Motion
+            let motion = NSEntityDescription.insertNewObjectForEntityForName("Motion", inManagedObjectContext: managedContext) as! Motion
             
             motion.date = NSDate()
             motion.cadence = 78
@@ -180,7 +180,10 @@ class CylHistoryController : UITableViewController {
         
         
         var error: NSError?
-        if !managedContext.save(&error) {
+        do {
+            try managedContext.save()
+        } catch let error1 as NSError {
+            error = error1
             NSLog("Could not save \(error), \(error?.userInfo)")
         }
 

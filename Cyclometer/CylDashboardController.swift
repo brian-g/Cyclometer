@@ -63,7 +63,7 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
     
     @IBAction func toggleRideState(sender: UIBarButtonItem) {
         
-        var buttonTag = sender.tag
+        let buttonTag = sender.tag
 
         secondButton.hide()
 
@@ -92,9 +92,9 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
                 
             case Stop:
                 
-                var alert = UIAlertController(title: "Save Ride?", message: "When you save your ride, results will also be posted to any accounts you have set up", preferredStyle: UIAlertControllerStyle.ActionSheet)
+                let alert = UIAlertController(title: "Save Ride?", message: "When you save your ride, results will also be posted to any accounts you have set up", preferredStyle: UIAlertControllerStyle.ActionSheet)
                 
-                alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction? ) in
+                alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction ) in
                     NSLog("Save")
                     
                     self.firstButton.tag = self.Play
@@ -103,7 +103,7 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
                     
                 }))
 
-                alert.addAction(UIAlertAction(title: "Don't save", style: UIAlertActionStyle.Destructive, handler: { ( action: UIAlertAction? ) in
+                alert.addAction(UIAlertAction(title: "Don't save", style: UIAlertActionStyle.Destructive, handler: { ( action: UIAlertAction ) in
                     NSLog("Don't save")
                     
                     self.firstButton.tag = self.Play
@@ -112,7 +112,7 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
                     
                 }))
 
-                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { ( action: UIAlertAction? ) in
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { ( action: UIAlertAction ) in
                     
                     NSLog("Cancel")
                     

@@ -91,10 +91,10 @@ class JunkTools : UIViewController, CLLocationManagerDelegate {
     
     
     /* CoreMotion */
-    func updateAltitude(altitudeData: CMAltitudeData!, error: NSError!) -> Void {
+    func updateAltitude(altitudeData: CMAltitudeData?, error: NSError?) -> Void {
     
-        if (altitudeData != nil && altitudeData.relativeAltitude != nil) {
-            var x = altitudeData.relativeAltitude
+        if let alt = altitudeData {
+            let x = alt.relativeAltitude
             altitude.text = "Altitude:" + x.stringValue + " meters"
         } else {
             altitude.text = "No altitude"
@@ -102,27 +102,27 @@ class JunkTools : UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func updateMotion(motionActivity: CMMotionActivity!) -> Void {
+    func updateMotion(motionActivity: CMMotionActivity?) -> Void {
         
         NSLog("coremotion activity")
         
-        if (motionActivity.automotive) {
+        if (motionActivity!.automotive) {
             coreMotionStatus.text = "Automotive"
-        } else if (motionActivity.cycling) {
+        } else if (motionActivity!.cycling) {
             coreMotionStatus.text = "Biking"
-        } else if (motionActivity.walking) {
+        } else if (motionActivity!.walking) {
             coreMotionStatus.text = "Walking"
-        } else if (motionActivity.running) {
+        } else if (motionActivity!.running) {
             coreMotionStatus.text = "Running"
-        } else if (motionActivity.stationary) {
+        } else if (motionActivity!.stationary) {
             coreMotionStatus.text = "Stationary"
-        } else if (motionActivity.unknown) {
+        } else if (motionActivity!.unknown) {
             coreMotionStatus.text = "Unknown"
         } else {
             coreMotionStatus.text = "Really unknown"
         }
         
-        switch motionActivity.confidence {
+        switch motionActivity!.confidence {
             case CMMotionActivityConfidence.High:
                 coreMotionConfidence.text = "High"
 
@@ -137,17 +137,18 @@ class JunkTools : UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var acceleration: UILabel!
     
     /* Core Location */
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         NSLog("location")
-        var loc = (locations.last as! CLLocation)
         
+        let loc = locations.last!
+
         verticalAccuracy.text = "Vert: " + loc.verticalAccuracy.description + " Hor: " + loc.horizontalAccuracy.description
 
-        var feetAbove = loc.altitude / 0.3048
+        let feetAbove = loc.altitude / 0.3048
         
         elevation.text = "Elevation: " + feetAbove.description + " feet"
 
-        var mph = loc.speed * 3600 / 1609.344
+        let mph = loc.speed * 3600 / 1609.344
         
         acceleration.text = mph.description + " mph"
         
@@ -155,7 +156,7 @@ class JunkTools : UIViewController, CLLocationManagerDelegate {
 
     }
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 
         if (status == CLAuthorizationStatus.AuthorizedAlways) {
 

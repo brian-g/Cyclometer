@@ -35,7 +35,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
         commonInit()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -43,33 +43,33 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     func commonInit() {
 
         speed.font = UIFont(name:"GillSans-Light", size:heroFontSize)
-        speed.setTranslatesAutoresizingMaskIntoConstraints(false)
+        speed.translatesAutoresizingMaskIntoConstraints = false
         speed.adjustsFontSizeToFitWidth = true
         speed.text = "0"
         
         speedUnits.font = UIFont(name:"GillSans-Light", size:captionFontSize)
-        speedUnits.setTranslatesAutoresizingMaskIntoConstraints(false)
+        speedUnits.translatesAutoresizingMaskIntoConstraints = false
         speedUnits.adjustsFontSizeToFitWidth = false
         speedUnits.textColor = captionColor
         speedUnits.text = "MPH"
         
         maxSpeed.font = UIFont(name:"GillSans-Light", size:minorFontSize)
-        maxSpeed.setTranslatesAutoresizingMaskIntoConstraints(false)
+        maxSpeed.translatesAutoresizingMaskIntoConstraints = false
         maxSpeed.adjustsFontSizeToFitWidth = false
         maxSpeed.text = "-"
         
         maxSpeedCaption.font = UIFont(name: "GillSans-Light", size: captionFontSize)
-        maxSpeedCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        maxSpeedCaption.translatesAutoresizingMaskIntoConstraints = false
         maxSpeedCaption.textColor = captionColor
         maxSpeedCaption.text = "MAX"
 
         avgSpeed.font = UIFont(name:"GillSans-Light", size:minorFontSize)
-        avgSpeed.setTranslatesAutoresizingMaskIntoConstraints(false)
+        avgSpeed.translatesAutoresizingMaskIntoConstraints = false
         avgSpeed.adjustsFontSizeToFitWidth = false
         avgSpeed.text = "-"
         
         avgSpeedCaption.font = UIFont(name: "GillSans-Light", size: captionFontSize)
-        avgSpeedCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        avgSpeedCaption.translatesAutoresizingMaskIntoConstraints = false
         avgSpeedCaption.textColor = captionColor
         avgSpeedCaption.text = "AVG"
 
@@ -98,7 +98,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             attribute: NSLayoutAttribute.Leading,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.Leading,
             multiplier: 1.0,
             constant: 0.0))
 
@@ -203,50 +203,50 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
         commonInit()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
     func commonInit() {
 
-        setTranslatesAutoresizingMaskIntoConstraints(false)
+        translatesAutoresizingMaskIntoConstraints = false
         
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
-        moduleCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        moduleCaption.translatesAutoresizingMaskIntoConstraints = false
         moduleCaption.adjustsFontSizeToFitWidth = false
         moduleCaption.textColor = globalTintColor
         moduleCaption.text = "DISTANCE"
 
         distance.font = UIFont(name: fontName, size: majorFontSize)
-        distance.setTranslatesAutoresizingMaskIntoConstraints(false)
+        distance.translatesAutoresizingMaskIntoConstraints = false
         distance.adjustsFontSizeToFitWidth = false
         distance.text = "85.41"
 
         distanceUnits.font = UIFont(name: fontName, size: captionFontSize)
-        distanceUnits.setTranslatesAutoresizingMaskIntoConstraints(false)
+        distanceUnits.translatesAutoresizingMaskIntoConstraints = false
         distanceUnits.adjustsFontSizeToFitWidth = false
         distanceUnits.textColor = captionColor
         distanceUnits.text = "MILES"
 
         duration.font = UIFont(name: fontName, size: majorFontSize)
-        duration.setTranslatesAutoresizingMaskIntoConstraints(false)
+        duration.translatesAutoresizingMaskIntoConstraints = false
         duration.adjustsFontSizeToFitWidth = false
         duration.text = "5:30.10"
         
         durationCaption.font = UIFont(name: fontName, size: captionFontSize)
-        durationCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        durationCaption.translatesAutoresizingMaskIntoConstraints = false
         durationCaption.adjustsFontSizeToFitWidth = false
         durationCaption.textColor = globalTintColor
         durationCaption.text = "DURATION"
 
         pace.font = UIFont(name: fontName, size: minorFontSize)
-        pace.setTranslatesAutoresizingMaskIntoConstraints(false)
+        pace.translatesAutoresizingMaskIntoConstraints = false
         pace.adjustsFontSizeToFitWidth = false
         pace.text = "85.41"
         
         paceCaption.font = UIFont(name: fontName, size: captionFontSize)
-        paceCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        paceCaption.translatesAutoresizingMaskIntoConstraints = false
         paceCaption.adjustsFontSizeToFitWidth = false
         paceCaption.textColor = captionColor
         paceCaption.text = "MIN/MILE"
@@ -292,7 +292,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             attribute: NSLayoutAttribute.Leading,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.Leading,
             multiplier: 1.0,
             constant: 0.0))
 
@@ -340,7 +340,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             attribute: NSLayoutAttribute.Leading,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.Leading,
             multiplier: 1.0,
             constant: 0.0))
 
@@ -398,7 +398,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
         commonInit()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -406,40 +406,40 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     func commonInit() {
     
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
-        moduleCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        moduleCaption.translatesAutoresizingMaskIntoConstraints = false
         moduleCaption.adjustsFontSizeToFitWidth = false
         moduleCaption.textColor = globalTintColor
         moduleCaption.text = "CADENCE"
 
         cadence.font = UIFont(name: fontName, size: majorFontSize)
-        cadence.setTranslatesAutoresizingMaskIntoConstraints(false)
+        cadence.translatesAutoresizingMaskIntoConstraints = false
         cadence.adjustsFontSizeToFitWidth = false
         cadence.text = "76"
 
         cadenceUnits.font = UIFont(name: fontName, size: captionFontSize)
-        cadenceUnits.setTranslatesAutoresizingMaskIntoConstraints(false)
+        cadenceUnits.translatesAutoresizingMaskIntoConstraints = false
         cadenceUnits.adjustsFontSizeToFitWidth = false
         cadenceUnits.textColor = captionColor
         cadenceUnits.text = "RPM"
 
         max.font = UIFont(name: fontName, size: minorFontSize)
-        max.setTranslatesAutoresizingMaskIntoConstraints(false)
+        max.translatesAutoresizingMaskIntoConstraints = false
         max.adjustsFontSizeToFitWidth = false
         max.text = "120"
         
         maxCaption.font = UIFont(name: fontName, size: captionFontSize)
-        maxCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        maxCaption.translatesAutoresizingMaskIntoConstraints = false
         maxCaption.adjustsFontSizeToFitWidth = false
         maxCaption.textColor = captionColor
         maxCaption.text = "MAX"
 
         avg.font = UIFont(name: fontName, size: minorFontSize)
-        avg.setTranslatesAutoresizingMaskIntoConstraints(false)
+        avg.translatesAutoresizingMaskIntoConstraints = false
         avg.adjustsFontSizeToFitWidth = false
         avg.text = "79.5"
 
         avgCaption.font = UIFont(name: fontName, size: captionFontSize)
-        avgCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        avgCaption.translatesAutoresizingMaskIntoConstraints = false
         avgCaption.adjustsFontSizeToFitWidth = false
         avgCaption.textColor = captionColor
         avgCaption.text = "AVG"
@@ -485,7 +485,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             attribute: NSLayoutAttribute.Leading,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.Leading,
             multiplier: 1.0,
             constant: 0.0))
         
@@ -590,47 +590,47 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
         commonInit()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
     func commonInit() {
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
-        moduleCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        moduleCaption.translatesAutoresizingMaskIntoConstraints = false
         moduleCaption.adjustsFontSizeToFitWidth = false
         moduleCaption.textColor = globalTintColor
         moduleCaption.text = "HEART RATE"
         
         hr.font = UIFont(name: fontName, size: majorFontSize)
-        hr.setTranslatesAutoresizingMaskIntoConstraints(false)
+        hr.translatesAutoresizingMaskIntoConstraints = false
         hr.adjustsFontSizeToFitWidth = false
         hr.text = "161"
         
         hrUnits.font = UIFont(name: fontName, size: captionFontSize)
-        hrUnits.setTranslatesAutoresizingMaskIntoConstraints(false)
+        hrUnits.translatesAutoresizingMaskIntoConstraints = false
         hrUnits.adjustsFontSizeToFitWidth = false
         hrUnits.textColor = captionColor
         hrUnits.text = "BPM"
         
         max.font = UIFont(name: fontName, size: minorFontSize)
-        max.setTranslatesAutoresizingMaskIntoConstraints(false)
+        max.translatesAutoresizingMaskIntoConstraints = false
         max.adjustsFontSizeToFitWidth = false
         max.text = "170"
         
         maxCaption.font = UIFont(name: fontName, size: captionFontSize)
-        maxCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        maxCaption.translatesAutoresizingMaskIntoConstraints = false
         maxCaption.adjustsFontSizeToFitWidth = false
         maxCaption.textColor = captionColor
         maxCaption.text = "MAX"
         
         avg.font = UIFont(name: fontName, size: minorFontSize)
-        avg.setTranslatesAutoresizingMaskIntoConstraints(false)
+        avg.translatesAutoresizingMaskIntoConstraints = false
         avg.adjustsFontSizeToFitWidth = false
         avg.text = "99.5"
         
         avgCaption.font = UIFont(name: fontName, size: captionFontSize)
-        avgCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        avgCaption.translatesAutoresizingMaskIntoConstraints = false
         avgCaption.adjustsFontSizeToFitWidth = false
         avgCaption.textColor = captionColor
         avgCaption.text = "AVG"
@@ -676,7 +676,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             attribute: NSLayoutAttribute.Leading,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.Leading,
             multiplier: 1.0,
             constant: 0.0))
         
@@ -780,7 +780,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
         commonInit()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -788,40 +788,40 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     func commonInit() {
 
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
-        moduleCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        moduleCaption.translatesAutoresizingMaskIntoConstraints = false
         moduleCaption.adjustsFontSizeToFitWidth = false
         moduleCaption.textColor = globalTintColor
         moduleCaption.text = "ELEVATION"
 
         el.font = UIFont(name: fontName, size: majorFontSize)
-        el.setTranslatesAutoresizingMaskIntoConstraints(false)
+        el.translatesAutoresizingMaskIntoConstraints = false
         el.adjustsFontSizeToFitWidth = false
         el.text = "3452"
         
         elUnits.font = UIFont(name: fontName, size: captionFontSize)
-        elUnits.setTranslatesAutoresizingMaskIntoConstraints(false)
+        elUnits.translatesAutoresizingMaskIntoConstraints = false
         elUnits.adjustsFontSizeToFitWidth = false
         elUnits.textColor = captionColor
         elUnits.text = "FEET"
 
         asc.font = UIFont(name: fontName, size: minorFontSize)
-        asc.setTranslatesAutoresizingMaskIntoConstraints(false)
+        asc.translatesAutoresizingMaskIntoConstraints = false
         asc.adjustsFontSizeToFitWidth = false
         asc.text = "161"
         
         ascCaption.font = UIFont(name: fontName, size: captionFontSize)
-        ascCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        ascCaption.translatesAutoresizingMaskIntoConstraints = false
         ascCaption.adjustsFontSizeToFitWidth = false
         ascCaption.textColor = captionColor
         ascCaption.text = "ASCENT"
         
         des.font = UIFont(name: fontName, size: minorFontSize)
-        des.setTranslatesAutoresizingMaskIntoConstraints(false)
+        des.translatesAutoresizingMaskIntoConstraints = false
         des.adjustsFontSizeToFitWidth = false
         des.text = "170"
         
         desCaption.font = UIFont(name: fontName, size: captionFontSize)
-        desCaption.setTranslatesAutoresizingMaskIntoConstraints(false)
+        desCaption.translatesAutoresizingMaskIntoConstraints = false
         desCaption.adjustsFontSizeToFitWidth = false
         desCaption.textColor = captionColor
         desCaption.text = "DESCENT"
@@ -867,7 +867,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
             attribute: NSLayoutAttribute.Leading,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.Leading,
             multiplier: 1.0,
             constant: 0.0))
         

@@ -22,8 +22,8 @@ import UIKit
         commonInit()
     }
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
         commonInit()
     }
     
@@ -38,12 +38,12 @@ import UIKit
         labelLabel.font = UIFont(name:fontName, size:11.0)
         numberLabel.font = UIFont(name:fontName, size:56.0)
 
-        numberLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-        labelLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        numberLabel.translatesAutoresizingMaskIntoConstraints = false
+        labelLabel.translatesAutoresizingMaskIntoConstraints = false
         
         numberLabel.adjustsFontSizeToFitWidth = true
         numberLabel.minimumScaleFactor = 0.5
-        numberLabel.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        numberLabel.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
 
         addSubview(numberLabel)
         addSubview(labelLabel)
@@ -53,15 +53,15 @@ import UIKit
   
     override func updateConstraints() {
        
-        var v = [ "number" : numberLabel, "label" : labelLabel]
+        let v = [ "number" : numberLabel, "label" : labelLabel]
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(-10)-[number]-(-10)-[label]",
-            options: NSLayoutFormatOptions.allZeros,
+            options: NSLayoutFormatOptions(),
             metrics: nil,
             views: v))
         
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[number]|",
-            options: NSLayoutFormatOptions.allZeros,
+            options: NSLayoutFormatOptions(),
             metrics: nil,
             views: v))
         

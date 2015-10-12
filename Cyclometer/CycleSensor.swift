@@ -49,7 +49,7 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
     let type : SensorType = SensorType.WheelAndCrankRPM
     var name : String {
         get {
-            return _peripheral.name
+            return _peripheral.name!
         }
     }
     override var description: String {
@@ -113,15 +113,15 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
 
     var updateCrankRevolutions: ((UInt16) -> Void)?
 
-    func peripheral(peripheral: CBPeripheral!, didDiscoverCharacteristicsForService service: CBService!, error: NSError!) {
+    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
         
         if (service.UUID == CBUUID(string: kBTHR)) {
             NSLog("didDiscoverCharacteristics: \(peripheral.name), Service: \(service.UUID):\(service.UUID.UUIDString), " + service.description)
             
             
-            var characteristics = service.characteristics
+            let characteristics = service.characteristics
             
-            for c in characteristics as! [CBCharacteristic] {
+            for c in characteristics! {
                 NSLog("Characteristic: \(c.UUID.UUIDString)")
                 
                 if (c.UUID.UUIDString == kBTHRLocation) {
@@ -135,9 +135,9 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
         }
     }
     
-    func peripheral(peripheral: CBPeripheral!, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
+    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
         
-        if let actualError = error {
+        if let _ = error {
             NSLog("error reading characteristic")
         } else {
             switch characteristic.UUID.UUIDString {
@@ -148,16 +148,16 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
 //                    f(bpm)
 //                }
             case kBTHRLocation:
-                NSLog("Location: \(HeartRateSensor.readHeartRateLocation(characteristic.value).description())")
+                NSLog("Location: \(HeartRateSensor.readHeartRateLocation(characteristic.value!).description())")
             default:
                 NSLog("WTF")
             }
         }
     }
     
-    func peripheral(peripheral: CBPeripheral!, didUpdateNotificationStateForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
+    func peripheral(peripheral: CBPeripheral, didUpdateNotificationStateForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
         
-        if let actualError = error {
+        if let _ = error {
             NSLog("error")
         } else {
             switch characteristic.UUID.UUIDString {
