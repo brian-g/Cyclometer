@@ -27,6 +27,8 @@
 		D38F14031AC8C09500A959A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14021AC8C09400A959A2 /* CoreLocation.framework */; };
 		D38F14051AC8C0A300A959A2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */; };
 		D395E00D1ACA3DE40007AF34 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395E00C1ACA3DE40007AF34 /* MapKit.framework */; };
+		D3BE70161BCB4A37001A94FD /* RideHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BE70141BCB4A37001A94FD /* RideHistory.storyboard */; settings = {ASSET_TAGS = (); }; };
+		D3BE70181BCC223E001A94FD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BE70171BCC223E001A94FD /* Settings.storyboard */; settings = {ASSET_TAGS = (); }; };
 		D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C862ED1ACF3AB20033872C /* HeartRateSensor.swift */; };
 		D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C862EF1ACF84EA0033872C /* SensorManager.swift */; };
 		D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83141A54AFF00070E792 /* AppDelegate.swift */; };
@@ -150,6 +152,8 @@
 		D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D38F14081AC8C17D00A959A2 /* Cyclometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cyclometer.entitlements; sourceTree = "<group>"; };
 		D395E00C1ACA3DE40007AF34 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D3BE70151BCB4A37001A94FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RideHistory.storyboard; sourceTree = "<group>"; };
+		D3BE70171BCC223E001A94FD /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		D3C862ED1ACF3AB20033872C /* HeartRateSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateSensor.swift; sourceTree = "<group>"; };
 		D3C862EF1ACF84EA0033872C /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 		D3DA830F1A54AFF00070E792 /* Cyclometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cyclometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -371,6 +375,8 @@
 				D38F14081AC8C17D00A959A2 /* Cyclometer.entitlements */,
 				D3DA83141A54AFF00070E792 /* AppDelegate.swift */,
 				D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */,
+				D3BE70171BCC223E001A94FD /* Settings.storyboard */,
+				D3BE70141BCB4A37001A94FD /* RideHistory.storyboard */,
 				D349AF8A1AC8D82B00E9049A /* Tools.swift */,
 				D3DA83161A54AFF00070E792 /* BaseControllers.swift */,
 				D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */,
@@ -727,8 +733,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BE70161BCB4A37001A94FD /* RideHistory.storyboard in Resources */,
 				D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */,
 				D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */,
+				D3BE70181BCC223E001A94FD /* Settings.storyboard in Resources */,
 				D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */,
 				D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */,
 			);
@@ -885,6 +893,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D3BE70141BCB4A37001A94FD /* RideHistory.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3BE70151BCB4A37001A94FD /* Base */,
+			);
+			name = RideHistory.storyboard;
+			sourceTree = "<group>";
+		};
 		D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

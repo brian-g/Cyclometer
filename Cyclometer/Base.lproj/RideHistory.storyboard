@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hg3-Bl-1e7">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--History-->
+        <scene sceneID="kAc-HY-ewg">
+            <objects>
+                <tableViewController title="History" id="Hg3-Bl-1e7" userLabel="History" customClass="CylHistoryController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="C0u-X8-dqo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="historyCell" textLabel="BCH-Wf-Ihn" detailTextLabel="DoC-7X-xIA" style="IBUITableViewCellStyleSubtitle" id="YdZ-wL-98j">
+                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YdZ-wL-98j" id="qkI-Ay-l6V">
+                                    <rect key="frame" x="0.0" y="0.0" width="533" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BCH-Wf-Ihn">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DoC-7X-xIA">
+                                            <rect key="frame" x="15" y="25" width="31" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <segue destination="Dja-hl-p2C" kind="show" identifier="showHistoryDetail" id="UX1-JF-kWW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hg3-Bl-1e7" id="A1d-3g-Qjb"/>
+                            <outlet property="delegate" destination="Hg3-Bl-1e7" id="aEb-bp-THK"/>
+                        </connections>
+                    </tableView>
+                    <fixedSimulatedSizeMetrics key="simulatedDestinationMetrics">
+                        <size key="portraitSize" width="600" height="800"/>
+                        <size key="landscapeSize" width="600" height="800"/>
+                    </fixedSimulatedSizeMetrics>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VzU-ox-JAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-981" y="-2338"/>
+        </scene>
+        <!--RideDetails-->
+        <scene sceneID="1ST-Xq-dcX">
+            <objects>
+                <viewController title="Ride Details" id="Dja-hl-p2C" userLabel="RideDetails" customClass="CylRideDetailsController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fFz-uH-D16"/>
+                        <viewControllerLayoutGuide type="bottom" id="yFG-JL-ghp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P6Q-Ak-BKH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJ0-R0-uH5" userLabel="Distance" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="n7N-hX-xJL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="999.99"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Distance"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="miles"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-uh-sBi" userLabel="AvgSpeed" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="88" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LDG-8A-dHT"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="99.00"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Avg Speed"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="mph"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8o-G5-4Gl" userLabel="AvgPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="156" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="B2N-V6-IDq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Avg Pace"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="minutes / mile"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="9:99"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vg2-zA-Vfs" userLabel="AvgCadence" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="224" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cU7-Id-2dC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Avg Cadence"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="rpm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="999"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8n-uy-GC6" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="292" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="lkz-UE-ZPd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Ascent"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="feet"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="999"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4k-5g-n8t" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="360" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="RRc-GS-23O"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Avg Heart Rate"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="bpm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="199"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y72-Ff-d6g" userLabel="Duration" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="300" y="20" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2YD-74-Djz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="99:99:59"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Duration"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqT-ry-7dd" userLabel="MaxSpeed" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="300" y="88" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7nT-GB-Bx8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="99.99"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Max Speed"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="mph"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzh-QG-ALD" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="300" y="156" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Out-m0-Ugl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="9:99"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Max Pace"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="minutes / mile"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzX-DP-rQ4" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="300" y="224" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gzU-5n-uI7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="999"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Max Cadence"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="rpm"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tr3-M4-2a8" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="300" y="292" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="rMi-lv-yrr"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="999"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Descent"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="feet"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruL-1x-GQN" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <rect key="frame" x="300" y="360" width="284" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0Rz-bc-Hjn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="label" value="Max Heart Rate"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="units" value="bpm"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="number" value="199"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vg2-zA-Vfs" firstAttribute="width" secondItem="H8n-uy-GC6" secondAttribute="width" id="1L0-CO-v4V"/>
+                            <constraint firstItem="jJ0-R0-uH5" firstAttribute="top" secondItem="fFz-uH-D16" secondAttribute="bottom" id="32t-IB-yjd"/>
+                            <constraint firstItem="pzh-QG-ALD" firstAttribute="top" secondItem="IqT-ry-7dd" secondAttribute="bottom" constant="8" id="3Tb-HC-M0y"/>
+                            <constraint firstItem="IzX-DP-rQ4" firstAttribute="leading" secondItem="Tr3-M4-2a8" secondAttribute="leading" id="46S-du-iBk"/>
+                            <constraint firstItem="x8o-G5-4Gl" firstAttribute="top" secondItem="dpr-uh-sBi" secondAttribute="bottom" constant="8" id="5Mb-9V-z6v"/>
+                            <constraint firstItem="jJ0-R0-uH5" firstAttribute="width" secondItem="P6Q-Ak-BKH" secondAttribute="width" multiplier="0.5" constant="-16" id="6Hg-XU-WT5"/>
+                            <constraint firstItem="IzX-DP-rQ4" firstAttribute="width" secondItem="Tr3-M4-2a8" secondAttribute="width" id="8OR-d2-qZP"/>
+                            <constraint firstItem="dpr-uh-sBi" firstAttribute="leading" secondItem="x8o-G5-4Gl" secondAttribute="leading" id="DwU-kZ-q2d"/>
+                            <constraint firstItem="Y72-Ff-d6g" firstAttribute="leading" secondItem="IqT-ry-7dd" secondAttribute="leading" id="JGm-eM-pvN"/>
+                            <constraint firstItem="Vg2-zA-Vfs" firstAttribute="leading" secondItem="x8o-G5-4Gl" secondAttribute="leading" id="KwX-LF-Ava"/>
+                            <constraint firstItem="s4k-5g-n8t" firstAttribute="top" secondItem="H8n-uy-GC6" secondAttribute="bottom" constant="8" id="L8V-IF-gnT"/>
+                            <constraint firstItem="ruL-1x-GQN" firstAttribute="top" secondItem="Tr3-M4-2a8" secondAttribute="bottom" constant="8" id="OKN-Cm-rd4"/>
+                            <constraint firstItem="pzh-QG-ALD" firstAttribute="leading" secondItem="IzX-DP-rQ4" secondAttribute="leading" id="Ot3-fy-6u3"/>
+                            <constraint firstItem="Vg2-zA-Vfs" firstAttribute="leading" secondItem="H8n-uy-GC6" secondAttribute="leading" id="Pn4-9F-QfF"/>
+                            <constraint firstItem="dpr-uh-sBi" firstAttribute="width" secondItem="x8o-G5-4Gl" secondAttribute="width" id="Thb-gE-vx3"/>
+                            <constraint firstItem="pzh-QG-ALD" firstAttribute="leading" secondItem="IqT-ry-7dd" secondAttribute="leading" id="UhK-iW-1xH"/>
+                            <constraint firstItem="Y72-Ff-d6g" firstAttribute="top" secondItem="jJ0-R0-uH5" secondAttribute="top" id="WhM-dN-4cK"/>
+                            <constraint firstItem="pzh-QG-ALD" firstAttribute="width" secondItem="IzX-DP-rQ4" secondAttribute="width" id="Xkm-Ea-r9j"/>
+                            <constraint firstItem="pzh-QG-ALD" firstAttribute="width" secondItem="IqT-ry-7dd" secondAttribute="width" id="ZhX-LE-BOr"/>
+                            <constraint firstItem="jJ0-R0-uH5" firstAttribute="leading" secondItem="dpr-uh-sBi" secondAttribute="leading" id="dAn-8o-gOu"/>
+                            <constraint firstItem="Vg2-zA-Vfs" firstAttribute="top" secondItem="x8o-G5-4Gl" secondAttribute="bottom" constant="8" id="dnf-p6-K5n"/>
+                            <constraint firstItem="dpr-uh-sBi" firstAttribute="width" secondItem="P6Q-Ak-BKH" secondAttribute="width" multiplier="0.5" constant="-16" id="eUN-IX-j17"/>
+                            <constraint firstItem="jJ0-R0-uH5" firstAttribute="leading" secondItem="P6Q-Ak-BKH" secondAttribute="leadingMargin" id="gHc-jw-JcU"/>
+                            <constraint firstItem="IqT-ry-7dd" firstAttribute="top" secondItem="Y72-Ff-d6g" secondAttribute="bottom" constant="8" id="gLh-pn-bCC"/>
+                            <constraint firstItem="IzX-DP-rQ4" firstAttribute="top" secondItem="pzh-QG-ALD" secondAttribute="bottom" constant="8" id="gcR-3F-rAH"/>
+                            <constraint firstItem="Y72-Ff-d6g" firstAttribute="trailing" secondItem="IqT-ry-7dd" secondAttribute="trailing" id="l8h-Al-FV4"/>
+                            <constraint firstItem="ruL-1x-GQN" firstAttribute="leading" secondItem="Tr3-M4-2a8" secondAttribute="leading" id="mUn-hq-EEz"/>
+                            <constraint firstItem="Y72-Ff-d6g" firstAttribute="width" secondItem="P6Q-Ak-BKH" secondAttribute="width" multiplier="0.5" constant="-16" id="nKw-zD-dyu"/>
+                            <constraint firstItem="dpr-uh-sBi" firstAttribute="top" secondItem="jJ0-R0-uH5" secondAttribute="bottom" constant="8" id="noL-2U-TJw"/>
+                            <constraint firstItem="ruL-1x-GQN" firstAttribute="width" secondItem="Tr3-M4-2a8" secondAttribute="width" id="qms-UI-fk3"/>
+                            <constraint firstItem="Tr3-M4-2a8" firstAttribute="top" secondItem="IzX-DP-rQ4" secondAttribute="bottom" constant="8" id="rYX-hT-dYp"/>
+                            <constraint firstAttribute="centerXWithinMargins" secondItem="Y72-Ff-d6g" secondAttribute="trailing" multiplier="0.5" constant="8" id="sRY-f9-sfZ"/>
+                            <constraint firstItem="H8n-uy-GC6" firstAttribute="leading" secondItem="s4k-5g-n8t" secondAttribute="leading" id="tRK-8W-Tgz"/>
+                            <constraint firstItem="H8n-uy-GC6" firstAttribute="width" secondItem="s4k-5g-n8t" secondAttribute="width" id="u0h-xL-UlP"/>
+                            <constraint firstItem="Vg2-zA-Vfs" firstAttribute="width" secondItem="x8o-G5-4Gl" secondAttribute="width" id="xqN-PJ-Dtx"/>
+                            <constraint firstItem="H8n-uy-GC6" firstAttribute="top" secondItem="Vg2-zA-Vfs" secondAttribute="bottom" constant="8" id="zkw-Vp-N38"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ascent" destination="H8n-uy-GC6" id="0vB-R3-D0v"/>
+                        <outlet property="avgCadence" destination="Vg2-zA-Vfs" id="1bK-kC-il4"/>
+                        <outlet property="avgHr" destination="s4k-5g-n8t" id="AVP-mF-qTB"/>
+                        <outlet property="avgPace" destination="x8o-G5-4Gl" id="fxQ-B1-GDX"/>
+                        <outlet property="avgSpeed" destination="dpr-uh-sBi" id="amg-DZ-LHS"/>
+                        <outlet property="descent" destination="Tr3-M4-2a8" id="fYF-c5-T1k"/>
+                        <outlet property="distance" destination="jJ0-R0-uH5" id="aLv-7Y-BDf"/>
+                        <outlet property="duration" destination="Y72-Ff-d6g" id="jWr-d1-CoI"/>
+                        <outlet property="maxCadence" destination="IzX-DP-rQ4" id="zKi-sc-JLZ"/>
+                        <outlet property="maxHr" destination="ruL-1x-GQN" id="BLb-al-TYg"/>
+                        <outlet property="maxPace" destination="pzh-QG-ALD" id="sQo-hb-eiS"/>
+                        <outlet property="maxSpeed" destination="IqT-ry-7dd" id="il8-FU-lGG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0BB-Gk-l3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-195" y="-2327"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.0" green="0.74332284930000003" blue="0.85895025729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
