@@ -92,10 +92,10 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
                 
             case Stop:
                 
-                let alert = UIAlertController(title: "Save Ride?", message: "When you save your ride, results will also be posted to any accounts you have set up", preferredStyle: UIAlertControllerStyle.ActionSheet)
+                let alert = UIAlertController(title: "Keep Ride?", message: "When you keep your ride, it will be available for analysis.", preferredStyle: UIAlertControllerStyle.ActionSheet)
                 
-                alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction ) in
-                    NSLog("Save")
+                alert.addAction(UIAlertAction(title: "Keep", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction ) in
+                    NSLog("Keep")
                     
                     self.firstButton.tag = self.Play
                     self.firstButton.image = self.playImage
@@ -103,8 +103,8 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
                     
                 }))
 
-                alert.addAction(UIAlertAction(title: "Don't save", style: UIAlertActionStyle.Destructive, handler: { ( action: UIAlertAction ) in
-                    NSLog("Don't save")
+                alert.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.Destructive, handler: { ( action: UIAlertAction ) in
+                    NSLog("Discard")
                     
                     self.firstButton.tag = self.Play
                     self.firstButton.image = self.playImage
