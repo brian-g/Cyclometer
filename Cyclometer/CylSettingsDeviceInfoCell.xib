@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -12,10 +12,12 @@
             <rect key="frame" x="0.0" y="0.0" width="628" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="npb-tO-DUk" id="lq1-nn-27O">
+                <rect key="frame" x="0.0" y="0.0" width="595" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxa-e8-Ep6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Device name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxa-e8-Ep6">
                         <rect key="frame" x="16" y="2" width="97" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="noB-66-mEA"/>
                         </constraints>
@@ -23,23 +25,27 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device capabilities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXE-px-ZuT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Device capabilities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXE-px-ZuT">
                         <rect key="frame" x="16" y="21" width="97" height="22"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Connection" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-LD-LA8">
                         <rect key="frame" x="573" y="11" width="22" height="22"/>
+                        <animations/>
                         <color key="tintColor" red="0.0" green="0.90114325284957886" blue="0.80365443229675293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HiJ-Tm-j3r">
                         <rect key="frame" x="516" y="6" width="51" height="31"/>
+                        <animations/>
                         <connections>
                             <action selector="toggleRemembered:" destination="npb-tO-DUk" eventType="valueChanged" id="dra-Ps-aQf"/>
                         </connections>
                     </switch>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="YwT-LD-LA8" firstAttribute="centerY" secondItem="lq1-nn-27O" secondAttribute="centerYWithinMargins" id="0X2-VM-Ify"/>
                     <constraint firstItem="YwT-LD-LA8" firstAttribute="leading" secondItem="HiJ-Tm-j3r" secondAttribute="trailing" constant="8" id="1Yf-Mj-OQy"/>
@@ -52,6 +58,7 @@
                     <constraint firstItem="xxa-e8-Ep6" firstAttribute="leading" secondItem="lq1-nn-27O" secondAttribute="leading" constant="16" id="yaA-DW-KpY"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="deviceCapabilities" destination="oXE-px-ZuT" id="hoA-ZV-umu"/>
                 <outlet property="deviceName" destination="xxa-e8-Ep6" id="2p5-KP-qP7"/>
