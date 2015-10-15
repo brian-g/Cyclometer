@@ -12,7 +12,7 @@ import Foundation
 
 let kAutoPause = "AutoPause"
 let kUseInBackground = "UseInBackground"
-let kUseHealthKit = "HealthKit"
+let kAutoDim = "AutoDim"
 let kUnits = "Units"
 let kWheelSize = "Wheelsize"
 let kDevices = "Devices"
@@ -48,7 +48,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
     @IBOutlet weak var autoPause: UISwitch!
     @IBOutlet weak var trackInBackground: UISwitch!
     @IBOutlet weak var units: UISegmentedControl!
-    @IBOutlet weak var useHealthKit: UISwitch!
+    @IBOutlet weak var autoDim: UISwitch!
     @IBOutlet weak var wheelSize: UILabel!
     
     override func viewDidLoad() {
@@ -80,7 +80,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         autoPause.on = defaults.boolForKey(kAutoPause)
         trackInBackground.on = defaults.boolForKey(kUseInBackground)
         units.selectedSegmentIndex = defaults.integerForKey(kUnits)
-        useHealthKit.on = defaults.boolForKey(kUseHealthKit)
+        autoDim.on = defaults.boolForKey(kAutoDim)
         
         let size = defaults.integerForKey(kWheelSize)
         if (size <= 0) {
@@ -100,7 +100,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         
         defaults.setBool(autoPause.on, forKey: kAutoPause)
         defaults.setBool(trackInBackground.on, forKey: kUseInBackground)
-        defaults.setBool(useHealthKit.on, forKey: kUseHealthKit)
+        defaults.setBool(autoDim.on, forKey: kAutoDim)
         defaults.setInteger(units.selectedSegmentIndex, forKey: kUnits)
         
     }
@@ -204,7 +204,7 @@ class CylWheelPickerViewController : UIViewController, UIPickerViewDelegate, UIP
     
     @IBOutlet weak var picker: UIPickerView!
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return sizes[row]
     }
     
