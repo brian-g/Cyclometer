@@ -32,11 +32,6 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="c1Z-cI-Fxr"/>
-                                    <barButtonItem image="Wrench" style="plain" id="H3w-Ph-Adh">
-                                        <connections>
-                                            <segue destination="D74-Xk-927" kind="show" id="hJV-x7-GBh"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem image="History" id="rRq-XF-kmC">
                                         <connections>
                                             <segue destination="7OL-Fs-0ym" kind="show" identifier="showHistory" id="38H-wN-gnU"/>
@@ -139,125 +134,6 @@
             </objects>
             <point key="canvasLocation" x="-1934" y="-3278"/>
         </scene>
-        <!--Tools-->
-        <scene sceneID="0Bb-sZ-rhe">
-            <objects>
-                <viewController id="D74-Xk-927" userLabel="Tools" customClass="JunkTools" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JL3-Cj-gvS"/>
-                        <viewControllerLayoutGuide type="bottom" id="u7S-DQ-sQA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9dr-1N-DQ8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnj-yb-pxg">
-                                <rect key="frame" x="50" y="115" width="220" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t9-JR-hAj">
-                                <rect key="frame" x="50" y="144" width="194" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6p-Fj-qBT">
-                                <rect key="frame" x="50" y="173" width="181" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAX-g9-TrO">
-                                <rect key="frame" x="50" y="305" width="271" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bbM-9c-A0h">
-                                <rect key="frame" x="50" y="76" width="51" height="31"/>
-                                <animations/>
-                                <connections>
-                                    <action selector="toggleCoreMotion:" destination="D74-Xk-927" eventType="valueChanged" id="Ih0-xx-JiL"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pDL-7W-evT">
-                                <rect key="frame" x="50" y="213" width="51" height="31"/>
-                                <animations/>
-                                <connections>
-                                    <action selector="toggleCoreLocation:" destination="D74-Xk-927" eventType="valueChanged" id="8eZ-sx-1eq"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Report on CoreMotion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8F-VB-V0r">
-                                <rect key="frame" x="107" y="81" width="172" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Report on CoreLocation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzu-qI-qPp">
-                                <rect key="frame" x="107" y="218" width="185" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vmV-6d-Hec">
-                                <rect key="frame" x="50" y="252" width="51" height="31"/>
-                                <animations/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ch4-Bl-D1y">
-                                <rect key="frame" x="107" y="257" width="35" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuV-fp-HSW">
-                                <rect key="frame" x="50" y="334" width="260" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bu-NE-h65">
-                                <rect key="frame" x="50" y="363" width="311" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-Zp-Hgf">
-                                <rect key="frame" x="53" y="392" width="308" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="acceleration" destination="7bu-NE-h65" id="yoF-XX-Lb8"/>
-                        <outlet property="altitude" destination="T6p-Fj-qBT" id="rDf-wp-rug"/>
-                        <outlet property="bestSwitch" destination="vmV-6d-Hec" id="FSi-6T-kdN"/>
-                        <outlet property="coreMotionConfidence" destination="3t9-JR-hAj" id="pnm-Bl-jUl"/>
-                        <outlet property="coreMotionStatus" destination="bnj-yb-pxg" id="ese-Gt-POW"/>
-                        <outlet property="elevation" destination="UuV-fp-HSW" id="yiJ-hy-bFL"/>
-                        <outlet property="floor" destination="uv1-Zp-Hgf" id="2fL-xx-8yF"/>
-                        <outlet property="verticalAccuracy" destination="BAX-g9-TrO" id="ijk-XI-lCn"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tea-iU-cTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1018" y="-3278"/>
-        </scene>
         <!--Cyl Navigation Controller-->
         <scene sceneID="QKi-qz-dts">
             <objects>
@@ -302,7 +178,6 @@
         <image name="History" width="22" height="22"/>
         <image name="Play" width="22" height="22"/>
         <image name="Settings" width="22" height="22"/>
-        <image name="Wrench" width="22" height="22"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.74332284930000003" blue="0.85895025729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
