@@ -220,8 +220,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatically dim screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWT-cR-7YS">
-                                                    <rect key="frame" x="16" y="11" width="192" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto dim screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWT-cR-7YS">
+                                                    <rect key="frame" x="16" y="11" width="125" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -459,10 +459,10 @@
                         <size key="landscapeSize" width="600" height="800"/>
                     </fixedSimulatedSizeMetrics>
                     <connections>
+                        <outlet property="autoDim" destination="CPL-xG-yyo" id="HZG-Iy-AYE"/>
                         <outlet property="autoPause" destination="yc3-xi-sOq" id="fUK-l8-QT4"/>
                         <outlet property="trackInBackground" destination="yDI-nh-eRg" id="OQi-Sy-cCE"/>
                         <outlet property="units" destination="4Ed-WN-xSK" id="RiO-J8-gI8"/>
-                        <outlet property="useHealthKit" destination="CPL-xG-yyo" id="kgQ-Zi-6Qy"/>
                         <outlet property="wheelSize" destination="wU3-bF-9SZ" id="uAR-0N-P6S"/>
                     </connections>
                 </tableViewController>

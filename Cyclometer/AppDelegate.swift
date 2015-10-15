@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSUserDefaults.standardUserDefaults().registerDefaults([
             kAutoPause: true,
             kUseInBackground: true,
-            kUseHealthKit: true,
+            kAutoDim: true,
             kUnits: 0,
             kWheelSize: -1,
             kDevices: []
