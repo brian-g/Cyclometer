@@ -16,7 +16,7 @@ class CylSettingsDeviceInfoCell : UITableViewCell {
     @IBOutlet weak var isConnected: UIImageView!
     @IBOutlet var isRemembered: UISwitch!
     
-    var peripheral : NSUUID!
+    var peripheral : SensorInfo!
     
     @IBAction func toggleRemembered(sender: AnyObject) {
         NSLog("Nothing hooked up to CylSettingsInfoCell")

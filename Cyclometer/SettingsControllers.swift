@@ -93,7 +93,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
     func rememberToggled(sender : CylSettingsDeviceInfoCell) {
         NSLog("rememberToggled")
         
-//        sensorManager.rememberSensor(sender.peripheral, remember: sender.isRemembered.on)
+        sensorManager.rememberSensor(sender.peripheral.identifier, remember: sender.isRemembered.on)
     }
     
     @IBAction func updateDefaultsFromControls(sender: AnyObject) {
@@ -156,7 +156,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
                 cell?.deviceCapabilities?.text = sensor.capabilities
                 cell?.isConnected?.highlighted = sensor.connected
                 cell?.isRemembered?.on = sensor.remembered
-                cell?.peripheral = sensor.peripheral
+                cell?.peripheral = sensor
                 cell?.isRemembered.addTarget(self, action: "rememberToggled:", forControlEvents: UIControlEvents.ValueChanged)
             }
             return cell!
@@ -168,10 +168,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
     @IBAction func unwindFromWheelPicker(segue: UIStoryboardSegue) {
         NSLog("unwindFromWheelPicker")
         segue.sourceViewController.dismissViewControllerAnimated(true, completion: nil)
-        //        (segue.destinationViewController as CylHistoryController).wheelSize =
     }
-    
-    
 }
 
 class CylWheelPickerViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {

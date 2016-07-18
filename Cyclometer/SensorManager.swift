@@ -17,14 +17,12 @@ let kBTHR = "180D"
 let kBTHRMeasurement = "2A37"
 let kBTHRLocation = "2A38"
 
-let scanningTimeout = 120.0
-
 struct SensorInfo {
     var name : String
     var capabilities : String
     var remembered : Bool
     var connected : Bool
-    var peripheral : NSUUID
+    var identifier : NSUUID
     var type: SensorType
 }
 
@@ -100,6 +98,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     private var _savedDevices = [AnyObject]()
     private var _peripherals = [Sensor]()
     private var _disoveredPeripherals = [NSUUID: CBPeripheral]()
+    private var _scanOnlyRemembered : Bool = true
     
     var updateHeartRate : ((UInt16) -> Void)?
     var updateWheelRevolutions : ((UInt32) -> Void)?
@@ -108,6 +107,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     let services = [CBUUID(string: kBTHR), CBUUID(string: kBTCSC)]
 
     var isScanning : Bool = false
+
     
     override init() {
         
@@ -135,7 +135,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                             capabilities: p.description,
                             remembered:p.remembered,
                             connected: p.connected,
-                            peripheral: p.identifier,
+                            identifier: p.identifier,
                             type: p.type)
 
         return info
@@ -143,6 +143,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     func rememberSensor(p : NSUUID, remember : Bool) {
         for device in _peripherals {
+
             if device.identifier == p {
                 if remember {
                     // TODO: Need to rip through remembered array and forgot shit that we're replacing
@@ -160,16 +161,13 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         }
     }
     
-    func startScanningForSensors() {
+    func startScanningForSensors(scanOnlyRemembered: Bool = true) {
+        _scanOnlyRemembered = scanOnlyRemembered
         
-        if _btManager.state == CBCentralManagerState.PoweredOn {
+        if _btManager.state == CBCentralManagerState.PoweredOn && isScanning == false {
             NSLog("Started scanning...")
             _btManager.scanForPeripheralsWithServices(services, options: nil)
             isScanning = true
-            
-            NSTimer.schedule(delay: scanningTimeout) { timer in
-                self.stopScanningForSensors()
-            }
         }
     }
     
@@ -178,7 +176,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         _btManager.stopScan()
         isScanning = false
     }
-
+    
     // Check status of BLE hardware
     func centralManagerDidUpdateState(central: CBCentralManager) {
         
@@ -200,8 +198,12 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
         
         NSLog("Found peripheral: \(peripheral.name) \(RSSI)")
-
         _disoveredPeripherals[peripheral.identifier] = peripheral // Need to hold a strong reference
+        if (_scanOnlyRemembered) {
+            
+        } else {
+            
+        }
         central.connectPeripheral(peripheral, options: nil)
     }
     

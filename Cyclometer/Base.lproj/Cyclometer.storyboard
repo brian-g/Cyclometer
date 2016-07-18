@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uF5-os-OCe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uF5-os-OCe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +19,6 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7t-c4-Cuo">
                                 <rect key="frame" x="0.0" y="756" width="600" height="44"/>
-                                <animations/>
                                 <items>
                                     <barButtonItem image="Play" id="BL2-Yq-ooy">
                                         <connections>
@@ -46,7 +45,6 @@
                             </toolbar>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-1s-Aex" customClass="CylSpeedDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                 <rect key="frame" x="16" y="20" width="568" height="141"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.81052117598684215" green="0.13381476151315788" blue="0.85895025729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -55,7 +53,6 @@
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlJ-dt-HY9" customClass="CylCadenceDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                 <rect key="frame" x="16" y="340" width="568" height="85"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="wf9-lw-WbM"/>
@@ -63,7 +60,6 @@
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="POE-U3-tk5" customClass="CylHeartRateDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                 <rect key="frame" x="16" y="433" width="568" height="85"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="QxS-vT-oic"/>
@@ -71,7 +67,6 @@
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-wU-I28" customClass="CylGeoDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                 <rect key="frame" x="16" y="520" width="568" height="85"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="JE6-kz-qGP"/>
@@ -79,14 +74,12 @@
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQ0-kp-MzQ" customClass="CylDistanceTimeDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                 <rect key="frame" x="16" y="169" width="568" height="163"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="163" id="Y4y-tc-bC6"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gvv-1s-Aex" firstAttribute="trailing" secondItem="jlJ-dt-HY9" secondAttribute="trailing" id="1n9-tZ-zpF"/>
@@ -137,17 +130,15 @@
         <!--Cyl Navigation Controller-->
         <scene sceneID="QKi-qz-dts">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="uF5-os-OCe" customClass="CylNavigationController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="uF5-os-OCe" customClass="CylNavigationController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FNh-tT-J1y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="faF-ZJ-ok8">
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </toolbar>
                     <connections>
                         <segue destination="Fgv-my-Dd4" kind="relationship" relationship="rootViewController" id="XYq-cM-KyL"/>
