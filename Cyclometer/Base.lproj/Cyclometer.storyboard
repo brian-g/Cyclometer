@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uF5-os-OCe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,6 +17,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iS-2A-oBw">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PWw-Mq-2B3">
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-1s-Aex" customClass="CylSpeedDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.75646525621414185" green="0.0" blue="0.82503485679626465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="141" id="dlT-gC-cXG"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQ0-kp-MzQ" customClass="CylDistanceTimeDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                                <frame key="frameInset" minY="141" width="560" height="163"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="163" id="Y4y-tc-bC6"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlJ-dt-HY9" customClass="CylCadenceDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="85" id="wf9-lw-WbM"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POE-U3-tk5" customClass="CylHeartRateDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="85" id="QxS-vT-oic"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-wU-I28" customClass="CylGeoDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="85" id="JE6-kz-qGP"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="leading" secondItem="8iS-2A-oBw" secondAttribute="leading" constant="20" id="1Hl-WU-Ek9"/>
+                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="centerX" secondItem="8iS-2A-oBw" secondAttribute="centerX" id="Elb-8v-pqW"/>
+                                    <constraint firstAttribute="bottom" secondItem="PWw-Mq-2B3" secondAttribute="bottom" constant="177" id="OOv-Wr-mLX"/>
+                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="top" secondItem="8iS-2A-oBw" secondAttribute="top" id="QZU-t3-xlQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="PWw-Mq-2B3" secondAttribute="trailing" constant="20" id="mJL-jH-KB5"/>
+                                </constraints>
+                            </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7t-c4-Cuo">
                                 <items>
                                     <barButtonItem image="Play" id="BL2-Yq-ooy">
@@ -43,68 +89,17 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-1s-Aex" customClass="CylSpeedDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.75646525621414185" green="0.0" blue="0.82503485679626465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="141" id="dlT-gC-cXG"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlJ-dt-HY9" customClass="CylCadenceDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="wf9-lw-WbM"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POE-U3-tk5" customClass="CylHeartRateDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="QxS-vT-oic"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-wU-I28" customClass="CylGeoDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="JE6-kz-qGP"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQ0-kp-MzQ" customClass="CylDistanceTimeDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <frame key="frameInset" minX="20" minY="169" width="560" height="163"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="Y4y-tc-bC6"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Gvv-1s-Aex" firstAttribute="trailing" secondItem="jlJ-dt-HY9" secondAttribute="trailing" id="1n9-tZ-zpF"/>
-                            <constraint firstItem="jlJ-dt-HY9" firstAttribute="top" secondItem="nQ0-kp-MzQ" secondAttribute="bottom" constant="8" id="2k6-1l-JeS"/>
-                            <constraint firstItem="Efl-wU-I28" firstAttribute="leading" secondItem="BCV-q9-8Uw" secondAttribute="leadingMargin" id="47f-hR-9DF"/>
-                            <constraint firstItem="Gvv-1s-Aex" firstAttribute="leading" secondItem="BCV-q9-8Uw" secondAttribute="leadingMargin" id="56g-pD-XqM"/>
-                            <constraint firstItem="Gvv-1s-Aex" firstAttribute="trailing" secondItem="BCV-q9-8Uw" secondAttribute="trailingMargin" id="FcH-LZ-iMk"/>
-                            <constraint firstItem="Efl-wU-I28" firstAttribute="trailing" secondItem="BCV-q9-8Uw" secondAttribute="trailingMargin" id="FyU-cF-7h5"/>
-                            <constraint firstItem="nQ0-kp-MzQ" firstAttribute="leading" secondItem="BCV-q9-8Uw" secondAttribute="leadingMargin" id="GYk-gO-hAF"/>
-                            <constraint firstItem="POE-U3-tk5" firstAttribute="trailing" secondItem="BCV-q9-8Uw" secondAttribute="trailingMargin" id="JcM-9X-g2U"/>
-                            <constraint firstItem="nQ0-kp-MzQ" firstAttribute="top" secondItem="Gvv-1s-Aex" secondAttribute="bottom" constant="8" id="KMa-Gb-XN3"/>
-                            <constraint firstItem="POE-U3-tk5" firstAttribute="top" secondItem="jlJ-dt-HY9" secondAttribute="bottom" constant="8" id="MFQ-qf-mC9"/>
-                            <constraint firstItem="Gvv-1s-Aex" firstAttribute="top" secondItem="fOy-HG-o9H" secondAttribute="bottom" id="RPo-6c-qbu"/>
-                            <constraint firstItem="Efl-wU-I28" firstAttribute="top" secondItem="POE-U3-tk5" secondAttribute="bottom" constant="2" id="SBV-vx-3Tj"/>
                             <constraint firstAttribute="trailing" secondItem="G7t-c4-Cuo" secondAttribute="trailing" id="SLw-4O-LLZ"/>
-                            <constraint firstItem="nQ0-kp-MzQ" firstAttribute="trailing" secondItem="BCV-q9-8Uw" secondAttribute="trailingMargin" id="XOm-p7-3eH"/>
-                            <constraint firstAttribute="bottom" secondItem="Gvv-1s-Aex" secondAttribute="bottom" constant="639" id="eJD-7a-QcT"/>
+                            <constraint firstItem="8iS-2A-oBw" firstAttribute="trailing" secondItem="G7t-c4-Cuo" secondAttribute="trailing" id="bts-7W-Pfr"/>
+                            <constraint firstItem="8iS-2A-oBw" firstAttribute="bottom" secondItem="G7t-c4-Cuo" secondAttribute="top" id="g1g-kf-jSy"/>
+                            <constraint firstItem="8iS-2A-oBw" firstAttribute="leading" secondItem="G7t-c4-Cuo" secondAttribute="leading" id="k2X-tZ-l4A"/>
                             <constraint firstItem="G7t-c4-Cuo" firstAttribute="bottom" secondItem="Sym-Dl-1ZI" secondAttribute="top" id="mOa-t6-NOB"/>
-                            <constraint firstItem="jlJ-dt-HY9" firstAttribute="trailing" secondItem="BCV-q9-8Uw" secondAttribute="trailingMargin" id="mvB-5M-sOu"/>
-                            <constraint firstItem="POE-U3-tk5" firstAttribute="leading" secondItem="BCV-q9-8Uw" secondAttribute="leadingMargin" id="sGv-c0-LSy"/>
-                            <constraint firstItem="jlJ-dt-HY9" firstAttribute="leading" secondItem="BCV-q9-8Uw" secondAttribute="leadingMargin" id="uc7-EY-421"/>
                             <constraint firstItem="G7t-c4-Cuo" firstAttribute="leading" secondItem="BCV-q9-8Uw" secondAttribute="leading" id="vvC-OR-9RF"/>
+                            <constraint firstItem="8iS-2A-oBw" firstAttribute="top" secondItem="BCV-q9-8Uw" secondAttribute="top" id="zdV-Ho-R7F"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="1n9-tZ-zpF"/>
-                                <exclude reference="eJD-7a-QcT"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="D44-2z-ogW"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -121,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8m-5Y-ehg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1771" y="-3282"/>
+            <point key="canvasLocation" x="-1771.2" y="-3282.4587706146931"/>
         </scene>
         <!--Cyl Navigation Controller-->
         <scene sceneID="QKi-qz-dts">
