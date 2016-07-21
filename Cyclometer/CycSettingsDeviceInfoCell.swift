@@ -18,7 +18,7 @@ class CylSettingsDeviceInfoCell : UITableViewCell {
     
     var peripheral : SensorInfo!
     
-    @IBAction func toggleRemembered(sender: AnyObject) {
+    @IBAction func toggleRemembered(_ sender: AnyObject) {
         NSLog("Nothing hooked up to CylSettingsInfoCell")
     }
 }

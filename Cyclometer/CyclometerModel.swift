@@ -17,10 +17,10 @@ class Devices: NSManagedObject {
 
 class Ride: NSManagedObject {
     
-    @NSManaged dynamic var date: NSDate
-    @NSManaged var biometrics: NSOrderedSet
-    @NSManaged var locations: NSOrderedSet
-    @NSManaged var motions: NSOrderedSet
+    @NSManaged dynamic var date: Date
+    @NSManaged var biometrics: OrderedSet
+    @NSManaged var locations: OrderedSet
+    @NSManaged var motions: OrderedSet
     @NSManaged var summary: Summary
     
 }
@@ -32,7 +32,7 @@ class Summary: NSManagedObject {
     @NSManaged var distance: Float
     @NSManaged var elevation_gain: Int32
     @NSManaged var elevation_loss: Int32
-    @NSManaged var end: NSDate
+    @NSManaged var end: Date
     @NSManaged var hr_avg: Float
     @NSManaged var hr_max: Int16
     @NSManaged var pace_avg: Float
@@ -40,7 +40,7 @@ class Summary: NSManagedObject {
     @NSManaged var pace_min: Float
     @NSManaged var speed_avg: Float
     @NSManaged var speed_max: Float
-    @NSManaged var start: NSDate
+    @NSManaged var start: Date
     @NSManaged var time_active: Int64
     @NSManaged var time_total: Int64
     @NSManaged var ride: Ride
@@ -50,7 +50,7 @@ class Summary: NSManagedObject {
 class Biometrics: NSManagedObject {
     
     @NSManaged var bpm: Int16
-    @NSManaged var date: NSDate
+    @NSManaged var date: Date
     @NSManaged var ride: Ride
     
 }
@@ -58,7 +58,7 @@ class Biometrics: NSManagedObject {
 class Motion: NSManagedObject {
     
     @NSManaged var cadence: Int16
-    @NSManaged var date: NSDate
+    @NSManaged var date: Date
     @NSManaged var gpsspeed: Double
     @NSManaged var wheelspeed: Double
     @NSManaged var ride: Ride
@@ -68,7 +68,7 @@ class Motion: NSManagedObject {
 class Location: NSManagedObject {
     
     @NSManaged var altitude: Double
-    @NSManaged var date: NSDate
+    @NSManaged var date: Date
     @NSManaged var latitude: Double
     @NSManaged var longitude: Double
     @NSManaged var ride: Ride

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uF5-os-OCe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uF5-os-OCe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Dashboard-->
@@ -18,7 +19,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7t-c4-Cuo">
-                                <rect key="frame" x="0.0" y="756" width="600" height="44"/>
                                 <items>
                                     <barButtonItem image="Play" id="BL2-Yq-ooy">
                                         <connections>
@@ -43,44 +43,40 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-1s-Aex" customClass="CylSpeedDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="20" width="568" height="141"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="0.81052117598684215" green="0.13381476151315788" blue="0.85895025729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-1s-Aex" customClass="CylSpeedDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.75646525621414185" green="0.0" blue="0.82503485679626465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="141" id="dlT-gC-cXG"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlJ-dt-HY9" customClass="CylCadenceDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="340" width="568" height="85"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlJ-dt-HY9" customClass="CylCadenceDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="wf9-lw-WbM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="POE-U3-tk5" customClass="CylHeartRateDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="433" width="568" height="85"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POE-U3-tk5" customClass="CylHeartRateDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="QxS-vT-oic"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-wU-I28" customClass="CylGeoDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="520" width="568" height="85"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-wU-I28" customClass="CylGeoDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="JE6-kz-qGP"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQ0-kp-MzQ" customClass="CylDistanceTimeDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="169" width="568" height="163"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <frame key="frameInset" minX="20" minY="169" width="560" height="163"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="163" id="Y4y-tc-bC6"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Gvv-1s-Aex" firstAttribute="trailing" secondItem="jlJ-dt-HY9" secondAttribute="trailing" id="1n9-tZ-zpF"/>
                             <constraint firstItem="jlJ-dt-HY9" firstAttribute="top" secondItem="nQ0-kp-MzQ" secondAttribute="bottom" constant="8" id="2k6-1l-JeS"/>
@@ -125,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8m-5Y-ehg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1934" y="-3278"/>
+            <point key="canvasLocation" x="-1771" y="-3282"/>
         </scene>
         <!--Cyl Navigation Controller-->
         <scene sceneID="QKi-qz-dts">
@@ -154,7 +150,7 @@
                 <viewControllerPlaceholder storyboardName="RideHistory" id="7OL-Fs-0ym" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1V3-hg-fp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1463" y="-3162"/>
+            <point key="canvasLocation" x="-768" y="-2934"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1pG-Gl-AIw">
@@ -162,7 +158,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="Settings" storyboardName="Settings" referencedIdentifier="Settings" id="hVZ-3P-87J" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FZ-7q-Cv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1473.5" y="-3382"/>
+            <point key="canvasLocation" x="-750" y="-3650"/>
         </scene>
     </scenes>
     <resources>
@@ -170,5 +166,5 @@
         <image name="Play" width="22" height="22"/>
         <image name="Settings" width="22" height="22"/>
     </resources>
-    <color key="tintColor" red="0.0" green="0.74332284930000003" blue="0.85895025729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.087501421570777893" green="0.69217121601104736" blue="0.82485681772232056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

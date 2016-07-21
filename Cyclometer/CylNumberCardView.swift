@@ -12,8 +12,8 @@ import UIKit
 @IBDesignable class CylNumberCardView : UIView {
     
 
-    private let numberLabel: UILabel = UILabel(frame:CGRectZero)
-    private let labelLabel: UILabel = UILabel(frame:CGRectZero)
+    private let numberLabel: UILabel = UILabel(frame:CGRect.zero)
+    private let labelLabel: UILabel = UILabel(frame:CGRect.zero)
     private var caption : String!
     private var unitofmeasure : String!
     
@@ -43,7 +43,7 @@ import UIKit
         
         numberLabel.adjustsFontSizeToFitWidth = true
         numberLabel.minimumScaleFactor = 0.5
-        numberLabel.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        numberLabel.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
 
         addSubview(numberLabel)
         addSubview(labelLabel)
@@ -55,18 +55,18 @@ import UIKit
        
         let v = [ "number" : numberLabel, "label" : labelLabel]
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(-10)-[number]-(-10)-[label]",
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(-10)-[number]-(-10)-[label]",
             options: NSLayoutFormatOptions(),
             metrics: nil,
             views: v))
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[number]|",
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[number]|",
             options: NSLayoutFormatOptions(),
             metrics: nil,
             views: v))
         
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|",
-            options: NSLayoutFormatOptions.DirectionLeadingToTrailing,
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[label]|",
+            options: NSLayoutFormatOptions(),
             metrics: nil,
             views: v))
 
@@ -91,7 +91,7 @@ import UIKit
         
         set {
             caption = newValue
-            labelLabel.text = newValue.uppercaseString
+            labelLabel.text = newValue.uppercased()
             labelLabel.sizeToFit()
         }
     }
@@ -103,7 +103,7 @@ import UIKit
         
         set {
             unitofmeasure = newValue
-            labelLabel.text = label.uppercaseString + " (" + units + ")"
+            labelLabel.text = label.uppercased() + " (" + units + ")"
             labelLabel.sizeToFit()
         }
     }

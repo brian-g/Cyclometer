@@ -27,15 +27,15 @@ class CylNavigationController : UINavigationController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func pushViewController(viewController: UIViewController, animated: Bool) {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         super.pushViewController(viewController, animated: animated)
         
         self.setNavigationBarHidden(false, animated: animated)
 
     }
 
-    override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
-        let anObject = super.popViewControllerAnimated(animated)
+    override func popViewController(animated: Bool) -> UIViewController? {
+        let anObject = super.popViewController(animated: animated)
 
         if self.childViewControllers.count == 1 {
 
@@ -45,7 +45,7 @@ class CylNavigationController : UINavigationController {
         return anObject
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         NSLog(segue.identifier!);
     }
 }
@@ -54,35 +54,35 @@ class CylHistoryController : UITableViewController {
 
     var rides = [Ride]()
 
-    private let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    private let appDelegate = UIApplication.shared().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
         let managedContext = appDelegate.managedObjectContext!
-        let fetchRequest = NSFetchRequest(entityName: "Ride")
-        let sortDescriptor = NSSortDescriptor(key:"date", ascending: false)
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Ride")
+        let sortDescriptor = SortDescriptor(key:"date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 20 // Optmize later
              
         do {
-            let fetchResults = try managedContext.executeFetchRequest(fetchRequest) as? [Ride]
+            let fetchResults = try managedContext.fetch(fetchRequest) as? [Ride]
             
             NSLog("Number of rides: \(fetchResults!.count)")
             rides = fetchResults!
             
             if fetchResults!.count < 20 {
                 
-                let alert = UIAlertController(title: "Load demo data", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Load demo data", message: nil, preferredStyle: UIAlertControllerStyle.alert)
                 
-                alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction ) in
+                alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { ( action: UIAlertAction ) in
                     createDemoData(self.appDelegate.managedObjectContext!)
                 }))
                 
-                alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
                 
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
             }
 
         } catch {
@@ -95,33 +95,33 @@ class CylHistoryController : UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rides.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        NSLog("cellForRowAtIndexPath: \(indexPath.row)")
+        NSLog("cellForRowAtIndexPath: \((indexPath as NSIndexPath).row)")
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("historyCell") 
+        var cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") 
         if cell === nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "historyCell")
+            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "historyCell")
         }
 
-        let rideDate = rides[indexPath.row].date as NSDate
-        let c = rides[indexPath.row].biometrics.count
+        let rideDate = rides[(indexPath as NSIndexPath).row].date as Date
+        let c = rides[(indexPath as NSIndexPath).row].biometrics.count
         
         NSLog("Count of bio data \(c)")
-        cell?.textLabel?.text = appDelegate.dateFormatter.stringFromDate(rideDate)
+        cell?.textLabel?.text = appDelegate.dateFormatter.string(from: rideDate)
         
         return cell!
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         NSLog("prepareForSegue")
         
         let selectedRow = tableView.indexPathForSelectedRow
-        let row = selectedRow?.row
+        let row = (selectedRow as NSIndexPath?)?.row
         
         if (row != nil) {
 //            (segue.destinationViewController as CylViewControllerParameter).viewControllerParameter = CylParameter(param: rides[row!], function:nil)
@@ -153,16 +153,16 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
     var viewControllerParameter : CylParameter?
     var ride : Ride?
     
-    let numberFormatter = NSNumberFormatter()
+    let numberFormatter = NumberFormatter()
     
-    private let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    private let appDelegate = UIApplication.shared().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
         
-        self.navigationItem.title = appDelegate.dateFormatter.stringFromDate(ride!.date)
+        self.navigationItem.title = appDelegate.dateFormatter.string(from: ride!.date)
      
         updateValues()
     }
@@ -175,73 +175,73 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
   
     func updateValues() {
         
-        if let n = numberFormatter.stringFromNumber(ride!.summary.distance) {
+        if let n = numberFormatter.string(from: ride!.summary.distance) {
             distance.number = n
         } else {
             distance.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(NSNumber(longLong:ride!.summary.time_active)) {
+        if let n = numberFormatter.string(from: NSNumber(value:ride!.summary.time_active)) {
             duration.number = n
         } else {
             duration.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(ride!.summary.speed_avg) {
+        if let n = numberFormatter.string(from: ride!.summary.speed_avg) {
             avgSpeed.number = n
         } else {
             avgSpeed.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(ride!.summary.speed_max) {
+        if let n = numberFormatter.string(from: ride!.summary.speed_max) {
             maxSpeed.number = n
         } else {
             maxSpeed.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(NSNumber(int: ride!.summary.elevation_gain)) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.elevation_gain)) {
             ascent.number = n
         } else {
             ascent.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(NSNumber(int: ride!.summary.elevation_loss)) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.elevation_loss)) {
             descent.number = n
         } else {
             descent.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(NSNumber(float: ride!.summary.pace_avg)) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.pace_avg)) {
             avgPace.number = n
         } else {
             avgPace.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(NSNumber(float: ride!.summary.pace_max)) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.pace_max)) {
             maxPace.number = n
         } else {
             maxPace.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(NSNumber(float: ride!.summary.cadence_avg)) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.cadence_avg)) {
             avgCadence.number = n
         } else {
             avgCadence.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(NSNumber(short: ride!.summary.cadence_max)) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.cadence_max)) {
             maxCadence.number = n
         } else {
             maxCadence.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(NSNumber(float: ride!.summary.hr_avg)) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.hr_avg)) {
             avgHr.number = n
         } else {
             avgHr.number = emptyString
         }
 
-        if let n = numberFormatter.stringFromNumber(NSNumber(short:ride!.summary.hr_max)) {
+        if let n = numberFormatter.string(from: NSNumber(value:ride!.summary.hr_max)) {
             maxHr.number = n
         } else {
             maxHr.number = emptyString

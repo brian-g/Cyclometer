@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hg3-Bl-1e7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hg3-Bl-1e7">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--History-->
@@ -13,36 +14,31 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="C0u-X8-dqo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="historyCell" textLabel="BCH-Wf-Ihn" detailTextLabel="DoC-7X-xIA" style="IBUITableViewCellStyleSubtitle" id="YdZ-wL-98j">
-                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                <frame key="frameInset" minY="22" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YdZ-wL-98j" id="qkI-Ay-l6V">
-                                    <rect key="frame" x="0.0" y="0.0" width="533" height="43"/>
+                                    <frame key="frameInset" width="533" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BCH-Wf-Ihn">
-                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <frame key="frameInset" minX="15" minY="5" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DoC-7X-xIA">
-                                            <rect key="frame" x="15" y="25" width="31" height="14"/>
+                                            <frame key="frameInset" minX="15" minY="25" width="31" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <segue destination="Dja-hl-p2C" kind="show" identifier="showHistoryDetail" id="UX1-JF-kWW"/>
                                 </connections>
@@ -60,7 +56,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VzU-ox-JAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-981" y="-2338"/>
+            <point key="canvasLocation" x="-915" y="-2338"/>
         </scene>
         <!--RideDetails-->
         <scene sceneID="1ST-Xq-dcX">
@@ -74,10 +70,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJ0-R0-uH5" userLabel="Distance" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="228" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJ0-R0-uH5" userLabel="Distance" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="n7N-hX-xJL"/>
                                 </constraints>
@@ -87,10 +81,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="units" value="miles"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-uh-sBi" userLabel="AvgSpeed" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="296" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-uh-sBi" userLabel="AvgSpeed" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="LDG-8A-dHT"/>
                                 </constraints>
@@ -100,10 +92,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="units" value="mph"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8o-G5-4Gl" userLabel="AvgPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="364" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8o-G5-4Gl" userLabel="AvgPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="B2N-V6-IDq"/>
                                 </constraints>
@@ -113,10 +103,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="number" value="9:99"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vg2-zA-Vfs" userLabel="AvgCadence" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="432" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vg2-zA-Vfs" userLabel="AvgCadence" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="cU7-Id-2dC"/>
                                 </constraints>
@@ -126,10 +114,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="number" value="999"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H8n-uy-GC6" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="500" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8n-uy-GC6" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="lkz-UE-ZPd"/>
                                 </constraints>
@@ -139,10 +125,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="number" value="999"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4k-5g-n8t" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="568" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4k-5g-n8t" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="RRc-GS-23O"/>
                                 </constraints>
@@ -152,10 +136,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="number" value="199"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y72-Ff-d6g" userLabel="Duration" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="228" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y72-Ff-d6g" userLabel="Duration" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="2YD-74-Djz"/>
                                 </constraints>
@@ -164,10 +146,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="label" value="Duration"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IqT-ry-7dd" userLabel="MaxSpeed" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="296" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqT-ry-7dd" userLabel="MaxSpeed" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7nT-GB-Bx8"/>
                                 </constraints>
@@ -177,10 +157,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="units" value="mph"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pzh-QG-ALD" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="364" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzh-QG-ALD" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Out-m0-Ugl"/>
                                 </constraints>
@@ -190,10 +168,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="units" value="minutes / mile"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IzX-DP-rQ4" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="432" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzX-DP-rQ4" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="gzU-5n-uI7"/>
                                 </constraints>
@@ -203,10 +179,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="units" value="rpm"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tr3-M4-2a8" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="500" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tr3-M4-2a8" userLabel="MaxPace" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="rMi-lv-yrr"/>
                                 </constraints>
@@ -216,10 +190,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="units" value="feet"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ruL-1x-GQN" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
-                                <rect key="frame" x="300" y="568" width="284" height="60"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruL-1x-GQN" userLabel="Ascent" customClass="CylNumberCardView" customModule="Cyclometer" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="0Rz-bc-Hjn"/>
                                 </constraints>
@@ -230,12 +202,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zwV-la-1zK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="220"/>
-                                <animations/>
+                                <frame key="frameInset" width="600" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vg2-zA-Vfs" firstAttribute="width" secondItem="H8n-uy-GC6" secondAttribute="width" id="1L0-CO-v4V"/>
                             <constraint firstItem="jJ0-R0-uH5" firstAttribute="top" secondItem="fFz-uH-D16" secondAttribute="bottom" id="32t-IB-yjd"/>
@@ -292,8 +263,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BB-Gk-l3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-195" y="-2327"/>
+            <point key="canvasLocation" x="343" y="-2338"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.0" green="0.74332284930000003" blue="0.85895025729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.087501421570777893" green="0.69217121601104736" blue="0.82485681772232056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

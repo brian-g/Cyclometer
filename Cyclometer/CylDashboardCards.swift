@@ -21,13 +21,13 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
 
 @IBDesignable class CylSpeedDashboardView : UIView {
 
-    private lazy var avgSpeedCaption = UILabel(frame: CGRectZero)
-    private lazy var maxSpeedCaption = UILabel(frame: CGRectZero)
+    private lazy var avgSpeedCaption = UILabel(frame: CGRect.zero)
+    private lazy var maxSpeedCaption = UILabel(frame: CGRect.zero)
     
-    lazy var speed = UILabel(frame:CGRectZero)
-    lazy var speedUnits = UILabel(frame: CGRectZero)
-    lazy var maxSpeed = UILabel(frame: CGRectZero)
-    lazy var avgSpeed = UILabel(frame: CGRectZero)
+    lazy var speed = UILabel(frame:CGRect.zero)
+    lazy var speedUnits = UILabel(frame: CGRect.zero)
+    lazy var maxSpeed = UILabel(frame: CGRect.zero)
+    lazy var avgSpeed = UILabel(frame: CGRect.zero)
 
     
     override init(frame: CGRect) {
@@ -87,98 +87,98 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     override func updateConstraints() {
         
         addConstraint(NSLayoutConstraint(item: speed,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: speed,
-            attribute: NSLayoutAttribute.Leading,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.leading,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Leading,
+            attribute: NSLayoutAttribute.leading,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: speedUnits,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: speed,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: speedUnits,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: speed,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 24.0))
 
         addConstraint(NSLayoutConstraint(item: avgSpeedCaption,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: avgSpeedCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: avgSpeed,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: avgSpeed,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: avgSpeed,
-            attribute: NSLayoutAttribute.Baseline,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.lastBaseline,
+            relatedBy: NSLayoutRelation.equal,
             toItem: speed,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: maxSpeedCaption,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: maxSpeedCaption,
-            attribute: NSLayoutAttribute.Baseline,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.lastBaseline,
+            relatedBy: NSLayoutRelation.equal,
             toItem: speed,
-            attribute: NSLayoutAttribute.CenterY,
+            attribute: NSLayoutAttribute.centerY,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: maxSpeed,
-            attribute: NSLayoutAttribute.Baseline,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.lastBaseline,
+            relatedBy: NSLayoutRelation.equal,
             toItem: maxSpeedCaption,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: maxSpeed,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
@@ -189,14 +189,14 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
 
 @IBDesignable class CylDistanceTimeDashboardView : UIView {
 
-    private lazy var moduleCaption = UILabel(frame:CGRectZero)
-    private lazy var durationCaption = UILabel(frame:CGRectZero)
+    private lazy var moduleCaption = UILabel(frame:CGRect.zero)
+    private lazy var durationCaption = UILabel(frame:CGRect.zero)
     
-    lazy var distance = UILabel(frame:CGRectZero)
-    lazy var distanceUnits = UILabel(frame:CGRectZero)
-    lazy var duration = UILabel(frame:CGRectZero)
-    lazy var paceCaption = UILabel(frame:CGRectZero)
-    lazy var pace = UILabel(frame:CGRectZero)
+    lazy var distance = UILabel(frame:CGRect.zero)
+    lazy var distanceUnits = UILabel(frame:CGRect.zero)
+    lazy var duration = UILabel(frame:CGRect.zero)
+    lazy var paceCaption = UILabel(frame:CGRect.zero)
+    lazy var pace = UILabel(frame:CGRect.zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -265,114 +265,114 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     override func updateConstraints() {
         
         addConstraint(NSLayoutConstraint(item: moduleCaption,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.left,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: moduleCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: distance,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: moduleCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: distance,
-            attribute: NSLayoutAttribute.Leading,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.leading,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Leading,
+            attribute: NSLayoutAttribute.leading,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: distanceUnits,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: distance,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: distanceUnits,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: distance,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 9.0))
 
         addConstraint(NSLayoutConstraint(item: durationCaption,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.left,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: durationCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: distance,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0,
             constant: 8.0))
 
         addConstraint(NSLayoutConstraint(item: duration,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: durationCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: duration,
-            attribute: NSLayoutAttribute.Leading,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.leading,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Leading,
+            attribute: NSLayoutAttribute.leading,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: pace,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: pace,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: distance,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: paceCaption,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: paceCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: pace,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
 
@@ -383,14 +383,14 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
 
 @IBDesignable class CylCadenceDashboardView : UIView {
  
-    private lazy var moduleCaption = UILabel(frame: CGRectZero)
-    private lazy var avgCaption = UILabel(frame: CGRectZero)
-    private lazy var maxCaption = UILabel(frame: CGRectZero)
+    private lazy var moduleCaption = UILabel(frame: CGRect.zero)
+    private lazy var avgCaption = UILabel(frame: CGRect.zero)
+    private lazy var maxCaption = UILabel(frame: CGRect.zero)
     
-    lazy var cadence = UILabel(frame: CGRectZero)
-    lazy var cadenceUnits = UILabel(frame: CGRectZero)
-    lazy var avg = UILabel(frame: CGRectZero)
-    lazy var max = UILabel(frame: CGRectZero)
+    lazy var cadence = UILabel(frame: CGRect.zero)
+    lazy var cadenceUnits = UILabel(frame: CGRect.zero)
+    lazy var avg = UILabel(frame: CGRect.zero)
+    lazy var max = UILabel(frame: CGRect.zero)
 
     
     override init(frame: CGRect) {
@@ -458,114 +458,114 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     override func updateConstraints() {
         
         addConstraint(NSLayoutConstraint(item: moduleCaption,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.left,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: moduleCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: cadence,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: moduleCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: cadence,
-            attribute: NSLayoutAttribute.Leading,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.leading,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Leading,
+            attribute: NSLayoutAttribute.leading,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: cadenceUnits,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: cadence,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: cadenceUnits,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: cadence,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 9.0))
 
         addConstraint(NSLayoutConstraint(item: max,
-            attribute: NSLayoutAttribute.Baseline,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.lastBaseline,
+            relatedBy: NSLayoutRelation.equal,
             toItem: cadence,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: max,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.CenterX,
+            attribute: NSLayoutAttribute.centerX,
             multiplier: 1.50,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: maxCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: max,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0,
             constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: maxCaption,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: max,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: avg,
-            attribute: NSLayoutAttribute.Baseline,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.lastBaseline,
+            relatedBy: NSLayoutRelation.equal,
             toItem: cadence,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: avg,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
         addConstraint(NSLayoutConstraint(item: avgCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: avg,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0,
             constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: avgCaption,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: avg,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
@@ -575,14 +575,14 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
 
 @IBDesignable class CylHeartRateDashboardView : UIView {
 
-    private lazy var moduleCaption = UILabel(frame: CGRectZero)
-    private lazy var hrUnits = UILabel(frame: CGRectZero)
-    private lazy var avgCaption = UILabel(frame: CGRectZero)
-    private lazy var maxCaption = UILabel(frame: CGRectZero)
+    private lazy var moduleCaption = UILabel(frame: CGRect.zero)
+    private lazy var hrUnits = UILabel(frame: CGRect.zero)
+    private lazy var avgCaption = UILabel(frame: CGRect.zero)
+    private lazy var maxCaption = UILabel(frame: CGRect.zero)
     
-    lazy var hr = UILabel(frame: CGRectZero)
-    lazy var avg = UILabel(frame: CGRectZero)
-    lazy var max = UILabel(frame: CGRectZero)
+    lazy var hr = UILabel(frame: CGRect.zero)
+    lazy var avg = UILabel(frame: CGRect.zero)
+    lazy var max = UILabel(frame: CGRect.zero)
 
 
     override init(frame: CGRect) {
@@ -649,114 +649,114 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     override func updateConstraints() {
  
         addConstraint(NSLayoutConstraint(item: moduleCaption,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.left,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: moduleCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: hr,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: moduleCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: hr,
-            attribute: NSLayoutAttribute.Leading,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.leading,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Leading,
+            attribute: NSLayoutAttribute.leading,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: hrUnits,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: hr,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: hrUnits,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: hr,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 9.0))
         
         addConstraint(NSLayoutConstraint(item: max,
-            attribute: NSLayoutAttribute.Baseline,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.lastBaseline,
+            relatedBy: NSLayoutRelation.equal,
             toItem: hr,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: max,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.CenterX,
+            attribute: NSLayoutAttribute.centerX,
             multiplier: 1.50,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: maxCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: max,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0,
             constant: -8.0))
         
         addConstraint(NSLayoutConstraint(item: maxCaption,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: max,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: avg,
-            attribute: NSLayoutAttribute.Baseline,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.lastBaseline,
+            relatedBy: NSLayoutRelation.equal,
             toItem: hr,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: avg,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: avgCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: avg,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0,
             constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: avgCaption,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: avg,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
@@ -766,14 +766,14 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
 
 @IBDesignable class CylGeoDashboardView : UIView {
 
-    private lazy var moduleCaption = UILabel(frame: CGRectZero)
-    private lazy var ascCaption = UILabel(frame: CGRectZero)
-    private lazy var desCaption = UILabel(frame: CGRectZero)
+    private lazy var moduleCaption = UILabel(frame: CGRect.zero)
+    private lazy var ascCaption = UILabel(frame: CGRect.zero)
+    private lazy var desCaption = UILabel(frame: CGRect.zero)
     
-    lazy var el = UILabel(frame: CGRectZero)
-    lazy var elUnits = UILabel(frame: CGRectZero)
-    lazy var asc = UILabel(frame: CGRectZero)
-    lazy var des = UILabel(frame: CGRectZero)
+    lazy var el = UILabel(frame: CGRect.zero)
+    lazy var elUnits = UILabel(frame: CGRect.zero)
+    lazy var asc = UILabel(frame: CGRect.zero)
+    lazy var des = UILabel(frame: CGRect.zero)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -840,114 +840,114 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     override func updateConstraints() {
         
         addConstraint(NSLayoutConstraint(item: moduleCaption,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Left,
+            attribute: NSLayoutAttribute.left,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: moduleCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: el,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: moduleCaption,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: el,
-            attribute: NSLayoutAttribute.Leading,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.leading,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Leading,
+            attribute: NSLayoutAttribute.leading,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: elUnits,
-            attribute: NSLayoutAttribute.Left,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.left,
+            relatedBy: NSLayoutRelation.equal,
             toItem: el,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: elUnits,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: el,
-            attribute: NSLayoutAttribute.Top,
+            attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 9.0))
         
         addConstraint(NSLayoutConstraint(item: asc,
-            attribute: NSLayoutAttribute.Baseline,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.lastBaseline,
+            relatedBy: NSLayoutRelation.equal,
             toItem: el,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: asc,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.CenterX,
+            attribute: NSLayoutAttribute.centerX,
             multiplier: 1.50,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: ascCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: asc,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0,
             constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: ascCaption,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: asc,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: des,
-            attribute: NSLayoutAttribute.Baseline,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.lastBaseline,
+            relatedBy: NSLayoutRelation.equal,
             toItem: el,
-            attribute: NSLayoutAttribute.Baseline,
+            attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: des,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: desCaption,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.top,
+            relatedBy: NSLayoutRelation.equal,
             toItem: des,
-            attribute: NSLayoutAttribute.Bottom,
+            attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0,
             constant: -9.0))
         
         addConstraint(NSLayoutConstraint(item: desCaption,
-            attribute: NSLayoutAttribute.Right,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.right,
+            relatedBy: NSLayoutRelation.equal,
             toItem: des,
-            attribute: NSLayoutAttribute.Right,
+            attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
         

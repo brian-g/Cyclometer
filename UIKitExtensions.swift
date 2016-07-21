@@ -10,14 +10,14 @@ import UIKit
 
 extension UIBarButtonItem {
     func hide() {
-        self.enabled = false
+        self.isEnabled = false
         self.image = nil
         self.title = nil
     }
     
-    func show(image: UIImage?, title: String?) {
+    func show(_ image: UIImage?, title: String?) {
         
-        self.enabled = true
+        self.isEnabled = true
         
         if image != nil {
             self.image = image

@@ -42,14 +42,14 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
     }
 
     func start() {
-        let opQ = NSOperationQueue()
+        let opQ = OperationQueue()
         
-        motionManager!.startActivityUpdatesToQueue(opQ, withHandler: updateMotion)
+        motionManager!.startActivityUpdates(to: opQ, withHandler: updateMotion)
     }
     
     /* CoreMotion */
     
-    func updateMotion(motionActivity: CMMotionActivity?) -> Void {
+    func updateMotion(_ motionActivity: CMMotionActivity?) -> Void {
 
         
     }
@@ -57,12 +57,12 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
 
     /* CoreLocation Delegates */
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         NSLog("%d", manager.location!.altitude)
     }
  
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         NSLog("We changed")
     }
 }

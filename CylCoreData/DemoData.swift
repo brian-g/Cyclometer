@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-func createDemoData(managedContext : NSManagedObjectContext) {
+func createDemoData(_ managedContext : NSManagedObjectContext) {
     
-    let ride = NSEntityDescription.insertNewObjectForEntityForName("Ride", inManagedObjectContext: managedContext) as! Ride
-    let summary = NSEntityDescription.insertNewObjectForEntityForName("Summary", inManagedObjectContext: managedContext) as! Summary
+    let ride = NSEntityDescription.insertNewObject(forEntityName: "Ride", into: managedContext) as! Ride
+    let summary = NSEntityDescription.insertNewObject(forEntityName: "Summary", into: managedContext) as! Summary
     
     summary.elevation_gain = 500
     summary.elevation_loss = 301
@@ -28,12 +28,12 @@ func createDemoData(managedContext : NSManagedObjectContext) {
     summary.pace_min = 1.0
     summary.cadence_avg = 80
     summary.cadence_max = 130
-    summary.start = NSDate()
-    summary.end = NSDate(timeIntervalSinceNow: 10800.0)
+    summary.start = Date()
+    summary.end = Date(timeIntervalSinceNow: 10800.0)
     summary.time_active = 10353
     summary.time_total = 10800
     
-    ride.date = NSDate()
+    ride.date = Date()
     ride.summary = summary
     
     summary.ride = ride
@@ -41,8 +41,8 @@ func createDemoData(managedContext : NSManagedObjectContext) {
     var biometrics = [Biometrics]()
     
     for i in 1...15 {
-        let bio = NSEntityDescription.insertNewObjectForEntityForName("Biometrics", inManagedObjectContext: managedContext) as! Biometrics
-        bio.date = NSDate(timeIntervalSinceNow: 5)
+        let bio = NSEntityDescription.insertNewObject(forEntityName: "Biometrics", into: managedContext) as! Biometrics
+        bio.date = Date(timeIntervalSinceNow: 5)
         bio.ride = ride
         bio.bpm = 78
     }
@@ -50,9 +50,9 @@ func createDemoData(managedContext : NSManagedObjectContext) {
     var motion = [Motion]()
     
     for i in 1...20 {
-        let motion = NSEntityDescription.insertNewObjectForEntityForName("Motion", inManagedObjectContext: managedContext) as! Motion
+        let motion = NSEntityDescription.insertNewObject(forEntityName: "Motion", into: managedContext) as! Motion
         
-        motion.date = NSDate()
+        motion.date = Date()
         motion.cadence = 78
         motion.gpsspeed = 15.6
         motion.wheelspeed = 15.5
