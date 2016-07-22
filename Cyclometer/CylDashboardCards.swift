@@ -209,8 +209,6 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     }
     
     func commonInit() {
-
-        translatesAutoresizingMaskIntoConstraints = false
         
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
         moduleCaption.translatesAutoresizingMaskIntoConstraints = false
