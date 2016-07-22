@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uF5-os-OCe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,8 +29,7 @@
                                                     <constraint firstAttribute="height" constant="141" id="dlT-gC-cXG"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQ0-kp-MzQ" customClass="CylDistanceTimeDashboardView" customModule="Cyclometer" customModuleProvider="target">
-                                                <frame key="frameInset" minY="141" width="560" height="163"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQ0-kp-MzQ" customClass="CylDistanceTimeDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="163" id="Y4y-tc-bC6"/>
@@ -57,11 +57,11 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="leading" secondItem="8iS-2A-oBw" secondAttribute="leading" constant="20" id="1Hl-WU-Ek9"/>
-                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="centerX" secondItem="8iS-2A-oBw" secondAttribute="centerX" id="Elb-8v-pqW"/>
-                                    <constraint firstAttribute="bottom" secondItem="PWw-Mq-2B3" secondAttribute="bottom" constant="177" id="OOv-Wr-mLX"/>
-                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="top" secondItem="8iS-2A-oBw" secondAttribute="top" id="QZU-t3-xlQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="PWw-Mq-2B3" secondAttribute="trailing" constant="20" id="mJL-jH-KB5"/>
+                                    <constraint firstAttribute="bottom" secondItem="PWw-Mq-2B3" secondAttribute="bottom" constant="197" id="6S0-5r-Jds"/>
+                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="leading" secondItem="8iS-2A-oBw" secondAttribute="leadingMargin" id="9dL-R1-wqR"/>
+                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="trailing" secondItem="8iS-2A-oBw" secondAttribute="trailingMargin" id="XpW-W7-W2l"/>
+                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="top" secondItem="8iS-2A-oBw" secondAttribute="top" id="iOL-lJ-6Mx"/>
+                                    <constraint firstItem="PWw-Mq-2B3" firstAttribute="centerX" secondItem="8iS-2A-oBw" secondAttribute="centerX" id="sR1-vN-vmd"/>
                                 </constraints>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7t-c4-Cuo">

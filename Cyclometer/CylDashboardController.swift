@@ -72,7 +72,7 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
                 firstButton.tag = Pause
                 firstButton.image = pauseImage
             
-                speed.speed.text = "15.4"
+                speed.speed.text = "25.4"
                 speed.avgSpeed.text = "10.3"
                 speed.maxSpeed.text = "22.1"
             
