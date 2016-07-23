@@ -53,7 +53,8 @@ class CylNavigationController : UINavigationController {
 class CylHistoryController : UITableViewController {
 
     var rides = [Ride]()
-
+    var rowActions = [UITableViewRowAction]()
+    
     private let appDelegate = UIApplication.shared().delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -117,6 +118,15 @@ class CylHistoryController : UITableViewController {
         return cell!
     }
     
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if (rowActions.count > 0) { return rowActions }
+        
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler: doDeleteRow)
+        rowActions.append(deleteAction)
+        
+        return rowActions
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         NSLog("prepareForSegue")
         
@@ -129,7 +139,10 @@ class CylHistoryController : UITableViewController {
         }
         
     }
-    
+
+    func doDeleteRow(action: UITableViewRowAction, rowIndex: IndexPath) {
+        print ("Delete row called for \(rowIndex)")
+    }
 }
 
 class CylRideDetailsController : UIViewController, CylViewControllerParameter {
