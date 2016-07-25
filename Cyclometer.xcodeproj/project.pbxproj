@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D302FBC91A882B740076E6E0 /* CylNumberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */; };
 		D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31780B01ADB62C900F8512D /* CycleSensor.swift */; };
 		D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D335E2971AC8D38B00555080 /* HealthKit.framework */; };
 		D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A393E1A7DB0B800941901 /* CyclometerModel.swift */; };
@@ -75,7 +74,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylNumberCardView.swift; sourceTree = "<group>"; };
 		D31780B01ADB62C900F8512D /* CycleSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleSensor.swift; sourceTree = "<group>"; };
 		D335E2971AC8D38B00555080 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		D33A393E1A7DB0B800941901 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CyclometerModel.swift; path = /Shared/Users/brian/Projects/Cyclometer/Cyclometer/CyclometerModel.swift; sourceTree = "<absolute>"; };
@@ -337,7 +335,6 @@
 			children = (
 				D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */,
 				D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */,
-				D302FBC81A882B740076E6E0 /* CylNumberCardView.swift */,
 			);
 			name = CellsAndOddments;
 			sourceTree = "<group>";
@@ -573,7 +570,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */,
-				D302FBC91A882B740076E6E0 /* CylNumberCardView.swift in Sources */,
 				D3FD125A1AFE94A900C90CFA /* FoundationExtensions.swift in Sources */,
 				D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */,
 				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,

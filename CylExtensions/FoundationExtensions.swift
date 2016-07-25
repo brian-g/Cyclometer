@@ -39,3 +39,13 @@ extension Timer {
         return timer!
     }
 }
+
+extension Float {
+    func inMiles() -> Float {
+        return self * 621.37
+    }
+    
+    func inKM() -> Float {
+        return self * 1000
+    }
+}
