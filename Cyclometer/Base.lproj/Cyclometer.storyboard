@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Sym-Dl-1ZI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BCV-q9-8Uw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iS-2A-oBw">
@@ -102,8 +102,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="D44-2z-ogW"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="biometrics" destination="POE-U3-tk5" id="jcO-bx-ZOG"/>
                         <outlet property="cadence" destination="jlJ-dt-HY9" id="aPy-JZ-Jlg"/>

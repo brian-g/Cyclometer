@@ -9,8 +9,6 @@
 import UIKit
 import CoreData
 
-
-
 class CylNavigationController : UINavigationController {
     
     override func viewDidLoad() {
@@ -145,22 +143,23 @@ class CylHistoryController : UITableViewController {
     }
 }
 
-class CylRideDetailsController : UIViewController, CylViewControllerParameter {
+class CylRideDetailsController : UITableViewController, CylViewControllerParameter {
 
     let emptyString = "--"
+    let englishUnits = UserDefaults.standard.bool(forKey: kUnits)
     
-    @IBOutlet weak var distance: CylNumberCardView!
-    @IBOutlet weak var duration: CylNumberCardView!
-    @IBOutlet weak var avgSpeed: CylNumberCardView!
-    @IBOutlet weak var maxSpeed: CylNumberCardView!
-    @IBOutlet weak var avgPace: CylNumberCardView!
-    @IBOutlet weak var maxPace: CylNumberCardView!
-    @IBOutlet weak var avgCadence: CylNumberCardView!
-    @IBOutlet weak var maxCadence: CylNumberCardView!
-    @IBOutlet weak var ascent: CylNumberCardView!
-    @IBOutlet weak var descent: CylNumberCardView!
-    @IBOutlet weak var avgHr: CylNumberCardView!
-    @IBOutlet weak var maxHr: CylNumberCardView!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var avgSpeed: UILabel!
+    @IBOutlet weak var maxSpeed: UILabel!
+    @IBOutlet weak var avgPace: UILabel!
+    @IBOutlet weak var maxPace: UILabel!
+    @IBOutlet weak var avgCadence: UILabel!
+    @IBOutlet weak var maxCadence: UILabel!
+    @IBOutlet weak var ascent: UILabel!
+    @IBOutlet weak var descent: UILabel!
+    @IBOutlet weak var avgHr: UILabel!
+    @IBOutlet weak var maxHr: UILabel!
 
     
     var viewControllerParameter : CylParameter?
@@ -176,6 +175,9 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         
         self.navigationItem.title = appDelegate.dateFormatter.string(from: ride!.date)
+        
+        let anotherButton = UIBarButtonItem(barButtonSystemItem: .action, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = anotherButton;
      
         updateValues()
     }
@@ -189,79 +191,98 @@ class CylRideDetailsController : UIViewController, CylViewControllerParameter {
     func updateValues() {
         
         if let n = numberFormatter.string(from: ride!.summary.distance) {
-            distance.number = n
+            distance.text = "\(n) miles"
         } else {
-            distance.number = emptyString
+            distance.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value:ride!.summary.time_active)) {
-            duration.number = n
+            duration.text = n
         } else {
-            duration.number = emptyString
+            duration.text = emptyString
         }
 
         if let n = numberFormatter.string(from: ride!.summary.speed_avg) {
-            avgSpeed.number = n
+            avgSpeed.text = "\(n) mph"
         } else {
-            avgSpeed.number = emptyString
+            avgSpeed.text = emptyString
         }
 
         if let n = numberFormatter.string(from: ride!.summary.speed_max) {
-            maxSpeed.number = n
+            maxSpeed.text = "\(n) mph"
         } else {
-            maxSpeed.number = emptyString
+            maxSpeed.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.elevation_gain)) {
-            ascent.number = n
+            ascent.text = "\(n) ft"
         } else {
-            ascent.number = emptyString
+            ascent.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.elevation_loss)) {
-            descent.number = n
+            descent.text = "\(n) ft"
         } else {
-            descent.number = emptyString
+            descent.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.pace_avg)) {
-            avgPace.number = n
+            avgPace.text = "\(n) min/mile"
         } else {
-            avgPace.number = emptyString
+            avgPace.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.pace_max)) {
-            maxPace.number = n
+            maxPace.text = "\(n) min/mile"
         } else {
-            maxPace.number = emptyString
+            maxPace.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.cadence_avg)) {
-            avgCadence.number = n
+            avgCadence.text = "\(n) rpm"
         } else {
-            avgCadence.number = emptyString
+            avgCadence.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.cadence_max)) {
-            maxCadence.number = n
+            maxCadence.text = "\(n) rpm"
         } else {
-            maxCadence.number = emptyString
+            maxCadence.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.hr_avg)) {
-            avgHr.number = n
+            avgHr.text = "\(n) bpm"
         } else {
-            avgHr.number = emptyString
+            avgHr.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value:ride!.summary.hr_max)) {
-            maxHr.number = n
+            maxHr.text = "\(n) bpm"
         } else {
-            maxHr.number = emptyString
+            maxHr.text = emptyString
         }
-
-    
     }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return super.numberOfSections(in: tableView)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return super.tableView(tableView, heightForRowAt:indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
+        return super.tableView(tableView, indentationLevelForRowAt:indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return super.tableView(tableView, numberOfRowsInSection:section)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return super.tableView(tableView, cellForRowAt: indexPath)
+    }
+
 }
 
 
