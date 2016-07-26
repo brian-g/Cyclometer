@@ -9,17 +9,25 @@
 import Foundation
 import UIKit
 
+class CylDashboardView : UIView {
 
-let fontName = "GillSans-Light"
-let captionFontSize : CGFloat = 14.0
-let heroFontSize : CGFloat = 128.0
-let majorFontSize : CGFloat = 56.0
-let minorFontSize : CGFloat = (heroFontSize / 4)
-//let globalTintColor = UIColor(red: 0.0, green: 0.75, blue: 0.86, alpha: 1.0)
-let globalTintColor = UIColor(red:0, green:0.532, blue:0.679, alpha:1.0)
-let captionColor = UIColor(white: 0.25, alpha: 1.0)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        let cg = UIGraphicsGetCurrentContext()
+        
+        if (superview?.subviews.last != self) {
+            cg!.setLineWidth(1.0);
+            cg!.setStrokeColor(gray: 0.752, alpha: 1.0)
+            cg!.moveTo(x: rect.origin.x, y: rect.origin.y + rect.size.height)
+            cg!.addLineTo(x: rect.origin.x + rect.size.width, y: rect.origin.y + rect.size.height)
+            cg!.strokePath()
+        }
+    }
+}
 
-@IBDesignable class CylSpeedDashboardView : UIView {
+
+@IBDesignable class CylSpeedDashboardView : CylDashboardView {
 
     private lazy var avgSpeedCaption = UILabel(frame: CGRect.zero)
     private lazy var maxSpeedCaption = UILabel(frame: CGRect.zero)
@@ -187,7 +195,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     }
 }
 
-@IBDesignable class CylDistanceTimeDashboardView : UIView {
+@IBDesignable class CylDistanceTimeDashboardView : CylDashboardView {
 
     private lazy var moduleCaption = UILabel(frame:CGRect.zero)
     private lazy var durationCaption = UILabel(frame:CGRect.zero)
@@ -379,7 +387,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     
 }
 
-@IBDesignable class CylCadenceDashboardView : UIView {
+@IBDesignable class CylCadenceDashboardView : CylDashboardView {
  
     private lazy var moduleCaption = UILabel(frame: CGRect.zero)
     private lazy var avgCaption = UILabel(frame: CGRect.zero)
@@ -571,7 +579,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     }
 }
 
-@IBDesignable class CylHeartRateDashboardView : UIView {
+@IBDesignable class CylHeartRateDashboardView : CylDashboardView {
 
     private lazy var moduleCaption = UILabel(frame: CGRect.zero)
     private lazy var hrUnits = UILabel(frame: CGRect.zero)
@@ -762,7 +770,7 @@ let captionColor = UIColor(white: 0.25, alpha: 1.0)
     }
 }
 
-@IBDesignable class CylGeoDashboardView : UIView {
+@IBDesignable class CylGeoDashboardView : CylDashboardView {
 
     private lazy var moduleCaption = UILabel(frame: CGRect.zero)
     private lazy var ascCaption = UILabel(frame: CGRect.zero)

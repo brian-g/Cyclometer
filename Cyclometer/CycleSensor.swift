@@ -142,7 +142,7 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
         } else {
             switch characteristic.uuid.uuidString {
             case kBTCSCMeasurement:
-                var cx = 0
+                var _ = 0
 //                var bpm = HeartRateSensor.readHeartRate(characteristic.value)
 //                if var f = updateHeartRate {
 //                    f(bpm)
@@ -163,9 +163,10 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
             switch characteristic.uuid.uuidString {
             case kBTCSCMeasurement:
                 
-                if var v = characteristic.value {
-//                    var bpm = CycleSensor.readHeartRate(v)
-//                    NSLog("Rate: \(bpm)")
+                if let v = characteristic.value {
+                    let bpm = v
+//                    let bpm = CycleSensor.readHeartRate(v)
+                    NSLog("Rate: \(bpm)")
 //                    if var f = updateWheelRevolutions {
 //                        f(34)
 //                    }

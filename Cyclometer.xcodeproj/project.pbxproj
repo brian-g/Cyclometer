@@ -30,6 +30,7 @@
 		D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83161A54AFF00070E792 /* BaseControllers.swift */; };
 		D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831B1A54AFF00070E792 /* Images.xcassets */; };
 		D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */; };
+		D3E1E1291D4714E200B54A57 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E1281D4714E200B54A57 /* Globals.swift */; };
 		D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */; };
 		D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */; };
 		D3FD125A1AFE94A900C90CFA /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FD12591AFE94A900C90CFA /* FoundationExtensions.swift */; };
@@ -104,6 +105,7 @@
 		D3DA83161A54AFF00070E792 /* BaseControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControllers.swift; sourceTree = "<group>"; };
 		D3DA831B1A54AFF00070E792 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3DA831E1A54AFF00070E792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D3E1E1281D4714E200B54A57 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtensions.swift; path = /Shared/Users/brian/Projects/Cyclometer/UIKitExtensions.swift; sourceTree = "<absolute>"; };
 		D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardCards.swift; sourceTree = "<group>"; };
 		D3FD12591AFE94A900C90CFA /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoundationExtensions.swift; path = CylExtensions/FoundationExtensions.swift; sourceTree = SOURCE_ROOT; };
@@ -307,6 +309,7 @@
 		D3DA83111A54AFF00070E792 /* Cyclometer */ = {
 			isa = PBXGroup;
 			children = (
+				D3E1E1281D4714E200B54A57 /* Globals.swift */,
 				D3FDEFCC1A633890006D3840 /* RideManager.swift */,
 				D3910A3B1C2B102C00ADCB07 /* Views */,
 				D3910A3A1C2B0FFF00ADCB07 /* View Controllers */,
@@ -573,6 +576,7 @@
 				D3FD125A1AFE94A900C90CFA /* FoundationExtensions.swift in Sources */,
 				D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */,
 				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
+				D3E1E1291D4714E200B54A57 /* Globals.swift in Sources */,
 				D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */,
 				D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */,
 				D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */,
@@ -837,7 +841,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Cyclometer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "name.glaeske.brian.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -858,7 +862,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Cyclometer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "name.glaeske.brian.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

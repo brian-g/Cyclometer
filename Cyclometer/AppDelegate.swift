@@ -15,9 +15,7 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    var tintColor = UIColor(red: 0.0, green: 0.75, blue: 0.86, alpha: 1.0)
-    
+        
     lazy var dateFormatter : DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
@@ -30,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        window?.tintColor = tintColor
+        window?.tintColor = globalTintColor
         
         UserDefaults.standard.register([
             kAutoPause: true,

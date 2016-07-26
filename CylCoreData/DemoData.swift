@@ -38,18 +38,14 @@ func createDemoData(_ managedContext : NSManagedObjectContext) {
     
     summary.ride = ride
     
-    var biometrics = [Biometrics]()
-    
-    for i in 1...15 {
+    for _ in 1...15 {
         let bio = NSEntityDescription.insertNewObject(forEntityName: "Biometrics", into: managedContext) as! Biometrics
         bio.date = Date(timeIntervalSinceNow: 5)
         bio.ride = ride
         bio.bpm = 78
     }
     
-    var motion = [Motion]()
-    
-    for i in 1...20 {
+    for _ in 1...20 {
         let motion = NSEntityDescription.insertNewObject(forEntityName: "Motion", into: managedContext) as! Motion
         
         motion.date = Date()
@@ -59,7 +55,6 @@ func createDemoData(_ managedContext : NSManagedObjectContext) {
         motion.ride = ride
         
     }
-    
     
     var error: NSError?
     do {
