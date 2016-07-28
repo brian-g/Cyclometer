@@ -40,7 +40,7 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Cyclometer will use your location to track your movement while the application is in the background.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Cyclometer will use your lcoation to track your movement while the application is running.</string>
+	<string>Cyclometer will use your location to track your movement while the application is running.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>

@@ -237,7 +237,7 @@ class CylDashboardView : UIView {
 
         duration.font = UIFont(name: fontName, size: majorFontSize)
         duration.translatesAutoresizingMaskIntoConstraints = false
-        duration.adjustsFontSizeToFitWidth = false
+        duration.adjustsFontSizeToFitWidth = true
         duration.text = "5:30.10"
         
         durationCaption.font = UIFont(name: fontName, size: captionFontSize)

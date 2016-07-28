@@ -7,45 +7,63 @@
 //
 
 import Foundation
+import UIKit
 import CoreMotion
 import CoreBluetooth
 import CoreLocation
 
+protocol CylRideManagerDelegate : class {
+    func locationDidUpdate(locations:[CLLocation]) -> Void
+}
 
 class CylRideManager : NSObject, CLLocationManagerDelegate {
 
-    var locationManager : CLLocationManager!
-    var motionManager : CMMotionActivityManager?
-
+    private var locationManager : CLLocationManager!
+    var delegate : CylRideManagerDelegate!
+    
     override init() {
         
         super.init()
 
         locationManager = CLLocationManager()
-        locationManager.requestAlwaysAuthorization()
+
+        let authStatus = CLLocationManager.authorizationStatus()
         
+        if (authStatus == .denied || authStatus == .restricted) {
+            // need to do soemthing here
+        } else if (authStatus == .notDetermined) {
+            locationManager.requestAlwaysAuthorization()
+        }
+        
+        CLLocationManager.locationServicesEnabled()
+        
+        locationManager.activityType = .fitness
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone
-
-        if (CMMotionActivityManager.isActivityAvailable()) {
-            motionManager = CMMotionActivityManager()
-        }
     }
     
     deinit {
-        locationManager.stopMonitoringSignificantLocationChanges()
+        locationManager.stopUpdatingLocation()
         locationManager = nil
-        
-        motionManager?.stopActivityUpdates()
-        motionManager = nil
     }
 
-    func start() {
-        let opQ = OperationQueue()
-        
-        motionManager!.startActivityUpdates(to: opQ, withHandler: updateMotion)
+    func start() -> Bool {
+        let authStatus = CLLocationManager.authorizationStatus()
+        if (authStatus == .authorizedAlways || authStatus == .authorizedWhenInUse) {
+            locationManager.startUpdatingLocation()
+        } else {
+            return false
+        }
+        NSLog("Location tracking started")
+        return true
     }
+    
+    func stop() -> Bool {
+        locationManager.stopUpdatingLocation()
+        return true
+    }
+
     
     /* CoreMotion */
     
@@ -54,15 +72,19 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
         
     }
     
-
     /* CoreLocation Delegates */
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        NSLog("%d", manager.location!.altitude)
+        if (delegate != nil) {
+            delegate.locationDidUpdate(locations: locations)
+        }
+        
     }
  
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        NSLog("We changed")
+        
+        NSLog("BRG: Not sure what the fuck to do here.")
+        
     }
 }

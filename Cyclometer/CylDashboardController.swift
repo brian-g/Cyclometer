@@ -9,8 +9,9 @@
 import UIKit
 import Foundation
 import CoreBluetooth
+import CoreLocation
 
-class CylDashboardController : UIViewController, CBPeripheralDelegate {
+class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideManagerDelegate {
     
     let Play = 0
     let Stop = 1
@@ -30,6 +31,7 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
     @IBOutlet weak var geo: CylGeoDashboardView!
 
     private lazy var numberFormatter = NumberFormatter()
+    private lazy var speedFormatter = NumberFormatter()
     private lazy var timeFormatter = DateFormatter()
 
     private lazy var rideManager = CylRideManager()
@@ -54,6 +56,8 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
         secondButton.hide()
 
         zeroDashboard()
+        
+        rideManager.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,6 +73,11 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
 
         switch buttonTag {
             case Play:
+                if (rideManager.start() == false) {
+                    informUserOfBadPermissions()
+                    return
+                }
+
                 firstButton.tag = Pause
                 firstButton.image = pauseImage
             
@@ -89,7 +98,8 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
                 geo.des.text = "123"
             
                 _sensorManager.updateHeartRate = updateHeartRate
-                
+            
+            
             case Stop:
                 
                 let alert = UIAlertController(title: "Keep Ride?", message: "When you keep your ride, it will be available for analysis.", preferredStyle: UIAlertControllerStyle.actionSheet)
@@ -122,7 +132,8 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
                 self.present(alert, animated: true, completion: { () in
                     NSLog("Done")
                 })
-                
+            
+                _ = rideManager.stop()
             
             case Pause:
                 firstButton.tag = Stop
@@ -131,6 +142,8 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
                 secondButton.isEnabled = true
                 secondButton.show(playImage, title:nil)
                 secondButton.tag = Play
+            
+                _ = rideManager.stop()
             
             default:
                 NSLog("You're screwed")
@@ -174,5 +187,20 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate {
 
     func updateHeartRate(_ bpm: UInt16) {
         self.biometrics.hr.text = bpm.description
+    }
+    
+    func informUserOfBadPermissions() {
+        let alert = UIAlertController(title: "No permission to location services", message: "This application requires access to the GPS, but permission has not been granted. Go to Settings -> Cyclometer and change access.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func locationDidUpdate(locations: [CLLocation]) {
+        let curSpeed : CLLocationSpeed = (locations.last?.speed.inMilesPerHour())!
+        speed.speed.text = numberFormatter.string(from: curSpeed)
+        geo.el.text = locations.last?.altitude.description
+        
     }
 }

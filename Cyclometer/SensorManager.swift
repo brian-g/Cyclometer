@@ -164,14 +164,12 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     func startScanningForSensors(_ scanOnlyRemembered: Bool = true) {
         _scanOnlyRemembered = scanOnlyRemembered
         
-/*
         
-        if _btManager.state == CBCentralManagerState.poweredOn && isScanning == false {
+        if _btManager.state == CBManagerState.poweredOn && isScanning == false {
             NSLog("Started scanning...")
             _btManager.scanForPeripherals(withServices: services, options: nil)
             isScanning = true
-        } 
- */
+        }
     }
     
     func stopScanningForSensors() {
@@ -182,12 +180,12 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     // Check status of BLE hardware
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-/*
-        if central.state == CBCentralManagerState.poweredOn {
+
+        if central.state == CBManagerState.poweredOn {
             NSLog("Powered on")
             startScanningForSensors()
         }
-        else if central.state == CBCentralManagerState.poweredOff {
+        else if central.state == CBManagerState.poweredOff {
             // Can have different conditions for all states if needed - show generic alert for now
             NSLog("BLE Powered Off")
             central.stopScan();
@@ -195,7 +193,6 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         else {
             NSLog("BLE Manager Did Update Unknown State")
         }
- */
     }
     
     // Check out the discovered peripherals to find Sensor Tag
