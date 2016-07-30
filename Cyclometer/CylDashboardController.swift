@@ -184,9 +184,11 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
     func locationDidUpdate(locations: [CLLocation]) {
 
         speed.speed = (locations.last?.speed)!
+        speed.average = rideManager.average
         distanceDuration.distance = rideManager.totalDistance
         distanceDuration.duration = rideManager.duration
-        
+        distanceDuration.pace = rideManager.pace
+
         geo.el.text = locations.last?.altitude.description
         
         

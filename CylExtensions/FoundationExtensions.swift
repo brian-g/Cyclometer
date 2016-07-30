@@ -41,22 +41,21 @@ extension Timer {
 }
 
 extension Float {
-
-    // Assumes meters
-    func inMiles() -> Float {
-        return self * 0.00062137
+    
+    var miles : Float {
+        return self / 1609.347
     }
     
-    func inKM() -> Float {
+    var km : Float {
         return self * 1000
     }
     
     // Assumes meters/second
-    func inMilesPerHour() -> Float {
-        return self * 3600 * self.inMiles()
+    var mph : Float {
+        return self * 3600 * self.miles
     }
     
-    func inKiloMetersPerHour() -> Float {
+    var kph : Float {
         return self * 3600
     }
 }
@@ -64,20 +63,20 @@ extension Float {
 extension Double {
     
     // Assumes meters
-    func inMiles() -> Double {
-        return self * 0.00062137
+    var miles : Double {
+        return self / kMetersInMile
     }
     
-    func inKM() -> Double {
+    var km : Double {
         return self * 1000
     }
     
     // Assumes meters/second
-    func inMilesPerHour() -> Double {
-        return 3600 * self.inMiles()
+    var mph : Double {
+        return self * kSecondsInHour / kMetersInMile
     }
 
-    func inKiloMetersPerHour() -> Double {
-        return self * 3600;
+    var kph : Double {
+        return self * kSecondsInHour
     }
 }

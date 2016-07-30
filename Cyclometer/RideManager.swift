@@ -25,6 +25,9 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
 
     var delegate : CylRideManagerDelegate!
     var totalDistance : CLLocationDistance = 0
+    var coordinates : [CLLocationCoordinate2D] = []
+    
+    var ride = Ride()
     
     override init() {
         
@@ -46,6 +49,8 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone
+        
+        
     }
     
     deinit {
@@ -71,6 +76,13 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
             return duration / totalDistance
         }
     }
+    
+    var average : Double {
+        get {
+            return totalDistance / duration
+        }
+    }
+    
     func start() -> Bool {
         let authStatus = CLLocationManager.authorizationStatus()
         if (authStatus == .authorizedAlways || authStatus == .authorizedWhenInUse) {
@@ -82,7 +94,7 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
         
         startDate = Date()
         totalDistance = 0
-        
+    
         return true
     }
     
@@ -91,14 +103,6 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
         return true
     }
 
-    
-    /* CoreMotion */
-    
-    func updateMotion(_ motionActivity: CMMotionActivity?) -> Void {
-
-        
-    }
-    
     /* CoreLocation Delegates */
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -111,6 +115,7 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
         if (delegate != nil) {
             delegate.locationDidUpdate(locations: locations)
         }
+        coordinates.append(locations.last!.coordinate)
         
     }
  

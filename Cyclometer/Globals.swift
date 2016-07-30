@@ -31,3 +31,12 @@ let kSensorId = "SensorID"
 let kSensorCap = "SensorCap"
 
 var currentUnits = Units.imperial
+
+
+let kMetersInMile = 1609.347
+let kKmInMile = kMetersInMile / 1000.0
+let kSecondsInMin = 60.0
+let kMinutesInHour = 60.0
+let kSecondsInHour = 3600.0
+let kMilesInMeter = 0.00062137
+let kMetersInKm = 1000.0

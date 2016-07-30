@@ -45,17 +45,17 @@ class CylDashboardView : UIView {
     var speed : Double {
         set {
             if (units == .imperial) {
-                _speedLabel.text = _numberFormatter.string(from: newValue.inMilesPerHour())
+                _speedLabel.text = _numberFormatter.string(from: newValue.mph)
             } else {
-                _speedLabel.text = _numberFormatter.string(from: newValue.inKiloMetersPerHour())
+                _speedLabel.text = _numberFormatter.string(from: newValue.kph)
             }
             
             if (newValue > _maxSpeed) {
                 _maxSpeed = newValue
                 if (units == .imperial) {
-                    maxSpeed.text = _avgNumberFormatter.string(from:_maxSpeed.inMilesPerHour())
+                    maxSpeed.text = _avgNumberFormatter.string(from:_maxSpeed.mph)
                 } else {
-                    maxSpeed.text = _avgNumberFormatter.string(from:_maxSpeed)
+                    maxSpeed.text = _avgNumberFormatter.string(from:_maxSpeed.kph)
                 }
             }
         }
@@ -64,6 +64,20 @@ class CylDashboardView : UIView {
         }
     }
     
+    var average : Double {
+        set {
+            _avgSpeed = newValue
+            if (units == .imperial) {
+                avgSpeed.text = _numberFormatter.string(from: _avgSpeed.mph)
+                
+            } else {
+                avgSpeed.text = _numberFormatter.string(from: _avgSpeed.kph)
+            }
+        }
+        get {
+            return 0.0
+        }
+    }
     var units : Units {
         get {
             return _units
@@ -278,9 +292,9 @@ class CylDashboardView : UIView {
         get { return 0.0 }
         set {
             if (_units == .imperial) {
-                distanceLabel.text = distanceFormatter.string(from: newValue.inMiles())
+                distanceLabel.text = distanceFormatter.string(from: newValue.miles)
             } else {
-                distanceLabel.text = distanceFormatter.string(from: newValue.inKM())
+                distanceLabel.text = distanceFormatter.string(from: newValue.km)
             }
         }
     }
@@ -295,13 +309,17 @@ class CylDashboardView : UIView {
     var pace : Double {
         get { return 0.0 }
         set {
+
             if (_units == .imperial) {
-                paceLabel.text = distanceFormatter.string(from: newValue.inMiles())
+                // We get seconds/meter. Need minutes/mile
+                paceLabel.text = distanceFormatter.string(from: (newValue / 60) * kMetersInMile )
             } else {
-                paceLabel.text = distanceFormatter.string(from: newValue)
+                // We get seconds/meter. Need minutes/km
+                paceLabel.text = distanceFormatter.string(from: newValue / 60 * kMetersInKm)
             }
         }
     }
+    
     var units : Units {
         get { return _units }
         set {
