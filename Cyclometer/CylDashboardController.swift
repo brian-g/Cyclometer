@@ -190,7 +190,16 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
         distanceDuration.pace = rideManager.pace
 
         geo.el.text = locations.last?.altitude.description
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        NSLog(segue.identifier!)
         
+        if (segue.identifier! == "showMapAndRoute") {
+            NSLog("BRG: Fuck Yes")
+            (segue.destinationViewController as! CylMapAndRouteController).ride = rideManager
+        }
     }
 }

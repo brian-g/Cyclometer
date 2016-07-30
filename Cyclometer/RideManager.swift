@@ -50,7 +50,6 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone
         
-        
     }
     
     deinit {
