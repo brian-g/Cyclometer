@@ -54,8 +54,6 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
         firstButton.image = playImage
         
         secondButton.hide()
-
-        zeroDashboard()
         
         rideManager.delegate = self
     }
@@ -81,13 +79,10 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
                 firstButton.tag = Pause
                 firstButton.image = pauseImage
             
-                speed.speed.text = "25.4"
-                speed.avgSpeed.text = "10.3"
-                speed.maxSpeed.text = "22.1"
-            
-                distanceDuration.distance.text = "15.3"
-                distanceDuration.duration.text = "0:59.12"
-                distanceDuration.pace.text = "3.86"
+                
+                distanceDuration.distance = 0.0
+                distanceDuration.duration = 0.0
+                distanceDuration.pace = 0.0
             
                 cadence.cadence.text = "78"
                 cadence.max.text = "105"
@@ -153,16 +148,12 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
     
     func zeroDashboard() {
    
-        speed.speed.text = "—.–"
-        speed.speedUnits.text = "MPH"
-        speed.avgSpeed.text = "—.–"
-        speed.maxSpeed.text = "—.–"
+        speed.speed = 0.0
+        speed.units = currentUnits
         
-        distanceDuration.distance.text = numberFormatter.string(from: 0)
-        distanceDuration.distanceUnits.text = "MILES"
-        distanceDuration.duration.text = (NSString(format: "%d:%.2d.%d", 0, 0, 0) as String)
-        distanceDuration.pace.text = "—.–"
-        distanceDuration.paceCaption.text = "MIN/MILE"
+        distanceDuration.distance = 0.0
+        distanceDuration.pace = 0.0
+        distanceDuration.duration = 0.0
         
         cadence.cadence.text = "—"
         cadence.max.text = "—.–"
@@ -178,13 +169,6 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
         geo.des.text = "—"
     }
     
-    func speed(_ _speed : Double) {
-        self.speed.speed.text = numberFormatter.string(from: _speed)
-        if (_speed > _maxSpeed) {
-            _maxSpeed = _speed
-        }
-    }
-
     func updateHeartRate(_ bpm: UInt16) {
         self.biometrics.hr.text = bpm.description
     }
@@ -198,9 +182,13 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
     }
     
     func locationDidUpdate(locations: [CLLocation]) {
-        let curSpeed : CLLocationSpeed = (locations.last?.speed.inMilesPerHour())!
-        speed.speed.text = numberFormatter.string(from: curSpeed)
+
+        speed.speed = (locations.last?.speed)!
+        distanceDuration.distance = rideManager.totalDistance
+        distanceDuration.duration = rideManager.duration
+        
         geo.el.text = locations.last?.altitude.description
+        
         
     }
 }

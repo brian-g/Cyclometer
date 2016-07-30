@@ -18,3 +18,16 @@ let minorFontSize : CGFloat = (heroFontSize / 4)
 let globalTintColor = #colorLiteral(red: 0.3449069262, green: 0.7287212014, blue: 0.01709888875, alpha: 1)
 
 let captionColor = UIColor(white: 0.25, alpha: 1.0)
+
+
+let kAutoPause = "AutoPause"
+let kUseInBackground = "UseInBackground"
+let kAutoDim = "AutoDim"
+let kUnits = "Units"
+let kWheelSize = "Wheelsize"
+let kDevices = "Devices"
+let kSensorName = "SensorName"
+let kSensorId = "SensorID"
+let kSensorCap = "SensorCap"
+
+var currentUnits = Units.imperial

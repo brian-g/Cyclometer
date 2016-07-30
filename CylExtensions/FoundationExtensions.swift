@@ -55,6 +55,10 @@ extension Float {
     func inMilesPerHour() -> Float {
         return self * 3600 * self.inMiles()
     }
+    
+    func inKiloMetersPerHour() -> Float {
+        return self * 3600
+    }
 }
 
 extension Double {
@@ -73,4 +77,7 @@ extension Double {
         return 3600 * self.inMiles()
     }
 
+    func inKiloMetersPerHour() -> Double {
+        return self * 3600;
+    }
 }
