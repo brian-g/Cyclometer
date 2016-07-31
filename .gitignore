@@ -1,2 +1,4 @@
 *.xcbkptlist
 Assets/*.png
+
+*.xcuserstate
