@@ -9,40 +9,11 @@
 import UIKit
 import Foundation
 
-
-let kAutoPause = "AutoPause"
-let kUseInBackground = "UseInBackground"
-let kAutoDim = "AutoDim"
-let kUnits = "Units"
-let kWheelSize = "Wheelsize"
-let kDevices = "Devices"
-let kSensorName = "SensorName"
-let kSensorId = "SensorID"
-let kSensorCap = "SensorCap"
-
-
-enum Units : Int {
-    case Imperial = 0
-    case Metric = 1
-    
-    func description() -> String {
-        switch self {
-        case .Imperial:
-            return "Miles"
-        case .Metric:
-            return "Metric"
-        }
-    }
-}
-
-var currentUnits = Units.Imperial
-
-
-class CylSettingsController : UITableViewController, SensorManagerSensorListUpdates {
+class SettingsController : UITableViewController, SensorManagerSensorListUpdates {
     
     let deviceSection = 1
     let maxDevices = 10
-    var defaults = NSUserDefaults.standardUserDefaults()
+    var defaults = UserDefaults.standard
     private let sensorManager = SensorManager.sharedManager
     
     @IBOutlet weak var autoPause: UISwitch!
@@ -67,7 +38,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         NSLog(segue.identifier!)
         
         if segue.identifier == "wheelSizePicker" {
@@ -77,12 +48,12 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
     
     func updateControlsFromDefaults() {
         
-        autoPause.on = defaults.boolForKey(kAutoPause)
-        trackInBackground.on = defaults.boolForKey(kUseInBackground)
-        units.selectedSegmentIndex = defaults.integerForKey(kUnits)
-        autoDim.on = defaults.boolForKey(kAutoDim)
+        autoPause.isOn = defaults.bool(forKey: kAutoPause)
+        trackInBackground.isOn = defaults.bool(forKey: kUseInBackground)
+        units.selectedSegmentIndex = defaults.integer(forKey: kUnits)
+        autoDim.isOn = defaults.bool(forKey: kAutoDim)
         
-        let size = defaults.integerForKey(kWheelSize)
+        let size = defaults.integer(forKey: kWheelSize)
         if (size <= 0) {
             wheelSize.text = "Automatic"
         } else {
@@ -90,18 +61,18 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         }
     }
     
-    func rememberToggled(sender : CylSettingsDeviceInfoCell) {
+    func rememberToggled(_ sender : SettingsDeviceInfoCell) {
         NSLog("rememberToggled")
         
-        sensorManager.rememberSensor(sender.peripheral.identifier, remember: sender.isRemembered.on)
+        sensorManager.rememberSensor(sender.peripheral.identifier, remember: sender.isRemembered.isOn)
     }
     
-    @IBAction func updateDefaultsFromControls(sender: AnyObject) {
+    @IBAction func updateDefaultsFromControls(_ sender: AnyObject) {
         
-        defaults.setBool(autoPause.on, forKey: kAutoPause)
-        defaults.setBool(trackInBackground.on, forKey: kUseInBackground)
-        defaults.setBool(autoDim.on, forKey: kAutoDim)
-        defaults.setInteger(units.selectedSegmentIndex, forKey: kUnits)
+        defaults.set(autoPause.isOn, forKey: kAutoPause)
+        defaults.set(trackInBackground.isOn, forKey: kUseInBackground)
+        defaults.set(autoDim.isOn, forKey: kAutoDim)
+        defaults.set(units.selectedSegmentIndex, forKey: kUnits)
         
     }
     
@@ -109,31 +80,31 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         tableView.reloadData()
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return super.numberOfSectionsInTableView(tableView)
+        return super.numberOfSections(in: tableView)
         
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath.section == deviceSection {
+        if (indexPath as NSIndexPath).section == deviceSection {
             return 44.0
         }
         
-        return super.tableView(tableView, heightForRowAtIndexPath:indexPath)
+        return super.tableView(tableView, heightForRowAt:indexPath)
     }
     
-    override func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+    override func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
         
-        if indexPath.section == deviceSection {
+        if (indexPath as NSIndexPath).section == deviceSection {
             return 0
         }
         
-        return super.tableView(tableView, indentationLevelForRowAtIndexPath:indexPath)
+        return super.tableView(tableView, indentationLevelForRowAt:indexPath)
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == deviceSection {
             return sensorManager.sensorCount();
@@ -141,37 +112,37 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         return super.tableView(tableView, numberOfRowsInSection:section)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == deviceSection {
+        if (indexPath as NSIndexPath).section == deviceSection {
             
-            var cell : CylSettingsDeviceInfoCell? = tableView.dequeueReusableCellWithIdentifier("deviceInfoCell") as? CylSettingsDeviceInfoCell
+            var cell : SettingsDeviceInfoCell? = tableView.dequeueReusableCell(withIdentifier: "deviceInfoCell") as? SettingsDeviceInfoCell
             
             if cell === nil {
-                cell = (NSBundle.mainBundle().loadNibNamed("CylSettingsDeviceInfoCell", owner: nil, options: nil)[0] as! CylSettingsDeviceInfoCell)
+                cell = (Bundle.main.loadNibNamed("SettingsDeviceInfoCell", owner: nil, options: nil)[0] as! SettingsDeviceInfoCell)
                 
-                let sensor = sensorManager.sensorAt(indexPath.row)
+                let sensor = sensorManager.sensorAt((indexPath as NSIndexPath).row)
                 
                 cell?.deviceName?.text = sensor.name
                 cell?.deviceCapabilities?.text = sensor.capabilities
-                cell?.isConnected?.highlighted = sensor.connected
-                cell?.isRemembered?.on = sensor.remembered
+                cell?.isConnected?.isHighlighted = sensor.connected
+                cell?.isRemembered?.isOn = sensor.remembered
                 cell?.peripheral = sensor
-                cell?.isRemembered.addTarget(self, action: "rememberToggled:", forControlEvents: UIControlEvents.ValueChanged)
+                cell?.isRemembered.addTarget(self, action: #selector(SettingsController.rememberToggled(_:)), for: UIControlEvents.valueChanged)
             }
             return cell!
         }
         
-        return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        return super.tableView(tableView, cellForRowAt: indexPath)
     }
     
-    @IBAction func unwindFromWheelPicker(segue: UIStoryboardSegue) {
+    @IBAction func unwindFromWheelPicker(_ segue: UIStoryboardSegue) {
         NSLog("unwindFromWheelPicker")
-        segue.sourceViewController.dismissViewControllerAnimated(true, completion: nil)
+        segue.sourceViewController.dismiss(animated: true, completion: nil)
     }
 }
 
-class CylWheelPickerViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class WheelPickerViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let sizes = [
         "Automatic",
@@ -201,15 +172,15 @@ class CylWheelPickerViewController : UIViewController, UIPickerViewDelegate, UIP
     
     @IBOutlet weak var picker: UIPickerView!
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return sizes[row]
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return sizes.count
     }
     

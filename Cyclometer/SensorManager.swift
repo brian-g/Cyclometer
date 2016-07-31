@@ -22,17 +22,17 @@ struct SensorInfo {
     var capabilities : String
     var remembered : Bool
     var connected : Bool
-    var identifier : NSUUID
+    var identifier : UUID
     var type: SensorType
 }
 
 class DefaultsSensorInfo: NSObject {
     var name : NSString
     var capabilities : NSString
-    var identifier: NSUUID
+    var identifier: UUID
     var type: SensorType
     
-    init(name : NSString, capabilities : NSString, identifier: NSUUID, type: SensorType) {
+    init(name : NSString, capabilities : NSString, identifier: UUID, type: SensorType) {
         self.name = name
         self.capabilities = capabilities
         self.identifier = identifier
@@ -41,13 +41,13 @@ class DefaultsSensorInfo: NSObject {
 }
 
 enum SensorType : Int {
-    case HeartRate = 0
-    case WheelAndCrankRPM
+    case heartRate = 0
+    case wheelAndCrankRPM
     
     func description() -> String {
         switch self {
-            case .HeartRate: return "Heart rate"
-            case .WheelAndCrankRPM: return "Cadence and Wheel Speed"
+            case .heartRate: return "Heart rate"
+            case .wheelAndCrankRPM: return "Cadence and Wheel Speed"
         }
     }
     
@@ -58,7 +58,7 @@ protocol SensorManagerSensorListUpdates : class {
 }
 
 protocol SensorManagerHeartRateUpdates : class {
-    func sensorManagerHearRateUpdated(bpm: UInt16) -> Void
+    func sensorManagerHearRateUpdated(_ bpm: UInt16) -> Void
 }
 
 protocol Sensor : class {
@@ -77,7 +77,7 @@ protocol Sensor : class {
     var description: String {
         get
     }
-    var identifier: NSUUID {
+    var identifier: UUID {
         get
     }
 }
@@ -97,7 +97,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
 
     private var _savedDevices = [AnyObject]()
     private var _peripherals = [Sensor]()
-    private var _disoveredPeripherals = [NSUUID: CBPeripheral]()
+    private var _disoveredPeripherals = [UUID: CBPeripheral]()
     private var _scanOnlyRemembered : Bool = true
     
     var updateHeartRate : ((UInt16) -> Void)?
@@ -115,7 +115,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         
         _btManager = CBCentralManager(delegate: self, queue: nil)
         
-        _savedDevices = NSUserDefaults.standardUserDefaults().arrayForKey(kDevices)!
+        _savedDevices = UserDefaults.standard.array(forKey: kDevices)!
 
     }
     
@@ -128,7 +128,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         return _peripherals.count
     }
     
-    func sensorAt(index : Int) -> SensorInfo {
+    func sensorAt(_ index : Int) -> SensorInfo {
 
         let p = _peripherals[index]
         let info = SensorInfo(name: p.name,
@@ -141,7 +141,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         return info
     }
     
-    func rememberSensor(p : NSUUID, remember : Bool) {
+    func rememberSensor(_ p : UUID, remember : Bool) {
         for device in _peripherals {
 
             if device.identifier == p {
@@ -152,7 +152,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                                                 identifier: device.identifier,
                                                 type: device.type)
                     _savedDevices.append(db)
-                    NSUserDefaults.standardUserDefaults().synchronize()
+                    UserDefaults.standard.synchronize()
                     
                 } else {
                     
@@ -161,12 +161,13 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         }
     }
     
-    func startScanningForSensors(scanOnlyRemembered: Bool = true) {
+    func startScanningForSensors(_ scanOnlyRemembered: Bool = true) {
         _scanOnlyRemembered = scanOnlyRemembered
         
-        if _btManager.state == CBCentralManagerState.PoweredOn && isScanning == false {
+        
+        if _btManager.state == CBManagerState.poweredOn && isScanning == false {
             NSLog("Started scanning...")
-            _btManager.scanForPeripheralsWithServices(services, options: nil)
+            _btManager.scanForPeripherals(withServices: services, options: nil)
             isScanning = true
         }
     }
@@ -178,13 +179,13 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     
     // Check status of BLE hardware
-    func centralManagerDidUpdateState(central: CBCentralManager) {
-        
-        if central.state == CBCentralManagerState.PoweredOn {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+
+        if central.state == CBManagerState.poweredOn {
             NSLog("Powered on")
             startScanningForSensors()
         }
-        else if central.state == CBCentralManagerState.PoweredOff {
+        else if central.state == CBManagerState.poweredOff {
             // Can have different conditions for all states if needed - show generic alert for now
             NSLog("BLE Powered Off")
             central.stopScan();
@@ -195,7 +196,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     
     // Check out the discovered peripherals to find Sensor Tag
-    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : AnyObject], rssi RSSI: NSNumber) {
         
         NSLog("Found peripheral: \(peripheral.name) \(RSSI)")
         _disoveredPeripherals[peripheral.identifier] = peripheral // Need to hold a strong reference
@@ -204,15 +205,15 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         } else {
             
         }
-        central.connectPeripheral(peripheral, options: nil)
+        central.connect(peripheral, options: nil)
     }
     
-    func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: NSError?) {
         NSLog("Did fail \(peripheral.name): \(error!.description)")
     }
     
     // Discover services of the peripheral
-    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
 
         NSLog("Connected: \(peripheral.name), UUID: \(peripheral.identifier)")
 
@@ -221,20 +222,20 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
 
     }
     
-    func centralManager(central: CBCentralManager!, didRetrieveConnectedPeripherals peripherals: [AnyObject]!) {
+    func centralManager(_ central: CBCentralManager!, didRetrieveConnectedPeripherals peripherals: [AnyObject]!) {
         NSLog("Found connected shit")
         
     }
     // If disconnected, start searching again
-    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
         
         NSLog("Disconnected " + peripheral.name!)
         
         _disoveredPeripherals[peripheral.identifier] = nil
         
-        for var i = 0; i < _peripherals.count; i++ {
+        for i in 0 ..< _peripherals.count {
             if _peripherals[i].identifier == peripheral.identifier {
-                _peripherals.removeAtIndex(i)
+                _peripherals.remove(at: i)
                 sensorListUpdatedDelegate?.sensorManagerSensorListDidChange()
             }
         }
@@ -242,17 +243,17 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
 
     /* Periphal delegates */
-    func peripheral(peripheral: CBPeripheral, didDiscoverIncludedServicesForService service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: NSError?) {
 
         NSLog("Found one Name \(peripheral.name): service: \(service.description)")
 
     }
     
-    func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
         NSLog("didDiscoverServices")
         
         for service in peripheral.services! {
-            if service.UUID == CBUUID(string: kBTHR) {
+            if service.uuid == CBUUID(string: kBTHR) {
                 let _heartRate = HeartRateSensor(peripheral: service.peripheral)
                 _heartRate.connected = true
                 _peripherals.append(_heartRate)
@@ -261,7 +262,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                 if updateHeartRate != nil {
                     _heartRate.updateHeartRate = updateHeartRate
                 }
-            } else if service.UUID == CBUUID(string: kBTCSC) {
+            } else if service.uuid == CBUUID(string: kBTCSC) {
                 let _cycling = CycleSensor(peripheral: service.peripheral)
                 _peripherals.append(_cycling)
                 
@@ -269,17 +270,17 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
                     _cycling.updateWheelRevolutions = updateWheelRevolutions
                 }
             }
-            peripheral.discoverCharacteristics(nil, forService: service)
+            peripheral.discoverCharacteristics(nil, for: service)
         }
         sensorListUpdatedDelegate?.sensorManagerSensorListDidChange()
     }
     
-    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: NSError?) {
 
         NSLog("DEAD")
     }
     
-    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: NSError?) {
         
         NSLog("DEAD")
     }

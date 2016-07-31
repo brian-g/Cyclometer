@@ -10,18 +10,18 @@ import Foundation
 import CoreBluetooth
 
 enum HeartRateSensorLocation : UInt8 {
-    case Other = 0
-    case Chest, Wrist, Finger, Hand, EarLobe, Foot
+    case other = 0
+    case chest, wrist, finger, hand, earLobe, foot
     
     func description() -> String {
         switch self {
-            case .Other: return "Other"
-            case .Chest: return "Chest"
-            case .Finger: return "Finger"
-            case .Wrist: return "Wrist"
-            case .Hand: return "Hand"
-            case .EarLobe: return "Ear lobe"
-            case .Foot: return "Foot"
+            case .other: return "Other"
+            case .chest: return "Chest"
+            case .finger: return "Finger"
+            case .wrist: return "Wrist"
+            case .hand: return "Hand"
+            case .earLobe: return "Ear lobe"
+            case .foot: return "Foot"
         }
     }
 }
@@ -30,7 +30,7 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
 
     weak var _peripheral : CBPeripheral!
 
-    let type : SensorType = SensorType.HeartRate
+    let type : SensorType = SensorType.heartRate
     var name : String {
         get {
             return _peripheral.name!
@@ -43,17 +43,17 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
     }
     var connected: Bool = false
     var remembered: Bool = false
-    var identifier: NSUUID {
+    var identifier: UUID {
         get {
             return _peripheral.identifier
         }
     }
-    var location : HeartRateSensorLocation = .Other
+    var location : HeartRateSensorLocation = .other
     
-    class func readHeartRate(data : NSData) -> UInt16 {
+    class func readHeartRate(_ data : Data) -> UInt16 {
         
-        var buffer = [UInt8](count: data.length, repeatedValue: 0x00)
-        data.getBytes(&buffer, length: buffer.count)
+        var buffer = [UInt8](repeating: 0x00, count: data.count)
+        (data as NSData).getBytes(&buffer, length: buffer.count)
         
         var bpm:UInt16?
         
@@ -73,11 +73,11 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
         }
     }
     
-    class func readHeartRateLocation(data: NSData) -> HeartRateSensorLocation {
+    class func readHeartRateLocation(_ data: Data) -> HeartRateSensorLocation {
         
-        var buffer = HeartRateSensorLocation.Other
+        var buffer = HeartRateSensorLocation.other
         
-        data.getBytes(&buffer, length:data.length)
+        (data as NSData).getBytes(&buffer, length:data.count)
         
         return buffer
     }
@@ -95,49 +95,49 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
     var updateHeartRate : ((UInt16) -> Void)?
     
     /* These 2 should never get called because of how I'm fucking with the delegate */
-    func peripheral(peripheral: CBPeripheral, didDiscoverIncludedServicesForService service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: NSError?) {
         
         NSLog("HRSensor: Found \(peripheral.name): service: \(service.description)")
         
     }
     
-    func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
         NSLog("HRSensor didDiscoverServices")
         
         for service in peripheral.services! {
-            peripheral.discoverCharacteristics(nil, forService: service)
+            peripheral.discoverCharacteristics(nil, for: service)
         }
     }
     
     
-    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: NSError?) {
         
-        if (service.UUID == CBUUID(string: kBTHR)) {
-            NSLog("didDiscoverCharacteristics: \(peripheral.name), Service: \(service.UUID):\(service.UUID.UUIDString), " + service.description)
+        if (service.uuid == CBUUID(string: kBTHR)) {
+            NSLog("didDiscoverCharacteristics: \(peripheral.name), Service: \(service.uuid):\(service.uuid.uuidString), " + service.description)
             
             
             let characteristics = service.characteristics
 
             for c in characteristics! {
-                NSLog("Characteristic: \(c.UUID.UUIDString)")
+                NSLog("Characteristic: \(c.uuid.uuidString)")
                 
-                if (c.UUID.UUIDString == kBTHRLocation) {
-                    peripheral.readValueForCharacteristic(c)
+                if (c.uuid.uuidString == kBTHRLocation) {
+                    peripheral.readValue(for: c)
                 }
                 
-                if (c.UUID.UUIDString == kBTHRMeasurement) {
-                    peripheral.setNotifyValue(true, forCharacteristic: c)
+                if (c.uuid.uuidString == kBTHRMeasurement) {
+                    peripheral.setNotifyValue(true, for: c)
                 }
             }
         }
     }
     
-    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: NSError?) {
         
         if let _ = error {
             NSLog("error reading characteristic")
         } else {
-            switch characteristic.UUID.UUIDString {
+            switch characteristic.uuid.uuidString {
                 case kBTHRMeasurement:
                     
                     let bpm = HeartRateSensor.readHeartRate(characteristic.value!)
@@ -153,12 +153,12 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
         }
     }
 
-    func peripheral(peripheral: CBPeripheral, didUpdateNotificationStateForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: NSError?) {
 
         if let _ = error {
             NSLog("error")
         } else {
-            switch characteristic.UUID.UUIDString {
+            switch characteristic.uuid.uuidString {
                 case kBTHRMeasurement:
                 
                     if let v = characteristic.value {
