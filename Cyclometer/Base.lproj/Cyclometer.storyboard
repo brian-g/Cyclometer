@@ -10,7 +10,7 @@
         <!--Dashboard-->
         <scene sceneID="Pk4-CA-OSE">
             <objects>
-                <viewController storyboardIdentifier="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fgv-my-Dd4" customClass="CylDashboardController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fgv-my-Dd4" customClass="DashboardController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fOy-HG-o9H"/>
                         <viewControllerLayoutGuide type="bottom" id="Sym-Dl-1ZI"/>
@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="-1771.2" y="-3282.4587706146931"/>
         </scene>
-        <!--Cyl Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="QKi-qz-dts">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="uF5-os-OCe" customClass="CylNavigationController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="uF5-os-OCe" customClass="NavigationController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FNh-tT-J1y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -10,7 +10,7 @@
         <!--History-->
         <scene sceneID="kAc-HY-ewg">
             <objects>
-                <tableViewController title="History" id="Hg3-Bl-1e7" userLabel="History" customClass="CylHistoryController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="History" id="Hg3-Bl-1e7" userLabel="History" customClass="HistoryController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="C0u-X8-dqo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
         <!--Ride Details-->
         <scene sceneID="Fck-6R-VIe">
             <objects>
-                <tableViewController title="Ride Details" id="e9g-he-shh" customClass="CylRideDetailsController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Ride Details" id="e9g-he-shh" customClass="RideDetailsController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="UiE-YM-lJD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,7 +11,7 @@ import Foundation
 import CoreBluetooth
 import CoreLocation
 
-class CylDashboardController : UIViewController, CBPeripheralDelegate, RideManagerDelegate {
+class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerDelegate {
     
     let Play = 0
     let Stop = 1

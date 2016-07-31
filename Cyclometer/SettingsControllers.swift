@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class CylSettingsController : UITableViewController, SensorManagerSensorListUpdates {
+class SettingsController : UITableViewController, SensorManagerSensorListUpdates {
     
     let deviceSection = 1
     let maxDevices = 10
@@ -128,7 +128,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
                 cell?.isConnected?.isHighlighted = sensor.connected
                 cell?.isRemembered?.isOn = sensor.remembered
                 cell?.peripheral = sensor
-                cell?.isRemembered.addTarget(self, action: #selector(CylSettingsController.rememberToggled(_:)), for: UIControlEvents.valueChanged)
+                cell?.isRemembered.addTarget(self, action: #selector(SettingsController.rememberToggled(_:)), for: UIControlEvents.valueChanged)
             }
             return cell!
         }
@@ -142,7 +142,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
     }
 }
 
-class CylWheelPickerViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class WheelPickerViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let sizes = [
         "Automatic",
