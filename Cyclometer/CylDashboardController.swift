@@ -194,12 +194,8 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, RideManag
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        NSLog(segue.identifier!)
-        
         if (segue.identifier! == "showMapAndRoute") {
-            NSLog("BRG: Fuck Yes")
-            (segue.destinationViewController as! CylMapAndRouteController).ride = rideManager
+            (segue.destinationViewController as! MapAndRouteController).ride = rideManager
         }
     }
 }

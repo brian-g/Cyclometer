@@ -153,7 +153,7 @@
         <!--Map and Route-->
         <scene sceneID="2QU-MO-Uv2">
             <objects>
-                <viewController title="Map and Route" id="66z-hX-iNd" customClass="CylMapAndRouteController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map and Route" id="66z-hX-iNd" customClass="MapAndRouteController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q5A-sJ-VFY"/>
                         <viewControllerLayoutGuide type="bottom" id="Wdi-db-42n"/>

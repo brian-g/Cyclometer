@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class CylMapAndRouteController : UIViewController, MKMapViewDelegate {
+class MapAndRouteController : UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
