@@ -60,8 +60,6 @@
 		D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		D365F4E61D4DA68F00DA2C21 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
-		D3893A341A81958A00C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3893A351A81958A00C8AA96 /* CylExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylExtensions.h; sourceTree = "<group>"; };
 		D3893A431A81958A00C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3893A441A81958A00C8AA96 /* CylExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylExtensionsTests.swift; sourceTree = "<group>"; };
 		D3893A581A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,24 +115,6 @@
 				D31780B01ADB62C900F8512D /* CycleSensor.swift */,
 			);
 			name = Sensors;
-			sourceTree = "<group>";
-		};
-		D3893A321A81958A00C8AA96 /* CylExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				D3893A351A81958A00C8AA96 /* CylExtensions.h */,
-				D3893A331A81958A00C8AA96 /* Supporting Files */,
-			);
-			name = CylExtensions;
-			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CylExtensions;
-			sourceTree = "<absolute>";
-		};
-		D3893A331A81958A00C8AA96 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D3893A341A81958A00C8AA96 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D3893A411A81958A00C8AA96 /* CylExtensionsTests */ = {
@@ -197,7 +177,6 @@
 		D3893A741A81962100C8AA96 /* Oddments */ = {
 			isa = PBXGroup;
 			children = (
-				D3893A321A81958A00C8AA96 /* CylExtensions */,
 				D3893A411A81958A00C8AA96 /* CylExtensionsTests */,
 				D3893A561A8195C500C8AA96 /* CylCoreData */,
 				D3893A651A8195C500C8AA96 /* CylCoreDataTests */,
@@ -262,9 +241,9 @@
 				D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */,
 				D365F4E61D4DA68F00DA2C21 /* Protocols.swift */,
 				D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */,
-				D3FDEFD51A66A207006D3840 /* Cells */,
 				D3E1E1281D4714E200B54A57 /* Globals.swift */,
 				D3FDEFCC1A633890006D3840 /* RideManager.swift */,
+				D3FDEFD51A66A207006D3840 /* Cells */,
 				D3910A3B1C2B102C00ADCB07 /* Views */,
 				D3910A3A1C2B0FFF00ADCB07 /* View Controllers */,
 				D3BE70191BD08E89001A94FD /* Storyboards */,
