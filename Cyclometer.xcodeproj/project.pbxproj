@@ -11,13 +11,10 @@
 		D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D335E2971AC8D38B00555080 /* HealthKit.framework */; };
 		D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A393E1A7DB0B800941901 /* CyclometerModel.swift */; };
 		D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */; };
-		D3893A361A81958A00C8AA96 /* CylExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D3893A351A81958A00C8AA96 /* CylExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D3893A481A81958A00C8AA96 /* CylExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A311A81958A00C8AA96 /* CylExtensions.framework */; };
-		D3893A491A81958A00C8AA96 /* CylExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A311A81958A00C8AA96 /* CylExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D3893A5A1A8195C500C8AA96 /* CylCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = D3893A591A8195C500C8AA96 /* CylCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D3893A6C1A8195C500C8AA96 /* CylCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A551A8195C500C8AA96 /* CylCoreData.framework */; };
-		D3893A6D1A8195C500C8AA96 /* CylCoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3893A551A8195C500C8AA96 /* CylCoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D3893A761A81C89F00C8AA96 /* CylProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3893A751A81C89F00C8AA96 /* CylProtocols.swift */; };
+		D365F4E81D4DA68F00DA2C21 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E41D4DA68F00DA2C21 /* Enums.swift */; };
+		D365F4E91D4DA68F00DA2C21 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */; };
+		D365F4EA1D4DA68F00DA2C21 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E61D4DA68F00DA2C21 /* Protocols.swift */; };
+		D365F4EB1D4DA68F00DA2C21 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */; };
 		D38F14031AC8C09500A959A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14021AC8C09400A959A2 /* CoreLocation.framework */; };
 		D38F14051AC8C0A300A959A2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */; };
 		D3910A3D1C2B126F00ADCB07 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3910A3C1C2B126F00ADCB07 /* DemoData.swift */; };
@@ -31,11 +28,8 @@
 		D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831B1A54AFF00070E792 /* Images.xcassets */; };
 		D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */; };
 		D3E1E1291D4714E200B54A57 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E1281D4714E200B54A57 /* Globals.swift */; };
-		D3E1E12B1D4ABF4D00B54A57 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E12A1D4ABF4D00B54A57 /* Enums.swift */; };
 		D3E1E12D1D4D4E6300B54A57 /* CylMapAndRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E12C1D4D4E6300B54A57 /* CylMapAndRoute.swift */; };
-		D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */; };
 		D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */; };
-		D3FD125A1AFE94A900C90CFA /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FD12591AFE94A900C90CFA /* FoundationExtensions.swift */; };
 		D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */; };
 		D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCC1A633890006D3840 /* RideManager.swift */; };
 		D3FDEFD01A6342B4006D3840 /* CyclometerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCE1A6342B4006D3840 /* CyclometerModel.xcdatamodeld */; };
@@ -44,23 +38,6 @@
 		D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D3893A461A81958A00C8AA96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D3893A301A81958A00C8AA96;
-			remoteInfo = CylExtensions;
-		};
-		D3893A6A1A8195C500C8AA96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D3893A541A8195C500C8AA96;
-			remoteInfo = CylCoreData;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		D3FDEFF71A66A291006D3840 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -68,8 +45,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D3893A6D1A8195C500C8AA96 /* CylCoreData.framework in Embed Frameworks */,
-				D3893A491A81958A00C8AA96 /* CylExtensions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,17 +56,18 @@
 		D335E2971AC8D38B00555080 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		D33A393E1A7DB0B800941901 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CyclometerModel.swift; path = /Shared/Users/brian/Projects/Cyclometer/Cyclometer/CyclometerModel.swift; sourceTree = "<absolute>"; };
 		D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsControllers.swift; sourceTree = "<group>"; };
-		D3893A311A81958A00C8AA96 /* CylExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CylExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D365F4E41D4DA68F00DA2C21 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		D365F4E61D4DA68F00DA2C21 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		D3893A341A81958A00C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3893A351A81958A00C8AA96 /* CylExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylExtensions.h; sourceTree = "<group>"; };
 		D3893A431A81958A00C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3893A441A81958A00C8AA96 /* CylExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylExtensionsTests.swift; sourceTree = "<group>"; };
-		D3893A551A8195C500C8AA96 /* CylCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CylCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3893A581A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3893A591A8195C500C8AA96 /* CylCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylCoreData.h; sourceTree = "<group>"; };
 		D3893A671A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3893A681A8195C500C8AA96 /* CylCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylCoreDataTests.swift; sourceTree = "<group>"; };
-		D3893A751A81C89F00C8AA96 /* CylProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CylProtocols.swift; path = CylExtensions/CylProtocols.swift; sourceTree = SOURCE_ROOT; };
 		D38F14021AC8C09400A959A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D38F14081AC8C17D00A959A2 /* Cyclometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cyclometer.entitlements; sourceTree = "<group>"; };
@@ -108,11 +84,8 @@
 		D3DA831B1A54AFF00070E792 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3DA831E1A54AFF00070E792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D3E1E1281D4714E200B54A57 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		D3E1E12A1D4ABF4D00B54A57 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D3E1E12C1D4D4E6300B54A57 /* CylMapAndRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylMapAndRoute.swift; sourceTree = "<group>"; };
-		D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtensions.swift; path = /Shared/Users/brian/Projects/Cyclometer/UIKitExtensions.swift; sourceTree = "<absolute>"; };
 		D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardCards.swift; sourceTree = "<group>"; };
-		D3FD12591AFE94A900C90CFA /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoundationExtensions.swift; path = CylExtensions/FoundationExtensions.swift; sourceTree = SOURCE_ROOT; };
 		D3FDEFCA1A6176E9006D3840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cyclometer/Base.lproj/Cyclometer.storyboard; sourceTree = "<group>"; };
 		D3FDEFCC1A633890006D3840 /* RideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideManager.swift; sourceTree = "<group>"; };
 		D3FDEFCF1A6342B4006D3840 /* CyclometerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CyclometerModel.xcdatamodel; sourceTree = "<group>"; };
@@ -122,37 +95,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D3893A2D1A81958A00C8AA96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3893A511A8195C500C8AA96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D3DA830C1A54AFF00070E792 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D38F14051AC8C0A300A959A2 /* CoreBluetooth.framework in Frameworks */,
 				D38F14031AC8C09500A959A2 /* CoreLocation.framework in Frameworks */,
-				D3893A6C1A8195C500C8AA96 /* CylCoreData.framework in Frameworks */,
-				D3893A481A81958A00C8AA96 /* CylExtensions.framework in Frameworks */,
 				D395E00D1ACA3DE40007AF34 /* MapKit.framework in Frameworks */,
 				D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3FDEFD71A66A291006D3840 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,11 +122,8 @@
 		D3893A321A81958A00C8AA96 /* CylExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */,
 				D3893A351A81958A00C8AA96 /* CylExtensions.h */,
 				D3893A331A81958A00C8AA96 /* Supporting Files */,
-				D3893A751A81C89F00C8AA96 /* CylProtocols.swift */,
-				D3FD12591AFE94A900C90CFA /* FoundationExtensions.swift */,
 			);
 			name = CylExtensions;
 			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CylExtensions;
@@ -254,7 +201,6 @@
 				D3893A411A81958A00C8AA96 /* CylExtensionsTests */,
 				D3893A561A8195C500C8AA96 /* CylCoreData */,
 				D3893A651A8195C500C8AA96 /* CylCoreDataTests */,
-				D3E1E12A1D4ABF4D00B54A57 /* Enums.swift */,
 			);
 			name = Oddments;
 			path = ..;
@@ -274,7 +220,6 @@
 		D3910A3B1C2B102C00ADCB07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D3FDEFD51A66A207006D3840 /* CellsAndOddments */,
 				D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */,
 			);
 			name = Views;
@@ -306,8 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				D3DA830F1A54AFF00070E792 /* Cyclometer.app */,
-				D3893A311A81958A00C8AA96 /* CylExtensions.framework */,
-				D3893A551A8195C500C8AA96 /* CylCoreData.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,6 +258,11 @@
 		D3DA83111A54AFF00070E792 /* Cyclometer */ = {
 			isa = PBXGroup;
 			children = (
+				D365F4E41D4DA68F00DA2C21 /* Enums.swift */,
+				D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */,
+				D365F4E61D4DA68F00DA2C21 /* Protocols.swift */,
+				D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */,
+				D3FDEFD51A66A207006D3840 /* Cells */,
 				D3E1E1281D4714E200B54A57 /* Globals.swift */,
 				D3FDEFCC1A633890006D3840 /* RideManager.swift */,
 				D3910A3B1C2B102C00ADCB07 /* Views */,
@@ -339,80 +287,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D3FDEFD51A66A207006D3840 /* CellsAndOddments */ = {
+		D3FDEFD51A66A207006D3840 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */,
 				D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */,
 			);
-			name = CellsAndOddments;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		D3893A2E1A81958A00C8AA96 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D3893A361A81958A00C8AA96 /* CylExtensions.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3893A521A8195C500C8AA96 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D3893A5A1A8195C500C8AA96 /* CylCoreData.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3FDEFD81A66A291006D3840 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		D3893A301A81958A00C8AA96 /* CylExtensions */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D3893A4A1A81958A00C8AA96 /* Build configuration list for PBXNativeTarget "CylExtensions" */;
-			buildPhases = (
-				D3893A2C1A81958A00C8AA96 /* Sources */,
-				D3893A2D1A81958A00C8AA96 /* Frameworks */,
-				D3893A2E1A81958A00C8AA96 /* Headers */,
-				D3893A2F1A81958A00C8AA96 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CylExtensions;
-			productName = CylExtensions;
-			productReference = D3893A311A81958A00C8AA96 /* CylExtensions.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D3893A541A8195C500C8AA96 /* CylCoreData */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D3893A6E1A8195C500C8AA96 /* Build configuration list for PBXNativeTarget "CylCoreData" */;
-			buildPhases = (
-				D3893A501A8195C500C8AA96 /* Sources */,
-				D3893A511A8195C500C8AA96 /* Frameworks */,
-				D3893A521A8195C500C8AA96 /* Headers */,
-				D3893A531A8195C500C8AA96 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CylCoreData;
-			productName = CylCoreData;
-			productReference = D3893A551A8195C500C8AA96 /* CylCoreData.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		D3DA830E1A54AFF00070E792 /* Cyclometer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3DA832E1A54AFF00070E792 /* Build configuration list for PBXNativeTarget "Cyclometer" */;
@@ -425,30 +311,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				D3893A471A81958A00C8AA96 /* PBXTargetDependency */,
-				D3893A6B1A8195C500C8AA96 /* PBXTargetDependency */,
 			);
 			name = Cyclometer;
 			productName = Cyclometer;
 			productReference = D3DA830F1A54AFF00070E792 /* Cyclometer.app */;
 			productType = "com.apple.product-type.application";
-		};
-		D3FDEFDA1A66A291006D3840 /* DashboardViews */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D3FDEFF41A66A291006D3840 /* Build configuration list for PBXNativeTarget "DashboardViews" */;
-			buildPhases = (
-				D3FDEFD61A66A291006D3840 /* Sources */,
-				D3FDEFD71A66A291006D3840 /* Frameworks */,
-				D3FDEFD81A66A291006D3840 /* Headers */,
-				D3FDEFD91A66A291006D3840 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DashboardViews;
-			productName = DashboardViews;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -461,16 +328,6 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Brian Glaeske";
 				TargetAttributes = {
-					D3893A301A81958A00C8AA96 = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = R57AHL4XS9;
-						LastSwiftMigration = 0800;
-					};
-					D3893A541A8195C500C8AA96 = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = R57AHL4XS9;
-						LastSwiftMigration = 0800;
-					};
 					D3DA830E1A54AFF00070E792 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = R57AHL4XS9;
@@ -496,9 +353,6 @@
 							};
 						};
 					};
-					D3FDEFDA1A66A291006D3840 = {
-						CreatedOnToolsVersion = 6.2;
-					};
 				};
 			};
 			buildConfigurationList = D3DA830A1A54AFF00070E792 /* Build configuration list for PBXProject "Cyclometer" */;
@@ -515,28 +369,11 @@
 			projectRoot = "";
 			targets = (
 				D3DA830E1A54AFF00070E792 /* Cyclometer */,
-				D3FDEFDA1A66A291006D3840 /* DashboardViews */,
-				D3893A301A81958A00C8AA96 /* CylExtensions */,
-				D3893A541A8195C500C8AA96 /* CylCoreData */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D3893A2F1A81958A00C8AA96 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3893A531A8195C500C8AA96 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D3DA830D1A54AFF00070E792 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -550,77 +387,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3FDEFD91A66A291006D3840 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D3893A2C1A81958A00C8AA96 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3893A501A8195C500C8AA96 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D3DA830B1A54AFF00070E792 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */,
-				D3FD125A1AFE94A900C90CFA /* FoundationExtensions.swift in Sources */,
 				D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */,
 				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
+				D365F4EA1D4DA68F00DA2C21 /* Protocols.swift in Sources */,
 				D3E1E1291D4714E200B54A57 /* Globals.swift in Sources */,
 				D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */,
-				D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */,
 				D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */,
-				D3893A761A81C89F00C8AA96 /* CylProtocols.swift in Sources */,
 				D3E1E12D1D4D4E6300B54A57 /* CylMapAndRoute.swift in Sources */,
 				D3FDEFD01A6342B4006D3840 /* CyclometerModel.xcdatamodeld in Sources */,
+				D365F4EB1D4DA68F00DA2C21 /* UIKitExtensions.swift in Sources */,
 				D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */,
 				D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */,
 				D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */,
 				D3910A3D1C2B126F00ADCB07 /* DemoData.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
 				D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */,
-				D3E1E12B1D4ABF4D00B54A57 /* Enums.swift in Sources */,
+				D365F4E81D4DA68F00DA2C21 /* Enums.swift in Sources */,
 				D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3FDEFD61A66A291006D3840 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				D365F4E91D4DA68F00DA2C21 /* FoundationExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D3893A471A81958A00C8AA96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D3893A301A81958A00C8AA96 /* CylExtensions */;
-			targetProxy = D3893A461A81958A00C8AA96 /* PBXContainerItemProxy */;
-		};
-		D3893A6B1A8195C500C8AA96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D3893A541A8195C500C8AA96 /* CylCoreData */;
-			targetProxy = D3893A6A1A8195C500C8AA96 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D3BE70141BCB4A37001A94FD /* RideHistory.storyboard */ = {
@@ -651,110 +447,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D3893A4B1A81958A00C8AA96 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CylExtensions/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "name.glaeske.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D3893A4C1A81958A00C8AA96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CylExtensions/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "name.glaeske.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D3893A6F1A8195C500C8AA96 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CylCoreData/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "name.glaeske.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D3893A701A8195C500C8AA96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CylCoreData/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "name.glaeske.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		D3DA832C1A54AFF00070E792 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -880,72 +572,9 @@
 			};
 			name = Release;
 		};
-		D3FDEFF51A66A291006D3840 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DashboardViews/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D3FDEFF61A66A291006D3840 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DashboardViews/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D3893A4A1A81958A00C8AA96 /* Build configuration list for PBXNativeTarget "CylExtensions" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3893A4B1A81958A00C8AA96 /* Debug */,
-				D3893A4C1A81958A00C8AA96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D3893A6E1A8195C500C8AA96 /* Build configuration list for PBXNativeTarget "CylCoreData" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3893A6F1A8195C500C8AA96 /* Debug */,
-				D3893A701A8195C500C8AA96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D3DA830A1A54AFF00070E792 /* Build configuration list for PBXProject "Cyclometer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -960,15 +589,6 @@
 			buildConfigurations = (
 				D3DA832F1A54AFF00070E792 /* Debug */,
 				D3DA83301A54AFF00070E792 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D3FDEFF41A66A291006D3840 /* Build configuration list for PBXNativeTarget "DashboardViews" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3FDEFF51A66A291006D3840 /* Debug */,
-				D3FDEFF61A66A291006D3840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
