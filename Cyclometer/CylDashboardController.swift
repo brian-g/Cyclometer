@@ -11,7 +11,7 @@ import Foundation
 import CoreBluetooth
 import CoreLocation
 
-class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideManagerDelegate {
+class CylDashboardController : UIViewController, CBPeripheralDelegate, RideManagerDelegate {
     
     let Play = 0
     let Stop = 1
@@ -34,7 +34,7 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
     private lazy var speedFormatter = NumberFormatter()
     private lazy var timeFormatter = DateFormatter()
 
-    private lazy var rideManager = CylRideManager()
+    private lazy var rideManager = RideManager()
     
     private var _maxSpeed = 0.0
     

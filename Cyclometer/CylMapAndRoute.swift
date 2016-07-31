@@ -14,7 +14,7 @@ class CylMapAndRouteController : UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var ride : CylRideManager?
+    var ride : RideManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
