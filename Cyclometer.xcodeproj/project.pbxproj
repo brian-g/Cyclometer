@@ -184,15 +184,9 @@
 		D3DA83111A54AFF00070E792 /* Cyclometer */ = {
 			isa = PBXGroup;
 			children = (
-				D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */,
-				D36EF77F1D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld */,
-				D36EF77C1D4DA8930006DD79 /* DemoData.swift */,
-				D365F4E41D4DA68F00DA2C21 /* Enums.swift */,
-				D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */,
-				D365F4E61D4DA68F00DA2C21 /* Protocols.swift */,
-				D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */,
-				D3E1E1281D4714E200B54A57 /* Globals.swift */,
 				D3FDEFCC1A633890006D3840 /* RideManager.swift */,
+				D3E7CD611D4DB50B00EC5910 /* Extensions, Globals and Protocols */,
+				D3E7CD601D4DB4F200EC5910 /* CoreData */,
 				D3FDEFD51A66A207006D3840 /* Cells */,
 				D3910A3B1C2B102C00ADCB07 /* Views */,
 				D3910A3A1C2B0FFF00ADCB07 /* View Controllers */,
@@ -213,6 +207,28 @@
 				D3DA83131A54AFF00070E792 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3E7CD601D4DB4F200EC5910 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */,
+				D36EF77F1D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld */,
+				D36EF77C1D4DA8930006DD79 /* DemoData.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		D3E7CD611D4DB50B00EC5910 /* Extensions, Globals and Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D365F4E41D4DA68F00DA2C21 /* Enums.swift */,
+				D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */,
+				D365F4E61D4DA68F00DA2C21 /* Protocols.swift */,
+				D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */,
+				D3E1E1281D4714E200B54A57 /* Globals.swift */,
+			);
+			name = "Extensions, Globals and Protocols";
 			sourceTree = "<group>";
 		};
 		D3FDEFD51A66A207006D3840 /* Cells */ = {
