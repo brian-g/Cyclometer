@@ -143,7 +143,7 @@ class CylHistoryController : UITableViewController {
     }
 }
 
-class CylRideDetailsController : UITableViewController, CylViewControllerParameter {
+class CylRideDetailsController : UITableViewController {
 
     let emptyString = "--"
     let englishUnits = UserDefaults.standard.bool(forKey: kUnits)
@@ -161,8 +161,6 @@ class CylRideDetailsController : UITableViewController, CylViewControllerParamet
     @IBOutlet weak var avgHr: UILabel!
     @IBOutlet weak var maxHr: UILabel!
 
-    
-    var viewControllerParameter : CylParameter?
     var ride : Ride?
     
     let numberFormatter = NumberFormatter()
