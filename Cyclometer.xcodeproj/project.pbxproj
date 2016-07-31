@@ -60,8 +60,6 @@
 		D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		D365F4E61D4DA68F00DA2C21 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
-		D3893A431A81958A00C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3893A441A81958A00C8AA96 /* CylExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylExtensionsTests.swift; sourceTree = "<group>"; };
 		D3893A581A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3893A591A8195C500C8AA96 /* CylCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylCoreData.h; sourceTree = "<group>"; };
 		D3893A671A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,24 +115,6 @@
 			name = Sensors;
 			sourceTree = "<group>";
 		};
-		D3893A411A81958A00C8AA96 /* CylExtensionsTests */ = {
-			isa = PBXGroup;
-			children = (
-				D3893A441A81958A00C8AA96 /* CylExtensionsTests.swift */,
-				D3893A421A81958A00C8AA96 /* Supporting Files */,
-			);
-			name = CylExtensionsTests;
-			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CylExtensionsTests;
-			sourceTree = "<absolute>";
-		};
-		D3893A421A81958A00C8AA96 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D3893A431A81958A00C8AA96 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D3893A561A8195C500C8AA96 /* CylCoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +157,6 @@
 		D3893A741A81962100C8AA96 /* Oddments */ = {
 			isa = PBXGroup;
 			children = (
-				D3893A411A81958A00C8AA96 /* CylExtensionsTests */,
 				D3893A561A8195C500C8AA96 /* CylCoreData */,
 				D3893A651A8195C500C8AA96 /* CylCoreDataTests */,
 			);
