@@ -217,3 +217,7 @@ xcuserdata/
 ####
 # UNKNOWN: recommended by others, but I can't discover what these files are
 #
+
+Cyclometer.xcodeproj/xcuserdata/brian.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+
+Cyclometer.xcodeproj/project.xcworkspace/xcuserdata/brian.xcuserdatad/UserInterfaceState.xcuserstate

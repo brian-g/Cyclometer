@@ -28,6 +28,7 @@ let kDevices = "Devices"
 let kSensorName = "SensorName"
 let kSensorId = "SensorID"
 let kSensorCap = "SensorCap"
+let kDoNotDisturb = "DoNotDisturb"
 
 var currentUnits = Units.imperial
 
