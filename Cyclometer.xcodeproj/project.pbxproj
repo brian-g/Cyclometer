@@ -9,15 +9,16 @@
 /* Begin PBXBuildFile section */
 		D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31780B01ADB62C900F8512D /* CycleSensor.swift */; };
 		D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D335E2971AC8D38B00555080 /* HealthKit.framework */; };
-		D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A393E1A7DB0B800941901 /* CyclometerModel.swift */; };
 		D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */; };
 		D365F4E81D4DA68F00DA2C21 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E41D4DA68F00DA2C21 /* Enums.swift */; };
 		D365F4E91D4DA68F00DA2C21 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */; };
 		D365F4EA1D4DA68F00DA2C21 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E61D4DA68F00DA2C21 /* Protocols.swift */; };
 		D365F4EB1D4DA68F00DA2C21 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */; };
+		D36EF77D1D4DA8930006DD79 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36EF77C1D4DA8930006DD79 /* DemoData.swift */; };
+		D36EF7811D4DA8B10006DD79 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */; };
+		D36EF7821D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D36EF77F1D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld */; };
 		D38F14031AC8C09500A959A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14021AC8C09400A959A2 /* CoreLocation.framework */; };
 		D38F14051AC8C0A300A959A2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */; };
-		D3910A3D1C2B126F00ADCB07 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3910A3C1C2B126F00ADCB07 /* DemoData.swift */; };
 		D395E00D1ACA3DE40007AF34 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395E00C1ACA3DE40007AF34 /* MapKit.framework */; };
 		D3BE70161BCB4A37001A94FD /* RideHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BE70141BCB4A37001A94FD /* RideHistory.storyboard */; };
 		D3BE70181BCC223E001A94FD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BE70171BCC223E001A94FD /* Settings.storyboard */; };
@@ -32,7 +33,6 @@
 		D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */; };
 		D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */; };
 		D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCC1A633890006D3840 /* RideManager.swift */; };
-		D3FDEFD01A6342B4006D3840 /* CyclometerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCE1A6342B4006D3840 /* CyclometerModel.xcdatamodeld */; };
 		D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */; };
 		D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */; };
 		D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */; };
@@ -54,20 +54,19 @@
 /* Begin PBXFileReference section */
 		D31780B01ADB62C900F8512D /* CycleSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleSensor.swift; sourceTree = "<group>"; };
 		D335E2971AC8D38B00555080 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		D33A393E1A7DB0B800941901 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CyclometerModel.swift; path = /Shared/Users/brian/Projects/Cyclometer/Cyclometer/CyclometerModel.swift; sourceTree = "<absolute>"; };
 		D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsControllers.swift; sourceTree = "<group>"; };
 		D365F4E41D4DA68F00DA2C21 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		D365F4E61D4DA68F00DA2C21 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
-		D3893A581A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3893A591A8195C500C8AA96 /* CylCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylCoreData.h; sourceTree = "<group>"; };
+		D36EF77C1D4DA8930006DD79 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
+		D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclometerModel.swift; sourceTree = "<group>"; };
+		D36EF7801D4DA8B10006DD79 /* CyclometerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CyclometerModel.xcdatamodel; sourceTree = "<group>"; };
 		D3893A671A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3893A681A8195C500C8AA96 /* CylCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylCoreDataTests.swift; sourceTree = "<group>"; };
 		D38F14021AC8C09400A959A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D38F14081AC8C17D00A959A2 /* Cyclometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cyclometer.entitlements; sourceTree = "<group>"; };
-		D3910A3C1C2B126F00ADCB07 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoData.swift; path = CylCoreData/DemoData.swift; sourceTree = SOURCE_ROOT; };
 		D395E00C1ACA3DE40007AF34 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D3BE70151BCB4A37001A94FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RideHistory.storyboard; sourceTree = "<group>"; };
 		D3BE70171BCC223E001A94FD /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -84,7 +83,6 @@
 		D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardCards.swift; sourceTree = "<group>"; };
 		D3FDEFCA1A6176E9006D3840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cyclometer/Base.lproj/Cyclometer.storyboard; sourceTree = "<group>"; };
 		D3FDEFCC1A633890006D3840 /* RideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideManager.swift; sourceTree = "<group>"; };
-		D3FDEFCF1A6342B4006D3840 /* CyclometerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CyclometerModel.xcdatamodel; sourceTree = "<group>"; };
 		D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CylSettingsDeviceInfoCell.xib; sourceTree = "<group>"; };
 		D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycSettingsDeviceInfoCell.swift; sourceTree = "<group>"; };
 		D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardController.swift; sourceTree = "<group>"; };
@@ -115,27 +113,6 @@
 			name = Sensors;
 			sourceTree = "<group>";
 		};
-		D3893A561A8195C500C8AA96 /* CylCoreData */ = {
-			isa = PBXGroup;
-			children = (
-				D3FDEFCE1A6342B4006D3840 /* CyclometerModel.xcdatamodeld */,
-				D33A393E1A7DB0B800941901 /* CyclometerModel.swift */,
-				D3893A591A8195C500C8AA96 /* CylCoreData.h */,
-				D3893A571A8195C500C8AA96 /* Supporting Files */,
-				D3910A3C1C2B126F00ADCB07 /* DemoData.swift */,
-			);
-			name = CylCoreData;
-			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CylCoreData;
-			sourceTree = "<absolute>";
-		};
-		D3893A571A8195C500C8AA96 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D3893A581A8195C500C8AA96 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D3893A651A8195C500C8AA96 /* CylCoreDataTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +134,6 @@
 		D3893A741A81962100C8AA96 /* Oddments */ = {
 			isa = PBXGroup;
 			children = (
-				D3893A561A8195C500C8AA96 /* CylCoreData */,
 				D3893A651A8195C500C8AA96 /* CylCoreDataTests */,
 			);
 			name = Oddments;
@@ -216,6 +192,9 @@
 		D3DA83111A54AFF00070E792 /* Cyclometer */ = {
 			isa = PBXGroup;
 			children = (
+				D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */,
+				D36EF77F1D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld */,
+				D36EF77C1D4DA8930006DD79 /* DemoData.swift */,
 				D365F4E41D4DA68F00DA2C21 /* Enums.swift */,
 				D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */,
 				D365F4E61D4DA68F00DA2C21 /* Protocols.swift */,
@@ -358,17 +337,17 @@
 				D365F4EA1D4DA68F00DA2C21 /* Protocols.swift in Sources */,
 				D3E1E1291D4714E200B54A57 /* Globals.swift in Sources */,
 				D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */,
+				D36EF7811D4DA8B10006DD79 /* CyclometerModel.swift in Sources */,
 				D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */,
 				D3E1E12D1D4D4E6300B54A57 /* CylMapAndRoute.swift in Sources */,
-				D3FDEFD01A6342B4006D3840 /* CyclometerModel.xcdatamodeld in Sources */,
 				D365F4EB1D4DA68F00DA2C21 /* UIKitExtensions.swift in Sources */,
 				D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */,
 				D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */,
 				D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */,
-				D3910A3D1C2B126F00ADCB07 /* DemoData.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
-				D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */,
+				D36EF77D1D4DA8930006DD79 /* DemoData.swift in Sources */,
 				D365F4E81D4DA68F00DA2C21 /* Enums.swift in Sources */,
+				D36EF7821D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld in Sources */,
 				D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */,
 				D365F4E91D4DA68F00DA2C21 /* FoundationExtensions.swift in Sources */,
 			);
@@ -554,15 +533,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D3FDEFCE1A6342B4006D3840 /* CyclometerModel.xcdatamodeld */ = {
+		D36EF77F1D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D3FDEFCF1A6342B4006D3840 /* CyclometerModel.xcdatamodel */,
+				D36EF7801D4DA8B10006DD79 /* CyclometerModel.xcdatamodel */,
 			);
-			currentVersion = D3FDEFCF1A6342B4006D3840 /* CyclometerModel.xcdatamodel */;
-			name = CyclometerModel.xcdatamodeld;
-			path = /Shared/Users/brian/Projects/Cyclometer/Cyclometer/CyclometerModel.xcdatamodeld;
-			sourceTree = "<absolute>";
+			currentVersion = D36EF7801D4DA8B10006DD79 /* CyclometerModel.xcdatamodel */;
+			path = CyclometerModel.xcdatamodeld;
+			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
