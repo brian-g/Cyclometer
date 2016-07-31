@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class CylSettingsController : UITableViewController, SensorManagerSensorListUpdates {
+class SettingsController : UITableViewController, SensorManagerSensorListUpdates {
     
     let deviceSection = 1
     let maxDevices = 10
@@ -61,7 +61,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         }
     }
     
-    func rememberToggled(_ sender : CylSettingsDeviceInfoCell) {
+    func rememberToggled(_ sender : SettingsDeviceInfoCell) {
         NSLog("rememberToggled")
         
         sensorManager.rememberSensor(sender.peripheral.identifier, remember: sender.isRemembered.isOn)
@@ -116,10 +116,10 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         
         if (indexPath as NSIndexPath).section == deviceSection {
             
-            var cell : CylSettingsDeviceInfoCell? = tableView.dequeueReusableCell(withIdentifier: "deviceInfoCell") as? CylSettingsDeviceInfoCell
+            var cell : SettingsDeviceInfoCell? = tableView.dequeueReusableCell(withIdentifier: "deviceInfoCell") as? SettingsDeviceInfoCell
             
             if cell === nil {
-                cell = (Bundle.main.loadNibNamed("CylSettingsDeviceInfoCell", owner: nil, options: nil)[0] as! CylSettingsDeviceInfoCell)
+                cell = (Bundle.main.loadNibNamed("SettingsDeviceInfoCell", owner: nil, options: nil)[0] as! SettingsDeviceInfoCell)
                 
                 let sensor = sensorManager.sensorAt((indexPath as NSIndexPath).row)
                 
@@ -128,7 +128,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
                 cell?.isConnected?.isHighlighted = sensor.connected
                 cell?.isRemembered?.isOn = sensor.remembered
                 cell?.peripheral = sensor
-                cell?.isRemembered.addTarget(self, action: #selector(CylSettingsController.rememberToggled(_:)), for: UIControlEvents.valueChanged)
+                cell?.isRemembered.addTarget(self, action: #selector(SettingsController.rememberToggled(_:)), for: UIControlEvents.valueChanged)
             }
             return cell!
         }
@@ -142,7 +142,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
     }
 }
 
-class CylWheelPickerViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class WheelPickerViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let sizes = [
         "Automatic",

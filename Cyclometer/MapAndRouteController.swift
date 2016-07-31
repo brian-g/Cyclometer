@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 import MapKit
 
-class CylMapAndRouteController : UIViewController, MKMapViewDelegate {
+class MapAndRouteController : UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var ride : CylRideManager?
+    var ride : RideManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()

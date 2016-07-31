@@ -10,7 +10,7 @@
         <!--Dashboard-->
         <scene sceneID="Pk4-CA-OSE">
             <objects>
-                <viewController storyboardIdentifier="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fgv-my-Dd4" customClass="CylDashboardController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fgv-my-Dd4" customClass="DashboardController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fOy-HG-o9H"/>
                         <viewControllerLayoutGuide type="bottom" id="Sym-Dl-1ZI"/>
@@ -23,31 +23,31 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PWw-Mq-2B3">
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-1s-Aex" customClass="CylSpeedDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvv-1s-Aex" customClass="SpeedDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="141" id="dlT-gC-cXG"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQ0-kp-MzQ" customClass="CylDistanceTimeDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQ0-kp-MzQ" customClass="DistanceTimeDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="163" id="Y4y-tc-bC6"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlJ-dt-HY9" customClass="CylCadenceDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlJ-dt-HY9" customClass="CadenceDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="wf9-lw-WbM"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POE-U3-tk5" customClass="CylHeartRateDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POE-U3-tk5" customClass="HeartRateDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="QxS-vT-oic"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-wU-I28" customClass="CylGeoDashboardView" customModule="Cyclometer" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-wU-I28" customClass="GeoDashboardView" customModule="Cyclometer" customModuleProvider="target">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="JE6-kz-qGP"/>
@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="-1771.2" y="-3282.4587706146931"/>
         </scene>
-        <!--Cyl Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="QKi-qz-dts">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="uF5-os-OCe" customClass="CylNavigationController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="uF5-os-OCe" customClass="NavigationController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FNh-tT-J1y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -153,7 +153,7 @@
         <!--Map and Route-->
         <scene sceneID="2QU-MO-Uv2">
             <objects>
-                <viewController title="Map and Route" id="66z-hX-iNd" customClass="CylMapAndRouteController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map and Route" id="66z-hX-iNd" customClass="MapAndRouteController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q5A-sJ-VFY"/>
                         <viewControllerLayoutGuide type="bottom" id="Wdi-db-42n"/>

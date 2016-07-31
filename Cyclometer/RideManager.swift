@@ -1,5 +1,5 @@
 //
-//  Ride.swift
+//  RideManager.swift
 //  Cyclometer
 //
 //  Created by Brian on 1/11/15.
@@ -12,18 +12,18 @@ import CoreMotion
 import CoreBluetooth
 import CoreLocation
 
-protocol CylRideManagerDelegate : class {
+protocol RideManagerDelegate : class {
     func locationDidUpdate(locations:[CLLocation]) -> Void
 }
 
-class CylRideManager : NSObject, CLLocationManagerDelegate {
+class RideManager : NSObject, CLLocationManagerDelegate {
 
     private var locationManager : CLLocationManager!
     private var lastLocation : CLLocation!
     private var startDate : Date!
     private var stopDate : Date!
 
-    var delegate : CylRideManagerDelegate!
+    var delegate : RideManagerDelegate!
     var totalDistance : CLLocationDistance = 0
     var coordinates : [CLLocationCoordinate2D] = []
     

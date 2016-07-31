@@ -11,7 +11,7 @@ import Foundation
 import CoreBluetooth
 import CoreLocation
 
-class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideManagerDelegate {
+class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerDelegate {
     
     let Play = 0
     let Stop = 1
@@ -24,17 +24,17 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
     @IBOutlet weak var firstButton: UIBarButtonItem!
     @IBOutlet weak var secondButton: UIBarButtonItem!
     
-    @IBOutlet weak var speed: CylSpeedDashboardView!
-    @IBOutlet weak var distanceDuration: CylDistanceTimeDashboardView!
-    @IBOutlet weak var cadence: CylCadenceDashboardView!
-    @IBOutlet weak var biometrics: CylHeartRateDashboardView!
-    @IBOutlet weak var geo: CylGeoDashboardView!
+    @IBOutlet weak var speed: SpeedDashboardView!
+    @IBOutlet weak var distanceDuration: DistanceTimeDashboardView!
+    @IBOutlet weak var cadence: CadenceDashboardView!
+    @IBOutlet weak var biometrics: HeartRateDashboardView!
+    @IBOutlet weak var geo: GeoDashboardView!
 
     private lazy var numberFormatter = NumberFormatter()
     private lazy var speedFormatter = NumberFormatter()
     private lazy var timeFormatter = DateFormatter()
 
-    private lazy var rideManager = CylRideManager()
+    private lazy var rideManager = RideManager()
     
     private var _maxSpeed = 0.0
     
@@ -194,12 +194,8 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, CylRideMa
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        NSLog(segue.identifier!)
-        
         if (segue.identifier! == "showMapAndRoute") {
-            NSLog("BRG: Fuck Yes")
-            (segue.destinationViewController as! CylMapAndRouteController).ride = rideManager
+            (segue.destinationViewController as! MapAndRouteController).ride = rideManager
         }
     }
 }

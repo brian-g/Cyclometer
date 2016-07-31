@@ -25,17 +25,24 @@
 		D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C862ED1ACF3AB20033872C /* HeartRateSensor.swift */; };
 		D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C862EF1ACF84EA0033872C /* SensorManager.swift */; };
 		D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83141A54AFF00070E792 /* AppDelegate.swift */; };
-		D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83161A54AFF00070E792 /* BaseControllers.swift */; };
+		D3DA83171A54AFF00070E792 /* RideDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83161A54AFF00070E792 /* RideDetailsController.swift */; };
 		D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831B1A54AFF00070E792 /* Images.xcassets */; };
 		D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */; };
 		D3E1E1291D4714E200B54A57 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E1281D4714E200B54A57 /* Globals.swift */; };
-		D3E1E12D1D4D4E6300B54A57 /* CylMapAndRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E12C1D4D4E6300B54A57 /* CylMapAndRoute.swift */; };
-		D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */; };
+		D3E1E12D1D4D4E6300B54A57 /* MapAndRouteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E12C1D4D4E6300B54A57 /* MapAndRouteController.swift */; };
+		D3E7CD531D4DACC800EC5910 /* GeoDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD521D4DACC800EC5910 /* GeoDashboardView.swift */; };
+		D3E7CD551D4DACFC00EC5910 /* HeartRateDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD541D4DACFC00EC5910 /* HeartRateDashboardView.swift */; };
+		D3E7CD571D4DAD2700EC5910 /* CadenceDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD561D4DAD2700EC5910 /* CadenceDashboardView.swift */; };
+		D3E7CD591D4DAD5300EC5910 /* DistanceTimeDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD581D4DAD5300EC5910 /* DistanceTimeDashboardView.swift */; };
+		D3E7CD5B1D4DAD7A00EC5910 /* SpeedDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD5A1D4DAD7A00EC5910 /* SpeedDashboardView.swift */; };
+		D3E7CD5D1D4DB35900EC5910 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD5C1D4DB35900EC5910 /* NavigationController.swift */; };
+		D3E7CD5F1D4DB43E00EC5910 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD5E1D4DB43E00EC5910 /* HistoryController.swift */; };
+		D3F7F9211A6D33A600DA3FC0 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9201A6D33A600DA3FC0 /* DashboardView.swift */; };
 		D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */; };
 		D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCC1A633890006D3840 /* RideManager.swift */; };
-		D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */; };
-		D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */; };
-		D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */; };
+		D3FDEFD21A654FA7006D3840 /* SettingsDeviceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFD11A654FA7006D3840 /* SettingsDeviceInfoCell.xib */; };
+		D3FDEFD41A6608C4006D3840 /* SettingsDeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFD31A6608C4006D3840 /* SettingsDeviceInfoCell.swift */; };
+		D3FDF0001A6A0C46006D3840 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFFF1A6A0C46006D3840 /* DashboardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,17 +80,24 @@
 		D3DA830F1A54AFF00070E792 /* Cyclometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cyclometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DA83131A54AFF00070E792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DA83141A54AFF00070E792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3DA83161A54AFF00070E792 /* BaseControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControllers.swift; sourceTree = "<group>"; };
+		D3DA83161A54AFF00070E792 /* RideDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailsController.swift; sourceTree = "<group>"; };
 		D3DA831B1A54AFF00070E792 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3DA831E1A54AFF00070E792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D3E1E1281D4714E200B54A57 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		D3E1E12C1D4D4E6300B54A57 /* CylMapAndRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylMapAndRoute.swift; sourceTree = "<group>"; };
-		D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardCards.swift; sourceTree = "<group>"; };
+		D3E1E12C1D4D4E6300B54A57 /* MapAndRouteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAndRouteController.swift; sourceTree = "<group>"; };
+		D3E7CD521D4DACC800EC5910 /* GeoDashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoDashboardView.swift; sourceTree = "<group>"; };
+		D3E7CD541D4DACFC00EC5910 /* HeartRateDashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateDashboardView.swift; sourceTree = "<group>"; };
+		D3E7CD561D4DAD2700EC5910 /* CadenceDashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadenceDashboardView.swift; sourceTree = "<group>"; };
+		D3E7CD581D4DAD5300EC5910 /* DistanceTimeDashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceTimeDashboardView.swift; sourceTree = "<group>"; };
+		D3E7CD5A1D4DAD7A00EC5910 /* SpeedDashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedDashboardView.swift; sourceTree = "<group>"; };
+		D3E7CD5C1D4DB35900EC5910 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		D3E7CD5E1D4DB43E00EC5910 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		D3F7F9201A6D33A600DA3FC0 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		D3FDEFCA1A6176E9006D3840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cyclometer/Base.lproj/Cyclometer.storyboard; sourceTree = "<group>"; };
 		D3FDEFCC1A633890006D3840 /* RideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideManager.swift; sourceTree = "<group>"; };
-		D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CylSettingsDeviceInfoCell.xib; sourceTree = "<group>"; };
-		D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycSettingsDeviceInfoCell.swift; sourceTree = "<group>"; };
-		D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardController.swift; sourceTree = "<group>"; };
+		D3FDEFD11A654FA7006D3840 /* SettingsDeviceInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsDeviceInfoCell.xib; sourceTree = "<group>"; };
+		D3FDEFD31A6608C4006D3840 /* SettingsDeviceInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDeviceInfoCell.swift; sourceTree = "<group>"; };
+		D3FDEFFF1A6A0C46006D3840 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +128,12 @@
 		D3910A3A1C2B0FFF00ADCB07 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D3DA83161A54AFF00070E792 /* BaseControllers.swift */,
+				D3DA83161A54AFF00070E792 /* RideDetailsController.swift */,
 				D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */,
-				D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */,
-				D3E1E12C1D4D4E6300B54A57 /* CylMapAndRoute.swift */,
+				D3FDEFFF1A6A0C46006D3840 /* DashboardController.swift */,
+				D3E1E12C1D4D4E6300B54A57 /* MapAndRouteController.swift */,
+				D3E7CD5C1D4DB35900EC5910 /* NavigationController.swift */,
+				D3E7CD5E1D4DB43E00EC5910 /* HistoryController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -125,7 +141,12 @@
 		D3910A3B1C2B102C00ADCB07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */,
+				D3F7F9201A6D33A600DA3FC0 /* DashboardView.swift */,
+				D3E7CD521D4DACC800EC5910 /* GeoDashboardView.swift */,
+				D3E7CD541D4DACFC00EC5910 /* HeartRateDashboardView.swift */,
+				D3E7CD561D4DAD2700EC5910 /* CadenceDashboardView.swift */,
+				D3E7CD581D4DAD5300EC5910 /* DistanceTimeDashboardView.swift */,
+				D3E7CD5A1D4DAD7A00EC5910 /* SpeedDashboardView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -163,15 +184,9 @@
 		D3DA83111A54AFF00070E792 /* Cyclometer */ = {
 			isa = PBXGroup;
 			children = (
-				D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */,
-				D36EF77F1D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld */,
-				D36EF77C1D4DA8930006DD79 /* DemoData.swift */,
-				D365F4E41D4DA68F00DA2C21 /* Enums.swift */,
-				D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */,
-				D365F4E61D4DA68F00DA2C21 /* Protocols.swift */,
-				D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */,
-				D3E1E1281D4714E200B54A57 /* Globals.swift */,
 				D3FDEFCC1A633890006D3840 /* RideManager.swift */,
+				D3E7CD611D4DB50B00EC5910 /* Extensions, Globals and Protocols */,
+				D3E7CD601D4DB4F200EC5910 /* CoreData */,
 				D3FDEFD51A66A207006D3840 /* Cells */,
 				D3910A3B1C2B102C00ADCB07 /* Views */,
 				D3910A3A1C2B0FFF00ADCB07 /* View Controllers */,
@@ -194,11 +209,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D3E7CD601D4DB4F200EC5910 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */,
+				D36EF77F1D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld */,
+				D36EF77C1D4DA8930006DD79 /* DemoData.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		D3E7CD611D4DB50B00EC5910 /* Extensions, Globals and Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D365F4E41D4DA68F00DA2C21 /* Enums.swift */,
+				D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */,
+				D365F4E61D4DA68F00DA2C21 /* Protocols.swift */,
+				D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */,
+				D3E1E1281D4714E200B54A57 /* Globals.swift */,
+			);
+			name = "Extensions, Globals and Protocols";
+			sourceTree = "<group>";
+		};
 		D3FDEFD51A66A207006D3840 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */,
-				D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */,
+				D3FDEFD11A654FA7006D3840 /* SettingsDeviceInfoCell.xib */,
+				D3FDEFD31A6608C4006D3840 /* SettingsDeviceInfoCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -287,7 +324,7 @@
 			files = (
 				D3BE70161BCB4A37001A94FD /* RideHistory.storyboard in Resources */,
 				D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */,
-				D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */,
+				D3FDEFD21A654FA7006D3840 /* SettingsDeviceInfoCell.xib in Resources */,
 				D3BE70181BCC223E001A94FD /* Settings.storyboard in Resources */,
 				D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */,
 				D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */,
@@ -301,25 +338,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */,
-				D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */,
-				D3DA83171A54AFF00070E792 /* BaseControllers.swift in Sources */,
+				D3F7F9211A6D33A600DA3FC0 /* DashboardView.swift in Sources */,
+				D3FDF0001A6A0C46006D3840 /* DashboardController.swift in Sources */,
+				D3DA83171A54AFF00070E792 /* RideDetailsController.swift in Sources */,
 				D365F4EA1D4DA68F00DA2C21 /* Protocols.swift in Sources */,
+				D3E7CD591D4DAD5300EC5910 /* DistanceTimeDashboardView.swift in Sources */,
 				D3E1E1291D4714E200B54A57 /* Globals.swift in Sources */,
 				D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */,
+				D3E7CD5D1D4DB35900EC5910 /* NavigationController.swift in Sources */,
 				D36EF7811D4DA8B10006DD79 /* CyclometerModel.swift in Sources */,
+				D3E7CD551D4DACFC00EC5910 /* HeartRateDashboardView.swift in Sources */,
 				D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */,
-				D3E1E12D1D4D4E6300B54A57 /* CylMapAndRoute.swift in Sources */,
+				D3E1E12D1D4D4E6300B54A57 /* MapAndRouteController.swift in Sources */,
 				D365F4EB1D4DA68F00DA2C21 /* UIKitExtensions.swift in Sources */,
+				D3E7CD571D4DAD2700EC5910 /* CadenceDashboardView.swift in Sources */,
 				D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */,
 				D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */,
-				D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */,
+				D3FDEFD41A6608C4006D3840 /* SettingsDeviceInfoCell.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
+				D3E7CD5F1D4DB43E00EC5910 /* HistoryController.swift in Sources */,
 				D36EF77D1D4DA8930006DD79 /* DemoData.swift in Sources */,
 				D365F4E81D4DA68F00DA2C21 /* Enums.swift in Sources */,
 				D36EF7821D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld in Sources */,
 				D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */,
 				D365F4E91D4DA68F00DA2C21 /* FoundationExtensions.swift in Sources */,
+				D3E7CD531D4DACC800EC5910 /* GeoDashboardView.swift in Sources */,
+				D3E7CD5B1D4DAD7A00EC5910 /* SpeedDashboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
