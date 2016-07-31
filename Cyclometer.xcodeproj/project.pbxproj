@@ -62,8 +62,6 @@
 		D36EF77C1D4DA8930006DD79 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclometerModel.swift; sourceTree = "<group>"; };
 		D36EF7801D4DA8B10006DD79 /* CyclometerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CyclometerModel.xcdatamodel; sourceTree = "<group>"; };
-		D3893A671A8195C500C8AA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3893A681A8195C500C8AA96 /* CylCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CylCoreDataTests.swift; sourceTree = "<group>"; };
 		D38F14021AC8C09400A959A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D38F14081AC8C17D00A959A2 /* Cyclometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cyclometer.entitlements; sourceTree = "<group>"; };
@@ -113,28 +111,9 @@
 			name = Sensors;
 			sourceTree = "<group>";
 		};
-		D3893A651A8195C500C8AA96 /* CylCoreDataTests */ = {
-			isa = PBXGroup;
-			children = (
-				D3893A681A8195C500C8AA96 /* CylCoreDataTests.swift */,
-				D3893A661A8195C500C8AA96 /* Supporting Files */,
-			);
-			name = CylCoreDataTests;
-			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CylCoreDataTests;
-			sourceTree = "<absolute>";
-		};
-		D3893A661A8195C500C8AA96 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D3893A671A8195C500C8AA96 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D3893A741A81962100C8AA96 /* Oddments */ = {
 			isa = PBXGroup;
 			children = (
-				D3893A651A8195C500C8AA96 /* CylCoreDataTests */,
 			);
 			name = Oddments;
 			path = ..;
