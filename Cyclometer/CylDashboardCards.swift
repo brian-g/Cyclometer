@@ -29,14 +29,68 @@ class CylDashboardView : UIView {
 
 @IBDesignable class CylSpeedDashboardView : CylDashboardView {
 
-    private lazy var avgSpeedCaption = UILabel(frame: CGRect.zero)
-    private lazy var maxSpeedCaption = UILabel(frame: CGRect.zero)
+    private var avgSpeedCaption = UILabel(frame: CGRect.zero)
+    private var maxSpeedCaption = UILabel(frame: CGRect.zero)
+    private var _speedLabel = UILabel(frame:CGRect.zero)
+    private var _speedUnitsLabel = UILabel(frame: CGRect.zero)
+    private var maxSpeed = UILabel(frame: CGRect.zero)
+    private var avgSpeed = UILabel(frame: CGRect.zero)
+    private var _units : Units = .imperial
+    private var _numberFormatter = NumberFormatter()
+    private var _avgNumberFormatter = NumberFormatter()
     
-    lazy var speed = UILabel(frame:CGRect.zero)
-    lazy var speedUnits = UILabel(frame: CGRect.zero)
-    lazy var maxSpeed = UILabel(frame: CGRect.zero)
-    lazy var avgSpeed = UILabel(frame: CGRect.zero)
-
+    private var _maxSpeed : Double = 0.0
+    private var _avgSpeed : Double = 0.0
+    
+    var speed : Double {
+        set {
+            if (units == .imperial) {
+                _speedLabel.text = _numberFormatter.string(from: newValue.mph)
+            } else {
+                _speedLabel.text = _numberFormatter.string(from: newValue.kph)
+            }
+            
+            if (newValue > _maxSpeed) {
+                _maxSpeed = newValue
+                if (units == .imperial) {
+                    maxSpeed.text = _avgNumberFormatter.string(from:_maxSpeed.mph)
+                } else {
+                    maxSpeed.text = _avgNumberFormatter.string(from:_maxSpeed.kph)
+                }
+            }
+        }
+        get {
+            return 0.0
+        }
+    }
+    
+    var average : Double {
+        set {
+            _avgSpeed = newValue
+            if (units == .imperial) {
+                avgSpeed.text = _numberFormatter.string(from: _avgSpeed.mph)
+                
+            } else {
+                avgSpeed.text = _numberFormatter.string(from: _avgSpeed.kph)
+            }
+        }
+        get {
+            return 0.0
+        }
+    }
+    var units : Units {
+        get {
+            return _units
+        }
+        set {
+            _units = newValue
+            if (_units == .imperial) {
+                _speedUnitsLabel.text = "MPH"
+            } else {
+                _speedUnitsLabel.text = "KPH"
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,39 +104,53 @@ class CylDashboardView : UIView {
     
     func commonInit() {
 
-        speed.font = UIFont(name:"GillSans-Light", size:heroFontSize)
-        speed.translatesAutoresizingMaskIntoConstraints = false
-        speed.adjustsFontSizeToFitWidth = true
-        speed.text = "0"
+        _numberFormatter.allowsFloats = true
+        _numberFormatter.minimum = 0
+        _numberFormatter.maximumIntegerDigits = 2
+        _numberFormatter.minimumIntegerDigits = 1
+        _numberFormatter.minimumFractionDigits = 1
+        _numberFormatter.maximumFractionDigits = 1
         
-        speedUnits.font = UIFont(name:"GillSans-Light", size:captionFontSize)
-        speedUnits.translatesAutoresizingMaskIntoConstraints = false
-        speedUnits.adjustsFontSizeToFitWidth = false
-        speedUnits.textColor = captionColor
-        speedUnits.text = "MPH"
+        _avgNumberFormatter.allowsFloats = true
+        _avgNumberFormatter.maximumIntegerDigits = 2
+        _avgNumberFormatter.minimumIntegerDigits = 1
+        _avgNumberFormatter.minimumFractionDigits = 1
+        _avgNumberFormatter.maximumFractionDigits = 1
+        _avgNumberFormatter.zeroSymbol = "—.–"
+        
+        _speedLabel.font = UIFont(name:"GillSans-Light", size:heroFontSize)
+        _speedLabel.translatesAutoresizingMaskIntoConstraints = false
+        _speedLabel.adjustsFontSizeToFitWidth = true
+        _speedLabel.text = "0"
+        
+        _speedUnitsLabel.font = UIFont(name:"GillSans-Light", size:captionFontSize)
+        _speedUnitsLabel.translatesAutoresizingMaskIntoConstraints = false
+        _speedUnitsLabel.adjustsFontSizeToFitWidth = false
+        _speedUnitsLabel.textColor = captionColor
+        units = .imperial
         
         maxSpeed.font = UIFont(name:"GillSans-Light", size:minorFontSize)
         maxSpeed.translatesAutoresizingMaskIntoConstraints = false
         maxSpeed.adjustsFontSizeToFitWidth = false
-        maxSpeed.text = "-"
-        
+
         maxSpeedCaption.font = UIFont(name: "GillSans-Light", size: captionFontSize)
         maxSpeedCaption.translatesAutoresizingMaskIntoConstraints = false
         maxSpeedCaption.textColor = captionColor
         maxSpeedCaption.text = "MAX"
-
+        maxSpeed.text = "—.–"
+        
         avgSpeed.font = UIFont(name:"GillSans-Light", size:minorFontSize)
         avgSpeed.translatesAutoresizingMaskIntoConstraints = false
         avgSpeed.adjustsFontSizeToFitWidth = false
-        avgSpeed.text = "-"
-        
+        avgSpeed.text = "—.–"
+
         avgSpeedCaption.font = UIFont(name: "GillSans-Light", size: captionFontSize)
         avgSpeedCaption.translatesAutoresizingMaskIntoConstraints = false
         avgSpeedCaption.textColor = captionColor
         avgSpeedCaption.text = "AVG"
 
-        addSubview(speed)
-        addSubview(speedUnits)
+        addSubview(_speedLabel)
+        addSubview(_speedUnitsLabel)
         addSubview(maxSpeed)
         addSubview(maxSpeedCaption)
         addSubview(avgSpeed)
@@ -94,7 +162,7 @@ class CylDashboardView : UIView {
     
     override func updateConstraints() {
         
-        addConstraint(NSLayoutConstraint(item: speed,
+        addConstraint(NSLayoutConstraint(item: _speedLabel,
             attribute: NSLayoutAttribute.top,
             relatedBy: NSLayoutRelation.equal,
             toItem: self,
@@ -102,7 +170,7 @@ class CylDashboardView : UIView {
             multiplier: 1.0,
             constant: 0.0))
 
-        addConstraint(NSLayoutConstraint(item: speed,
+        addConstraint(NSLayoutConstraint(item: _speedLabel,
             attribute: NSLayoutAttribute.leading,
             relatedBy: NSLayoutRelation.equal,
             toItem: self,
@@ -110,18 +178,18 @@ class CylDashboardView : UIView {
             multiplier: 1.0,
             constant: 0.0))
 
-        addConstraint(NSLayoutConstraint(item: speedUnits,
+        addConstraint(NSLayoutConstraint(item: _speedUnitsLabel,
             attribute: NSLayoutAttribute.left,
             relatedBy: NSLayoutRelation.equal,
-            toItem: speed,
+            toItem: _speedLabel,
             attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
-        addConstraint(NSLayoutConstraint(item: speedUnits,
+        addConstraint(NSLayoutConstraint(item: _speedUnitsLabel,
             attribute: NSLayoutAttribute.top,
             relatedBy: NSLayoutRelation.equal,
-            toItem: speed,
+            toItem: _speedLabel,
             attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 24.0))
@@ -153,7 +221,7 @@ class CylDashboardView : UIView {
         addConstraint(NSLayoutConstraint(item: avgSpeed,
             attribute: NSLayoutAttribute.lastBaseline,
             relatedBy: NSLayoutRelation.equal,
-            toItem: speed,
+            toItem: _speedLabel,
             attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
@@ -169,7 +237,7 @@ class CylDashboardView : UIView {
         addConstraint(NSLayoutConstraint(item: maxSpeedCaption,
             attribute: NSLayoutAttribute.lastBaseline,
             relatedBy: NSLayoutRelation.equal,
-            toItem: speed,
+            toItem: _speedLabel,
             attribute: NSLayoutAttribute.centerY,
             multiplier: 1.0,
             constant: 0.0))
@@ -197,14 +265,18 @@ class CylDashboardView : UIView {
 
 @IBDesignable class CylDistanceTimeDashboardView : CylDashboardView {
 
-    private lazy var moduleCaption = UILabel(frame:CGRect.zero)
-    private lazy var durationCaption = UILabel(frame:CGRect.zero)
+    private var moduleCaption = UILabel(frame:CGRect.zero)
+    private var durationCaption = UILabel(frame:CGRect.zero)
     
-    lazy var distance = UILabel(frame:CGRect.zero)
-    lazy var distanceUnits = UILabel(frame:CGRect.zero)
-    lazy var duration = UILabel(frame:CGRect.zero)
-    lazy var paceCaption = UILabel(frame:CGRect.zero)
-    lazy var pace = UILabel(frame:CGRect.zero)
+    private var distanceLabel = UILabel(frame:CGRect.zero)
+    private var distanceUnitsLabel = UILabel(frame:CGRect.zero)
+    private var durationLabel = UILabel(frame:CGRect.zero)
+    private var paceCaption = UILabel(frame:CGRect.zero)
+    private var paceLabel = UILabel(frame:CGRect.zero)
+    private var distanceFormatter = NumberFormatter()
+    private var timeFormatter = DateComponentsFormatter()
+    
+    private var _units = Units.imperial
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -216,7 +288,67 @@ class CylDashboardView : UIView {
         commonInit()
     }
     
+    var distance : Double {
+        get { return 0.0 }
+        set {
+            if (_units == .imperial) {
+                distanceLabel.text = distanceFormatter.string(from: newValue.miles)
+            } else {
+                distanceLabel.text = distanceFormatter.string(from: newValue.km)
+            }
+        }
+    }
+    
+    var duration : TimeInterval {
+        get { return 0.0 }
+        set {
+            durationLabel.text = timeFormatter.string(from: newValue)
+        }
+    }
+    
+    var pace : Double {
+        get { return 0.0 }
+        set {
+
+            if (_units == .imperial) {
+                // We get seconds/meter. Need minutes/mile
+                paceLabel.text = distanceFormatter.string(from: (newValue / 60) * kMetersInMile )
+            } else {
+                // We get seconds/meter. Need minutes/km
+                paceLabel.text = distanceFormatter.string(from: newValue / 60 * kMetersInKm)
+            }
+        }
+    }
+    
+    var units : Units {
+        get { return _units }
+        set {
+            _units = newValue
+            
+            if (_units == .imperial) {
+                distanceUnitsLabel.text = "MILES"
+                paceCaption.text = "MIN/MILE"
+            } else {
+                distanceUnitsLabel.text = "KILOMETERS"
+                paceCaption.text = "MIN/KM"
+            }
+        }
+    }
+    
     func commonInit() {
+    
+        distanceFormatter.allowsFloats = true
+        distanceFormatter.minimumIntegerDigits = 1
+        distanceFormatter.maximumFractionDigits = 2
+        distanceFormatter.minimumFractionDigits = 2
+        timeFormatter.zeroFormattingBehavior = .pad
+        timeFormatter.allowedUnits = [.hour,.minute,.second]
+        timeFormatter.maximumUnitCount = 3
+        timeFormatter.unitsStyle = .positional
+
+        
+        
+        units = Units.imperial
         
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
         moduleCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -224,21 +356,20 @@ class CylDashboardView : UIView {
         moduleCaption.textColor = globalTintColor
         moduleCaption.text = "DISTANCE"
 
-        distance.font = UIFont(name: fontName, size: majorFontSize)
-        distance.translatesAutoresizingMaskIntoConstraints = false
-        distance.adjustsFontSizeToFitWidth = false
-        distance.text = "85.41"
+        distanceLabel.font = UIFont(name: fontName, size: majorFontSize)
+        distanceLabel.translatesAutoresizingMaskIntoConstraints = false
+        distanceLabel.adjustsFontSizeToFitWidth = false
+        distanceLabel.text = "85.41"
 
-        distanceUnits.font = UIFont(name: fontName, size: captionFontSize)
-        distanceUnits.translatesAutoresizingMaskIntoConstraints = false
-        distanceUnits.adjustsFontSizeToFitWidth = false
-        distanceUnits.textColor = captionColor
-        distanceUnits.text = "MILES"
+        distanceUnitsLabel.font = UIFont(name: fontName, size: captionFontSize)
+        distanceUnitsLabel.translatesAutoresizingMaskIntoConstraints = false
+        distanceUnitsLabel.adjustsFontSizeToFitWidth = false
+        distanceUnitsLabel.textColor = captionColor
 
-        duration.font = UIFont(name: fontName, size: majorFontSize)
-        duration.translatesAutoresizingMaskIntoConstraints = false
-        duration.adjustsFontSizeToFitWidth = true
-        duration.text = "5:30.10"
+        durationLabel.font = UIFont(name: fontName, size: majorFontSize)
+        durationLabel.translatesAutoresizingMaskIntoConstraints = false
+        durationLabel.adjustsFontSizeToFitWidth = true
+        durationLabel.text = "5:30.10"
         
         durationCaption.font = UIFont(name: fontName, size: captionFontSize)
         durationCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -246,23 +377,22 @@ class CylDashboardView : UIView {
         durationCaption.textColor = globalTintColor
         durationCaption.text = "DURATION"
 
-        pace.font = UIFont(name: fontName, size: minorFontSize)
-        pace.translatesAutoresizingMaskIntoConstraints = false
-        pace.adjustsFontSizeToFitWidth = false
-        pace.text = "85.41"
+        paceLabel.font = UIFont(name: fontName, size: minorFontSize)
+        paceLabel.translatesAutoresizingMaskIntoConstraints = false
+        paceLabel.adjustsFontSizeToFitWidth = false
+        paceLabel.text = "85.41"
         
         paceCaption.font = UIFont(name: fontName, size: captionFontSize)
         paceCaption.translatesAutoresizingMaskIntoConstraints = false
         paceCaption.adjustsFontSizeToFitWidth = false
         paceCaption.textColor = captionColor
-        paceCaption.text = "MIN/MILE"
         
         addSubview(moduleCaption)
-        addSubview(distance)
-        addSubview(distanceUnits)
+        addSubview(distanceLabel)
+        addSubview(distanceUnitsLabel)
         addSubview(durationCaption)
-        addSubview(duration)
-        addSubview(pace)
+        addSubview(durationLabel)
+        addSubview(paceLabel)
         addSubview(paceCaption)
         
         setNeedsUpdateConstraints()
@@ -286,7 +416,7 @@ class CylDashboardView : UIView {
             multiplier: 1.0,
             constant: 0.0))
 
-        addConstraint(NSLayoutConstraint(item: distance,
+        addConstraint(NSLayoutConstraint(item: distanceLabel,
             attribute: NSLayoutAttribute.top,
             relatedBy: NSLayoutRelation.equal,
             toItem: moduleCaption,
@@ -294,7 +424,7 @@ class CylDashboardView : UIView {
             multiplier: 1.0,
             constant: 0.0))
 
-        addConstraint(NSLayoutConstraint(item: distance,
+        addConstraint(NSLayoutConstraint(item: distanceLabel,
             attribute: NSLayoutAttribute.leading,
             relatedBy: NSLayoutRelation.equal,
             toItem: self,
@@ -302,18 +432,18 @@ class CylDashboardView : UIView {
             multiplier: 1.0,
             constant: 0.0))
 
-        addConstraint(NSLayoutConstraint(item: distanceUnits,
+        addConstraint(NSLayoutConstraint(item: distanceUnitsLabel,
             attribute: NSLayoutAttribute.left,
             relatedBy: NSLayoutRelation.equal,
-            toItem: distance,
+            toItem: distanceLabel,
             attribute: NSLayoutAttribute.right,
             multiplier: 1.0,
             constant: 0.0))
 
-        addConstraint(NSLayoutConstraint(item: distanceUnits,
+        addConstraint(NSLayoutConstraint(item: distanceUnitsLabel,
             attribute: NSLayoutAttribute.top,
             relatedBy: NSLayoutRelation.equal,
-            toItem: distance,
+            toItem: distanceLabel,
             attribute: NSLayoutAttribute.top,
             multiplier: 1.0,
             constant: 9.0))
@@ -329,12 +459,12 @@ class CylDashboardView : UIView {
         addConstraint(NSLayoutConstraint(item: durationCaption,
             attribute: NSLayoutAttribute.top,
             relatedBy: NSLayoutRelation.equal,
-            toItem: distance,
+            toItem: distanceLabel,
             attribute: NSLayoutAttribute.bottom,
             multiplier: 1.0,
             constant: 8.0))
 
-        addConstraint(NSLayoutConstraint(item: duration,
+        addConstraint(NSLayoutConstraint(item: durationLabel,
             attribute: NSLayoutAttribute.top,
             relatedBy: NSLayoutRelation.equal,
             toItem: durationCaption,
@@ -342,7 +472,7 @@ class CylDashboardView : UIView {
             multiplier: 1.0,
             constant: 0.0))
         
-        addConstraint(NSLayoutConstraint(item: duration,
+        addConstraint(NSLayoutConstraint(item: durationLabel,
             attribute: NSLayoutAttribute.leading,
             relatedBy: NSLayoutRelation.equal,
             toItem: self,
@@ -350,7 +480,7 @@ class CylDashboardView : UIView {
             multiplier: 1.0,
             constant: 0.0))
 
-        addConstraint(NSLayoutConstraint(item: pace,
+        addConstraint(NSLayoutConstraint(item: paceLabel,
             attribute: NSLayoutAttribute.right,
             relatedBy: NSLayoutRelation.equal,
             toItem: self,
@@ -358,10 +488,10 @@ class CylDashboardView : UIView {
             multiplier: 1.0,
             constant: 0.0))
 
-        addConstraint(NSLayoutConstraint(item: pace,
+        addConstraint(NSLayoutConstraint(item: paceLabel,
             attribute: NSLayoutAttribute.top,
             relatedBy: NSLayoutRelation.equal,
-            toItem: distance,
+            toItem: distanceLabel,
             attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))
@@ -377,7 +507,7 @@ class CylDashboardView : UIView {
         addConstraint(NSLayoutConstraint(item: paceCaption,
             attribute: NSLayoutAttribute.top,
             relatedBy: NSLayoutRelation.equal,
-            toItem: pace,
+            toItem: paceLabel,
             attribute: NSLayoutAttribute.lastBaseline,
             multiplier: 1.0,
             constant: 0.0))

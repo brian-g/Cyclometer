@@ -76,6 +76,11 @@
                                             <action selector="toggleRideState:" destination="Fgv-my-Dd4" id="eNe-h6-iVV"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem image="Map" id="LAO-0N-Kb7" userLabel="Map">
+                                        <connections>
+                                            <segue destination="66z-hX-iNd" kind="show" identifier="showMapAndRoute" id="gzt-sK-Vce"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="c1Z-cI-Fxr"/>
                                     <barButtonItem image="History" id="rRq-XF-kmC">
                                         <connections>
@@ -145,6 +150,40 @@
             </objects>
             <point key="canvasLocation" x="-768" y="-2934"/>
         </scene>
+        <!--Map and Route-->
+        <scene sceneID="2QU-MO-Uv2">
+            <objects>
+                <viewController title="Map and Route" id="66z-hX-iNd" customClass="CylMapAndRouteController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q5A-sJ-VFY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wdi-db-42n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NLO-9N-XXs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-Ei-ZBW">
+                                <connections>
+                                    <outlet property="delegate" destination="66z-hX-iNd" id="E0z-aF-bpx"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1Xg-Ei-ZBW" secondAttribute="trailing" id="2uh-Bn-Rw4"/>
+                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="bottom" secondItem="Wdi-db-42n" secondAttribute="top" id="Qt6-Kn-wR9"/>
+                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="top" secondItem="NLO-9N-XXs" secondAttribute="top" id="fKG-Hu-BMS"/>
+                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="leading" secondItem="NLO-9N-XXs" secondAttribute="leading" id="uVy-uD-sE6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="1Xg-Ei-ZBW" id="BJ2-v7-yuW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1iD-1N-IuU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1772" y="-2541.6791604197902"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="1pG-Gl-AIw">
             <objects>
@@ -156,6 +195,7 @@
     </scenes>
     <resources>
         <image name="History" width="22" height="22"/>
+        <image name="Map" width="22" height="22"/>
         <image name="Play" width="22" height="22"/>
         <image name="Settings" width="22" height="22"/>
     </resources>

@@ -9,35 +9,6 @@
 import UIKit
 import Foundation
 
-
-let kAutoPause = "AutoPause"
-let kUseInBackground = "UseInBackground"
-let kAutoDim = "AutoDim"
-let kUnits = "Units"
-let kWheelSize = "Wheelsize"
-let kDevices = "Devices"
-let kSensorName = "SensorName"
-let kSensorId = "SensorID"
-let kSensorCap = "SensorCap"
-
-
-enum Units : Int {
-    case imperial = 0
-    case metric = 1
-    
-    func description() -> String {
-        switch self {
-        case .imperial:
-            return "Miles"
-        case .metric:
-            return "Metric"
-        }
-    }
-}
-
-var currentUnits = Units.imperial
-
-
 class CylSettingsController : UITableViewController, SensorManagerSensorListUpdates {
     
     let deviceSection = 1

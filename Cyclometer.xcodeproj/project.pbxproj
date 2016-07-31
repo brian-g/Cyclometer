@@ -31,6 +31,8 @@
 		D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831B1A54AFF00070E792 /* Images.xcassets */; };
 		D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831D1A54AFF00070E792 /* LaunchScreen.xib */; };
 		D3E1E1291D4714E200B54A57 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E1281D4714E200B54A57 /* Globals.swift */; };
+		D3E1E12B1D4ABF4D00B54A57 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E12A1D4ABF4D00B54A57 /* Enums.swift */; };
+		D3E1E12D1D4D4E6300B54A57 /* CylMapAndRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1E12C1D4D4E6300B54A57 /* CylMapAndRoute.swift */; };
 		D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */; };
 		D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */; };
 		D3FD125A1AFE94A900C90CFA /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FD12591AFE94A900C90CFA /* FoundationExtensions.swift */; };
@@ -106,6 +108,8 @@
 		D3DA831B1A54AFF00070E792 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3DA831E1A54AFF00070E792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D3E1E1281D4714E200B54A57 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		D3E1E12A1D4ABF4D00B54A57 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		D3E1E12C1D4D4E6300B54A57 /* CylMapAndRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylMapAndRoute.swift; sourceTree = "<group>"; };
 		D3F7F91A1A6C1B1A00DA3FC0 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtensions.swift; path = /Shared/Users/brian/Projects/Cyclometer/UIKitExtensions.swift; sourceTree = "<absolute>"; };
 		D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardCards.swift; sourceTree = "<group>"; };
 		D3FD12591AFE94A900C90CFA /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoundationExtensions.swift; path = CylExtensions/FoundationExtensions.swift; sourceTree = SOURCE_ROOT; };
@@ -250,6 +254,7 @@
 				D3893A411A81958A00C8AA96 /* CylExtensionsTests */,
 				D3893A561A8195C500C8AA96 /* CylCoreData */,
 				D3893A651A8195C500C8AA96 /* CylCoreDataTests */,
+				D3E1E12A1D4ABF4D00B54A57 /* Enums.swift */,
 			);
 			name = Oddments;
 			path = ..;
@@ -261,6 +266,7 @@
 				D3DA83161A54AFF00070E792 /* BaseControllers.swift */,
 				D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */,
 				D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */,
+				D3E1E12C1D4D4E6300B54A57 /* CylMapAndRoute.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -581,6 +587,7 @@
 				D3F7F91B1A6C1B1A00DA3FC0 /* UIKitExtensions.swift in Sources */,
 				D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */,
 				D3893A761A81C89F00C8AA96 /* CylProtocols.swift in Sources */,
+				D3E1E12D1D4D4E6300B54A57 /* CylMapAndRoute.swift in Sources */,
 				D3FDEFD01A6342B4006D3840 /* CyclometerModel.xcdatamodeld in Sources */,
 				D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */,
 				D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */,
@@ -588,6 +595,7 @@
 				D3910A3D1C2B126F00ADCB07 /* DemoData.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
 				D33A393F1A7DB0B800941901 /* CyclometerModel.swift in Sources */,
+				D3E1E12B1D4ABF4D00B54A57 /* Enums.swift in Sources */,
 				D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,15 @@ protocol CylRideManagerDelegate : class {
 class CylRideManager : NSObject, CLLocationManagerDelegate {
 
     private var locationManager : CLLocationManager!
+    private var lastLocation : CLLocation!
+    private var startDate : Date!
+    private var stopDate : Date!
+
     var delegate : CylRideManagerDelegate!
+    var totalDistance : CLLocationDistance = 0
+    var coordinates : [CLLocationCoordinate2D] = []
+    
+    var ride = Ride()
     
     override init() {
         
@@ -41,6 +49,7 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone
+        
     }
     
     deinit {
@@ -48,6 +57,31 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
         locationManager = nil
     }
 
+    var duration : TimeInterval {
+        get {
+            if (startDate != nil) {
+                if (stopDate != nil) {
+                    return DateInterval(start: startDate, end: stopDate).duration
+                } else {
+                    return DateInterval(start: startDate, end: Date()).duration
+                }
+            }
+            return 0
+        }
+    }
+    
+    var pace : Double {
+        get {
+            return duration / totalDistance
+        }
+    }
+    
+    var average : Double {
+        get {
+            return totalDistance / duration
+        }
+    }
+    
     func start() -> Bool {
         let authStatus = CLLocationManager.authorizationStatus()
         if (authStatus == .authorizedAlways || authStatus == .authorizedWhenInUse) {
@@ -56,6 +90,10 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
             return false
         }
         NSLog("Location tracking started")
+        
+        startDate = Date()
+        totalDistance = 0
+    
         return true
     }
     
@@ -64,21 +102,19 @@ class CylRideManager : NSObject, CLLocationManagerDelegate {
         return true
     }
 
-    
-    /* CoreMotion */
-    
-    func updateMotion(_ motionActivity: CMMotionActivity?) -> Void {
-
-        
-    }
-    
     /* CoreLocation Delegates */
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+        if (lastLocation != nil) {
+            totalDistance = totalDistance + lastLocation.distance(from: locations.last!)
+        }
+        lastLocation = locations.last!
+        
         if (delegate != nil) {
             delegate.locationDidUpdate(locations: locations)
         }
+        coordinates.append(locations.last!.coordinate)
         
     }
  
