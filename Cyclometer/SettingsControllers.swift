@@ -21,6 +21,7 @@ class SettingsController : UITableViewController, SensorManagerSensorListUpdates
     @IBOutlet weak var units: UISegmentedControl!
     @IBOutlet weak var autoDim: UISwitch!
     @IBOutlet weak var wheelSize: UILabel!
+    @IBOutlet weak var doNotDisturb: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,7 @@ class SettingsController : UITableViewController, SensorManagerSensorListUpdates
         trackInBackground.isOn = defaults.bool(forKey: kUseInBackground)
         units.selectedSegmentIndex = defaults.integer(forKey: kUnits)
         autoDim.isOn = defaults.bool(forKey: kAutoDim)
+        doNotDisturb.isOn = defaults.bool(forKey: kDoNotDisturb)
         
         let size = defaults.integer(forKey: kWheelSize)
         if (size <= 0) {
@@ -73,6 +75,7 @@ class SettingsController : UITableViewController, SensorManagerSensorListUpdates
         defaults.set(trackInBackground.isOn, forKey: kUseInBackground)
         defaults.set(autoDim.isOn, forKey: kAutoDim)
         defaults.set(units.selectedSegmentIndex, forKey: kUnits)
+        defaults.set(doNotDisturb.isOn, forKey: kDoNotDisturb)
         
     }
     
