@@ -111,14 +111,6 @@
 			name = Sensors;
 			sourceTree = "<group>";
 		};
-		D3893A741A81962100C8AA96 /* Oddments */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Oddments;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		D3910A3A1C2B0FFF00ADCB07 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +177,6 @@
 				D3910A3A1C2B0FFF00ADCB07 /* View Controllers */,
 				D3BE70191BD08E89001A94FD /* Storyboards */,
 				D3DA83121A54AFF00070E792 /* Supporting Files */,
-				D3893A741A81962100C8AA96 /* Oddments */,
 				D33610511A59AF65003E39DF /* Sensors */,
 			);
 			path = Cyclometer;
