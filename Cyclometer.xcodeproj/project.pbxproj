@@ -33,8 +33,8 @@
 		D3F7F9211A6D33A600DA3FC0 /* CylDashboardCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */; };
 		D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */; };
 		D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCC1A633890006D3840 /* RideManager.swift */; };
-		D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */; };
-		D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */; };
+		D3FDEFD21A654FA7006D3840 /* SettingsDeviceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFD11A654FA7006D3840 /* SettingsDeviceInfoCell.xib */; };
+		D3FDEFD41A6608C4006D3840 /* SettingsDeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFD31A6608C4006D3840 /* SettingsDeviceInfoCell.swift */; };
 		D3FDF0001A6A0C46006D3840 /* CylDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +81,8 @@
 		D3F7F9201A6D33A600DA3FC0 /* CylDashboardCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardCards.swift; sourceTree = "<group>"; };
 		D3FDEFCA1A6176E9006D3840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cyclometer/Base.lproj/Cyclometer.storyboard; sourceTree = "<group>"; };
 		D3FDEFCC1A633890006D3840 /* RideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideManager.swift; sourceTree = "<group>"; };
-		D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CylSettingsDeviceInfoCell.xib; sourceTree = "<group>"; };
-		D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycSettingsDeviceInfoCell.swift; sourceTree = "<group>"; };
+		D3FDEFD11A654FA7006D3840 /* SettingsDeviceInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsDeviceInfoCell.xib; sourceTree = "<group>"; };
+		D3FDEFD31A6608C4006D3840 /* SettingsDeviceInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDeviceInfoCell.swift; sourceTree = "<group>"; };
 		D3FDEFFF1A6A0C46006D3840 /* CylDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CylDashboardController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,8 +197,8 @@
 		D3FDEFD51A66A207006D3840 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D3FDEFD11A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib */,
-				D3FDEFD31A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift */,
+				D3FDEFD11A654FA7006D3840 /* SettingsDeviceInfoCell.xib */,
+				D3FDEFD31A6608C4006D3840 /* SettingsDeviceInfoCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 			files = (
 				D3BE70161BCB4A37001A94FD /* RideHistory.storyboard in Resources */,
 				D3DA831F1A54AFF00070E792 /* LaunchScreen.xib in Resources */,
-				D3FDEFD21A654FA7006D3840 /* CylSettingsDeviceInfoCell.xib in Resources */,
+				D3FDEFD21A654FA7006D3840 /* SettingsDeviceInfoCell.xib in Resources */,
 				D3BE70181BCC223E001A94FD /* Settings.storyboard in Resources */,
 				D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */,
 				D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */,
@@ -313,7 +313,7 @@
 				D365F4EB1D4DA68F00DA2C21 /* UIKitExtensions.swift in Sources */,
 				D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */,
 				D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */,
-				D3FDEFD41A6608C4006D3840 /* CycSettingsDeviceInfoCell.swift in Sources */,
+				D3FDEFD41A6608C4006D3840 /* SettingsDeviceInfoCell.swift in Sources */,
 				D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */,
 				D36EF77D1D4DA8930006DD79 /* DemoData.swift in Sources */,
 				D365F4E81D4DA68F00DA2C21 /* Enums.swift in Sources */,

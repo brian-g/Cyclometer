@@ -61,7 +61,7 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         }
     }
     
-    func rememberToggled(_ sender : CylSettingsDeviceInfoCell) {
+    func rememberToggled(_ sender : SettingsDeviceInfoCell) {
         NSLog("rememberToggled")
         
         sensorManager.rememberSensor(sender.peripheral.identifier, remember: sender.isRemembered.isOn)
@@ -116,10 +116,10 @@ class CylSettingsController : UITableViewController, SensorManagerSensorListUpda
         
         if (indexPath as NSIndexPath).section == deviceSection {
             
-            var cell : CylSettingsDeviceInfoCell? = tableView.dequeueReusableCell(withIdentifier: "deviceInfoCell") as? CylSettingsDeviceInfoCell
+            var cell : SettingsDeviceInfoCell? = tableView.dequeueReusableCell(withIdentifier: "deviceInfoCell") as? SettingsDeviceInfoCell
             
             if cell === nil {
-                cell = (Bundle.main.loadNibNamed("CylSettingsDeviceInfoCell", owner: nil, options: nil)[0] as! CylSettingsDeviceInfoCell)
+                cell = (Bundle.main.loadNibNamed("SettingsDeviceInfoCell", owner: nil, options: nil)[0] as! SettingsDeviceInfoCell)
                 
                 let sensor = sensorManager.sensorAt((indexPath as NSIndexPath).row)
                 

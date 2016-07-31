@@ -1,5 +1,5 @@
 //
-//  CycSettingsDeviceInfoCell.swift
+//  SettingsDeviceInfoCell.swift
 //  Cyclometer
 //
 //  Created by Brian on 1/13/15.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CylSettingsDeviceInfoCell : UITableViewCell {
+class SettingsDeviceInfoCell : UITableViewCell {
     
     @IBOutlet weak var deviceName: UILabel!
     @IBOutlet weak var deviceCapabilities: UILabel!
@@ -19,6 +19,6 @@ class CylSettingsDeviceInfoCell : UITableViewCell {
     var peripheral : SensorInfo!
     
     @IBAction func toggleRemembered(_ sender: AnyObject) {
-        NSLog("Nothing hooked up to CylSettingsInfoCell")
+        NSLog("Nothing hooked up to SettingsInfoCell")
     }
 }
