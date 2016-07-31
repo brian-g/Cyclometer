@@ -24,11 +24,11 @@ class CylDashboardController : UIViewController, CBPeripheralDelegate, RideManag
     @IBOutlet weak var firstButton: UIBarButtonItem!
     @IBOutlet weak var secondButton: UIBarButtonItem!
     
-    @IBOutlet weak var speed: CylSpeedDashboardView!
-    @IBOutlet weak var distanceDuration: CylDistanceTimeDashboardView!
-    @IBOutlet weak var cadence: CylCadenceDashboardView!
-    @IBOutlet weak var biometrics: CylHeartRateDashboardView!
-    @IBOutlet weak var geo: CylGeoDashboardView!
+    @IBOutlet weak var speed: SpeedDashboardView!
+    @IBOutlet weak var distanceDuration: DistanceTimeDashboardView!
+    @IBOutlet weak var cadence: CadenceDashboardView!
+    @IBOutlet weak var biometrics: HeartRateDashboardView!
+    @IBOutlet weak var geo: GeoDashboardView!
 
     private lazy var numberFormatter = NumberFormatter()
     private lazy var speedFormatter = NumberFormatter()
