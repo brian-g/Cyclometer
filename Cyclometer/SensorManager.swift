@@ -208,8 +208,8 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         central.connect(peripheral, options: nil)
     }
     
-    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: NSError?) {
-        NSLog("Did fail \(peripheral.name): \(error!.description)")
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        NSLog("Did fail \(peripheral.name): \(error!.localizedDescription)")
     }
     
     // Discover services of the peripheral
@@ -227,7 +227,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         
     }
     // If disconnected, start searching again
-    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         
         NSLog("Disconnected " + peripheral.name!)
         
@@ -243,13 +243,13 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
 
     /* Periphal delegates */
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
 
         NSLog("Found one Name \(peripheral.name): service: \(service.description)")
 
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         NSLog("didDiscoverServices")
         
         for service in peripheral.services! {
@@ -275,12 +275,12 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         sensorListUpdatedDelegate?.sensorManagerSensorListDidChange()
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
 
         NSLog("DEAD")
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
         NSLog("DEAD")
     }

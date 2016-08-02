@@ -15,7 +15,7 @@ class HistoryController : UITableViewController {
     var rides = [Ride]()
     var rowActions = [UITableViewRowAction]()
     
-    private let appDelegate = UIApplication.shared().delegate as! AppDelegate
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,8 @@ class HistoryController : UITableViewController {
         
         let managedContext = appDelegate.managedObjectContext!
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Ride")
-        let sortDescriptor = SortDescriptor(key:"date", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key:"date", ascending: false)
+
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 20 // Optmize later
         
@@ -94,7 +95,7 @@ class HistoryController : UITableViewController {
         let row = (selectedRow as NSIndexPath?)?.row
         
         if (row != nil) {
-            (segue.destinationViewController as! RideDetailsController).ride = rides[row!]
+            (segue.destination as! RideDetailsController).ride = rides[row!]
         }
         
     }

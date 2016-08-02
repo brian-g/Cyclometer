@@ -18,9 +18,9 @@ class Devices: NSManagedObject {
 class Ride: NSManagedObject {
     
     @NSManaged dynamic var date: Date
-    @NSManaged var biometrics: OrderedSet
-    @NSManaged var locations: OrderedSet
-    @NSManaged var motions: OrderedSet
+    @NSManaged var biometrics: NSOrderedSet
+    @NSManaged var locations: NSOrderedSet
+    @NSManaged var motions: NSOrderedSet
     @NSManaged var summary: Summary
     
 }

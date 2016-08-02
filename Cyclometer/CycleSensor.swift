@@ -113,7 +113,7 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
 
     var updateCrankRevolutions: ((UInt16) -> Void)?
 
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         
         if (service.uuid == CBUUID(string: kBTHR)) {
             NSLog("didDiscoverCharacteristics: \(peripheral.name), Service: \(service.uuid):\(service.uuid.uuidString), " + service.description)
@@ -135,7 +135,7 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
         }
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
         if let _ = error {
             NSLog("error reading characteristic")
@@ -155,7 +155,7 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
         }
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
         
         if let _ = error {
             NSLog("error")

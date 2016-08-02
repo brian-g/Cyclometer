@@ -31,7 +31,7 @@ class RideDetailsController : UITableViewController {
     
     let numberFormatter = NumberFormatter()
     
-    private let appDelegate = UIApplication.shared().delegate as! AppDelegate
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
