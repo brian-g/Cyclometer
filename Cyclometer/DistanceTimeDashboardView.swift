@@ -20,7 +20,7 @@ import UIKit
     private var durationLabel = UILabel(frame:CGRect.zero)
     private var paceCaption = UILabel(frame:CGRect.zero)
     private var paceLabel = UILabel(frame:CGRect.zero)
-    private var distanceFormatter = NumberFormatter()
+    private var distanceFormatter = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter
     private var timeFormatter = DateComponentsFormatter()
     
     private var _units = Units.imperial
@@ -84,16 +84,10 @@ import UIKit
     
     func commonInit() {
         
-        distanceFormatter.allowsFloats = true
-        distanceFormatter.minimumIntegerDigits = 1
-        distanceFormatter.maximumFractionDigits = 2
-        distanceFormatter.minimumFractionDigits = 2
         timeFormatter.zeroFormattingBehavior = .pad
         timeFormatter.allowedUnits = [.hour,.minute,.second]
         timeFormatter.maximumUnitCount = 3
         timeFormatter.unitsStyle = .positional
-        
-        
         
         units = Units.imperial
         

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uF5-os-OCe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11185.3" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uF5-os-OCe">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -132,6 +132,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="faF-ZJ-ok8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -163,26 +164,71 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-Ei-ZBW">
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="66z-hX-iNd" id="E0z-aF-bpx"/>
+                                    <outletCollection property="gestureRecognizers" destination="YYN-ZU-cGW" appends="YES" id="jy8-mK-llf"/>
                                 </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqE-w0-kop">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgP-SB-F9U">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="68" id="pNx-8S-Shw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearMeasure:" destination="66z-hX-iNd" eventType="touchUpInside" id="D9M-fe-XEr"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B47-4S-aTs">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="135" id="ihW-rS-jSl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="B47-4S-aTs" firstAttribute="bottom" secondItem="hgP-SB-F9U" secondAttribute="bottom" id="BRa-ch-y9l"/>
+                                    <constraint firstItem="hgP-SB-F9U" firstAttribute="top" secondItem="qqE-w0-kop" secondAttribute="top" constant="16" id="K2P-7f-3Aa"/>
+                                    <constraint firstItem="B47-4S-aTs" firstAttribute="leading" secondItem="qqE-w0-kop" secondAttribute="leadingMargin" id="Tk6-PQ-lrk"/>
+                                    <constraint firstAttribute="trailing" secondItem="hgP-SB-F9U" secondAttribute="trailing" constant="-3" id="WAw-XV-qJ6"/>
+                                    <constraint firstItem="B47-4S-aTs" firstAttribute="centerY" secondItem="hgP-SB-F9U" secondAttribute="centerY" id="Z6Q-tY-7nF"/>
+                                    <constraint firstItem="B47-4S-aTs" firstAttribute="centerY" secondItem="qqE-w0-kop" secondAttribute="centerY" id="u5z-kw-T0g"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1Xg-Ei-ZBW" secondAttribute="trailing" id="2uh-Bn-Rw4"/>
-                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="bottom" secondItem="Wdi-db-42n" secondAttribute="top" id="Qt6-Kn-wR9"/>
-                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="top" secondItem="NLO-9N-XXs" secondAttribute="top" id="fKG-Hu-BMS"/>
-                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="leading" secondItem="NLO-9N-XXs" secondAttribute="leading" id="uVy-uD-sE6"/>
+                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="leading" secondItem="NLO-9N-XXs" secondAttribute="leading" id="CNe-GQ-6gJ"/>
+                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="centerX" secondItem="qqE-w0-kop" secondAttribute="centerX" id="GXl-ef-Ngu"/>
+                            <constraint firstItem="qqE-w0-kop" firstAttribute="bottom" secondItem="NLO-9N-XXs" secondAttribute="bottomMargin" id="L9C-j9-ncV"/>
+                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="top" secondItem="NLO-9N-XXs" secondAttribute="top" id="NjW-yX-uUg"/>
+                            <constraint firstItem="qqE-w0-kop" firstAttribute="leading" secondItem="NLO-9N-XXs" secondAttribute="leadingMargin" id="Qdh-AM-nLY"/>
+                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="bottom" secondItem="Wdi-db-42n" secondAttribute="top" id="lyI-1d-M5s"/>
+                            <constraint firstAttribute="trailing" secondItem="1Xg-Ei-ZBW" secondAttribute="trailing" id="mKA-6y-MMP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="1Xg-Ei-ZBW" id="BJ2-v7-yuW"/>
+                        <outlet property="measureLabel" destination="B47-4S-aTs" id="qvM-jw-DTa"/>
+                        <outlet property="measureView" destination="qqE-w0-kop" id="hiy-Xj-SLX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iD-1N-IuU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="YYN-ZU-cGW">
+                    <connections>
+                        <action selector="addPoint:" destination="66z-hX-iNd" id="TCx-od-sKp"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1772" y="-2541.6791604197902"/>
+            <point key="canvasLocation" x="-2119.5" y="-2516.5"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1pG-Gl-AIw">
