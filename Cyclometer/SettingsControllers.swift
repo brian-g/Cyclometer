@@ -122,7 +122,7 @@ class SettingsController : UITableViewController, SensorManagerSensorListUpdates
             var cell : SettingsDeviceInfoCell? = tableView.dequeueReusableCell(withIdentifier: "deviceInfoCell") as? SettingsDeviceInfoCell
             
             if cell === nil {
-                cell = (Bundle.main.loadNibNamed("SettingsDeviceInfoCell", owner: nil, options: nil)[0] as! SettingsDeviceInfoCell)
+                cell = (Bundle.main.loadNibNamed("SettingsDeviceInfoCell", owner: nil, options: nil)?[0] as! SettingsDeviceInfoCell)
                 
                 let sensor = sensorManager.sensorAt((indexPath as NSIndexPath).row)
                 
@@ -141,7 +141,7 @@ class SettingsController : UITableViewController, SensorManagerSensorListUpdates
     
     @IBAction func unwindFromWheelPicker(_ segue: UIStoryboardSegue) {
         NSLog("unwindFromWheelPicker")
-        segue.sourceViewController.dismiss(animated: true, completion: nil)
+        segue.source.dismiss(animated: true, completion: nil)
     }
 }
 

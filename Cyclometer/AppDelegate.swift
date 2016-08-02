@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var dateFormatter : DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
-        dateFormatter.timeZone = TimeZone.system
+        dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateStyle = DateFormatter.Style.medium
         dateFormatter.timeStyle = DateFormatter.Style.medium
         dateFormatter.doesRelativeDateFormatting = true
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.tintColor = globalTintColor
         
-        UserDefaults.standard.register([
+        UserDefaults.standard.register(defaults: [
             kAutoPause: true,
             kUseInBackground: true,
             kAutoDim: true,
@@ -70,13 +70,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var applicationDocumentsDirectory: URL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "name.glaeske.brian.TestCoreData" in the application's documents Application Support directory.
-        let urls = FileManager.default.urlsForDirectory(.documentDirectory, inDomains: .userDomainMask)
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1] 
         }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = Bundle.main.urlForResource("CyclometerModel", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "CyclometerModel", withExtension: "momd")!
         NSLog("managedObjectModel called")
         return NSManagedObjectModel(contentsOf: modelURL)!
         }()
@@ -85,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = try! self.applicationDocumentsDirectory.appendingPathComponent("CyclometerData.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("CyclometerData.sqlite")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
         do {

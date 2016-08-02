@@ -195,7 +195,8 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
     
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier! == "showMapAndRoute") {
-            (segue.destinationViewController as! MapAndRouteController).ride = rideManager
+            (segue.destination as! MapAndRouteController).ride = rideManager
+
         }
     }
 }
