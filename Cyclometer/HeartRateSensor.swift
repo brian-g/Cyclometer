@@ -95,13 +95,13 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
     var updateHeartRate : ((UInt16) -> Void)?
     
     /* These 2 should never get called because of how I'm fucking with the delegate */
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
         
         NSLog("HRSensor: Found \(peripheral.name): service: \(service.description)")
         
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         NSLog("HRSensor didDiscoverServices")
         
         for service in peripheral.services! {
@@ -110,7 +110,7 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
     }
     
     
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         
         if (service.uuid == CBUUID(string: kBTHR)) {
             NSLog("didDiscoverCharacteristics: \(peripheral.name), Service: \(service.uuid):\(service.uuid.uuidString), " + service.description)
@@ -132,7 +132,7 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
         }
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
         if let _ = error {
             NSLog("error reading characteristic")
@@ -153,7 +153,7 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
         }
     }
 
-    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
 
         if let _ = error {
             NSLog("error")
