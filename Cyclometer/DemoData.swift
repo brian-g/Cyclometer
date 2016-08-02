@@ -12,7 +12,8 @@ import CoreData
 
 func createDemoData(_ managedContext : NSManagedObjectContext) {
     
-    let ride = NSEntityDescription.insertNewObject(forEntityName: "Ride", into: managedContext) as! Ride
+//    let ride = NSEntityDescription.insertNewObject(forEntityName: "Ride", into: managedContext) as! Ride
+    let ride = Ride(context: managedContext)
     let summary = NSEntityDescription.insertNewObject(forEntityName: "Summary", into: managedContext) as! Summary
     
     summary.elevation_gain = 500
