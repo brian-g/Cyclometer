@@ -22,7 +22,8 @@ class HistoryController : UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let managedContext = appDelegate.managedObjectContext!
-        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Ride")
+        let fetchRequest : NSFetchRequest<NSFetchRequestResult> = Ride.fetchRequest()
+        
         let sortDescriptor = SortDescriptor(key:"date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 20 // Optmize later
@@ -30,7 +31,6 @@ class HistoryController : UITableViewController {
         do {
             let fetchResults = try managedContext.fetch(fetchRequest) as? [Ride]
             
-            NSLog("Number of rides: \(fetchResults!.count)")
             rides = fetchResults!
             
             if fetchResults!.count < 20 {
