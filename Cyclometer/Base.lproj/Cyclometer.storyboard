@@ -10,13 +10,13 @@
         <!--Dashboard-->
         <scene sceneID="Pk4-CA-OSE">
             <objects>
-                <viewController storyboardIdentifier="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fgv-my-Dd4" customClass="DashboardController" customModule="Cyclometer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fgv-my-Dd4" customClass="DashboardController" customModule="Cyclometer" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fOy-HG-o9H"/>
                         <viewControllerLayoutGuide type="bottom" id="Sym-Dl-1ZI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BCV-q9-8Uw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iS-2A-oBw">
@@ -160,65 +160,49 @@
                         <viewControllerLayoutGuide type="bottom" id="Wdi-db-42n"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NLO-9N-XXs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-Ei-ZBW">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-Ei-ZBW">
+                                <frame key="frameInset" minY="-1" maxY="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="66z-hX-iNd" id="E0z-aF-bpx"/>
                                     <outletCollection property="gestureRecognizers" destination="YYN-ZU-cGW" appends="YES" id="jy8-mK-llf"/>
                                 </connections>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqE-w0-kop">
+                            <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="kjr-MD-Pcr" customClass="MapAndRouteDistanceDisplay" customModule="Cyclometer" customModuleProvider="target">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgP-SB-F9U">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="68" id="pNx-8S-Shw"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                        <state key="normal" title="Close">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clearMeasure:" destination="66z-hX-iNd" eventType="touchUpInside" id="D9M-fe-XEr"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B47-4S-aTs">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="135" id="ihW-rS-jSl"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.23 miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zK5-9U-Sb6">
                                         <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.79712433510000003" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="B47-4S-aTs" firstAttribute="bottom" secondItem="hgP-SB-F9U" secondAttribute="bottom" id="BRa-ch-y9l"/>
-                                    <constraint firstItem="hgP-SB-F9U" firstAttribute="top" secondItem="qqE-w0-kop" secondAttribute="top" constant="16" id="K2P-7f-3Aa"/>
-                                    <constraint firstItem="B47-4S-aTs" firstAttribute="leading" secondItem="qqE-w0-kop" secondAttribute="leadingMargin" id="Tk6-PQ-lrk"/>
-                                    <constraint firstAttribute="trailing" secondItem="hgP-SB-F9U" secondAttribute="trailing" constant="-3" id="WAw-XV-qJ6"/>
-                                    <constraint firstItem="B47-4S-aTs" firstAttribute="centerY" secondItem="hgP-SB-F9U" secondAttribute="centerY" id="Z6Q-tY-7nF"/>
-                                    <constraint firstItem="B47-4S-aTs" firstAttribute="centerY" secondItem="qqE-w0-kop" secondAttribute="centerY" id="u5z-kw-T0g"/>
+                                    <constraint firstItem="zK5-9U-Sb6" firstAttribute="centerX" secondItem="kjr-MD-Pcr" secondAttribute="centerX" id="4zZ-KW-3jH"/>
+                                    <constraint firstAttribute="width" secondItem="zK5-9U-Sb6" secondAttribute="width" constant="20" id="EOb-xo-oNd"/>
+                                    <constraint firstItem="zK5-9U-Sb6" firstAttribute="centerY" secondItem="kjr-MD-Pcr" secondAttribute="centerY" id="UuM-H2-Tja"/>
+                                    <constraint firstAttribute="height" secondItem="zK5-9U-Sb6" secondAttribute="height" constant="20" id="fbz-bf-zB7"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Cdj-Fa-4I1" appends="YES" id="0Bh-B7-1nU"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="leading" secondItem="NLO-9N-XXs" secondAttribute="leading" id="CNe-GQ-6gJ"/>
-                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="centerX" secondItem="qqE-w0-kop" secondAttribute="centerX" id="GXl-ef-Ngu"/>
-                            <constraint firstItem="qqE-w0-kop" firstAttribute="bottom" secondItem="NLO-9N-XXs" secondAttribute="bottomMargin" id="L9C-j9-ncV"/>
-                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="top" secondItem="NLO-9N-XXs" secondAttribute="top" id="NjW-yX-uUg"/>
-                            <constraint firstItem="qqE-w0-kop" firstAttribute="leading" secondItem="NLO-9N-XXs" secondAttribute="leadingMargin" id="Qdh-AM-nLY"/>
-                            <constraint firstItem="1Xg-Ei-ZBW" firstAttribute="bottom" secondItem="Wdi-db-42n" secondAttribute="top" id="lyI-1d-M5s"/>
-                            <constraint firstAttribute="trailing" secondItem="1Xg-Ei-ZBW" secondAttribute="trailing" id="mKA-6y-MMP"/>
+                            <constraint firstItem="Wdi-db-42n" firstAttribute="top" secondItem="kjr-MD-Pcr" secondAttribute="bottom" constant="8" id="IQN-uw-ouz"/>
+                            <constraint firstItem="kjr-MD-Pcr" firstAttribute="centerX" secondItem="NLO-9N-XXs" secondAttribute="centerX" id="pDi-fJ-sMj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="1Xg-Ei-ZBW" id="BJ2-v7-yuW"/>
-                        <outlet property="measureLabel" destination="B47-4S-aTs" id="qvM-jw-DTa"/>
-                        <outlet property="measureView" destination="qqE-w0-kop" id="hiy-Xj-SLX"/>
+                        <outlet property="measureLabel" destination="zK5-9U-Sb6" id="GrA-Ry-31a"/>
+                        <outlet property="measureView" destination="kjr-MD-Pcr" id="ls5-r1-DHv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iD-1N-IuU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,8 +211,13 @@
                         <action selector="addPoint:" destination="66z-hX-iNd" id="TCx-od-sKp"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="Cdj-Fa-4I1">
+                    <connections>
+                        <action selector="swipeDown:" destination="66z-hX-iNd" id="LVc-FR-6dU"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2119.5" y="-2516.5"/>
+            <point key="canvasLocation" x="-1970.4000000000001" y="-2487.7061469265368"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1pG-Gl-AIw">

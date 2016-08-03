@@ -26,6 +26,7 @@ class RideManager : NSObject, CLLocationManagerDelegate {
     var delegate : RideManagerDelegate!
     var totalDistance : CLLocationDistance = 0
     var coordinates : [CLLocationCoordinate2D] = []
+    var plannedRoute : [CLLocationCoordinate2D] = []
     
     var ride = Ride()
     
