@@ -24,6 +24,7 @@
 		D3BE70181BCC223E001A94FD /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BE70171BCC223E001A94FD /* Settings.storyboard */; };
 		D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C862ED1ACF3AB20033872C /* HeartRateSensor.swift */; };
 		D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C862EF1ACF84EA0033872C /* SensorManager.swift */; };
+		D3CC04CD1D518692009934D3 /* MapAndRouteDistanceDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC04CC1D518692009934D3 /* MapAndRouteDistanceDisplay.swift */; };
 		D3DA83151A54AFF00070E792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83141A54AFF00070E792 /* AppDelegate.swift */; };
 		D3DA83171A54AFF00070E792 /* RideDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA83161A54AFF00070E792 /* RideDetailsController.swift */; };
 		D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DA831B1A54AFF00070E792 /* Images.xcassets */; };
@@ -77,6 +78,7 @@
 		D3BE70171BCC223E001A94FD /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		D3C862ED1ACF3AB20033872C /* HeartRateSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateSensor.swift; sourceTree = "<group>"; };
 		D3C862EF1ACF84EA0033872C /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
+		D3CC04CC1D518692009934D3 /* MapAndRouteDistanceDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAndRouteDistanceDisplay.swift; sourceTree = "<group>"; };
 		D3DA830F1A54AFF00070E792 /* Cyclometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cyclometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DA83131A54AFF00070E792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DA83141A54AFF00070E792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				D3E7CD561D4DAD2700EC5910 /* CadenceDashboardView.swift */,
 				D3E7CD581D4DAD5300EC5910 /* DistanceTimeDashboardView.swift */,
 				D3E7CD5A1D4DAD7A00EC5910 /* SpeedDashboardView.swift */,
+				D3CC04CC1D518692009934D3 /* MapAndRouteDistanceDisplay.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				D3DA83171A54AFF00070E792 /* RideDetailsController.swift in Sources */,
 				D365F4EA1D4DA68F00DA2C21 /* Protocols.swift in Sources */,
 				D3E7CD591D4DAD5300EC5910 /* DistanceTimeDashboardView.swift in Sources */,
+				D3CC04CD1D518692009934D3 /* MapAndRouteDistanceDisplay.swift in Sources */,
 				D3E1E1291D4714E200B54A57 /* Globals.swift in Sources */,
 				D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */,
 				D3E7CD5D1D4DB35900EC5910 /* NavigationController.swift in Sources */,

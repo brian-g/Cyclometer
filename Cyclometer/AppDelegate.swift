@@ -26,6 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return dateFormatter
     }()
     
+    lazy var distanceFormatter : NumberFormatter = {
+        let distanceFormatter = NumberFormatter()
+        distanceFormatter.allowsFloats = true
+        distanceFormatter.minimumIntegerDigits = 1
+        distanceFormatter.maximumFractionDigits = 2
+        distanceFormatter.minimumFractionDigits = 2
+        return distanceFormatter
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         window?.tintColor = globalTintColor

@@ -84,16 +84,15 @@ import UIKit
     
     func commonInit() {
         
-        distanceFormatter.allowsFloats = true
-        distanceFormatter.minimumIntegerDigits = 1
-        distanceFormatter.maximumFractionDigits = 2
-        distanceFormatter.minimumFractionDigits = 2
         timeFormatter.zeroFormattingBehavior = .pad
         timeFormatter.allowedUnits = [.hour,.minute,.second]
         timeFormatter.maximumUnitCount = 3
         timeFormatter.unitsStyle = .positional
         
-        
+        distanceFormatter.allowsFloats = true
+        distanceFormatter.minimumIntegerDigits = 1
+        distanceFormatter.maximumFractionDigits = 2
+        distanceFormatter.minimumFractionDigits = 2
         
         units = Units.imperial
         
