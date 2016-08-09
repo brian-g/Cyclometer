@@ -16,3 +16,4 @@ The design is meant to be as minimal as possible. This has the following benefit
 
 The app itself will not require logins to services to work and will support simple GPX file export of ride data.
 
+***This app is a work-in-progress.***
