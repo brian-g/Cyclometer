@@ -77,6 +77,8 @@ class SettingsController : UITableViewController, SensorManagerSensorListUpdates
         defaults.set(units.selectedSegmentIndex, forKey: kUnits)
         defaults.set(doNotDisturb.isOn, forKey: kDoNotDisturb)
         
+        defaults.synchronize()
+        
     }
     
     func sensorManagerSensorListDidChange() {

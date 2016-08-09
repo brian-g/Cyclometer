@@ -60,6 +60,7 @@ import UIKit
             return 0.0
         }
     }
+    
     var units : Units {
         get {
             return _units
@@ -103,7 +104,7 @@ import UIKit
         _speedLabel.font = UIFont(name:"GillSans-Light", size:heroFontSize)
         _speedLabel.translatesAutoresizingMaskIntoConstraints = false
         _speedLabel.adjustsFontSizeToFitWidth = true
-        _speedLabel.text = "0"
+        _speedLabel.text = "—.–"
         
         _speedUnitsLabel.font = UIFont(name:"GillSans-Light", size:captionFontSize)
         _speedUnitsLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -139,6 +140,13 @@ import UIKit
         addSubview(avgSpeedCaption)
         
         setNeedsUpdateConstraints()
+        
+        units = currentUnits
+        
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: {(aNotification) -> Void in
+            self.units = currentUnits
+        })
+
         
     }
     

@@ -79,4 +79,8 @@ extension Double {
     var kph : Double {
         return self * kSecondsInHour
     }
+    
+    var ft : Double {
+        return self * kMetersInFeet
+    }
 }

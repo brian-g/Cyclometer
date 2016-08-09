@@ -74,9 +74,15 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
                 lastPoint = currentPoint
             }
             
-            let distanceString = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter.string(from: distance.miles)
-            
-            measureLabel!.text = distanceString!.appending(" miles")
+
+         
+            if (currentUnits == .imperial) {
+                let distanceString = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter.string(from: distance.miles)
+                measureLabel!.text = distanceString!.appending(" miles")
+            } else {
+                let distanceString = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter.string(from: distance.km)
+                measureLabel!.text = distanceString!.appending(" kilometers")
+            }
             measureView!.isHidden = false
         }
     }
