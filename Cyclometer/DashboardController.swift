@@ -56,6 +56,12 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
         secondButton.hide()
         
         rideManager.delegate = self
+        
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: { (aNotification) -> Void in
+            self.setUnits(currentUnits)
+            
+        })
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,14 +90,6 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
                 distanceDuration.duration = 0.0
                 distanceDuration.pace = 0.0
             
-                cadence.cadence.text = "78"
-                cadence.max.text = "105"
-                cadence.avg.text = "76"
-            
-                geo.el.text = "894"
-                geo.asc.text = "103"
-                geo.des.text = "123"
-            
                 _sensorManager.updateHeartRate = updateHeartRate
             
             
@@ -100,27 +98,18 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
                 let alert = UIAlertController(title: "Keep Ride?", message: "When you keep your ride, it will be available for analysis.", preferredStyle: UIAlertControllerStyle.actionSheet)
                 
                 alert.addAction(UIAlertAction(title: "Keep", style: UIAlertActionStyle.default, handler: { ( action: UIAlertAction ) in
-                    NSLog("Keep")
-                    
                     self.firstButton.tag = self.Play
                     self.firstButton.image = self.playImage
                     self.zeroDashboard()
-                    
                 }))
 
                 alert.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.destructive, handler: { ( action: UIAlertAction ) in
-                    NSLog("Discard")
-                    
                     self.firstButton.tag = self.Play
                     self.firstButton.image = self.playImage
                     self.zeroDashboard()
-                    
                 }))
 
                 alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { ( action: UIAlertAction ) in
-                    
-                    NSLog("Cancel")
-                    
                     self.secondButton.show(self.playImage, title:nil)
                 }))
 
@@ -163,10 +152,13 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
         biometrics.max.text = "—.–"
         biometrics.avg.text = "—.–"
         
-        geo.elUnits.text = "FEET"
-        geo.el.text = numberFormatter.string(from: 0)
-        geo.asc.text = "—"
-        geo.des.text = "—"
+        geo.elevation = 0.0
+        
+        setUnits(currentUnits)
+    }
+
+    func setUnits(_ units: Units) {
+        geo.units = units
     }
     
     func updateHeartRate(_ bpm: UInt16) {
@@ -189,7 +181,8 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
         distanceDuration.duration = rideManager.duration
         distanceDuration.pace = rideManager.pace
 
-        geo.el.text = locations.last?.altitude.description
+        geo.elevation = (locations.last?.altitude)!
+
     }
     
     

@@ -34,6 +34,7 @@ var currentUnits = Units.imperial
 
 
 let kMetersInMile = 1609.347
+let kMetersInFeet = 3.2808399
 let kKmInMile = kMetersInMile / 1000.0
 let kSecondsInMin = 60.0
 let kMinutesInHour = 60.0

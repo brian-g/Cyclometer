@@ -45,12 +45,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             kAutoDim: true,
             kUnits: 0,
             kWheelSize: -1,
-            kDevices: []
+            kDevices: [],
+            kDoNotDisturb: false
             ])
+
+        currentUnits = (UserDefaults.standard.integer(forKey: kUnits) == 0) ? .imperial : .metric
+    
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: {(aNotification) -> Void in
+            currentUnits = UserDefaults.standard.integer(forKey: kUnits) == 0 ? .imperial : .metric
+        })
 
         return true
     }
 
+    
     func applicationWillResignActive(_ application: UIApplication) {
         
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

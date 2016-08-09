@@ -94,7 +94,7 @@ import UIKit
         distanceFormatter.maximumFractionDigits = 2
         distanceFormatter.minimumFractionDigits = 2
         
-        units = Units.imperial
+        units = currentUnits
         
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
         moduleCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +105,7 @@ import UIKit
         distanceLabel.font = UIFont(name: fontName, size: majorFontSize)
         distanceLabel.translatesAutoresizingMaskIntoConstraints = false
         distanceLabel.adjustsFontSizeToFitWidth = false
-        distanceLabel.text = "85.41"
+        distanceLabel.text = "0.00"
         
         distanceUnitsLabel.font = UIFont(name: fontName, size: captionFontSize)
         distanceUnitsLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -115,7 +115,7 @@ import UIKit
         durationLabel.font = UIFont(name: fontName, size: majorFontSize)
         durationLabel.translatesAutoresizingMaskIntoConstraints = false
         durationLabel.adjustsFontSizeToFitWidth = true
-        durationLabel.text = "5:30.10"
+        durationLabel.text = "0:00.00"
         
         durationCaption.font = UIFont(name: fontName, size: captionFontSize)
         durationCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -126,7 +126,7 @@ import UIKit
         paceLabel.font = UIFont(name: fontName, size: minorFontSize)
         paceLabel.translatesAutoresizingMaskIntoConstraints = false
         paceLabel.adjustsFontSizeToFitWidth = false
-        paceLabel.text = "85.41"
+        paceLabel.text = "0.00"
         
         paceCaption.font = UIFont(name: fontName, size: captionFontSize)
         paceCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -142,6 +142,10 @@ import UIKit
         addSubview(paceCaption)
         
         setNeedsUpdateConstraints()
+        
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: {(aNotification) -> Void in
+            self.units = currentUnits
+        })
     }
     
     override func updateConstraints() {

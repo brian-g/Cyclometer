@@ -14,11 +14,17 @@ import UIKit
     private lazy var moduleCaption = UILabel(frame: CGRect.zero)
     private lazy var ascCaption = UILabel(frame: CGRect.zero)
     private lazy var desCaption = UILabel(frame: CGRect.zero)
+    private lazy var el = UILabel(frame: CGRect.zero)
+    private lazy var elUnits = UILabel(frame: CGRect.zero)
+    private lazy var asc = UILabel(frame: CGRect.zero)
+    private lazy var des = UILabel(frame: CGRect.zero)
+    private var distanceFormatter = NumberFormatter()
     
-    lazy var el = UILabel(frame: CGRect.zero)
-    lazy var elUnits = UILabel(frame: CGRect.zero)
-    lazy var asc = UILabel(frame: CGRect.zero)
-    lazy var des = UILabel(frame: CGRect.zero)
+    private var _units : Units = .imperial
+    
+    private var _currentElevation : Double = 0.0
+    private var _ascent : Double = 0.0
+    private var _descent : Double = 0.0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,8 +36,46 @@ import UIKit
         commonInit()
     }
     
+    var elevation : Double {
+        get { return _currentElevation }
+        set {
+            let diff = newValue - _currentElevation
+            if (diff > 0) {
+                _ascent = _ascent + diff
+            } else {
+                _descent = _descent - diff
+            }
+            _currentElevation = newValue
+            
+            if units == .imperial {
+                el.text = distanceFormatter.string(from: _currentElevation.ft)
+                asc.text = distanceFormatter.string(from: _ascent.ft)
+                des.text = distanceFormatter.string(from: _descent.ft)
+            } else {
+                el.text = distanceFormatter.string(from: _currentElevation)
+                asc.text = distanceFormatter.string(from: _ascent)
+                des.text = distanceFormatter.string(from: _descent)
+            }
+            
+        }
+    }
+    var units : Units {
+        get { return _units }
+        set {
+            if (currentUnits == .imperial) {
+                elUnits.text = "FEET"
+            } else {
+                elUnits.text = "METERS"
+            }
+        }
+    }
+    
     func commonInit() {
         
+        units = currentUnits
+    
+        distanceFormatter.allowsFloats = false
+
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
         moduleCaption.translatesAutoresizingMaskIntoConstraints = false
         moduleCaption.adjustsFontSizeToFitWidth = false
@@ -41,18 +85,18 @@ import UIKit
         el.font = UIFont(name: fontName, size: majorFontSize)
         el.translatesAutoresizingMaskIntoConstraints = false
         el.adjustsFontSizeToFitWidth = false
-        el.text = "3452"
+        el.text = "0.0"
         
         elUnits.font = UIFont(name: fontName, size: captionFontSize)
         elUnits.translatesAutoresizingMaskIntoConstraints = false
         elUnits.adjustsFontSizeToFitWidth = false
         elUnits.textColor = captionColor
-        elUnits.text = "FEET"
+        
         
         asc.font = UIFont(name: fontName, size: minorFontSize)
         asc.translatesAutoresizingMaskIntoConstraints = false
         asc.adjustsFontSizeToFitWidth = false
-        asc.text = "161"
+        asc.text = "0"
         
         ascCaption.font = UIFont(name: fontName, size: captionFontSize)
         ascCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +107,7 @@ import UIKit
         des.font = UIFont(name: fontName, size: minorFontSize)
         des.translatesAutoresizingMaskIntoConstraints = false
         des.adjustsFontSizeToFitWidth = false
-        des.text = "170"
+        des.text = "0"
         
         desCaption.font = UIFont(name: fontName, size: captionFontSize)
         desCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -80,6 +124,15 @@ import UIKit
         addSubview(desCaption)
         
         setNeedsUpdateConstraints()
+        
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: self, queue: nil, using: {(aNotification) -> Void in
+            if (currentUnits == .imperial) {
+                self.elUnits.text = "FEET"
+            } else {
+                self.elUnits.text = "METERS"
+            }
+        })
+
     }
     
     override func updateConstraints() {

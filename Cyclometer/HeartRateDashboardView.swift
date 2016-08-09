@@ -41,7 +41,7 @@ import UIKit
         hr.font = UIFont(name: fontName, size: majorFontSize)
         hr.translatesAutoresizingMaskIntoConstraints = false
         hr.adjustsFontSizeToFitWidth = false
-        hr.text = "161"
+        hr.text = "0"
         
         hrUnits.font = UIFont(name: fontName, size: captionFontSize)
         hrUnits.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +52,7 @@ import UIKit
         max.font = UIFont(name: fontName, size: minorFontSize)
         max.translatesAutoresizingMaskIntoConstraints = false
         max.adjustsFontSizeToFitWidth = false
-        max.text = "170"
+        max.text = "0"
         
         maxCaption.font = UIFont(name: fontName, size: captionFontSize)
         maxCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ import UIKit
         avg.font = UIFont(name: fontName, size: minorFontSize)
         avg.translatesAutoresizingMaskIntoConstraints = false
         avg.adjustsFontSizeToFitWidth = false
-        avg.text = "99.5"
+        avg.text = "0.0"
         
         avgCaption.font = UIFont(name: fontName, size: captionFontSize)
         avgCaption.translatesAutoresizingMaskIntoConstraints = false

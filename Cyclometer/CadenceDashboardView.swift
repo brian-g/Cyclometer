@@ -43,7 +43,7 @@ import UIKit
         cadence.font = UIFont(name: fontName, size: majorFontSize)
         cadence.translatesAutoresizingMaskIntoConstraints = false
         cadence.adjustsFontSizeToFitWidth = false
-        cadence.text = "76"
+        cadence.text = "0"
         
         cadenceUnits.font = UIFont(name: fontName, size: captionFontSize)
         cadenceUnits.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +54,7 @@ import UIKit
         max.font = UIFont(name: fontName, size: minorFontSize)
         max.translatesAutoresizingMaskIntoConstraints = false
         max.adjustsFontSizeToFitWidth = false
-        max.text = "120"
+        max.text = "0"
         
         maxCaption.font = UIFont(name: fontName, size: captionFontSize)
         maxCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +65,7 @@ import UIKit
         avg.font = UIFont(name: fontName, size: minorFontSize)
         avg.translatesAutoresizingMaskIntoConstraints = false
         avg.adjustsFontSizeToFitWidth = false
-        avg.text = "79.5"
+        avg.text = "0.0"
         
         avgCaption.font = UIFont(name: fontName, size: captionFontSize)
         avgCaption.translatesAutoresizingMaskIntoConstraints = false

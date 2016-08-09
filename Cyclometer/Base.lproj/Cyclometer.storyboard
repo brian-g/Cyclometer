@@ -164,7 +164,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-Ei-ZBW">
-                                <frame key="frameInset" minY="-1" maxY="1"/>
+                                <frame key="frameInset" minY="-2" maxY="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
