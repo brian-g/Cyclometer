@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-@IBDesignable class DistanceTimeDashboardView : DashboardView {
+@IBDesignable class DistanceTimeDashboardView : DashboardView, UnitsView {
     
     private var moduleCaption = UILabel(frame:CGRect.zero)
     private var durationCaption = UILabel(frame:CGRect.zero)
@@ -23,8 +23,6 @@ import UIKit
     private var distanceFormatter = NumberFormatter()
     private var timeFormatter = DateComponentsFormatter()
     
-    private var _units = Units.imperial
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -35,14 +33,9 @@ import UIKit
         commonInit()
     }
     
-    var distance : Double {
-        get { return 0.0 }
-        set {
-            if (_units == .imperial) {
-                distanceLabel.text = distanceFormatter.string(from: newValue.miles)
-            } else {
-                distanceLabel.text = distanceFormatter.string(from: newValue.km)
-            }
+    var distance : Double = 0.0 {
+        didSet {
+            distanceLabel.text = distanceFormatter.string(from: Measure.distance(asMiles: distance))
         }
     }
     
@@ -53,32 +46,16 @@ import UIKit
         }
     }
     
-    var pace : Double {
-        get { return 0.0 }
-        set {
-            
-            if (_units == .imperial) {
-                // We get seconds/meter. Need minutes/mile
-                paceLabel.text = distanceFormatter.string(from: (newValue / 60) * kMetersInMile )
-            } else {
-                // We get seconds/meter. Need minutes/km
-                paceLabel.text = distanceFormatter.string(from: newValue / 60 * kMetersInKm)
-            }
+    var pace : Double = 0.0 {
+        didSet {
+                paceLabel.text = distanceFormatter.string(from: Measure.pace(pace))
         }
     }
     
-    var units : Units {
-        get { return _units }
-        set {
-            _units = newValue
-            
-            if (_units == .imperial) {
-                distanceUnitsLabel.text = "MILES"
-                paceCaption.text = "MIN/MILE"
-            } else {
-                distanceUnitsLabel.text = "KILOMETERS"
-                paceCaption.text = "MIN/KM"
-            }
+    var units : Units = .imperial {
+        didSet {
+            distanceUnitsLabel.text = Measure.distanceLabel.uppercased()
+            paceCaption.text = Measure.paceLabel.uppercased()
         }
     }
     
@@ -94,7 +71,7 @@ import UIKit
         distanceFormatter.maximumFractionDigits = 2
         distanceFormatter.minimumFractionDigits = 2
         
-        units = currentUnits
+        units = Measure.currentUnits
         
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
         moduleCaption.translatesAutoresizingMaskIntoConstraints = false
@@ -142,10 +119,6 @@ import UIKit
         addSubview(paceCaption)
         
         setNeedsUpdateConstraints()
-        
-        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: {(aNotification) -> Void in
-            self.units = currentUnits
-        })
     }
     
     override func updateConstraints() {

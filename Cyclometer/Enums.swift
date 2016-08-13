@@ -15,7 +15,7 @@ enum Units : Int {
     func description() -> String {
         switch self {
         case .imperial:
-            return "Miles"
+            return "Imperial"
         case .metric:
             return "Metric"
         }

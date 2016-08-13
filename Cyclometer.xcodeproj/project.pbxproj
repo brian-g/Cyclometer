@@ -17,6 +17,7 @@
 		D36EF77D1D4DA8930006DD79 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36EF77C1D4DA8930006DD79 /* DemoData.swift */; };
 		D36EF7811D4DA8B10006DD79 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */; };
 		D36EF7821D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D36EF77F1D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld */; };
+		D377DEFF1D5BDF8500FB5579 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = D377DEFE1D5BDF8500FB5579 /* Measure.swift */; };
 		D38F14031AC8C09500A959A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14021AC8C09400A959A2 /* CoreLocation.framework */; };
 		D38F14051AC8C0A300A959A2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */; };
 		D395E00D1ACA3DE40007AF34 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395E00C1ACA3DE40007AF34 /* MapKit.framework */; };
@@ -38,6 +39,7 @@
 		D3E7CD5B1D4DAD7A00EC5910 /* SpeedDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD5A1D4DAD7A00EC5910 /* SpeedDashboardView.swift */; };
 		D3E7CD5D1D4DB35900EC5910 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD5C1D4DB35900EC5910 /* NavigationController.swift */; };
 		D3E7CD5F1D4DB43E00EC5910 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7CD5E1D4DB43E00EC5910 /* HistoryController.swift */; };
+		D3F06C171D5E7FD800644515 /* CyclometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F06C161D5E7FD800644515 /* CyclometerTests.swift */; };
 		D3F7F9211A6D33A600DA3FC0 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9201A6D33A600DA3FC0 /* DashboardView.swift */; };
 		D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FDEFC91A6176E9006D3840 /* Cyclometer.storyboard */; };
 		D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFCC1A633890006D3840 /* RideManager.swift */; };
@@ -45,6 +47,16 @@
 		D3FDEFD41A6608C4006D3840 /* SettingsDeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFD31A6608C4006D3840 /* SettingsDeviceInfoCell.swift */; };
 		D3FDF0001A6A0C46006D3840 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FDEFFF1A6A0C46006D3840 /* DashboardController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3F06C191D5E7FD800644515 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DA83071A54AFF00070E792 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3DA830E1A54AFF00070E792;
+			remoteInfo = Cyclometer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D3FDEFF71A66A291006D3840 /* Embed Frameworks */ = {
@@ -70,6 +82,7 @@
 		D36EF77C1D4DA8930006DD79 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclometerModel.swift; sourceTree = "<group>"; };
 		D36EF7801D4DA8B10006DD79 /* CyclometerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CyclometerModel.xcdatamodel; sourceTree = "<group>"; };
+		D377DEFE1D5BDF8500FB5579 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		D38F14021AC8C09400A959A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D38F14081AC8C17D00A959A2 /* Cyclometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cyclometer.entitlements; sourceTree = "<group>"; };
@@ -94,6 +107,9 @@
 		D3E7CD5A1D4DAD7A00EC5910 /* SpeedDashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedDashboardView.swift; sourceTree = "<group>"; };
 		D3E7CD5C1D4DB35900EC5910 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D3E7CD5E1D4DB43E00EC5910 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		D3F06C141D5E7FD800644515 /* CyclometerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CyclometerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3F06C161D5E7FD800644515 /* CyclometerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclometerTests.swift; sourceTree = "<group>"; };
+		D3F06C181D5E7FD800644515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3F7F9201A6D33A600DA3FC0 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		D3FDEFCA1A6176E9006D3840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Cyclometer/Base.lproj/Cyclometer.storyboard; sourceTree = "<group>"; };
 		D3FDEFCC1A633890006D3840 /* RideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideManager.swift; sourceTree = "<group>"; };
@@ -111,6 +127,13 @@
 				D38F14031AC8C09500A959A2 /* CoreLocation.framework in Frameworks */,
 				D395E00D1ACA3DE40007AF34 /* MapKit.framework in Frameworks */,
 				D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3F06C111D5E7FD800644515 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +195,7 @@
 				D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */,
 				D38F14021AC8C09400A959A2 /* CoreLocation.framework */,
 				D3DA83111A54AFF00070E792 /* Cyclometer */,
+				D3F06C151D5E7FD800644515 /* CyclometerTests */,
 				D3DA83101A54AFF00070E792 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -180,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D3DA830F1A54AFF00070E792 /* Cyclometer.app */,
+				D3F06C141D5E7FD800644515 /* CyclometerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,9 +255,20 @@
 				D365F4E61D4DA68F00DA2C21 /* Protocols.swift */,
 				D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */,
 				D3E1E1281D4714E200B54A57 /* Globals.swift */,
+				D377DEFE1D5BDF8500FB5579 /* Measure.swift */,
 			);
 			name = "Extensions, Globals and Protocols";
 			sourceTree = "<group>";
+		};
+		D3F06C151D5E7FD800644515 /* CyclometerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3F06C161D5E7FD800644515 /* CyclometerTests.swift */,
+				D3F06C181D5E7FD800644515 /* Info.plist */,
+			);
+			name = CyclometerTests;
+			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CyclometerTests;
+			sourceTree = "<absolute>";
 		};
 		D3FDEFD51A66A207006D3840 /* Cells */ = {
 			isa = PBXGroup;
@@ -264,6 +300,24 @@
 			productReference = D3DA830F1A54AFF00070E792 /* Cyclometer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D3F06C131D5E7FD800644515 /* CyclometerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3F06C1B1D5E7FD800644515 /* Build configuration list for PBXNativeTarget "CyclometerTests" */;
+			buildPhases = (
+				D3F06C101D5E7FD800644515 /* Sources */,
+				D3F06C111D5E7FD800644515 /* Frameworks */,
+				D3F06C121D5E7FD800644515 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3F06C1A1D5E7FD800644515 /* PBXTargetDependency */,
+			);
+			name = CyclometerTests;
+			productName = CyclometerTests;
+			productReference = D3F06C141D5E7FD800644515 /* CyclometerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -271,7 +325,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Brian Glaeske";
 				TargetAttributes = {
@@ -300,6 +354,11 @@
 							};
 						};
 					};
+					D3F06C131D5E7FD800644515 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D3DA830E1A54AFF00070E792;
+					};
 				};
 			};
 			buildConfigurationList = D3DA830A1A54AFF00070E792 /* Build configuration list for PBXProject "Cyclometer" */;
@@ -316,6 +375,7 @@
 			projectRoot = "";
 			targets = (
 				D3DA830E1A54AFF00070E792 /* Cyclometer */,
+				D3F06C131D5E7FD800644515 /* CyclometerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -331,6 +391,13 @@
 				D3BE70181BCC223E001A94FD /* Settings.storyboard in Resources */,
 				D3DA831C1A54AFF00070E792 /* Images.xcassets in Resources */,
 				D3FDEFCB1A6176E9006D3840 /* Cyclometer.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3F06C121D5E7FD800644515 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +422,7 @@
 				D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */,
 				D3E1E12D1D4D4E6300B54A57 /* MapAndRouteController.swift in Sources */,
 				D365F4EB1D4DA68F00DA2C21 /* UIKitExtensions.swift in Sources */,
+				D377DEFF1D5BDF8500FB5579 /* Measure.swift in Sources */,
 				D3E7CD571D4DAD2700EC5910 /* CadenceDashboardView.swift in Sources */,
 				D3C862EE1ACF3AB20033872C /* HeartRateSensor.swift in Sources */,
 				D3C862F01ACF84EA0033872C /* SensorManager.swift in Sources */,
@@ -371,7 +439,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3F06C101D5E7FD800644515 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F06C171D5E7FD800644515 /* CyclometerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3F06C1A1D5E7FD800644515 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3DA830E1A54AFF00070E792 /* Cyclometer */;
+			targetProxy = D3F06C191D5E7FD800644515 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D3BE70141BCB4A37001A94FD /* RideHistory.storyboard */ = {
@@ -527,6 +611,47 @@
 			};
 			name = Release;
 		};
+		D3F06C1C1D5E7FD800644515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = CyclometerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.glaeske.brian.CyclometerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyclometer.app/Cyclometer";
+			};
+			name = Debug;
+		};
+		D3F06C1D1D5E7FD800644515 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = CyclometerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = name.glaeske.brian.CyclometerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyclometer.app/Cyclometer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -547,6 +672,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D3F06C1B1D5E7FD800644515 /* Build configuration list for PBXNativeTarget "CyclometerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3F06C1C1D5E7FD800644515 /* Debug */,
+				D3F06C1D1D5E7FD800644515 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

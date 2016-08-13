@@ -52,7 +52,7 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
     }
 
     private func updatePlannedRouteAndDistance() {
-        var distance : Double = 0.0
+        var distance : Meters = 0.0
         
         if (!measurePoints.isEmpty) {
             if measureOverlay != nil {
@@ -74,15 +74,8 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
                 lastPoint = currentPoint
             }
             
-
-         
-            if (currentUnits == .imperial) {
-                let distanceString = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter.string(from: distance.miles)
-                measureLabel!.text = distanceString!.appending(" miles")
-            } else {
-                let distanceString = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter.string(from: distance.km)
-                measureLabel!.text = distanceString!.appending(" kilometers")
-            }
+            let distanceString = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter.string(from: Measure.distance(distance))
+            measureLabel!.text = distanceString!.appending(" \(Measure.distanceLabel)")
             measureView!.isHidden = false
         }
     }

@@ -18,7 +18,6 @@ let globalTintColor = #colorLiteral(red: 0.3449069262, green: 0.7287212014, blue
 
 let captionColor = UIColor(white: 0.25, alpha: 1.0)
 
-
 let kAutoPause = "AutoPause"
 let kUseInBackground = "UseInBackground"
 let kAutoDim = "AutoDim"
@@ -29,9 +28,6 @@ let kSensorName = "SensorName"
 let kSensorId = "SensorID"
 let kSensorCap = "SensorCap"
 let kDoNotDisturb = "DoNotDisturb"
-
-var currentUnits = Units.imperial
-
 
 let kMetersInMile = 1609.347
 let kMetersInFeet = 3.2808399
