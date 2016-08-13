@@ -11,6 +11,10 @@ import Foundation
 import CoreBluetooth
 import CoreLocation
 
+protocol UnitsView {
+    var units : Units { get set }
+}
+
 class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerDelegate {
     
     let Play = 0
@@ -40,6 +44,14 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
     
     private lazy var _sensorManager = SensorManager.sharedManager
     
+    var units : Units = .imperial {
+        didSet {
+            speed.units = Measure.currentUnits
+            distanceDuration.units = Measure.currentUnits
+            geo.units = Measure.currentUnits
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -58,8 +70,7 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
         rideManager.delegate = self
         
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: { (aNotification) -> Void in
-            self.setUnits(currentUnits)
-            
+            self.units = Measure.currentUnits
         })
 
     }
@@ -138,7 +149,6 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
     func zeroDashboard() {
    
         speed.speed = 0.0
-        speed.units = currentUnits
         
         distanceDuration.distance = 0.0
         distanceDuration.pace = 0.0
@@ -153,12 +163,6 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
         biometrics.avg.text = "—.–"
         
         geo.elevation = 0.0
-        
-        setUnits(currentUnits)
-    }
-
-    func setUnits(_ units: Units) {
-        geo.units = units
     }
     
     func updateHeartRate(_ bpm: UInt16) {
@@ -189,7 +193,6 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier! == "showMapAndRoute") {
             (segue.destination as! MapAndRouteController).ride = rideManager
-
         }
     }
 }

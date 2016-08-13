@@ -49,10 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             kDoNotDisturb: false
             ])
 
-        currentUnits = (UserDefaults.standard.integer(forKey: kUnits) == 0) ? .imperial : .metric
+    
+        Measure.currentUnits = (UserDefaults.standard.integer(forKey: kUnits) == 0) ? .imperial : .metric
     
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: {(aNotification) -> Void in
-            currentUnits = UserDefaults.standard.integer(forKey: kUnits) == 0 ? .imperial : .metric
+            Measure.currentUnits = UserDefaults.standard.integer(forKey: kUnits) == 0 ? .imperial : .metric
         })
 
         return true

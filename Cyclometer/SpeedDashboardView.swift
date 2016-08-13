@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class SpeedDashboardView : DashboardView {
+@IBDesignable class SpeedDashboardView : DashboardView, UnitsView {
     
     private var avgSpeedCaption = UILabel(frame: CGRect.zero)
     private var maxSpeedCaption = UILabel(frame: CGRect.zero)
@@ -17,61 +17,31 @@ import UIKit
     private var _speedUnitsLabel = UILabel(frame: CGRect.zero)
     private var maxSpeed = UILabel(frame: CGRect.zero)
     private var avgSpeed = UILabel(frame: CGRect.zero)
-    private var _units : Units = .imperial
     private var _numberFormatter = NumberFormatter()
     private var _avgNumberFormatter = NumberFormatter()
     
     private var _maxSpeed : Double = 0.0
-    private var _avgSpeed : Double = 0.0
     
-    var speed : Double {
-        set {
-            if (units == .imperial) {
-                _speedLabel.text = _numberFormatter.string(from: newValue.mph)
-            } else {
-                _speedLabel.text = _numberFormatter.string(from: newValue.kph)
-            }
+    var speed : MetersPerSecond = 0.0 {
+        didSet {
+            _speedLabel.text = _numberFormatter.string(from: Measure.velocity(speed))
             
-            if (newValue > _maxSpeed) {
-                _maxSpeed = newValue
-                if (units == .imperial) {
-                    maxSpeed.text = _avgNumberFormatter.string(from:_maxSpeed.mph)
-                } else {
-                    maxSpeed.text = _avgNumberFormatter.string(from:_maxSpeed.kph)
-                }
+            if (speed > _maxSpeed) {
+                _maxSpeed = speed
+                maxSpeed.text = _avgNumberFormatter.string(from: Measure.velocity(_maxSpeed))
             }
-        }
-        get {
-            return 0.0
         }
     }
     
-    var average : Double {
-        set {
-            _avgSpeed = newValue
-            if (units == .imperial) {
-                avgSpeed.text = _numberFormatter.string(from: _avgSpeed.mph)
-                
-            } else {
-                avgSpeed.text = _numberFormatter.string(from: _avgSpeed.kph)
-            }
-        }
-        get {
-            return 0.0
+    var average : MetersPerSecond = 0.0 {
+        didSet {
+            avgSpeed.text = _avgNumberFormatter.string(from: Measure.velocity(average))
         }
     }
     
-    var units : Units {
-        get {
-            return _units
-        }
-        set {
-            _units = newValue
-            if (_units == .imperial) {
-                _speedUnitsLabel.text = "MPH"
-            } else {
-                _speedUnitsLabel.text = "KPH"
-            }
+    var units : Units = .imperial {
+        didSet {
+            _speedUnitsLabel.text = Measure.speedLabel.uppercased()
         }
     }
     
@@ -110,7 +80,6 @@ import UIKit
         _speedUnitsLabel.translatesAutoresizingMaskIntoConstraints = false
         _speedUnitsLabel.adjustsFontSizeToFitWidth = false
         _speedUnitsLabel.textColor = captionColor
-        units = .imperial
         
         maxSpeed.font = UIFont(name:"GillSans-Light", size:minorFontSize)
         maxSpeed.translatesAutoresizingMaskIntoConstraints = false
@@ -140,14 +109,6 @@ import UIKit
         addSubview(avgSpeedCaption)
         
         setNeedsUpdateConstraints()
-        
-        units = currentUnits
-        
-        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: {(aNotification) -> Void in
-            self.units = currentUnits
-        })
-
-        
     }
     
     override func updateConstraints() {

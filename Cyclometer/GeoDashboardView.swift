@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class GeoDashboardView : DashboardView {
+@IBDesignable class GeoDashboardView : DashboardView, UnitsView {
     
     private lazy var moduleCaption = UILabel(frame: CGRect.zero)
     private lazy var ascCaption = UILabel(frame: CGRect.zero)
@@ -19,9 +19,7 @@ import UIKit
     private lazy var asc = UILabel(frame: CGRect.zero)
     private lazy var des = UILabel(frame: CGRect.zero)
     private var distanceFormatter = NumberFormatter()
-    
-    private var _units : Units = .imperial
-    
+
     private var _currentElevation : Double = 0.0
     private var _ascent : Double = 0.0
     private var _descent : Double = 0.0
@@ -35,45 +33,32 @@ import UIKit
         super.init(coder: aDecoder)
         commonInit()
     }
-    
-    var elevation : Double {
-        get { return _currentElevation }
-        set {
+
+    var units : Units = .imperial {
+        didSet {
+            elUnits.text = Measure.smallDistanceLabel.uppercased()
+        }
+    }
+
+    var elevation : Double = 0 {
+        willSet {
             let diff = newValue - _currentElevation
             if (diff > 0) {
                 _ascent = _ascent + diff
             } else {
                 _descent = _descent - diff
             }
-            _currentElevation = newValue
-            
-            if units == .imperial {
-                el.text = distanceFormatter.string(from: _currentElevation.ft)
-                asc.text = distanceFormatter.string(from: _ascent.ft)
-                des.text = distanceFormatter.string(from: _descent.ft)
-            } else {
-                el.text = distanceFormatter.string(from: _currentElevation)
-                asc.text = distanceFormatter.string(from: _ascent)
-                des.text = distanceFormatter.string(from: _descent)
-            }
-            
+
+            el.text = distanceFormatter.string(from: Measure.distance(smallUnits: newValue))
+            asc.text = distanceFormatter.string(from: Measure.distance(smallUnits: _ascent))
+            des.text = distanceFormatter.string(from: Measure.distance(smallUnits: _descent))
+
         }
     }
-    var units : Units {
-        get { return _units }
-        set {
-            if (currentUnits == .imperial) {
-                elUnits.text = "FEET"
-            } else {
-                elUnits.text = "METERS"
-            }
-        }
-    }
+    
     
     func commonInit() {
-        
-        units = currentUnits
-    
+
         distanceFormatter.allowsFloats = false
 
         moduleCaption.font = UIFont(name: fontName, size: captionFontSize)
@@ -85,12 +70,13 @@ import UIKit
         el.font = UIFont(name: fontName, size: majorFontSize)
         el.translatesAutoresizingMaskIntoConstraints = false
         el.adjustsFontSizeToFitWidth = false
-        el.text = "0.0"
+        el.text = "0"
         
         elUnits.font = UIFont(name: fontName, size: captionFontSize)
         elUnits.translatesAutoresizingMaskIntoConstraints = false
         elUnits.adjustsFontSizeToFitWidth = false
         elUnits.textColor = captionColor
+        elUnits.text = Measure.smallDistanceLabel.uppercased()
         
         
         asc.font = UIFont(name: fontName, size: minorFontSize)
@@ -124,15 +110,6 @@ import UIKit
         addSubview(desCaption)
         
         setNeedsUpdateConstraints()
-        
-        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: self, queue: nil, using: {(aNotification) -> Void in
-            if (currentUnits == .imperial) {
-                self.elUnits.text = "FEET"
-            } else {
-                self.elUnits.text = "METERS"
-            }
-        })
-
     }
     
     override func updateConstraints() {
