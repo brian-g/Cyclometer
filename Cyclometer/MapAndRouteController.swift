@@ -74,7 +74,7 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
                 lastPoint = currentPoint
             }
             
-            let distanceString = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter.string(from: Measure.distance(distance))
+            let distanceString = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter.string(from: NSNumber(value: Measure.distance(distance)))
             measureLabel!.text = distanceString!.appending(" \(Measure.distanceLabel)")
             measureView!.isHidden = false
         }
@@ -102,7 +102,9 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
     // ViewController delegates
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        ride!.plannedRoute = measurePoints
+        if ride != nil {
+            ride!.plannedRoute = measurePoints
+        }
     }
     
     // MapView delegates

@@ -49,9 +49,9 @@ import UIKit
                 _descent = _descent - diff
             }
 
-            el.text = distanceFormatter.string(from: Measure.distance(smallUnits: newValue))
-            asc.text = distanceFormatter.string(from: Measure.distance(smallUnits: _ascent))
-            des.text = distanceFormatter.string(from: Measure.distance(smallUnits: _descent))
+            el.text = distanceFormatter.string(from: NSNumber(value: Measure.distance(smallUnits: newValue)))
+            asc.text = distanceFormatter.string(from: NSNumber(value: Measure.distance(smallUnits: _ascent)))
+            des.text = distanceFormatter.string(from: NSNumber(value: Measure.distance(smallUnits: _descent)))
 
         }
     }

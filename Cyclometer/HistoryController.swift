@@ -87,7 +87,7 @@ class HistoryController : UITableViewController {
         return rowActions
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         NSLog("prepareForSegue")
         
         let selectedRow = tableView.indexPathForSelectedRow

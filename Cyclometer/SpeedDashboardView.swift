@@ -24,18 +24,18 @@ import UIKit
     
     var speed : MetersPerSecond = 0.0 {
         didSet {
-            _speedLabel.text = _numberFormatter.string(from: Measure.velocity(speed))
+            _speedLabel.text = _numberFormatter.string(from: NSNumber(value: Measure.velocity(speed)))
             
             if (speed > _maxSpeed) {
                 _maxSpeed = speed
-                maxSpeed.text = _avgNumberFormatter.string(from: Measure.velocity(_maxSpeed))
+                maxSpeed.text = _avgNumberFormatter.string(from: NSNumber(value: Measure.velocity(_maxSpeed)))
             }
         }
     }
     
     var average : MetersPerSecond = 0.0 {
         didSet {
-            avgSpeed.text = _avgNumberFormatter.string(from: Measure.velocity(average))
+            avgSpeed.text = _avgNumberFormatter.string(from: NSNumber(value: Measure.velocity(average)))
         }
     }
     
@@ -56,6 +56,8 @@ import UIKit
     }
     
     func commonInit() {
+        
+        units = Measure.currentUnits
         
         _numberFormatter.allowsFloats = true
         _numberFormatter.minimum = 0

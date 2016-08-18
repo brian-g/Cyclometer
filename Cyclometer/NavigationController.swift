@@ -43,7 +43,7 @@ class NavigationController : UINavigationController {
         return anObject
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         NSLog(segue.identifier!);
     }
 }

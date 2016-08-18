@@ -54,25 +54,26 @@ class RideDetailsController : UITableViewController {
   
     func updateValues() {
         
-        if let n = numberFormatter.string(from: ride!.summary.distance) {
+
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.distance)) {
             distance.text = "\(n) miles"
         } else {
             distance.text = emptyString
         }
 
-        if let n = numberFormatter.string(from: NSNumber(value:ride!.summary.time_active)) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.time_active)) {
             duration.text = n
         } else {
             duration.text = emptyString
         }
 
-        if let n = numberFormatter.string(from: ride!.summary.speed_avg) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.speed_avg)) {
             avgSpeed.text = "\(n) mph"
         } else {
             avgSpeed.text = emptyString
         }
 
-        if let n = numberFormatter.string(from: ride!.summary.speed_max) {
+        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.speed_max)) {
             maxSpeed.text = "\(n) mph"
         } else {
             maxSpeed.text = emptyString
