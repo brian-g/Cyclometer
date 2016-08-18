@@ -18,8 +18,8 @@ class DashboardView : UIView {
             if (superview?.subviews.last != self) {
                 cg.setLineWidth(1.0);
                 cg.setStrokeColor(gray: 0.752, alpha: 1.0)
-                cg.moveTo(x: rect.origin.x, y: rect.origin.y + rect.size.height)
-                cg.addLineTo(x: rect.origin.x + rect.size.width, y: rect.origin.y + rect.size.height)
+                cg.move(to: CGPoint(x: rect.origin.x, y: rect.origin.y + rect.size.height))
+                cg.addLine(to: CGPoint(x: rect.origin.x + rect.size.width, y: rect.origin.y + rect.size.height))
                 cg.strokePath()
             }
         }

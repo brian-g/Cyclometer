@@ -20,11 +20,11 @@ class Measure {
     static var currentUnits : Units = .imperial
     
     class func velocity(asMPH mps: MetersPerSecond) -> MilesPerHour {
-        return mps / 3600 * kMetersInMile
+        return mps * 3600 / kMetersInMile
     }
 
     class func velocity(asKPH mps: MetersPerSecond) -> KilometersPerHour {
-        return mps / kMetersInKm / 3600;
+        return mps * 3600 / kMetersInKm;
     }
 
     class func velocity(_ mps: MetersPerSecond) -> Double {

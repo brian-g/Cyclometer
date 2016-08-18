@@ -35,7 +35,7 @@ import UIKit
     
     var distance : Double = 0.0 {
         didSet {
-            distanceLabel.text = distanceFormatter.string(from: Measure.distance(asMiles: distance))
+            distanceLabel.text = distanceFormatter.string(from: NSNumber(value: Measure.distance(asMiles: distance)))
         }
     }
     
@@ -48,7 +48,7 @@ import UIKit
     
     var pace : Double = 0.0 {
         didSet {
-                paceLabel.text = distanceFormatter.string(from: Measure.pace(pace))
+            paceLabel.text = distanceFormatter.string(from: NSNumber(value: Measure.pace(pace)))
         }
     }
     

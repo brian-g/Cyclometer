@@ -95,7 +95,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     private var _btManager : CBCentralManager!
 
-    private var _savedDevices = [AnyObject]()
+    private var _savedDevices = [Any]()
     private var _peripherals = [Sensor]()
     private var _disoveredPeripherals = [UUID: CBPeripheral]()
     private var _scanOnlyRemembered : Bool = true
@@ -116,7 +116,6 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         _btManager = CBCentralManager(delegate: self, queue: nil)
         
         _savedDevices = UserDefaults.standard.array(forKey: kDevices)!
-
     }
     
     deinit {
@@ -147,8 +146,8 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
             if device.identifier == p {
                 if remember {
                     // TODO: Need to rip through remembered array and forgot shit that we're replacing
-                    let db = DefaultsSensorInfo(name: device.name,
-                                                capabilities: device.description,
+                    let db = DefaultsSensorInfo(name: device.name as NSString,
+                                                capabilities: device.description as NSString,
                                                 identifier: device.identifier,
                                                 type: device.type)
                     _savedDevices.append(db)
@@ -196,7 +195,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     
     // Check out the discovered peripherals to find Sensor Tag
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : AnyObject], rssi RSSI: NSNumber) {
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
         NSLog("Found peripheral: \(peripheral.name) \(RSSI)")
         _disoveredPeripherals[peripheral.identifier] = peripheral // Need to hold a strong reference

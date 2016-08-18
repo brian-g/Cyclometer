@@ -35,8 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return distanceFormatter
     }()
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         window?.tintColor = globalTintColor
         
         UserDefaults.standard.register(defaults: [
@@ -48,17 +47,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             kDevices: [],
             kDoNotDisturb: false
             ])
-
-    
+        
+        
         Measure.currentUnits = (UserDefaults.standard.integer(forKey: kUnits) == 0) ? .imperial : .metric
-    
+        
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil, using: {(aNotification) -> Void in
             Measure.currentUnits = UserDefaults.standard.integer(forKey: kUnits) == 0 ? .imperial : .metric
         })
-
+        
         return true
     }
-
     
     func applicationWillResignActive(_ application: UIApplication) {
         
@@ -112,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             error = error1
             coordinator = nil
             // Report any error we got.
-            var dict = [String: AnyObject]()
+            var dict = [String: Any]()
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error
