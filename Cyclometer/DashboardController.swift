@@ -15,12 +15,10 @@ protocol UnitsView {
     var units : Units { get set }
 }
 
+
+
 class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerDelegate {
     
-    let Play = 0
-    let Stop = 1
-    let Pause = 2
-
     let playImage = UIImage(named: "Play")
     let pauseImage = UIImage(named: "Pause")
     let stopImage = UIImage(named: "Stop")
@@ -62,7 +60,7 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
         numberFormatter.alwaysShowsDecimalSeparator = false
         
 
-        firstButton.tag = Play
+        firstButton.tag = RideState.play.rawValue
         firstButton.image = playImage
         
         secondButton.hide()
@@ -82,67 +80,66 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
     
     @IBAction func toggleRideState(_ sender: UIBarButtonItem) {
         
-        let buttonTag = sender.tag
+        let rideState : RideState = RideState(rawValue: sender.tag)!
+        
+        changeRideState(rideState)
 
+    }
+    
+    func changeRideState(_ rideState: RideState) {
         secondButton.hide()
+        
+        switch rideState {
+        case .play:
+            
+            rideManager.state = .play
 
-        switch buttonTag {
-            case Play:
-                if (rideManager.start() == false) {
-                    informUserOfBadPermissions()
-                    return
-                }
-
-                firstButton.tag = Pause
-                firstButton.image = pauseImage
-            
-                
-                distanceDuration.distance = 0.0
-                distanceDuration.duration = 0.0
-                distanceDuration.pace = 0.0
-            
-                _sensorManager.updateHeartRate = updateHeartRate
+            firstButton.tag = RideState.pause.rawValue
+            firstButton.image = pauseImage
             
             
-            case Stop:
-                
-                let alert = UIAlertController(title: "Keep Ride?", message: "When you keep your ride, it will be available for analysis.", preferredStyle: UIAlertControllerStyle.actionSheet)
-                
-                alert.addAction(UIAlertAction(title: "Keep", style: UIAlertActionStyle.default, handler: { ( action: UIAlertAction ) in
-                    self.firstButton.tag = self.Play
-                    self.firstButton.image = self.playImage
-                    self.zeroDashboard()
-                }))
-
-                alert.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.destructive, handler: { ( action: UIAlertAction ) in
-                    self.firstButton.tag = self.Play
-                    self.firstButton.image = self.playImage
-                    self.zeroDashboard()
-                }))
-
-                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { ( action: UIAlertAction ) in
-                    self.secondButton.show(self.playImage, title:nil)
-                }))
-
-                self.present(alert, animated: true, completion: { () in
-                    NSLog("Done")
-                })
+            distanceDuration.distance = 0.0
+            distanceDuration.duration = 0.0
+            distanceDuration.pace = 0.0
             
-                _ = rideManager.stop()
+            _sensorManager.updateHeartRate = updateHeartRate
             
-            case Pause:
-                firstButton.tag = Stop
-                firstButton.image = stopImage
-                
-                secondButton.isEnabled = true
-                secondButton.show(playImage, title:nil)
-                secondButton.tag = Play
             
-                _ = rideManager.stop()
+        case .stop:
             
-            default:
-                NSLog("You're screwed")
+            let alert = UIAlertController(title: "Keep Ride?", message: "When you keep your ride, it will be available for analysis.", preferredStyle: UIAlertControllerStyle.actionSheet)
             
+            alert.addAction(UIAlertAction(title: "Keep", style: UIAlertActionStyle.default, handler: { ( action: UIAlertAction ) in
+                self.firstButton.tag = RideState.play.rawValue
+                self.firstButton.image = self.playImage
+                self.zeroDashboard()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.destructive, handler: { ( action: UIAlertAction ) in
+                self.firstButton.tag = RideState.play.rawValue
+                self.firstButton.image = self.playImage
+                self.zeroDashboard()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { ( action: UIAlertAction ) in
+                self.secondButton.show(self.playImage, title:nil)
+            }))
+            
+            self.present(alert, animated: true, completion: { () in
+                NSLog("Done")
+            })
+            
+            rideManager.state = .stop
+            
+        case .pause:
+            firstButton.tag = RideState.stop.rawValue
+            firstButton.image = stopImage
+            
+            secondButton.isEnabled = true
+            secondButton.show(playImage, title:nil)
+            secondButton.tag = RideState.play.rawValue
+            
+            rideManager.state = .pause
         }
     }
     
@@ -177,22 +174,31 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
         self.present(alert, animated: true, completion: nil)
     }
     
-    func locationDidUpdate(locations: [CLLocation]) {
-
-        speed.speed = (locations.last?.speed)!
-        speed.average = rideManager.average
-        distanceDuration.distance = rideManager.totalDistance
-        distanceDuration.duration = rideManager.duration
-        distanceDuration.pace = rideManager.pace
-
-        geo.elevation = (locations.last?.altitude)!
-
-    }
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier! == "showMapAndRoute") {
             (segue.destination as! MapAndRouteController).ride = rideManager
         }
     }
+    
+    // RideManager Delegate Methods
+    func locationDidUpdate(locations: [CLLocation]) {
+        
+        speed.speed = (locations.last?.speed)!
+        speed.average = rideManager.avgSpeed
+        distanceDuration.distance = rideManager.totalDistance
+        distanceDuration.duration = rideManager.duration
+        distanceDuration.pace = rideManager.pace
+        
+        geo.elevation = (locations.last?.altitude)!
+        
+    }
+    
+    func rideDidPause() {
+        changeRideState(RideState.pause)
+    }
+    
+    func rideDidResume() {
+        changeRideState(RideState.play)
+    }
+    
 }

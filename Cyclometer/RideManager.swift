@@ -14,24 +14,37 @@ import CoreLocation
 
 protocol RideManagerDelegate : class {
     func locationDidUpdate(locations:[CLLocation]) -> Void
+    func rideDidPause() -> Void
+    func rideDidResume() -> Void
 }
 
-class RideManager : NSObject, CLLocationManagerDelegate {
+struct Period {
+    var start : Date
+    var end : Date?
+    
+    mutating func closePeriod() {
+        end = Date()
+    }
+}
+
+class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
 
     private var locationManager : CLLocationManager!
     private var lastLocation : CLLocation!
-    private var startDate : Date!
-    private var stopDate : Date!
 
     var delegate : RideManagerDelegate!
     var totalDistance : CLLocationDistance = 0
     var coordinates : [CLLocationCoordinate2D] = []
     var plannedRoute : [CLLocationCoordinate2D] = []
+    var activePeriods : [Period] = []
     
     var ride = Ride()
     
+
     override init() {
-        
+
+        speed = 0
+
         super.init()
 
         locationManager = CLLocationManager()
@@ -50,7 +63,6 @@ class RideManager : NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone
-        
     }
     
     deinit {
@@ -58,18 +70,54 @@ class RideManager : NSObject, CLLocationManagerDelegate {
         locationManager = nil
     }
 
-    var duration : TimeInterval {
-        get {
-            if (startDate != nil) {
-                if (stopDate != nil) {
-                    return DateInterval(start: startDate, end: stopDate).duration
-                } else {
-                    return DateInterval(start: startDate, end: Date()).duration
+    var speed : Double {
+        didSet {
+            if speed == 0 && state == .play {
+                if (UserDefaults.standard.bool(forKey: kAutoPause)) {
+                    state = .pause
+                    delegate!.rideDidPause()
+                }
+            } else if speed > 0 && state == .pause {
+                if (UserDefaults.standard.bool(forKey: kAutoPause)) {
+                    state = .play
+                    delegate!.rideDidResume()
                 }
             }
-            return 0
         }
     }
+
+
+    var avgSpeed : Double {
+        get {
+            return totalDistance / duration
+        }
+    }
+
+    var maxSpeed: Double = 0.0;
+    
+    var location: CLLocation = CLLocation()
+    
+    var duration : TimeInterval {
+        get {
+            var x : TimeInterval = 0
+            
+            NSLog("Number of periods \(activePeriods.count)")
+            for i in activePeriods {
+                if (i.end != nil) {
+                    x = x + DateInterval(start: i.start, end: i.end!).duration
+                } else {
+                    x = x + DateInterval(start: i.start, end: Date()).duration
+                }
+            }
+
+            return x;
+        }
+        set {
+            activePeriods.removeAll()
+        }
+    }
+    
+    var activeDuration: TimeInterval = 0.0
     
     var pace : Double {
         get {
@@ -77,29 +125,52 @@ class RideManager : NSObject, CLLocationManagerDelegate {
         }
     }
     
-    var average : Double {
-        get {
-            return totalDistance / duration
-        }
-    }
+    var heartRate: Double = 0.0
+    var avgHeartRate: Double = 0.0
+    var maxHeartRate: Double = 0.0
     
-    func start() -> Bool {
+    private func start() -> Bool {
         let authStatus = CLLocationManager.authorizationStatus()
         if (authStatus == .authorizedAlways || authStatus == .authorizedWhenInUse) {
             locationManager.startUpdatingLocation()
         } else {
             return false
         }
-        NSLog("Location tracking started")
-        
-        startDate = Date()
+
         totalDistance = 0
-    
+        activePeriods.append(Period(start: Date(), end: nil))
+        
         return true
     }
     
-    func stop() -> Bool {
+    private func pause() -> Bool {
+        if (activePeriods.count > 1) {
+            activePeriods[activePeriods.count - 1].closePeriod()
+            NSLog("Paused")
+        }
+        
+        return true
+    }
+
+    var state : RideState = .stop {
+        willSet {
+            switch newValue {
+            case .pause:
+                _ = pause()
+            case .stop:
+                _ = stop()
+            case .play:
+                if state != .play {
+                    _ = start()
+                }
+            }
+        }
+    }
+    
+    private func stop() -> Bool {
         locationManager.stopUpdatingLocation()
+        duration = 0
+        
         return true
     }
 
@@ -116,7 +187,7 @@ class RideManager : NSObject, CLLocationManagerDelegate {
             delegate.locationDidUpdate(locations: locations)
         }
         coordinates.append(locations.last!.coordinate)
-        
+        speed = lastLocation.speed
     }
  
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

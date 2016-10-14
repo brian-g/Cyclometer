@@ -17,49 +17,7 @@
                BlueprintIdentifier = "D3DA830E1A54AFF00070E792"
                BuildableName = "Cyclometer.app"
                BlueprintName = "Cyclometer"
-               ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3DA83231A54AFF00070E792"
-               BuildableName = "CyclometerTests.xctest"
-               BlueprintName = "CyclometerTests"
-               ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3893A3A1A81958A00C8AA96"
-               BuildableName = "CylExtensionsTests.xctest"
-               BlueprintName = "CylExtensionsTests"
-               ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3893A5E1A8195C500C8AA96"
-               BuildableName = "CylCoreDataTests.xctest"
-               BlueprintName = "CylCoreDataTests"
-               ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
+               ReferencedContainer = "container:Cyclometer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -70,41 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3DA83231A54AFF00070E792"
-               BuildableName = "CyclometerTests.xctest"
-               BlueprintName = "CyclometerTests"
-               ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3893A3A1A81958A00C8AA96"
-               BuildableName = "CylExtensionsTests.xctest"
-               BlueprintName = "CylExtensionsTests"
-               ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3893A5E1A8195C500C8AA96"
-               BuildableName = "CylCoreDataTests.xctest"
-               BlueprintName = "CylCoreDataTests"
-               ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
-            </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "CylCoreDataTests">
-               </Test>
-            </SkippedTests>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -112,7 +35,7 @@
             BlueprintIdentifier = "D3DA830E1A54AFF00070E792"
             BuildableName = "Cyclometer.app"
             BlueprintName = "Cyclometer"
-            ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
+            ReferencedContainer = "container:Cyclometer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -135,7 +58,7 @@
             BlueprintIdentifier = "D3DA830E1A54AFF00070E792"
             BuildableName = "Cyclometer.app"
             BlueprintName = "Cyclometer"
-            ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
+            ReferencedContainer = "container:Cyclometer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -154,7 +77,7 @@
             BlueprintIdentifier = "D3DA830E1A54AFF00070E792"
             BuildableName = "Cyclometer.app"
             BlueprintName = "Cyclometer"
-            ReferencedContainer = "container:../../../../../Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/Cyclometer.xcodeproj">
+            ReferencedContainer = "container:Cyclometer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

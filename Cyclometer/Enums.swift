@@ -21,3 +21,9 @@ enum Units : Int {
         }
     }
 }
+
+enum RideState : Int {
+    case play = 0
+    case stop = 1
+    case pause = 2
+}

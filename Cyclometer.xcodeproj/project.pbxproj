@@ -344,7 +344,7 @@
 								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.SafariKeychain = {
 								enabled = 0;
@@ -572,9 +572,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ../../../../../../../../Shared/Users/brian/Projects/Cyclometer/Cyclometer/Cyclometer.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ../../../../../../../../Users/brian/Projects/Cyclometer/Cyclometer/Cyclometer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R57AHL4XS9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -593,9 +594,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ../../../../../../../../Shared/Users/brian/Projects/Cyclometer/Cyclometer/Cyclometer.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ../../../../../../../../Users/brian/Projects/Cyclometer/Cyclometer/Cyclometer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R57AHL4XS9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -680,6 +682,7 @@
 				D3F06C1D1D5E7FD800644515 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
