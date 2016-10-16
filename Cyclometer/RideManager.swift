@@ -27,24 +27,27 @@ struct Period {
     }
 }
 
+
 class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
 
     private var locationManager : CLLocationManager!
     private var lastLocation : CLLocation!
-
+    private var activePeriods : [Period] = []
+    
+    var rideInfo : RideInfo
+    
     var delegate : RideManagerDelegate!
-    var totalDistance : CLLocationDistance = 0
+
     var coordinates : [CLLocationCoordinate2D] = []
     var plannedRoute : [CLLocationCoordinate2D] = []
-    var activePeriods : [Period] = []
     
     var ride = Ride()
     
 
     override init() {
 
-        speed = 0
-
+        rideInfo = RideInfo()
+        
         super.init()
 
         locationManager = CLLocationManager()
@@ -69,66 +72,7 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
         locationManager.stopUpdatingLocation()
         locationManager = nil
     }
-
-    var speed : Double {
-        didSet {
-            if speed == 0 && state == .play {
-                if (UserDefaults.standard.bool(forKey: kAutoPause)) {
-                    state = .pause
-                    delegate!.rideDidPause()
-                }
-            } else if speed > 0 && state == .pause {
-                if (UserDefaults.standard.bool(forKey: kAutoPause)) {
-                    state = .play
-                    delegate!.rideDidResume()
-                }
-            }
-        }
-    }
-
-
-    var avgSpeed : Double {
-        get {
-            return totalDistance / duration
-        }
-    }
-
-    var maxSpeed: Double = 0.0;
-    
-    var location: CLLocation = CLLocation()
-    
-    var duration : TimeInterval {
-        get {
-            var x : TimeInterval = 0
-            
-            NSLog("Number of periods \(activePeriods.count)")
-            for i in activePeriods {
-                if (i.end != nil) {
-                    x = x + DateInterval(start: i.start, end: i.end!).duration
-                } else {
-                    x = x + DateInterval(start: i.start, end: Date()).duration
-                }
-            }
-
-            return x;
-        }
-        set {
-            activePeriods.removeAll()
-        }
-    }
-    
-    var activeDuration: TimeInterval = 0.0
-    
-    var pace : Double {
-        get {
-            return duration / totalDistance
-        }
-    }
-    
-    var heartRate: Double = 0.0
-    var avgHeartRate: Double = 0.0
-    var maxHeartRate: Double = 0.0
-    
+        
     private func start() -> Bool {
         let authStatus = CLLocationManager.authorizationStatus()
         if (authStatus == .authorizedAlways || authStatus == .authorizedWhenInUse) {
@@ -137,7 +81,7 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
             return false
         }
 
-        totalDistance = 0
+        rideInfo.clearStats()
         activePeriods.append(Period(start: Date(), end: nil))
         
         return true
@@ -152,42 +96,44 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
         return true
     }
 
+    private func stop() -> Bool {
+
+        rideInfo.clearStats()
+        return true
+    }
+    
     var state : RideState = .stop {
         willSet {
             switch newValue {
-            case .pause:
-                _ = pause()
-            case .stop:
-                _ = stop()
-            case .play:
-                if state != .play {
-                    _ = start()
-                }
+                case .pause:
+                    _ = pause()
+                case .stop:
+                    _ = stop()
+                case .play:
+                    if state != .play {
+                        _ = start()
+                    }
+                case .autoPause:
+                    _ = pause();
             }
         }
-    }
-    
-    private func stop() -> Bool {
-        locationManager.stopUpdatingLocation()
-        duration = 0
-        
-        return true
     }
 
     /* CoreLocation Delegates */
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if (lastLocation != nil) {
-            totalDistance = totalDistance + lastLocation.distance(from: locations.last!)
+        if (lastLocation != nil && state != .pause && state != .autoPause) {
+            rideInfo.totalDistance += lastLocation.distance(from: locations.last!)
+            coordinates.append(locations.last!.coordinate)
         }
         lastLocation = locations.last!
         
         if (delegate != nil) {
             delegate.locationDidUpdate(locations: locations)
         }
-        coordinates.append(locations.last!.coordinate)
-        speed = lastLocation.speed
+        rideInfo.speed = lastLocation.speed
+        rideInfo.elevation = lastLocation.altitude
     }
  
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

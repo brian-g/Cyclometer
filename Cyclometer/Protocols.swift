@@ -10,19 +10,8 @@ import Foundation
 import CoreLocation
 
 protocol RideProtocol {
-    var speed : Double { get }
-    var avgSpeed : Double { get }
-    var maxSpeed : Double { get }
-    
-    var location : CLLocation { get }
-    var duration : TimeInterval { get }
-    var activeDuration : TimeInterval { get }
-    var pace : Double { get }
-
-    var heartRate : Double { get }
-    var avgHeartRate : Double { get }
-    var maxHeartRate : Double { get }
-    
+ 
+    var rideInfo : RideInfo { get }
     var state : RideState { get set }
     
 }

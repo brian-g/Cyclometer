@@ -140,7 +140,12 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
             secondButton.tag = RideState.play.rawValue
             
             rideManager.state = .pause
+        case .autoPause:
+            break
+            
         }
+
+        
     }
     
     func zeroDashboard() {
@@ -183,11 +188,12 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
     // RideManager Delegate Methods
     func locationDidUpdate(locations: [CLLocation]) {
         
-        speed.speed = (locations.last?.speed)!
-        speed.average = rideManager.avgSpeed
-        distanceDuration.distance = rideManager.totalDistance
-        distanceDuration.duration = rideManager.duration
-        distanceDuration.pace = rideManager.pace
+        
+        speed.speed = rideManager.rideInfo.speed
+        speed.average = rideManager.rideInfo.avgSpeed
+        distanceDuration.distance = rideManager.rideInfo.totalDistance
+        distanceDuration.duration = rideManager.rideInfo.duration
+        distanceDuration.pace = rideManager.rideInfo.pace
         
         geo.elevation = (locations.last?.altitude)!
         

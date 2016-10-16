@@ -14,10 +14,12 @@
 		D365F4E91D4DA68F00DA2C21 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */; };
 		D365F4EA1D4DA68F00DA2C21 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E61D4DA68F00DA2C21 /* Protocols.swift */; };
 		D365F4EB1D4DA68F00DA2C21 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */; };
+		D36E43951DB3139B00214B55 /* RideInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E43941DB3139B00214B55 /* RideInfo.swift */; };
 		D36EF77D1D4DA8930006DD79 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36EF77C1D4DA8930006DD79 /* DemoData.swift */; };
 		D36EF7811D4DA8B10006DD79 /* CyclometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */; };
 		D36EF7821D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D36EF77F1D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld */; };
 		D377DEFF1D5BDF8500FB5579 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = D377DEFE1D5BDF8500FB5579 /* Measure.swift */; };
+		D380D20C1DB3F46800ACD6B0 /* RideInfoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D380D20B1DB3F46800ACD6B0 /* RideInfoTest.swift */; };
 		D38F14031AC8C09500A959A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14021AC8C09400A959A2 /* CoreLocation.framework */; };
 		D38F14051AC8C0A300A959A2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */; };
 		D395E00D1ACA3DE40007AF34 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395E00C1ACA3DE40007AF34 /* MapKit.framework */; };
@@ -79,10 +81,12 @@
 		D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		D365F4E61D4DA68F00DA2C21 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D365F4E71D4DA68F00DA2C21 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		D36E43941DB3139B00214B55 /* RideInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideInfo.swift; sourceTree = "<group>"; };
 		D36EF77C1D4DA8930006DD79 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		D36EF77E1D4DA8B10006DD79 /* CyclometerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclometerModel.swift; sourceTree = "<group>"; };
 		D36EF7801D4DA8B10006DD79 /* CyclometerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CyclometerModel.xcdatamodel; sourceTree = "<group>"; };
 		D377DEFE1D5BDF8500FB5579 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		D380D20B1DB3F46800ACD6B0 /* RideInfoTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideInfoTest.swift; sourceTree = "<group>"; };
 		D38F14021AC8C09400A959A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D38F14041AC8C0A300A959A2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D38F14081AC8C17D00A959A2 /* Cyclometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cyclometer.entitlements; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				D3FDEFCC1A633890006D3840 /* RideManager.swift */,
+				D36E43941DB3139B00214B55 /* RideInfo.swift */,
 				D3E7CD611D4DB50B00EC5910 /* Extensions, Globals and Protocols */,
 				D3E7CD601D4DB4F200EC5910 /* CoreData */,
 				D3FDEFD51A66A207006D3840 /* Cells */,
@@ -264,11 +269,11 @@
 			isa = PBXGroup;
 			children = (
 				D3F06C161D5E7FD800644515 /* CyclometerTests.swift */,
+				D380D20B1DB3F46800ACD6B0 /* RideInfoTest.swift */,
 				D3F06C181D5E7FD800644515 /* Info.plist */,
 			);
-			name = CyclometerTests;
-			path = /Network/Servers/gehenna.local/Shared/Users/brian/Projects/Cyclometer/CyclometerTests;
-			sourceTree = "<absolute>";
+			path = CyclometerTests;
+			sourceTree = SOURCE_ROOT;
 		};
 		D3FDEFD51A66A207006D3840 /* Cells */ = {
 			isa = PBXGroup;
@@ -434,6 +439,7 @@
 				D36EF7821D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld in Sources */,
 				D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */,
 				D365F4E91D4DA68F00DA2C21 /* FoundationExtensions.swift in Sources */,
+				D36E43951DB3139B00214B55 /* RideInfo.swift in Sources */,
 				D3E7CD531D4DACC800EC5910 /* GeoDashboardView.swift in Sources */,
 				D3E7CD5B1D4DAD7A00EC5910 /* SpeedDashboardView.swift in Sources */,
 			);
@@ -444,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3F06C171D5E7FD800644515 /* CyclometerTests.swift in Sources */,
+				D380D20C1DB3F46800ACD6B0 /* RideInfoTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
