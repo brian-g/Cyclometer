@@ -14,24 +14,39 @@ import CoreLocation
 
 protocol RideManagerDelegate : class {
     func locationDidUpdate(locations:[CLLocation]) -> Void
+    func rideDidPause() -> Void
+    func rideDidResume() -> Void
 }
 
-class RideManager : NSObject, CLLocationManagerDelegate {
+struct Period {
+    var start : Date
+    var end : Date?
+    
+    mutating func closePeriod() {
+        end = Date()
+    }
+}
 
+
+class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
+
+    let autoPauseTime : TimeInterval = 2
+    
     private var locationManager : CLLocationManager!
     private var lastLocation : CLLocation!
-    private var startDate : Date!
-    private var stopDate : Date!
-
+    
+    var rideInfo = RideInfo()
+    
     var delegate : RideManagerDelegate!
-    var totalDistance : CLLocationDistance = 0
+
     var coordinates : [CLLocationCoordinate2D] = []
     var plannedRoute : [CLLocationCoordinate2D] = []
     
     var ride = Ride()
     
+
     override init() {
-        
+
         super.init()
 
         locationManager = CLLocationManager()
@@ -50,73 +65,86 @@ class RideManager : NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone
-        
     }
     
     deinit {
         locationManager.stopUpdatingLocation()
         locationManager = nil
     }
-
-    var duration : TimeInterval {
-        get {
-            if (startDate != nil) {
-                if (stopDate != nil) {
-                    return DateInterval(start: startDate, end: stopDate).duration
-                } else {
-                    return DateInterval(start: startDate, end: Date()).duration
-                }
-            }
-            return 0
-        }
-    }
-    
-    var pace : Double {
-        get {
-            return duration / totalDistance
-        }
-    }
-    
-    var average : Double {
-        get {
-            return totalDistance / duration
-        }
-    }
-    
-    func start() -> Bool {
+        
+    private func start() -> Bool {
         let authStatus = CLLocationManager.authorizationStatus()
         if (authStatus == .authorizedAlways || authStatus == .authorizedWhenInUse) {
             locationManager.startUpdatingLocation()
         } else {
             return false
         }
-        NSLog("Location tracking started")
-        
-        startDate = Date()
-        totalDistance = 0
-    
+
+        rideInfo.clearStats()
+        rideInfo.start()
+
         return true
     }
     
-    func stop() -> Bool {
-        locationManager.stopUpdatingLocation()
+    private func pause() -> Bool {
+        rideInfo.end()
         return true
+    }
+
+    private func stop() -> Bool {
+
+        rideInfo.end()
+        // 
+        // duh lots to do here
+        //
+        rideInfo.clearStats()
+        return true
+    }
+    
+    var state : RideState = .stop {
+        willSet {
+            switch newValue {
+                case .pause:
+                    _ = pause()
+                case .stop:
+                    _ = stop()
+                case .play:
+                    if state != .play {
+                        _ = start()
+                    }
+                case .autoPause:
+                    _ = pause();
+            }
+        }
     }
 
     /* CoreLocation Delegates */
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if (lastLocation != nil) {
-            totalDistance = totalDistance + lastLocation.distance(from: locations.last!)
+        if (lastLocation != nil && state != .pause && state != .autoPause) {
+            rideInfo.totalDistance += lastLocation.distance(from: locations.last!)
+            coordinates.append(locations.last!.coordinate)
         }
         lastLocation = locations.last!
         
         if (delegate != nil) {
             delegate.locationDidUpdate(locations: locations)
         }
-        coordinates.append(locations.last!.coordinate)
+        rideInfo.speed = lastLocation.speed
+        rideInfo.elevation = lastLocation.altitude
         
+        if let zeroSpeed = rideInfo.speedBecameZeroOn {
+            if state != .autoPause && zeroSpeed.timeIntervalSinceNow < -autoPauseTime {
+                state = .autoPause
+                rideInfo.end()
+            }
+            
+            if state == .autoPause && rideInfo.speed > 0 {
+                state = .play
+                rideInfo.start()
+            }
+        }
     }
  
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

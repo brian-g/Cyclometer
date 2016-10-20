@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 let fontName = "GillSans-Light"
+let fontNameBold = "GillSans-SemiBold"
 let captionFontSize : CGFloat = 14.0
 let heroFontSize : CGFloat = 128.0
 let majorFontSize : CGFloat = 56.0
