@@ -73,7 +73,7 @@ struct RideInfo {
 
     var pace : Double {
         get {
-            return totalDistance > 0 ? duration / totalDistance : 0
+            return totalDistance > 0 ? activeDuration / totalDistance : 0
         }
     }
     
