@@ -20,6 +20,7 @@ struct RideInfo {
     private var _hrSamples : Int = 0
     private var _hrSum : Int = 0
     private var _elevationSet = false
+    private var _activeDuration : TimeInterval = 0
     
     var lastUpdate : Date?
     var speedBecameZeroOn : Date?
@@ -57,14 +58,18 @@ struct RideInfo {
     var duration : TimeInterval {
         get {
             if _startTime != nil {
-                return Date().timeIntervalSince(_startTime!)
+                return -_startTime!.timeIntervalSinceNow
             } else {
                 return 0
             }
         }
     }
     
-    var activeDuration : TimeInterval = 0
+    var activeDuration : TimeInterval {
+        get {
+            return _activeDuration + (_periodStart != nil ? -_periodStart!.timeIntervalSinceNow : 0)
+        }
+    }
 
     var pace : Double {
         get {
@@ -125,7 +130,7 @@ struct RideInfo {
     }
     
     mutating func clearStats() {
-        activeDuration = 0
+        _activeDuration = 0
         totalDistance = 0
         elevation = 0
         lastUpdate = nil
@@ -150,7 +155,8 @@ struct RideInfo {
     
     mutating func end() {
         if _startTime != nil {
-            activeDuration += Date().timeIntervalSince(_startTime!)
+            _activeDuration += Date().timeIntervalSince(_startTime!)
+            _periodStart = nil
         }
     }
 }

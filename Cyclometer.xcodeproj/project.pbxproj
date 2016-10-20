@@ -157,9 +157,9 @@
 		D3910A3A1C2B0FFF00ADCB07 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3FDEFFF1A6A0C46006D3840 /* DashboardController.swift */,
 				D3DA83161A54AFF00070E792 /* RideDetailsController.swift */,
 				D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */,
-				D3FDEFFF1A6A0C46006D3840 /* DashboardController.swift */,
 				D3E1E12C1D4D4E6300B54A57 /* MapAndRouteController.swift */,
 				D3E7CD5C1D4DB35900EC5910 /* NavigationController.swift */,
 				D3E7CD5E1D4DB43E00EC5910 /* HistoryController.swift */,

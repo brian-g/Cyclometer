@@ -108,4 +108,28 @@ class RideInfoTest: XCTestCase {
         XCTAssertEqual(rideInfo.ascent, 0)
         XCTAssertEqual(rideInfo.descent, 0)
     }
+    
+    func testAutoPause() {
+        var rideInfo = RideInfo()
+
+        rideInfo.start()
+        rideInfo.speed = 10
+        sleep(1)
+        rideInfo.speed = 0
+        let mark = Date()
+        sleep(2)
+        
+        
+        XCTAssertNotNil(rideInfo.speedBecameZeroOn)
+        
+        // Don't need super precision. Round off the precision
+        let x = (rideInfo.speedBecameZeroOn!.timeIntervalSince1970 / 10000).rounded()
+        let y = (mark.timeIntervalSince1970 / 10000).rounded()
+        
+        XCTAssertEqual(x, y)
+        
+        rideInfo.speed = 12
+        
+        XCTAssertNil(rideInfo.speedBecameZeroOn)
+    }
 }

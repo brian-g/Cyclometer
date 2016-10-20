@@ -192,7 +192,7 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
         speed.speed = rideManager.rideInfo.speed
         speed.average = rideManager.rideInfo.avgSpeed
         distanceDuration.distance = rideManager.rideInfo.totalDistance
-        distanceDuration.duration = rideManager.rideInfo.duration
+        distanceDuration.duration = rideManager.rideInfo.activeDuration
         distanceDuration.pace = rideManager.rideInfo.pace
         
         geo.elevation = (locations.last?.altitude)!

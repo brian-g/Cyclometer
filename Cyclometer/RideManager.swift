@@ -30,11 +30,12 @@ struct Period {
 
 class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
 
+    let autoPauseTime : TimeInterval = 2
+    
     private var locationManager : CLLocationManager!
     private var lastLocation : CLLocation!
-    private var activePeriods : [Period] = []
     
-    var rideInfo : RideInfo
+    var rideInfo = RideInfo()
     
     var delegate : RideManagerDelegate!
 
@@ -46,8 +47,6 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
 
     override init() {
 
-        rideInfo = RideInfo()
-        
         super.init()
 
         locationManager = CLLocationManager()
@@ -82,22 +81,22 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
         }
 
         rideInfo.clearStats()
-        activePeriods.append(Period(start: Date(), end: nil))
-        
+        rideInfo.start()
+
         return true
     }
     
     private func pause() -> Bool {
-        if (activePeriods.count > 1) {
-            activePeriods[activePeriods.count - 1].closePeriod()
-            NSLog("Paused")
-        }
-        
+        rideInfo.end()
         return true
     }
 
     private func stop() -> Bool {
 
+        rideInfo.end()
+        // 
+        // duh lots to do here
+        //
         rideInfo.clearStats()
         return true
     }
@@ -134,6 +133,18 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
         }
         rideInfo.speed = lastLocation.speed
         rideInfo.elevation = lastLocation.altitude
+        
+        if let zeroSpeed = rideInfo.speedBecameZeroOn {
+            if state != .autoPause && zeroSpeed.timeIntervalSinceNow < -autoPauseTime {
+                state = .autoPause
+                rideInfo.end()
+            }
+            
+            if state == .autoPause && rideInfo.speed > 0 {
+                state = .play
+                rideInfo.start()
+            }
+        }
     }
  
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
