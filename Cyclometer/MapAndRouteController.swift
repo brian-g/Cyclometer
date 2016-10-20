@@ -34,7 +34,7 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
         measureView!.isHidden = true
         clearButton!.isHidden = true
         mapView!.delegate = self
-        mapView!.userTrackingMode = .followWithHeading
+        mapView!.userTrackingMode = .follow
         mapView!.showsCompass = true
         
         if (ride != nil) {

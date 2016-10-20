@@ -189,14 +189,18 @@
                                     <constraint firstAttribute="height" secondItem="zK5-9U-Sb6" secondAttribute="height" constant="20" id="fbz-bf-zB7"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHF-d8-dvN">
-                                <frame key="frameInset" minX="259" minY="615" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHF-d8-dvN">
                                 <color key="backgroundColor" white="1" alpha="0.797700264084507" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="Close"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -207,6 +211,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Wdi-db-42n" firstAttribute="top" secondItem="kjr-MD-Pcr" secondAttribute="bottom" constant="8" id="IQN-uw-ouz"/>
+                            <constraint firstItem="oHF-d8-dvN" firstAttribute="centerY" secondItem="zK5-9U-Sb6" secondAttribute="centerY" id="gxr-IX-77b"/>
+                            <constraint firstItem="oHF-d8-dvN" firstAttribute="leading" secondItem="zK5-9U-Sb6" secondAttribute="trailing" constant="18" id="iFp-6B-fx7"/>
                             <constraint firstItem="kjr-MD-Pcr" firstAttribute="centerX" secondItem="NLO-9N-XXs" secondAttribute="centerX" id="pDi-fJ-sMj"/>
                         </constraints>
                     </view>

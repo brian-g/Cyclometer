@@ -34,6 +34,11 @@ class MapAndRouteDistanceDisplay : UIView {
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
             self.insertSubview(blurEffectView, at: 0)
+            
+            layer.cornerRadius = 4
+            layer.borderWidth = 2
+            layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+
         }
     }
 
