@@ -18,6 +18,7 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var measureView: UIView!
     @IBOutlet weak var measureLabel: UILabel!
+    @IBOutlet weak var clearButton: UIButton!
     
     var ride : RideManager?
     var routePoints : [CLLocationCoordinate2D] = []
@@ -31,8 +32,9 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
 
         measureView!.isHidden = true
+        clearButton!.isHidden = true
         mapView!.delegate = self
-        mapView!.userTrackingMode = .followWithHeading
+        mapView!.userTrackingMode = .follow
         mapView!.showsCompass = true
         
         if (ride != nil) {
@@ -77,6 +79,7 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
             let distanceString = (UIApplication.shared.delegate as! AppDelegate).distanceFormatter.string(from: NSNumber(value: Measure.distance(distance)))
             measureLabel!.text = distanceString!.appending(" \(Measure.distanceLabel)")
             measureView!.isHidden = false
+            clearButton!.isHidden = false
         }
     }
     
@@ -87,16 +90,14 @@ class MapAndRouteController : UIViewController, MKMapViewDelegate {
         }
     }
     
-    @IBAction func swipeDown(_ sender: AnyObject) {
-
-        // Need to figure out how to actually animate this.
+    @IBAction func clear(_ sender: AnyObject) {
         if (measureOverlay != nil) {
             mapView!.remove(measureOverlay!)
         }
         measureView!.isHidden = true
+        clearButton!.isHidden = true
         measurePoints.removeAll()
         ride!.plannedRoute.removeAll()
-
     }
 
     // ViewController delegates

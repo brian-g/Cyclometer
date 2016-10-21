@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uF5-os-OCe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uF5-os-OCe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Sym-Dl-1ZI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BCV-q9-8Uw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iS-2A-oBw">
@@ -160,7 +160,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wdi-db-42n"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NLO-9N-XXs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-Ei-ZBW">
@@ -188,18 +188,36 @@
                                     <constraint firstItem="zK5-9U-Sb6" firstAttribute="centerY" secondItem="kjr-MD-Pcr" secondAttribute="centerY" id="UuM-H2-Tja"/>
                                     <constraint firstAttribute="height" secondItem="zK5-9U-Sb6" secondAttribute="height" constant="20" id="fbz-bf-zB7"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Cdj-Fa-4I1" appends="YES" id="0Bh-B7-1nU"/>
-                                </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHF-d8-dvN">
+                                <color key="backgroundColor" white="1" alpha="0.797700264084507" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="Close"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clear:" destination="66z-hX-iNd" eventType="touchUpInside" id="cau-vf-6w3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Wdi-db-42n" firstAttribute="top" secondItem="kjr-MD-Pcr" secondAttribute="bottom" constant="8" id="IQN-uw-ouz"/>
+                            <constraint firstItem="oHF-d8-dvN" firstAttribute="centerY" secondItem="zK5-9U-Sb6" secondAttribute="centerY" id="gxr-IX-77b"/>
+                            <constraint firstItem="oHF-d8-dvN" firstAttribute="leading" secondItem="zK5-9U-Sb6" secondAttribute="trailing" constant="18" id="iFp-6B-fx7"/>
                             <constraint firstItem="kjr-MD-Pcr" firstAttribute="centerX" secondItem="NLO-9N-XXs" secondAttribute="centerX" id="pDi-fJ-sMj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clearButton" destination="oHF-d8-dvN" id="G1M-JP-06f"/>
                         <outlet property="mapView" destination="1Xg-Ei-ZBW" id="BJ2-v7-yuW"/>
                         <outlet property="measureLabel" destination="zK5-9U-Sb6" id="GrA-Ry-31a"/>
                         <outlet property="measureView" destination="kjr-MD-Pcr" id="ls5-r1-DHv"/>
@@ -211,11 +229,6 @@
                         <action selector="addPoint:" destination="66z-hX-iNd" id="TCx-od-sKp"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="Cdj-Fa-4I1">
-                    <connections>
-                        <action selector="swipeDown:" destination="66z-hX-iNd" id="LVc-FR-6dU"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1970.4000000000001" y="-2487.7061469265368"/>
         </scene>
@@ -229,6 +242,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Close" width="40" height="40"/>
         <image name="History" width="22" height="22"/>
         <image name="Map" width="22" height="22"/>
         <image name="Play" width="22" height="22"/>
