@@ -16,11 +16,11 @@ func createDemoData(_ managedContext : NSManagedObjectContext) {
     let ride = Ride(context: managedContext)
     let summary = NSEntityDescription.insertNewObject(forEntityName: "Summary", into: managedContext) as! Summary
     
-    summary.elevation_gain = 500
-    summary.elevation_loss = 301
-    summary.distance = 30
-    summary.speed_avg = 15.5
-    summary.speed_max = 32.9
+    summary.elevation_gain = 15
+    summary.elevation_loss = 15
+    summary.distance = 24140.16
+    summary.speed_avg = 6.71
+    summary.speed_max = 13.4
     summary.hr_avg = 78
     summary.hr_max = 130
     summary.pace_avg = 10
@@ -30,9 +30,9 @@ func createDemoData(_ managedContext : NSManagedObjectContext) {
     summary.cadence_avg = 80
     summary.cadence_max = 130
     summary.start = Date()
-    summary.end = Date(timeIntervalSinceNow: 10800.0)
-    summary.time_active = 10353
-    summary.time_total = 10800
+    summary.end = Date().addingTimeInterval(6756.0)
+    summary.time_active = 5810
+    summary.time_total = 6034
     
     ride.date = Date()
     ride.summary = summary
