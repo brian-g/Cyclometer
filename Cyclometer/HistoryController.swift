@@ -16,8 +16,13 @@ class HistoryController : UITableViewController {
     var rowActions = [UITableViewRowAction]()
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let timeIntervalFormatter = DateComponentsFormatter()
     
     override func viewDidLoad() {
+        
+        timeIntervalFormatter.allowedUnits = [.hour, .minute]
+        timeIntervalFormatter.unitsStyle = .abbreviated
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -39,6 +44,7 @@ class HistoryController : UITableViewController {
                 
                 alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { ( action: UIAlertAction ) in
                     createDemoData(self.appDelegate.managedObjectContext!)
+                    self.tableView!.reloadData()
                 }))
                 
                 alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
@@ -64,17 +70,19 @@ class HistoryController : UITableViewController {
         
         NSLog("cellForRowAtIndexPath: \((indexPath as NSIndexPath).row)")
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "historyCell")
+        let cell : HistoryCell? = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryCell
         if cell === nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "historyCell")
+            NSLog("Fuck");
         }
         
         let rideDate = rides[(indexPath as NSIndexPath).row].date as Date
-        let c = rides[(indexPath as NSIndexPath).row].biometrics.count
+        let summary = rides[(indexPath as NSIndexPath).row].summary as Summary
         
-        NSLog("Count of bio data \(c)")
-        cell?.textLabel?.text = appDelegate.dateFormatter.string(from: rideDate)
-        
+        cell?.title = appDelegate.dateFormatter.string(from: rideDate)
+        cell?.description = "Duration: \(timeIntervalFormatter.string(from: summary.start, to: summary.end)!)"
+        cell?.distance = Double(exactly: summary.distance)!
+        cell?.mapImage = #imageLiteral(resourceName: "MapPlaceholder")
+
         return cell!
     }
     

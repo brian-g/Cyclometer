@@ -10,6 +10,7 @@
 		D31780B11ADB62C900F8512D /* CycleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31780B01ADB62C900F8512D /* CycleSensor.swift */; };
 		D335E2981AC8D38B00555080 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D335E2971AC8D38B00555080 /* HealthKit.framework */; };
 		D342C4741AD2FC1B00DFF194 /* SettingsControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */; };
+		D35D15D51DBD1AE70063B7FE /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D15D41DBD1AE70063B7FE /* HistoryCell.swift */; };
 		D365F4E81D4DA68F00DA2C21 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E41D4DA68F00DA2C21 /* Enums.swift */; };
 		D365F4E91D4DA68F00DA2C21 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */; };
 		D365F4EA1D4DA68F00DA2C21 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365F4E61D4DA68F00DA2C21 /* Protocols.swift */; };
@@ -77,6 +78,7 @@
 		D31780B01ADB62C900F8512D /* CycleSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleSensor.swift; sourceTree = "<group>"; };
 		D335E2971AC8D38B00555080 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		D342C4731AD2FC1B00DFF194 /* SettingsControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsControllers.swift; sourceTree = "<group>"; };
+		D35D15D41DBD1AE70063B7FE /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D365F4E41D4DA68F00DA2C21 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D365F4E51D4DA68F00DA2C21 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		D365F4E61D4DA68F00DA2C21 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		D3FDEFD51A66A207006D3840 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				D35D15D41DBD1AE70063B7FE /* HistoryCell.swift */,
 				D3FDEFD11A654FA7006D3840 /* SettingsDeviceInfoCell.xib */,
 				D3FDEFD31A6608C4006D3840 /* SettingsDeviceInfoCell.swift */,
 			);
@@ -437,6 +440,7 @@
 				D36EF77D1D4DA8930006DD79 /* DemoData.swift in Sources */,
 				D365F4E81D4DA68F00DA2C21 /* Enums.swift in Sources */,
 				D36EF7821D4DA8B10006DD79 /* CyclometerModel.xcdatamodeld in Sources */,
+				D35D15D51DBD1AE70063B7FE /* HistoryCell.swift in Sources */,
 				D3FDEFCD1A633890006D3840 /* RideManager.swift in Sources */,
 				D365F4E91D4DA68F00DA2C21 /* FoundationExtensions.swift in Sources */,
 				D36E43951DB3139B00214B55 /* RideInfo.swift in Sources */,
