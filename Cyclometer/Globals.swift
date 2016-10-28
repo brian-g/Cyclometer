@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 
 let fontName = "GillSans-Light"
+let fontNameRegular = "GillSans"
 let fontNameBold = "GillSans-SemiBold"
 let captionFontSize : CGFloat = 14.0
 let heroFontSize : CGFloat = 128.0
 let majorFontSize : CGFloat = 56.0
 let minorFontSize : CGFloat = (heroFontSize / 4)
+let valueFontSize : CGFloat = 34.0
+let unitFontSize : CGFloat = (valueFontSize / 2)
 let globalTintColor = #colorLiteral(red: 0.3449069262, green: 0.7287212014, blue: 0.01709888875, alpha: 1)
 
 let captionColor = UIColor(white: 0.25, alpha: 1.0)
