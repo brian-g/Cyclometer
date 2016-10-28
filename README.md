@@ -37,3 +37,28 @@ The design is meant to be as minimal as possible. This has the following benefit
 The automatic wheel sizing uses the GPS to figure out the precise size of the wheel being used. This algorithm will account for small changes in the size of the wheel due to air pressure and weight of the rider. After determine the wheel size, the GPS will be turned into adaptive mode and will only be used to track the route taken. 
 
 The GPS is only used for speed and distance when the BLE cycling speed sensor is not available. 
+
+## Style Guide
+
+### Type and ramp
+Type is set with GillSans primarily in the GillSans Light variety. Gill Sans is a 
+humanistic type face with open an large numbers making it ideal for the dashboard
+where quick reading and understanding of the numbers is important. 
+
+The ramp is set as:
+
+* Hero: GillSans-Light 128pt
+* Caption: GillSans-Light 14pt
+* Major: GillSans-Light 56pt
+* Minor: GillSans-Light 14pt
+* Values: GillSans-Light 34pt
+* Units: GillSans-Light 17pt
+
+Labels should be in **ALL CAPS**
+Units should be in *lowercase*
+
+### Color
+TBD
+
+### Text alignment
+Units should always be set baseline aligned with their coorsponding values

@@ -29,15 +29,17 @@ class RideDetailsController : UITableViewController {
 
     var ride : Ride?
     
-    let numberFormatter = NumberFormatter()
-    
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let timeIntervalFormatter = DateComponentsFormatter()
+    private let numberFormatter = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
-        
+        timeIntervalFormatter.allowedUnits = [.hour, .minute]
+        timeIntervalFormatter.unitsStyle = .abbreviated
+    
         self.navigationItem.title = appDelegate.dateFormatter.string(from: ride!.date)
         
         let anotherButton = UIBarButtonItem(barButtonSystemItem: .action, target: nil, action: nil)
@@ -51,78 +53,107 @@ class RideDetailsController : UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-  
+    private func makeAttributedString(_ value : String, units : String) -> NSAttributedString {
+
+        let valueAttr = [ NSFontAttributeName: UIFont(name: fontName, size: valueFontSize)! ]
+        let unitsAttr = [ NSFontAttributeName: UIFont(name: fontName, size: unitFontSize)! ]
+        
+        let str = NSMutableAttributedString(string: value, attributes: valueAttr)
+        let unitsStr = NSAttributedString(string: units, attributes: unitsAttr)
+        
+        str.append(unitsStr)
+        
+        return str
+    }
+    
+    private func makeDateComponentAttributedString(_ value : String) -> NSAttributedString {
+        // shit. This is going to localize like crap
+        let valueAttr = [ NSFontAttributeName: UIFont(name: fontName, size: valueFontSize)! ]
+        let unitsAttr = [ NSFontAttributeName: UIFont(name: fontName, size: unitFontSize)! ]
+        let nsStr = value as NSString
+        
+        let hourUnitPos = nsStr.range(of: "h")
+        let minUnitPos = nsStr.range(of: "m")
+        let str = NSMutableAttributedString(string: value, attributes: valueAttr)
+        str.addAttributes(unitsAttr, range: hourUnitPos)
+        str.addAttributes(unitsAttr, range: minUnitPos)
+        
+        return str
+    }
+    
     func updateValues() {
         
-
-        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.distance)) {
-            distance.text = "\(n) miles"
+        let summary = ride!.summary
+        
+        if let n = numberFormatter.string(from: NSNumber(value: Measure.distance(Double(exactly: summary.distance)!))) {
+            distance.attributedText = makeAttributedString(n, units: Measure.distanceLabel.lowercased())
         } else {
             distance.text = emptyString
         }
 
-        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.time_active)) {
-            duration.text = n
+        let ti = TimeInterval(summary.time_active)
+        if let n = timeIntervalFormatter.string(from: ti) {
+            duration.attributedText = makeDateComponentAttributedString(n)
         } else {
             duration.text = emptyString
         }
 
-        if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.speed_avg)) {
-            avgSpeed.text = "\(n) mph"
+        if let n = numberFormatter.string(from: NSNumber(value: Measure.velocity(Double(summary.speed_avg)))) {
+            avgSpeed.attributedText = makeAttributedString(n, units: Measure.speedLabel.lowercased())
         } else {
             avgSpeed.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.speed_max)) {
-            maxSpeed.text = "\(n) mph"
+            maxSpeed.attributedText = makeAttributedString(n, units: Measure.speedLabel.lowercased())
         } else {
             maxSpeed.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.elevation_gain)) {
-            ascent.text = "\(n) ft"
+            ascent.attributedText = makeAttributedString(n, units: Measure.smallDistanceLabel.lowercased())
         } else {
             ascent.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.elevation_loss)) {
-            descent.text = "\(n) ft"
+            descent.attributedText = makeAttributedString(n, units: Measure.smallDistanceLabel.lowercased())
         } else {
             descent.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.pace_avg)) {
-            avgPace.text = "\(n) min/mile"
+            avgPace.attributedText = makeAttributedString(n, units: Measure.paceLabel.lowercased())
         } else {
             avgPace.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.pace_max)) {
-            maxPace.text = "\(n) min/mile"
+            maxPace.attributedText = makeAttributedString(n, units: Measure.paceLabel.lowercased())
         } else {
             maxPace.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.cadence_avg)) {
-            avgCadence.text = "\(n) rpm"
+            avgCadence.attributedText = makeAttributedString(n, units: "rpm")
         } else {
             avgCadence.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.cadence_max)) {
-            maxCadence.text = "\(n) rpm"
+            maxCadence.attributedText = makeAttributedString(n, units: "rpm")
         } else {
             maxCadence.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value: ride!.summary.hr_avg)) {
-            avgHr.text = "\(n) bpm"
+            avgHr.attributedText = makeAttributedString(n, units: "bpm")
         } else {
             avgHr.text = emptyString
         }
 
         if let n = numberFormatter.string(from: NSNumber(value:ride!.summary.hr_max)) {
-            maxHr.text = "\(n) bpm"
+            maxHr.attributedText = makeAttributedString(n, units: "bpm")
         } else {
             maxHr.text = emptyString
         }
