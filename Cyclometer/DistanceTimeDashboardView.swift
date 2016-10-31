@@ -54,8 +54,8 @@ import UIKit
     
     var units : Units = .imperial {
         didSet {
-            distanceUnitsLabel.text = Measure.distanceLabel.uppercased()
-            paceCaption.text = Measure.paceLabel.uppercased()
+            distanceUnitsLabel.text = Measure.distanceLabel.lowercased()
+            paceCaption.text = Measure.paceLabel.lowercased()
         }
     }
     
@@ -164,12 +164,12 @@ import UIKit
                                          constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: distanceUnitsLabel,
-                                         attribute: NSLayoutAttribute.top,
+                                         attribute: NSLayoutAttribute.firstBaseline,
                                          relatedBy: NSLayoutRelation.equal,
                                          toItem: distanceLabel,
-                                         attribute: NSLayoutAttribute.top,
+                                         attribute: NSLayoutAttribute.firstBaseline,
                                          multiplier: 1.0,
-                                         constant: 9.0))
+                                         constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: durationCaption,
                                          attribute: NSLayoutAttribute.left,

@@ -76,7 +76,7 @@ import UIKit
         elUnits.translatesAutoresizingMaskIntoConstraints = false
         elUnits.adjustsFontSizeToFitWidth = false
         elUnits.textColor = captionColor
-        elUnits.text = Measure.smallDistanceLabel.uppercased()
+        elUnits.text = Measure.smallDistanceLabel.lowercased()
         
         
         asc.font = UIFont(name: fontName, size: minorFontSize)
@@ -155,12 +155,12 @@ import UIKit
                                          constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: elUnits,
-                                         attribute: NSLayoutAttribute.top,
+                                         attribute: NSLayoutAttribute.firstBaseline,
                                          relatedBy: NSLayoutRelation.equal,
                                          toItem: el,
-                                         attribute: NSLayoutAttribute.top,
+                                         attribute: NSLayoutAttribute.firstBaseline,
                                          multiplier: 1.0,
-                                         constant: 9.0))
+                                         constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: asc,
                                          attribute: NSLayoutAttribute.lastBaseline,

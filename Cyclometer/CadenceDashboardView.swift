@@ -49,7 +49,7 @@ import UIKit
         cadenceUnits.translatesAutoresizingMaskIntoConstraints = false
         cadenceUnits.adjustsFontSizeToFitWidth = false
         cadenceUnits.textColor = captionColor
-        cadenceUnits.text = "RPM"
+        cadenceUnits.text = "rpm"
         
         max.font = UIFont(name: fontName, size: minorFontSize)
         max.translatesAutoresizingMaskIntoConstraints = false
@@ -127,12 +127,12 @@ import UIKit
                                          constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: cadenceUnits,
-                                         attribute: NSLayoutAttribute.top,
+                                         attribute: NSLayoutAttribute.firstBaseline,
                                          relatedBy: NSLayoutRelation.equal,
                                          toItem: cadence,
-                                         attribute: NSLayoutAttribute.top,
+                                         attribute: NSLayoutAttribute.firstBaseline,
                                          multiplier: 1.0,
-                                         constant: 9.0))
+                                         constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: max,
                                          attribute: NSLayoutAttribute.lastBaseline,

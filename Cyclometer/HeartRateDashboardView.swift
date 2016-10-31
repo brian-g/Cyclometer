@@ -47,7 +47,7 @@ import UIKit
         hrUnits.translatesAutoresizingMaskIntoConstraints = false
         hrUnits.adjustsFontSizeToFitWidth = false
         hrUnits.textColor = captionColor
-        hrUnits.text = "BPM"
+        hrUnits.text = "bpm"
         
         max.font = UIFont(name: fontName, size: minorFontSize)
         max.translatesAutoresizingMaskIntoConstraints = false
@@ -125,12 +125,12 @@ import UIKit
                                          constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: hrUnits,
-                                         attribute: NSLayoutAttribute.top,
+                                         attribute: NSLayoutAttribute.firstBaseline,
                                          relatedBy: NSLayoutRelation.equal,
                                          toItem: hr,
-                                         attribute: NSLayoutAttribute.top,
+                                         attribute: NSLayoutAttribute.firstBaseline,
                                          multiplier: 1.0,
-                                         constant: 9.0))
+                                         constant: 0.0))
         
         addConstraint(NSLayoutConstraint(item: max,
                                          attribute: NSLayoutAttribute.lastBaseline,
