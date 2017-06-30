@@ -116,7 +116,7 @@ class CycleSensor : NSObject, CBPeripheralDelegate, Sensor {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         
         if (service.uuid == CBUUID(string: kBTHR)) {
-            NSLog("didDiscoverCharacteristics: \(peripheral.name), Service: \(service.uuid):\(service.uuid.uuidString), " + service.description)
+            NSLog("didDiscoverCharacteristics: \(String(describing: peripheral.name)), Service: \(service.uuid):\(service.uuid.uuidString), " + service.description)
             
             
             let characteristics = service.characteristics
