@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 import CoreMotion
-import CoreBluetooth
 import CoreLocation
 
 protocol RideManagerDelegate : class {
     func locationDidUpdate(locations:[CLLocation]) -> Void
     func rideDidPause() -> Void
     func rideDidResume() -> Void
+    func rideError(_ r : RideManagerError) -> Void
 }
 
 struct Period {
@@ -27,12 +27,17 @@ struct Period {
     }
 }
 
+enum RideManagerError {
+    case NoError
+    case Location_Denied
+    case Location_NotAvailable
+}
 
 class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
 
     let autoPauseTime : TimeInterval = 2
     
-    private var locationManager : CLLocationManager!
+    private var locationManager : CLLocationManager?
     private var lastLocation : CLLocation!
     
     var rideInfo = RideInfo()
@@ -44,46 +49,57 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
     
     var ride = Ride()
     
-
     override init() {
-
         super.init()
-
-        locationManager = CLLocationManager()
-
-        let authStatus = CLLocationManager.authorizationStatus()
-        
-        if (authStatus == .denied || authStatus == .restricted) {
-            // need to do soemthing here
-        } else if (authStatus == .notDetermined) {
-            locationManager.requestAlwaysAuthorization()
-        }
-        
-        CLLocationManager.locationServicesEnabled()
-        
-        locationManager.activityType = .fitness
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
-        locationManager.distanceFilter = kCLDistanceFilterNone
     }
     
     deinit {
-        locationManager.stopUpdatingLocation()
+        locationManager!.stopUpdatingLocation()
         locationManager = nil
     }
+    
+    private func initializeLocationService() -> RideManagerError {
         
-    private func start() -> Bool {
+        if locationManager == nil {
+            locationManager = CLLocationManager()
+            
+            let authStatus = CLLocationManager.authorizationStatus()
+            
+            if (authStatus == .denied || authStatus == .restricted) {
+                NSLog("authStatus for CLLocationManager was denied");
+
+            } else if (authStatus == .notDetermined) {
+                locationManager!.requestAlwaysAuthorization()
+            } else if (authStatus == .authorizedWhenInUse) {
+                locationManager!.requestWhenInUseAuthorization()
+            } else if (authStatus == .authorizedAlways) {
+                locationManager!.requestAlwaysAuthorization()
+            }
+            
+            CLLocationManager.locationServicesEnabled()
+            
+            locationManager!.activityType = .fitness
+            locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager!.delegate = self
+            locationManager!.distanceFilter = kCLDistanceFilterNone
+        }
+        
+        return RideManagerError.NoError
+    }
+    
+    private func start() -> RideManagerError {
         let authStatus = CLLocationManager.authorizationStatus()
         if (authStatus == .authorizedAlways || authStatus == .authorizedWhenInUse) {
-            locationManager.startUpdatingLocation()
+            _ = initializeLocationService()
+            locationManager!.startUpdatingLocation()
         } else {
-            return false
+            return RideManagerError.Location_Denied
         }
 
         rideInfo.clearStats()
         rideInfo.start()
 
-        return true
+        return RideManagerError.NoError
     }
     
     private func pause() -> Bool {
@@ -102,6 +118,7 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
     }
     
     var state : RideState = .stop {
+        
         willSet {
             switch newValue {
                 case .pause:
@@ -110,7 +127,9 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
                     _ = stop()
                 case .play:
                     if state != .play {
-                        _ = start()
+                        if start() == RideManagerError.Location_Denied {
+                            delegate!.rideError(RideManagerError.Location_Denied)
+                        }
                     }
                 case .autoPause:
                     _ = pause();
@@ -149,7 +168,17 @@ class RideManager : NSObject, CLLocationManagerDelegate, RideProtocol {
  
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
-        NSLog("BRG: Not sure what the fuck to do here.")
-        
+        switch(status) {
+            case .notDetermined:
+                NSLog("Location authorization: not determined")
+            case .restricted:
+                NSLog("Location authroization: restricted")
+            case .authorizedAlways:
+                NSLog("Location authorization: always")
+            case .authorizedWhenInUse:
+                NSLog("Location authorization: when in use")
+            case .denied:
+                NSLog("Location authorization: denied")
+        }
     }
 }

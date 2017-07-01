@@ -6,8 +6,6 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>Cyclometer</string>
-	<key>CFBundleDocumentTypes</key>
-	<array/>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,10 +24,12 @@
 	<string>100</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Cyclometer will use your location to track your movement while the application is in the background.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Cyclometer will use your location to track your movement while the application is running.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Cyclometer will use your location to track your movement while the application is running.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Cyclometer will use your location to track your movement while the application is running and in the background while you&apos;re riding.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Cyclometer will use your location to track your movement while the application is running and in the background while you&apos;re riding.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
