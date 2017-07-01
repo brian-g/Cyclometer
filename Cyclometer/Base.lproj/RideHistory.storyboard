@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hg3-Bl-1e7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
-=======
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hg3-Bl-1e7">
->>>>>>> master
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
@@ -46,19 +42,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfL-zb-Pi5">
-<<<<<<< HEAD
                                             <rect key="frame" x="53" y="21" width="35.5" height="22.5"/>
-=======
->>>>>>> master
                                             <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ts8-IY-fnq">
-<<<<<<< HEAD
                                             <rect key="frame" x="88.5" y="5" width="253.5" height="33.5"/>
-=======
->>>>>>> master
                                             <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="34"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -123,19 +113,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmH-KC-xX2">
-<<<<<<< HEAD
                                                     <rect key="frame" x="15" y="17.5" width="58" height="19.5"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.0 miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5n-zd-EsY" userLabel="DistanceValue">
-<<<<<<< HEAD
                                                     <rect key="frame" x="233" y="2.5" width="134" height="39"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -157,19 +141,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTY-uj-Bep">
-<<<<<<< HEAD
                                                     <rect key="frame" x="15" y="12.5" width="60.5" height="19.5"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH7-VI-bce" userLabel="DurationValue">
-<<<<<<< HEAD
                                                     <rect key="frame" x="309.5" y="-3" width="57.5" height="39.5"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -191,19 +169,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ascent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMG-E7-SNd">
-<<<<<<< HEAD
                                                     <rect key="frame" x="15" y="17.5" width="46.5" height="19.5"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1233 ft" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ei-fx-LpF" userLabel="AscentValue">
-<<<<<<< HEAD
                                                     <rect key="frame" x="271" y="2.5" width="96" height="39"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -225,19 +197,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGu-mR-HZT">
-<<<<<<< HEAD
                                                     <rect key="frame" x="15" y="17.5" width="49.5" height="19.5"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234 ft" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1I-M4-eKz" userLabel="DescentValue">
-<<<<<<< HEAD
                                                     <rect key="frame" x="271" y="2.5" width="96" height="39"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -256,11 +222,7 @@
                             <tableViewSection headerTitle="Speed" id="z9o-hk-acw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NqI-51-fPu">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="554" width="375" height="44"/>
-=======
-                                        <rect key="frame" x="0.0" y="555" width="375" height="44"/>
->>>>>>> master
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NqI-51-fPu" id="jlZ-xb-jZ7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -296,30 +258,20 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2BZ-OT-xXk">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="598" width="375" height="44"/>
-=======
-                                        <rect key="frame" x="0.0" y="599" width="375" height="44"/>
->>>>>>> master
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2BZ-OT-xXk" id="hTi-90-83j">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-05-RMf">
-<<<<<<< HEAD
                                                     <rect key="frame" x="15" y="11" width="55" height="22"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.0 mph" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7V-Lv-vxc">
-<<<<<<< HEAD
                                                     <rect key="frame" x="240" y="6" width="127" height="32"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="34"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -340,11 +292,7 @@
                             <tableViewSection headerTitle="Pace" id="Fhp-lf-Ypg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FA5-zU-TK3">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="698" width="375" height="44"/>
-=======
-                                        <rect key="frame" x="0.0" y="700" width="375" height="44"/>
->>>>>>> master
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FA5-zU-TK3" id="91u-RE-UXB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -380,21 +328,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2Bn-uZ-UXl">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="742" width="375" height="44"/>
-=======
-                                        <rect key="frame" x="0.0" y="744" width="375" height="44"/>
->>>>>>> master
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Bn-uZ-UXl" id="LNa-3h-6vx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94u-x5-Xeo">
-<<<<<<< HEAD
                                                     <rect key="frame" x="15" y="11" width="55" height="22"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -424,11 +365,7 @@
                             <tableViewSection headerTitle="Heartrate" id="EWJ-g8-qPf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ATG-d5-2YI">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="842" width="375" height="44"/>
-=======
-                                        <rect key="frame" x="0.0" y="845" width="375" height="44"/>
->>>>>>> master
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ATG-d5-2YI" id="NzR-hN-hVe">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -463,21 +400,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="x9i-Fz-Sm7">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="886" width="375" height="44"/>
-=======
-                                        <rect key="frame" x="0.0" y="889" width="375" height="44"/>
->>>>>>> master
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x9i-Fz-Sm7" id="g6Z-H3-GD3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyL-cJ-5ff">
-<<<<<<< HEAD
                                                     <rect key="frame" x="15" y="11" width="55" height="22"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -506,11 +436,7 @@
                             <tableViewSection headerTitle="Cadence" id="HAX-3a-XQb">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BRc-E1-q1K">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="986" width="375" height="44"/>
-=======
-                                        <rect key="frame" x="0.0" y="990" width="375" height="44"/>
->>>>>>> master
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BRc-E1-q1K" id="Hrt-Gg-pTy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -545,21 +471,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2wO-Iz-o9m">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="1030" width="375" height="44"/>
-=======
-                                        <rect key="frame" x="0.0" y="1034" width="375" height="44"/>
->>>>>>> master
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2wO-Iz-o9m" id="koy-PV-h1W">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEp-PT-reV">
-<<<<<<< HEAD
                                                     <rect key="frame" x="15" y="11" width="55" height="22"/>
-=======
->>>>>>> master
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
