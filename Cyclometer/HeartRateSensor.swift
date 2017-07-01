@@ -97,7 +97,7 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
     /* These 2 should never get called because of how I'm fucking with the delegate */
     func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
         
-        NSLog("HRSensor: Found \(peripheral.name): service: \(service.description)")
+        NSLog("HRSensor: Found \(String(describing: peripheral.name)): service: \(service.description)")
         
     }
     
@@ -113,7 +113,7 @@ class HeartRateSensor : NSObject, CBPeripheralDelegate, Sensor {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         
         if (service.uuid == CBUUID(string: kBTHR)) {
-            NSLog("didDiscoverCharacteristics: \(peripheral.name), Service: \(service.uuid):\(service.uuid.uuidString), " + service.description)
+            NSLog("didDiscoverCharacteristics: \(String(describing: peripheral.name)), Service: \(service.uuid):\(service.uuid.uuidString), " + service.description)
             
             
             let characteristics = service.characteristics

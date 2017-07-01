@@ -63,7 +63,7 @@ class SettingsController : UITableViewController, SensorManagerSensorListUpdates
         }
     }
     
-    func rememberToggled(_ sender : SettingsDeviceInfoCell) {
+    @objc func rememberToggled(_ sender : SettingsDeviceInfoCell) {
         NSLog("rememberToggled")
         
         sensorManager.rememberSensor(sender.peripheral.identifier, remember: sender.isRemembered.isOn)

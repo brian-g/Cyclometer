@@ -207,4 +207,22 @@ class DashboardController : UIViewController, CBPeripheralDelegate, RideManagerD
         changeRideState(RideState.play)
     }
     
+    func rideError(_ r: RideManagerError) {
+        let alert = UIAlertController(title: "Location Authorization Denied", message: "You must give permission for this application to use your location, otherwise there isn't much point in using it.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: { ( action: UIAlertAction ) in
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Go To Settings", style: UIAlertActionStyle.destructive, handler: { ( action: UIAlertAction ) in
+            if let appSettings = URL(string: UIApplicationOpenSettingsURLString + Bundle.main.bundleIdentifier!) {
+                if UIApplication.shared.canOpenURL(appSettings) {
+                    UIApplication.shared.open(appSettings)
+                }
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: { () in
+            NSLog("Done")
+        })
+    }
 }
