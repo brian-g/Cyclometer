@@ -55,8 +55,13 @@ class RideDetailsController : UITableViewController {
 
     private func makeAttributedString(_ value : String, units : String) -> NSAttributedString {
 
+<<<<<<< HEAD
         let valueAttr = [ NSFontAttributeName: UIFont(name: fontName, size: valueFontSize)! ]
         let unitsAttr = [ NSFontAttributeName: UIFont(name: fontName, size: unitFontSize)! ]
+=======
+        let valueAttr = [ NSAttributedStringKey.font: UIFont(name: fontName, size: valueFontSize)! ]
+        let unitsAttr = [ NSAttributedStringKey.font: UIFont(name: fontName, size: unitFontSize)! ]
+>>>>>>> master
         
         let str = NSMutableAttributedString(string: value, attributes: valueAttr)
         let unitsStr = NSAttributedString(string: units, attributes: unitsAttr)
@@ -68,8 +73,13 @@ class RideDetailsController : UITableViewController {
     
     private func makeDateComponentAttributedString(_ value : String) -> NSAttributedString {
         // shit. This is going to localize like crap
+<<<<<<< HEAD
         let valueAttr = [ NSFontAttributeName: UIFont(name: fontName, size: valueFontSize)! ]
         let unitsAttr = [ NSFontAttributeName: UIFont(name: fontName, size: unitFontSize)! ]
+=======
+        let valueAttr = [ NSAttributedStringKey.font: UIFont(name: fontName, size: valueFontSize)! ]
+        let unitsAttr = [ NSAttributedStringKey.font: UIFont(name: fontName, size: unitFontSize)! ]
+>>>>>>> master
         let nsStr = value as NSString
         
         let hourUnitPos = nsStr.range(of: "h")

@@ -197,7 +197,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     // Check out the discovered peripherals to find Sensor Tag
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
-        NSLog("Found peripheral: \(peripheral.name) \(RSSI)")
+        NSLog("Found peripheral: \(String(describing: peripheral.name)) \(RSSI)")
         _disoveredPeripherals[peripheral.identifier] = peripheral // Need to hold a strong reference
         if (_scanOnlyRemembered) {
             
@@ -208,13 +208,13 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        NSLog("Did fail \(peripheral.name): \(error!.localizedDescription)")
+        NSLog("Did fail \(String(describing: peripheral.name)): \(error!.localizedDescription)")
     }
     
     // Discover services of the peripheral
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
 
-        NSLog("Connected: \(peripheral.name), UUID: \(peripheral.identifier)")
+        NSLog("Connected: \(String(describing: peripheral.name)), UUID: \(peripheral.identifier)")
 
         peripheral.delegate = self;
         peripheral.discoverServices(services)
@@ -244,7 +244,7 @@ class SensorManager : NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     /* Periphal delegates */
     func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: Error?) {
 
-        NSLog("Found one Name \(peripheral.name): service: \(service.description)")
+        NSLog("Found one Name \(String(describing: peripheral.name)): service: \(service.description)")
 
     }
     

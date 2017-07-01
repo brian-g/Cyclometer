@@ -62,7 +62,7 @@ func createDemoData(_ managedContext : NSManagedObjectContext) {
         try managedContext.save()
     } catch let error1 as NSError {
         error = error1
-        NSLog("Could not save \(error), \(error?.userInfo)")
+        NSLog("Could not save \(String(describing: error)), \(String(describing: error?.userInfo))")
     }
     
 }
